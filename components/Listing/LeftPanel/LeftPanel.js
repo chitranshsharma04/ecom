@@ -256,7 +256,7 @@ const LeftPanel = () => {
 																				float: 'right',
 																			}}
 																			data-toggle='collapse'
-																		></a>
+																		 />
 																	</li>
 																),
 															)}

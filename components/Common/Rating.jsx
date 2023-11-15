@@ -9,7 +9,7 @@ function Star(props) {
 			onMouseLeave={props.onMouseLeave}
 			onClick={props.onClick}
 		>
-			<i className='fas fa-star'></i>
+			<i className='fas fa-star' />
 		</div>
 	);
 }

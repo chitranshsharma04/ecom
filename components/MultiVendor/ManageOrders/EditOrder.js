@@ -290,7 +290,7 @@ const EditOrder = props => {
 													</p>
 												</td>
 											</tr>
-											<tr></tr>
+											<tr />
 										</tbody>
 									</table>
 								</div>
@@ -426,11 +426,11 @@ const EditOrder = props => {
 															)
 														}
 														disabled={disable}
-													></textarea>
+													 />
 												</td>
 											</tr>
 											<tr>
-												<th scope='row'></th>
+												<th scope='row' />
 												<td>
 													{disable ? (
 														''
@@ -536,7 +536,7 @@ const EditOrder = props => {
 												<i
 													role='button'
 													className='fa fa-download'
-												></i>
+												 />
 											</Link>
 										</div>
 										<div className='col-md-6 text-md-right'>

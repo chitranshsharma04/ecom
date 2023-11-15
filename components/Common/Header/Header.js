@@ -193,7 +193,7 @@ const Header = props => {
 			<div
 				className='header-gap'
 				style={{height: parseInt(headerHeight) + 0 + 'px'}}
-			></div>
+			 />
 			<header className='header' ref={headerRef}>
 				{globalState?.userAuth?.role === 2 ? (
 					''
@@ -358,7 +358,7 @@ const Header = props => {
 														)
 													}
 												>
-													<i className='fa fa-heart'></i>
+													<i className='fa fa-heart' />
 													<span className='badge badge-danger count-wishlist'>
 														{globalState?.wishlistCount ||
 															0}
@@ -371,7 +371,7 @@ const Header = props => {
 												>
 													{' '}
 													&nbsp;
-													<i className='fa fa-heart'></i>
+													<i className='fa fa-heart' />
 													<span className='badge badge-danger count-wishlist'>
 														{globalState?.wishlistCount ||
 															0}

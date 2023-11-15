@@ -146,7 +146,7 @@ const Footer = props => {
 											type='button'
 											onClick={handleSubmit}
 											aria-label='News Button'
-										></button>
+										 />
 									</div>
 
 									{validateError.email ? (

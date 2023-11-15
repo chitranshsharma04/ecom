@@ -301,7 +301,7 @@ const Cart = () => {
 																							style={{
 																								width: '25px',
 																							}}
-																						></div>
+																						 />
 
 																						<button
 																							className='btn btn-link btn-light'

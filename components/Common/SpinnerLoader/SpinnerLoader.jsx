@@ -12,7 +12,7 @@ const SpinnerLoader = ({loading}) => {
 						: styles.loadingoverlay
 				}
 			>
-				<span className={styles.spinner}></span>
+				<span className={styles.spinner} />
 			</div>
 		</>
 	);

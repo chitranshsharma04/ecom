@@ -335,7 +335,7 @@ const Order = ({data}) => {
 									</div>
 								</div>
 								<div className='row'>
-									<div className='col-md-7'></div>
+									<div className='col-md-7' />
 
 									<div className='col-md-5'>
 										<div className='table-responsive'>

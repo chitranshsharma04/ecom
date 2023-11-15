@@ -66,25 +66,25 @@ const SubscriptionHistory = () => {
 												<th scope='col'>
 													<span className='text-primary'>
 														Subscription Id
-														<i className='fa fa-sort text-dark ml-1'></i>
+														<i className='fa fa-sort text-dark ml-1' />
 													</span>
 												</th>
 												<th scope='col'>
 													<span className='text-primary'>
 														Subscription Plan
-														<i className='fa fa-sort text-dark ml-1'></i>
+														<i className='fa fa-sort text-dark ml-1' />
 													</span>
 												</th>
 												<th scope='col'>
 													<span className='text-primary'>
 														Start Date
-														<i className='fa fa-sort text-dark ml-1'></i>
+														<i className='fa fa-sort text-dark ml-1' />
 													</span>
 												</th>
 												<th scope='col'>
 													<span className='text-primary'>
 														End Date
-														<i className='fa fa-sort text-dark ml-1'></i>
+														<i className='fa fa-sort text-dark ml-1' />
 													</span>
 												</th>
 												<th scope='col'>Action</th>
@@ -124,7 +124,7 @@ const SubscriptionHistory = () => {
 																	href={`/vendor/subscription_history_detail/${value.id}`}
 																>
 																	<button className='btn btn-warning'>
-																		<i className='fa fa-fw fa-eye'></i>
+																		<i className='fa fa-fw fa-eye' />
 																	</button>
 																</Link>
 															</td>

@@ -339,7 +339,7 @@ const Signup = () => {
 																						? 'fa-eye-slash'
 																						: 'fa-eye'
 																				}`}
-																			></i>
+																			 />
 																		</span>
 																		<span className='text-danger'>
 																			{
@@ -382,7 +382,7 @@ const Signup = () => {
 																						? 'fa-eye-slash'
 																						: 'fa-eye'
 																				}`}
-																			></i>
+																			 />
 																		</span>
 
 																		<span className='text-danger'>

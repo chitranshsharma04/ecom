@@ -8,7 +8,7 @@ function Loading() {
 			style={{paddingLeft: '25%'}}
 		>
 			{' '}
-			<Spinner animation='border' variant='primary'></Spinner>
+			<Spinner animation='border' variant='primary' />
 			<span
 				style={{marginLeft: '-3rem', marginTop: '2rem'}}
 				className='visually-hidden'

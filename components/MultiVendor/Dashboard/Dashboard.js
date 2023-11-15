@@ -169,7 +169,7 @@ const Dashboard = () => {
 										type='submit'
 										onClick={e => handleSubmit(e)}
 									>
-										<i className='fa fa-filter'></i> Filter
+										<i className='fa fa-filter' /> Filter
 									</button>
 									<button
 										onClick={e => handleReset(e)}
@@ -177,7 +177,7 @@ const Dashboard = () => {
 										title='Reset'
 										type='submit'
 									>
-										<i className='fa fa-refresh'></i> Reset
+										<i className='fa fa-refresh' /> Reset
 									</button>
 								</div>
 							</div>
@@ -287,7 +287,7 @@ const Dashboard = () => {
 												fontSize: '30px',
 											}}
 										>
-											<i className='fa fa-fw fa-eye'></i>
+											<i className='fa fa-fw fa-eye' />
 										</span>
 										<span className='dash-name'>
 											Total Reviews
@@ -315,7 +315,7 @@ const Dashboard = () => {
 												fontSize: '30px',
 											}}
 										>
-											<i className='fa fa-fw fa-eye'></i>
+											<i className='fa fa-fw fa-eye' />
 										</span>
 										<span className='dash-name'>
 											Total Contact-Us Enquiry

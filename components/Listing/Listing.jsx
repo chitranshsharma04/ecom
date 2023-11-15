@@ -33,7 +33,7 @@ const Listing = () => {
 
 	return (
 		<>
-			<CommonBreadcrumbs breadcrumbs={breadcrumbs}></CommonBreadcrumbs>
+			<CommonBreadcrumbs breadcrumbs={breadcrumbs} />
 			<div className='section pad-btm-sec'>
 				<div className='container'>
 					<div className='row no-gutters justify-content-between'>

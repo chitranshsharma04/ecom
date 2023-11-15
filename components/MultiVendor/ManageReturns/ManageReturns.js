@@ -162,7 +162,7 @@ const ManageReturns = () => {
 																		href={`/vendor/editreturnorder/${value.id}`}
 																	>
 																		<button className='btn btn-warning'>
-																			<i className='fa fa-fw fa-eye'></i>
+																			<i className='fa fa-fw fa-eye' />
 																		</button>
 																	</Link>
 																</td>

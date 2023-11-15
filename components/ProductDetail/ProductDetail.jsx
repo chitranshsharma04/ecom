@@ -324,7 +324,7 @@ const ProductDetail = ({productDetail}) => {
 					<div className='product-detail-sec'>
 						<div className='product-detail-top'>
 							<div className='row'>
-								<div className='col-lg-1 d-none d-sm-none d-md-none d-lg-block'></div>
+								<div className='col-lg-1 d-none d-sm-none d-md-none d-lg-block' />
 
 								<div className='col-12 col-sm-12  col-md-12 col-lg-10'>
 									<div className='row'>
@@ -424,7 +424,7 @@ const ProductDetail = ({productDetail}) => {
 														dangerouslySetInnerHTML={{
 															__html: productDetail?.long_description,
 														}}
-													></span>
+													 />
 												</div>
 												<div className='availibily-blk detail-des'>
 													<div className='availibily-col d-flex align-items-center'>
@@ -499,7 +499,7 @@ const ProductDetail = ({productDetail}) => {
 																														prd.title
 																													}`,
 																												}}
-																											></div>
+																											 />
 																										</div>
 																									);
 																								},
@@ -962,7 +962,7 @@ const ProductDetail = ({productDetail}) => {
 																		dangerouslySetInnerHTML={{
 																			__html: item.short_description,
 																		}}
-																	></p>
+																	 />
 																)}
 															<span className='price'>
 																$

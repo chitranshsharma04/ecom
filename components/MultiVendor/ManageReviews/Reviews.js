@@ -219,7 +219,7 @@ const Reviews = () => {
 																		href={`/vendor/review/${list.id}`}
 																	>
 																		<button className='btn btn-warning ml-2'>
-																			<i className='fa fa-fw fa-eye'></i>
+																			<i className='fa fa-fw fa-eye' />
 																		</button>
 																	</Link>
 																</td>

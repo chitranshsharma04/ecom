@@ -120,7 +120,7 @@ const ManageOrders = () => {
 											type='submit'
 											onClick={e => handleSubmit(e)}
 										>
-											<i className='fa fa-filter'></i>{' '}
+											<i className='fa fa-filter' />{' '}
 											Filter
 										</button>
 										<button
@@ -129,7 +129,7 @@ const ManageOrders = () => {
 											type='submit'
 											onClick={e => handleReset(e)}
 										>
-											<i className='fa  fa-refresh'></i>{' '}
+											<i className='fa  fa-refresh' />{' '}
 											Reset
 										</button>
 									</div>
@@ -197,7 +197,7 @@ const ManageOrders = () => {
 																			href={`/vendor/editorder/${value.id}`}
 																		>
 																			<button className='btn btn-warning'>
-																				<i className='fa fa-fw fa-eye'></i>
+																				<i className='fa fa-fw fa-eye' />
 																			</button>
 																		</Link>
 																	</td>
