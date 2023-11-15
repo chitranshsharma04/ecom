@@ -209,7 +209,7 @@ const AddProduct = props => {
 	};
 	const handleChangeImageVarient = e => {
 		let file = e.target.files[0];
-		if (file && file.type.startsWith('image/')) {
+		if (file?.type.startsWith('image/')) {
 			setVarientImage([...varientImage, file]);
 		} else {
 			setSelectedFile(undefined);
@@ -219,7 +219,7 @@ const AddProduct = props => {
 
 	const handleChangeImage = e => {
 		let file = e.target.files[0];
-		if (file && file.type.startsWith('image/')) {
+		if (file?.type.startsWith('image/')) {
 			setSelectedFile(file);
 		} else {
 			setSelectedFile(undefined);
@@ -563,8 +563,7 @@ const AddProduct = props => {
 					setInputValues(inputValues);
 					setValueAttribute(valueAttributeDatas);
 
-					response.data.product.product_image &&
-						response.data.product.product_image.map(image => {
+					response.data.product.product_image?.map(image => {
 							setProductImage(image);
 						});
 				}
@@ -1181,8 +1180,7 @@ const AddProduct = props => {
 																			: false
 																	}
 																	value={
-																		inputs &&
-																		inputs.status
+																		inputs?.status
 																	}
 																	onChange={
 																		handleChangeCheckbox
@@ -1229,8 +1227,7 @@ const AddProduct = props => {
 														</div>
 													</div>
 													{showMerge
-														? valueAttribute &&
-														  valueAttribute.map(
+														? valueAttribute?.map(
 																(item, i) => {
 																	let valName =
 																		Object.keys(

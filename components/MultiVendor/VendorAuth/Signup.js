@@ -523,8 +523,7 @@ const Signup = () => {
 																						file,
 																					);
 																					if (
-																						file &&
-																						file.type.startsWith(
+																						file?.type.startsWith(
 																							'image/',
 																						)
 																					) {

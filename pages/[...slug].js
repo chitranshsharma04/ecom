@@ -23,12 +23,12 @@ const Page = props => {
 };
 
 export async function getStaticProps({params}) {
-	const slug = params && params.slug ? params.slug.join('/') : '/';
+	const slug = params?.slug ? params.slug.join('/') : '/';
 
 	const props = await getCmsPageProps(slug);
 
 	let meta = {};
-	if (props && props.result && props.result.data) {
+	if (props?.result && props.result.data) {
 		const page = props.result.data;
 		meta = {
 			title: page.meta_title,
@@ -51,8 +51,7 @@ export async function getStaticPaths() {
 	});
 
 	const paths =
-		pages.data &&
-		pages.data.filter(item => {
+		pages.data?.filter(item => {
 			item.slug !== 'term-policy' ||
 				item.slug !== 'about-us' ||
 				item.slug !== 'contact-us';
@@ -60,8 +59,7 @@ export async function getStaticPaths() {
 
 	return {
 		paths:
-			(paths &&
-				paths.map(node =>
+			(paths?.map(node =>
 					node.slug === '/' ? `${node.slug}` : `/${node.slug}`,
 				)) ||
 			[],
