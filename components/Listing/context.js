@@ -35,7 +35,7 @@ const AppProvider = ({children}) => {
 		}
 
 		if (state.search) {
-			payload['search'] = state.search;
+			payload?.search = state.search;
 		}
 
 		dispatch({
