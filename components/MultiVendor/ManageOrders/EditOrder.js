@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {toast} from 'react-toastify';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
