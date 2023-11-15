@@ -1,6 +1,6 @@
 // / eslint-disable babel/camelcase /
 // / eslint-disable no-console /
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {toast} from 'react-toastify';
