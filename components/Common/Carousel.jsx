@@ -28,14 +28,14 @@ export function DealECarousel({children, ...rest}) {
 	return (
 		<Carousel
 			responsive={responsive1}
-			swipeable={true}
+			swipeable
 			draggable
 			showDots={false}
-			ssr={true} // means to render carousel on server-side.
-			infinite={true}
-			autoPlay={true}
+			ssr // means to render carousel on server-side.
+			infinite
+			autoPlay
 			autoPlaySpeed={2000}
-			keyBoardControl={true}
+			keyBoardControl
 			// pauseOnHover
 			arrows={false}
 			// customTransition='all .5'
@@ -81,11 +81,11 @@ function ECarousel({children, ...rest}) {
 			swipeable
 			draggable
 			showDots={false}
-			ssr={true} // means to render carousel on server-side.
-			infinite={true}
-			autoPlay={true}
+			ssr // means to render carousel on server-side.
+			infinite
+			autoPlay
 			autoPlaySpeed={2000}
-			keyBoardControl={true}
+			keyBoardControl
 			// pauseOnHover
 			arrows={false}
 			// customTransition='all .5'

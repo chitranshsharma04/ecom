@@ -12,7 +12,7 @@ const SpinnerLoader = () => {
 				ariaLabel='watch-loading'
 				wrapperStyle={{}}
 				wrapperClassName=''
-				visible={true}
+				visible
 			/>
 		</div>
 	);

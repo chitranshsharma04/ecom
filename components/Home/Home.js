@@ -259,7 +259,7 @@ const Home = () => {
 						<h2>DEALS OF THE DAYS</h2>
 					</div>
 
-					<ECarousel max={true} showThumbs={false}>
+					<ECarousel max showThumbs={false}>
 						{newArrivals?.length ? (
 							newArrivals.map((item, key) => (
 								<div
@@ -455,7 +455,7 @@ const Home = () => {
 					<div className='mid-heading'>
 						<h2>New Arrivals</h2>
 					</div>
-					<ECarousel max={true}>
+					<ECarousel max>
 						{newArrivals?.length
 							? newArrivals.map((item, key) => (
 									<div

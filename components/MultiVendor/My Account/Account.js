@@ -323,7 +323,7 @@ const Account = () => {
 												placeholder='example@email.com.'
 												name='email'
 												value={inputs?.email || ''}
-												disabled={true}
+												disabled
 												//onChange={handleChange}
 											/>
 											<span className='text-danger'>
@@ -431,7 +431,7 @@ const Account = () => {
 												name='vat_no'
 												required=''
 												onChange={handleChange}
-												disabled={true}
+												disabled
 											/>
 											<span className='text-danger'>
 												{validateError.vat_no}
@@ -453,7 +453,7 @@ const Account = () => {
 												accept='image/png, image/jpeg, image/jpg, application/pdf'
 												onChange={handleChangeImage}
 												disabled={disable}
-												required={true}
+												required
 											/>
 										</div>
 										<div className='col-md-12 text-center mb-3'>

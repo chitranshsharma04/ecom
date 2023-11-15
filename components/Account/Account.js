@@ -179,7 +179,7 @@ const Account = () => {
 												value={inputs.email}
 												onChange={handleChange}
 												onBlur={handleBlur}
-												disabled={true}
+												disabled
 											/>
 											<span className='text-danger'>
 												{validateError.email}
