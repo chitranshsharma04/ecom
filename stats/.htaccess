@@ -1,0 +1,7 @@
+AuthName "testing-admin-react-ecom-b2b.projectstatus.co.uk statistics"
+AuthType Basic
+AuthUserFile /home/testing-admin-react-ecom-b2b/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>

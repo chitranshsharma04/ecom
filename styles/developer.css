@@ -1,0 +1,145 @@
+.header .dropdown-menu {
+	min-width: 300px;
+	max-width: 100%;
+}
+
+.header .dropdown-menu .row [class*="col-"] { -ms-flex: 0 0 100%;
+flex: 0 0 100%;
+max-width: 100%;}
+
+.product-box{border:1px solid #ececec; background-color:#fff; text-align: left; box-shadow: 0px 6px 10px #f1f1f1;}
+
+.product-box:hover {
+	background-color: #fff;
+}
+
+.product-box figure img {
+	max-height:200px;
+}
+
+.icon-content {
+	white-space: normal;
+	word-wrap: break-word;
+}
+.icon-content:last-child {
+    padding-bottom: 0px;
+}
+
+
+
+.attributetable {
+	padding: 6px 10px;
+	border: 1px solid #8b8a8a;
+	margin-right: 10px;
+	font-size: 14px;
+	color:#000;
+	font-weight:400;
+}
+
+.attributeRadio:checked + .attributetable {
+	border-color:#8b8a8a;
+	
+	font-weight:400;
+}
+
+.size_text {
+	font-size: 18px !important;
+	margin-top: 15px;
+	padding-bottom: 5px;
+}
+
+.input-group-text.decrement-btn, .input-group-text.increment-btn {
+	background-color: #fff;
+	border: 1px solid #8b8a8a;
+	border-radius: 0;
+}
+
+.form-control.text-center.qty-input{
+	border-top: 1px solid #8b8a8a;
+border-bottom: 1px solid #8b8a8a;
+background: #fff;
+}
+.attributeclass0 {
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+
+.product-item-photo {
+	width: 100px;
+}
+.product-item-photo img {
+	max-height: 100px;
+}
+
+.product_data .item .d-flex {
+	align-items: center;
+}
+.product_data .item .d-flex h4 {
+	padding-bottom: 0;
+}
+.item-info td h4 {
+	padding-bottom: 0;
+}
+
+.cart-table .cart-action{ margin-top: 0;}
+.price s {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.search-field .form-control {
+    width: 100%;
+    background: #f3f4f7;
+    border-radius: 0.25rem !important;
+    border: none;
+}
+.quantity-input-box{
+	flex-wrap: nowrap
+}
+
+.quantity-input-box .qty-input{
+	padding-left: 1px !important;
+    text-align: center;
+    padding-right: 1px !important;
+    min-width: 30px;
+	flex-grow: 0;
+}
+.quantity-input-box .decrement-btn {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.quantity-input-box .increment-btn {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.quantity-input-box .qty-input,
+.quantity-input-box button {
+    height: 30px;
+}
+
+.quantity-input-box .qty-input {
+    padding: 5px;
+}
+
+
+
+ @media only screen and (max-width: 575px){
+.search-field .form-control {
+  width: 109px;
+}
+}
+
+ @media only screen and (min-width: 992px){
+.header .navbar .navbar-nav li.nav-item.dropdown {
+  position: relative;
+}
+}
+
+
+@media only screen and (min-width: 576px){
+.product-box h4 {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}	
+	}
