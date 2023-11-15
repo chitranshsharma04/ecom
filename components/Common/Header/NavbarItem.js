@@ -160,7 +160,7 @@ const NavbarItem = props => {
 										menuVariant='red'
 										key={index}
 										className='navs'
-										renderMenuOnMount={true}
+										renderMenuOnMount
 										show={show}
 										onMouseEnter={() => {
 											{

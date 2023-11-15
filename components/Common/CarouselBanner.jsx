@@ -37,7 +37,7 @@ const CarouselBanner = ({children}) => {
 			// dynamicHeight={false}
 			// useKeyboardArrows={false}
 			interval={2000}
-			infiniteLoop={true}
+			infiniteLoop
 			// showArrows={true}
 			// showStatus={false}
 			// showThumbs={true}
@@ -92,7 +92,7 @@ const CarouselBanner = ({children}) => {
 													alt='img2girl'
 													width={1080}
 													height={250}
-													priority={true}
+													priority
 													loading='eager'
 												/>
 											</figure>

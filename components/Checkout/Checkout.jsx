@@ -684,9 +684,7 @@ const Checkout = () => {
 																	value={
 																		option.value
 																	}
-																	checked={
-																		true
-																	}
+																	checked
 																	onChange={e => {
 																		console.log(
 																			e

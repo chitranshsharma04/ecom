@@ -348,7 +348,7 @@ const EditReturnOrder = props => {
 															?.return_items[0]
 															?.order_item?.price
 													}
-													disabled={true}
+													disabled
 												/>
 											</td>
 										</tr>

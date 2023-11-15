@@ -890,9 +890,7 @@ const ProductDetail = ({productDetail}) => {
 																									item?.rating ||
 																									0
 																								}
-																								view={
-																									true
-																								}
+																								view
 																							/>
 																						</div>
 																						{/* <NextImage
