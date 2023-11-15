@@ -78,7 +78,7 @@ const Cart = () => {
 		}
 
 		const lists = state.list;
-		lists[index]['quantity'] = Number(lists[index].quantity) + 1;
+		lists[index]?.quantity = Number(lists[index].quantity) + 1;
 		dispatch({
 			type: 'SET_DATA',
 			data: {
