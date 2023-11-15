@@ -18,7 +18,7 @@ const MyReviews = () => {
 	const fetchReviews = useCallback(async () => {
 		const payload = {};
 		if (router?.query?.page) {
-			payload['page'] = router?.query?.page;
+			payload.page = router?.query?.page;
 		}
 
 		dispatch({
