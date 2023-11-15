@@ -15,7 +15,7 @@ const SideBar = () => {
 	const routers = useRouter();
 
 	const getUserCookie = () => {
-		if (cookie && cookie.get('userAuth')) {
+		if (cookie?.get('userAuth')) {
 			const cookies = JSON.parse(cookie.get('userAuth'));
 			setCookieData(cookies ? cookies : {});
 			// return JSON.parse(cookie.get('userAuth'));

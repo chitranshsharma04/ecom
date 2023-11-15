@@ -260,8 +260,7 @@ const OrderInvoice = props => {
 										</td>
 									</tr>
 
-									{showProduct &&
-										showProduct.map((item, index) => (
+									{showProduct?.map((item, index) => (
 											<tr key={index}>
 												<td>{item?.product?.title}</td>
 												<td>{item?.product?.sku}</td>

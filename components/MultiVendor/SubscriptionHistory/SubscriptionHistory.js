@@ -92,8 +92,7 @@ const SubscriptionHistory = () => {
 										</thead>
 
 										<tbody>
-											{historyList &&
-												historyList.map(
+											{historyList?.map(
 													(value, index) => (
 														<tr key={index}>
 															<th scope='row'>

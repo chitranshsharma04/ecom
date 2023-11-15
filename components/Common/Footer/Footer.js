@@ -177,7 +177,7 @@ const Footer = props => {
 								<div className='col-sm-6 col-lg-4'>
 									<h4>KNOW YOUR STORE</h4>
 									<ul>
-										{pages && pages.length
+										{pages?.length
 											? pages.map((item, index) => {
 													return (
 														<li key={index}>
