@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, {useCallback, useEffect} from 'react';
+import {useCallback, useEffect} from 'react';
 import {useRouter} from 'next/router';
 import {toast} from 'react-toastify';
 
