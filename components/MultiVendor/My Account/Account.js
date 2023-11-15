@@ -177,7 +177,7 @@ const Account = () => {
 		setLoading(true);
 		setDisable(true);
 		const response = await api({
-			url: `/vendor/stripe/create-stripe-account`,
+			url: "/vendor/stripe/create-stripe-account",
 			method: 'POST',
 			data: {redirect_url: url},
 		});
@@ -264,7 +264,7 @@ const Account = () => {
 
 										<Link
 											className='btn custom-btn mb-4 pl-4 pr-4'
-											href={`/vendor/changepassword`}
+											href={"/vendor/changepassword"}
 										>
 											Change Password
 										</Link>

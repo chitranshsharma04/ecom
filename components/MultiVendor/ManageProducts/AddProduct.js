@@ -213,7 +213,7 @@ const AddProduct = props => {
 			setVarientImage([...varientImage, file]);
 		} else {
 			setSelectedFile(undefined);
-			toast.warn(`Please select proper image file format (jpeg,jpg,png)`);
+			toast.warn("Please select proper image file format (jpeg,jpg,png)");
 		}
 	};
 
@@ -223,7 +223,7 @@ const AddProduct = props => {
 			setSelectedFile(file);
 		} else {
 			setSelectedFile(undefined);
-			toast.warn(`Please select proper image file format (jpeg,jpg,png)`);
+			toast.warn("Please select proper image file format (jpeg,jpg,png)");
 		}
 	};
 	function removeDuplicates(editProductId) {
@@ -581,7 +581,7 @@ const AddProduct = props => {
 
 		try {
 			const response = await api({
-				url: `/vendor/product/create`,
+				url: "/vendor/product/create",
 				method: 'GET',
 			});
 			if (response) {

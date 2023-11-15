@@ -4,7 +4,7 @@ import {header} from './AuthHeader';
 import {API_BASE_URL} from '@utils/api';
 
 const getRegister = () => {
-	return axios.post(API_BASE_URL + `/users/register`, {
+	return axios.post(API_BASE_URL + "/users/register", {
 		headers: header,
 	});
 };

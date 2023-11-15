@@ -35,7 +35,7 @@ const ManageOrders = () => {
 		try {
 			setLoading(true);
 			const response = await api({
-				url: `/vendor/order/list?page=` + page,
+				url: "/vendor/order/list?page=" + page,
 				method: 'GET',
 			});
 			if (response.data) {

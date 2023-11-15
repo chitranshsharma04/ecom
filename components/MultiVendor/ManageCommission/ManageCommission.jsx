@@ -23,7 +23,7 @@ const ManageCommission = () => {
 		try {
 			setLoading(true);
 			const response = await api({
-				url: `/category-list/commission?page=` + page,
+				url: "/category-list/commission?page=" + page,
 				method: 'GET',
 			});
 			if (response.data) {

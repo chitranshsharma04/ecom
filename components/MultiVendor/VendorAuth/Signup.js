@@ -538,7 +538,7 @@ const Signup = () => {
 																						fileInputRef.current.value =
 																							null;
 																						toast.warn(
-																							`Please select proper image file format (jpeg,jpg,png)`,
+																							"Please select proper image file format (jpeg,jpg,png)",
 																						);
 																					}
 																				}

@@ -142,7 +142,7 @@ const ForgotPassword = () => {
 										</div>
 										<div className='dont_account_block'>
 											<span className='dont_text'>
-												Already Have an Account?{` `}
+												Already Have an Account?{" "}
 												<Link href='/vendor/login'>
 													Login
 												</Link>

@@ -23,7 +23,7 @@ const Order = () => {
 			},
 		});
 
-		const orders = await api({url: `/order?page=` + page});
+		const orders = await api({url: "/order?page=" + page});
 
 		dispatch({
 			type: 'SET_DATA',

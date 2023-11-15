@@ -208,7 +208,7 @@ const ProductDetail = ({productDetail}) => {
 		formData.append('product_id', productDetail?.id);
 
 		sVariant.forEach(key => {
-			formData.append(`attribute[]`, key);
+			formData.append("attribute[]", key);
 		});
 
 		const response = await api({
@@ -285,7 +285,7 @@ const ProductDetail = ({productDetail}) => {
 						</li>
 						{productDetail?.breadcrumbs?.map((br, i) => {
 							return (
-								<li className={`breadcrumb-item`} key={i}>
+								<li className={"breadcrumb-item"} key={i}>
 									{br.slug === Slug ? (
 										<span
 											className={`${

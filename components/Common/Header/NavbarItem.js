@@ -67,7 +67,7 @@ const NavbarItem = props => {
 			variant='red'
 			bg='red'
 			expand='lg'
-			style={{fontSize: `120%`, color: `#f8f9fa`}}
+			style={{fontSize: "120%", color: "#f8f9fa"}}
 		>
 			<Navbar.Toggle aria-controls='navbar-red-example' />
 			<Navbar.Collapse id='navbar-red-example'>

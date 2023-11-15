@@ -13,7 +13,7 @@ const ManageTax = () => {
 		try {
 			setLoading(true);
 			const response = await api({
-				url: `/tax?page=` + page,
+				url: "/tax?page=" + page,
 				method: 'GET',
 			});
 			if (response.data) {

@@ -23,7 +23,7 @@ const Loading = props => {
 							y='0'
 							width='300'
 							height='400'
-							style={{fill: `url("#gradient-42")`}}
+							style={{fill: 'url("#gradient-42")'}}
 						></rect>
 						<defs>
 							<clipPath id='clipPath-42'>
