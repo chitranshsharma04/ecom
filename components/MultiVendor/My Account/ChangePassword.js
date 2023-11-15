@@ -18,7 +18,7 @@ const ChangePassword = () => {
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
-		console.log(name, value);
+		
 		setInputs(values => ({...values, [name]: value}));
 	};
 
@@ -56,7 +56,7 @@ const ChangePassword = () => {
 	};
 
 	const handleSubmit = async event => {
-		console.log('submit');
+		
 		event.preventDefault();
 		setFormErrors({});
 		const result = validate(inputs);

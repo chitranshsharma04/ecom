@@ -86,7 +86,7 @@ const ReportManager = () => {
 				method: 'GET',
 			});
 			if (response) {
-				console.log('link', response.data);
+				
 				setTotalEarning(response.data);
 				setIsLoading(false);
 			}

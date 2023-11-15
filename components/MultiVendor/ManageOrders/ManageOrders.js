@@ -39,7 +39,7 @@ const ManageOrders = () => {
 				method: 'GET',
 			});
 			if (response.data) {
-				console.log('page', response.data);
+				
 				setLoading(false);
 				setCurrentPage(response.data.orderitems.current_page);
 				setOrderList(response.data.orderitems.data);

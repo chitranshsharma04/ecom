@@ -266,7 +266,7 @@ const AddProduct = props => {
 				field => field.regular_price && field.available_stock,
 			);
 			if (isFieldsValid) {
-				console.log(inputValues);
+				
 			} else {
 				toast.warn('Please fill all Regular Price and stock fields !.');
 				setLoading(false);
@@ -585,7 +585,7 @@ const AddProduct = props => {
 				method: 'GET',
 			});
 			if (response) {
-				console.log('AddProduct', response);
+				
 				setCategoryOptions(response.data.category);
 				setBrandOptions(response.data.brand);
 				setCountryOfManufactureOptions(response.data.countries);

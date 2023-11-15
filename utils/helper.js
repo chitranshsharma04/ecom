@@ -41,7 +41,7 @@ export const getCountriesList = async () => {
 
 export const getCurrencySymbol = () => {
 	const currencyCode = cookie.get('currencyValue');
-	console.log(currencyCode);
+	
 	let currencySymbol;
 	switch (currencyCode) {
 		case '49':

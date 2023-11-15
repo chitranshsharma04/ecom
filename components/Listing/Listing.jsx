@@ -28,7 +28,7 @@ const Listing = () => {
 	);
 
 	useEffect(() => {
-		console.log(router.pathname);
+		
 	}, [router]);
 
 	return (

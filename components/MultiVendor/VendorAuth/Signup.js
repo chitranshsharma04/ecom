@@ -518,10 +518,7 @@ const Signup = () => {
 																						e
 																							.target
 																							.files[0];
-																					console.log(
-																						'filetypeis',
-																						file,
-																					);
+																					
 																					if (
 																						file &&
 																						file.type.startsWith(

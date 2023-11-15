@@ -15,7 +15,7 @@ const OrderInvoice = props => {
 				method: 'GET',
 			});
 			if (response.data) {
-				console.log('setshow', response.data);
+				
 				setShowList(response.data.order);
 				setShowProduct(response.data.order.orderitems);
 				setLoading(false);

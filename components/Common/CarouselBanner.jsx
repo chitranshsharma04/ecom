@@ -27,7 +27,7 @@ const CarouselBanner = ({children}) => {
 			/>
 		);
 	};
-	console.log(banner1, 'child');
+	
 	return (
 		<Carousel
 			// swipeable={true}

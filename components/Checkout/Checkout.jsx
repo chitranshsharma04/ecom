@@ -51,7 +51,7 @@ const Checkout = () => {
 			method: 'GET',
 		});
 		if (response.status) {
-			console.log('setLoading(false)');
+			
 			setLoading(false);
 			dispatch({
 				type: 'SET_DATA',
@@ -137,7 +137,7 @@ const Checkout = () => {
 				return toast.error(response.message);
 			} else {
 				setCoupon(response.data);
-				console.log('Coupon Code Apply :', response.data);
+				
 				setLoadingCoupon(false);
 				couponCode.value = '';
 				return toast.success(response.message);
@@ -227,7 +227,7 @@ const Checkout = () => {
 			errors.country = 'Country is required!';
 		}
 		if (!(state?.['card-expiry'] && state?.['card-number'] && state?.cvc)) {
-			console.log('payment Details :', state?.cardNumber);
+			
 			errors.payment = 'The payment method field is required.';
 		}
 
@@ -688,11 +688,7 @@ const Checkout = () => {
 																		true
 																	}
 																	onChange={e => {
-																		console.log(
-																			e
-																				.target
-																				.value,
-																		);
+																		
 																		setSelectedValue(
 																			e
 																				.target

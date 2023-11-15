@@ -107,7 +107,7 @@ const ManageProducts = () => {
 		});
 	}, [productList, searchTerm]);
 
-	console.log('filteredProductList', filteredProductList);
+	
 
 	const handleKeyDown = event => {
 		if (event.key === 'Enter') {
@@ -297,42 +297,7 @@ const ManageProducts = () => {
 											{productList.length > 0
 												? pageLink?.map(
 														(item, index) => (
-															console.log(
-																'item',
-																item,
-															),
-															(
-																<li
-																	key={index}
-																	className={
-																		'page-item' +
-																		(item.url
-																			? ''
-																			: ' disabled') +
-																		(item.active
-																			? ' active'
-																			: '')
-																	}
-																>
-																	<a
-																		className='page-link'
-																		onClick={() => {
-																			setPage(
-																				item?.url?.split(
-																					'page=',
-																				)?.[1],
-																			);
-																		}}
-																	>
-																		<span
-																			aria-hidden='true'
-																			dangerouslySetInnerHTML={{
-																				__html: item.label,
-																			}}
-																		/>
-																	</a>
-																</li>
-															)
+															
 														),
 												  )
 												: ''}
