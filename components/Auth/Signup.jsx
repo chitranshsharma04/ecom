@@ -412,7 +412,7 @@ const Signup = () => {
 														<div className='dont_account_block'>
 															<span className='dont_text'>
 																Already Have an
-																Account?{` `}
+																Account?{" "}
 																<Link href='/login'>
 																	Login
 																</Link>

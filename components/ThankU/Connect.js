@@ -15,7 +15,7 @@ const Connect = () => {
 		Cookies.remove('connect_account');
 		setLoading(true);
 		const response = await api({
-			url: `/vendor/stripe/update-stripe-key`,
+			url: "/vendor/stripe/update-stripe-key",
 			method: 'POST',
 			data: {stripe_id: acc},
 		});

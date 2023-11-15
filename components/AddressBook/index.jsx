@@ -26,7 +26,7 @@ const AddressBook = () => {
 	const getUserAddresses = async page => {
 		setLoading(true);
 		const response = await api({
-			url: `/user-address?page=` + page,
+			url: "/user-address?page=" + page,
 			method: 'GET',
 		});
 

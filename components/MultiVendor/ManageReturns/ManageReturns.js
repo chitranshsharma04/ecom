@@ -27,7 +27,7 @@ const ManageReturns = () => {
 		try {
 			setReturnOrders(prev => ({...prev, loading: true}));
 			const response = await api({
-				url: `/vendor/return-order/list?page=` + page,
+				url: "/vendor/return-order/list?page=" + page,
 				method: 'GET',
 			});
 			if (response.data) {

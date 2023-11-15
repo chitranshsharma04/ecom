@@ -39,7 +39,7 @@ const AppProvider = ({children}) => {
 	const handleConfigFile = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
 		const response = await api({
-			url: `/users/user-config`,
+			url: "/users/user-config",
 			method: 'get',
 		});
 
