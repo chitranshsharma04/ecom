@@ -1815,7 +1815,7 @@ const AddProduct = props => {
 																																...newData[
 																																	index
 																																],
-																																['discount_price']:
+																																'discount_price':
 																																	'',
 																															};
 																														return newData;
@@ -1937,7 +1937,7 @@ const AddProduct = props => {
 																																...newData[
 																																	index
 																																],
-																																['discount_price']:
+																																'discount_price':
 																																	'',
 																															};
 																														return newData;
