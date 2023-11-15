@@ -91,8 +91,8 @@ const Cart = () => {
 			method: 'POST',
 			data: {
 				// eslint-disable-next-line babel/camelcase
-				cart_id: lists[index]['id'],
-				quantity: lists[index]['quantity'],
+				cart_id: lists[index]?.id,
+				quantity: lists[index]?.quantity,
 				// eslint-disable-next-line babel/camelcase
 				product_id: lists[index]['product']['id'],
 			},
