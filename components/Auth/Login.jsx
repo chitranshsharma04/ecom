@@ -85,7 +85,7 @@ const Login = () => {
 				});
 
 				if (!response.error && response.data.api_token) {
-					response.data['AccessToken'] = 'DOTSQUARES123';
+					response.data?.AccessToken = 'DOTSQUARES123';
 					let guesttoken = cookie.get('tokenguest');
 
 					cookie.set('tokenguest', guesttoken);
