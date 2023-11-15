@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 // eslint-disable-next-line import/no-unresolved
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
