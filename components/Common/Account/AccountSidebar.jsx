@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import Link from 'next/link';
 import cookie from 'js-cookie';
 import {useRouter} from 'next/router';
