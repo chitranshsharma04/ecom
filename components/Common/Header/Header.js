@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/link-passhref */
-import React, {
+import {
 	useCallback,
 	useEffect,
 	Fragment,
