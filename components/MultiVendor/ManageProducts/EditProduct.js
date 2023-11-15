@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-import React from 'react';
 // import {useRouter} from 'next/router';
 // import Link from 'next/link';
 // import JoditEditor from 'jodit-react';
