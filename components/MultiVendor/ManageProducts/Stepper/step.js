@@ -1,4 +1,3 @@
-import React from 'react';
 import StyleStepper from '@styles/stepper.module.css';
 
 export default function Step(props) {
