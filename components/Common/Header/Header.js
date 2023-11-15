@@ -55,7 +55,7 @@ const Header = props => {
 	};
 
 	let cookiedata = getUserCookie('userAuth');
-	console.log('cookie', cookiedata);
+	
 	// eslint-disable-next-line no-unused-vars
 	const getResults = useCallback(async () => {
 		try {

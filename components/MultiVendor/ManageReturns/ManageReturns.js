@@ -31,7 +31,7 @@ const ManageReturns = () => {
 				method: 'GET',
 			});
 			if (response.data) {
-				console.log('return', response.data);
+				
 				setReturnOrders(() => ({
 					list: response.data.returnRequests.data,
 					loading: false,

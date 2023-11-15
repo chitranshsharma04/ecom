@@ -89,61 +89,7 @@ const ManageContactUsEnquiry = () => {
 															0 &&
 														contactUsList.map(
 															(list, index) => (
-																console.log(
-																	'Contact Us :',
-																	list.status,
-																),
-																(
-																	<tr
-																		key={
-																			index
-																		}
-																	>
-																		<th scope='row'>
-																			{index +
-																				1}
-																		</th>
-																		<td>
-																			{list?.firstname +
-																				' ' +
-																				list?.lastname}
-																		</td>
-																		<td>
-																			{
-																				list?.email
-																			}
-																		</td>
-																		<td>
-																			{
-																				list?.phone
-																			}
-																		</td>
-																		<td className='text-nowrap'>
-																			{list?.created_at
-																				.slice(
-																					0,
-																					10,
-																				)
-																				.split(
-																					'-',
-																				)
-																				.reverse()
-																				.join(
-																					'-',
-																				)}
-																		</td>
-
-																		<td>
-																			<Link
-																				href={`/contact-us-view-enquiry/${list.id}`}
-																			>
-																				<button className='btn btn-warning'>
-																					<i className='fa fa-fw fa-eye'></i>
-																				</button>
-																			</Link>
-																		</td>
-																	</tr>
-																)
+																
 															),
 														)
 													) : (

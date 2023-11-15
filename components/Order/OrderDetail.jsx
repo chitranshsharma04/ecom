@@ -10,11 +10,11 @@ import Router from 'next/router';
 
 const Order = ({data}) => {
 	// const [selectedOption, setSelectedOption] = useState(null);
-	console.log('list', data);
+	
 	if (!data) return 'No data Found';
-	console.log('Details', data);
+	
 	const handleReturn = async (order_id, item_id, status = null, quantity) => {
-		console.log(status);
+		
 		const confirm = await confirmDialog(
 			'Are you want to return this order?',
 		);
@@ -46,7 +46,7 @@ const Order = ({data}) => {
 			}
 		}
 	};
-	console.log('data?.order', data?.order);
+	
 	return (
 		<>
 			<div className='cms-page innerblock-padd'>
@@ -157,10 +157,7 @@ const Order = ({data}) => {
 																},
 																(_, i) => i + 1,
 															);
-														console.log(
-															'selectOptions',
-															selectOptions,
-														);
+														
 														return (
 															<tr key={key}>
 																<td>

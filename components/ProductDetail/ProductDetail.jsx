@@ -273,7 +273,7 @@ const ProductDetail = ({productDetail}) => {
 		}
 	};
 	if (!productDetail?.title) return <Loading />;
-	console.log('productDetail', productDetail);
+	
 
 	return (
 		<>

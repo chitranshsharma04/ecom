@@ -121,10 +121,10 @@ $(function ($) {
 		maximize: 10,
 		onChange: valChanged,
 		onMinimum: function (e) {
-			console.log('reached minimum: ' + e);
+			
 		},
 		onMaximize: function (e) {
-			console.log('reached maximize' + e);
+			
 		},
 	};
 	// $('#handleCounter').handleCounter(options)

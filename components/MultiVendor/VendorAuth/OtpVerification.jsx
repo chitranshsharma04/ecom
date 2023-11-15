@@ -63,7 +63,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 				data: formData,
 			});
 			if (response.status === true) {
-				console.log('response', response);
+				
 				toast.success(response.message);
 			} else if (response.error) {
 				toast.error(response.message);
@@ -90,7 +90,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 				data: formData1,
 			});
 			if (response.status === true) {
-				console.log('child ', inputs);
+				
 				// handleOtpChange(inputs.mobile, true);
 				setAllInputs(inputs);
 

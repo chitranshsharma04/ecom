@@ -27,7 +27,7 @@ const ManageCommission = () => {
 				method: 'GET',
 			});
 			if (response.data) {
-				console.log('commission', response?.data);
+				
 				setLoading(false);
 				setCommissionList(response.data);
 				setCurrentPage(response.data.current_page);
@@ -91,10 +91,7 @@ const ManageCommission = () => {
 														?.length > 0 &&
 													commissionList?.data?.map(
 														(value, index) => {
-															console.log(
-																'value',
-																value,
-															);
+															
 															return (
 																<tr key={index}>
 																	<th scope='row'>

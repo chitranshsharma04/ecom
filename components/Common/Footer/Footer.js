@@ -53,7 +53,7 @@ const Footer = props => {
 			errors.email = 'Enter valid Email address!';
 		}
 		setValidateError(errors);
-		console.log('debugging...');
+		
 		return errors;
 	};
 

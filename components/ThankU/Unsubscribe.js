@@ -4,7 +4,7 @@ import {useEffect} from 'react';
 // import { api } from '@utils/api';
 
 const Unsubscribe = props => {
-	console.log('props are', props);
+	
 	const handleReturn = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
 		// const response = await api({
@@ -15,7 +15,7 @@ const Unsubscribe = props => {
 			`https://testing-admin-php-ecom-single.projectstatus.co.uk/unsubscribe/${props?.data?.pathdata?.slug}`,
 		)
 			.then(response => response.json())
-			.then(data => console.log('responseisdata', data));
+			.then(data => {});
 
 		// if (response.status) {
 		//     // fetchOrders();

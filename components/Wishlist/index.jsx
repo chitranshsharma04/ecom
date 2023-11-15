@@ -168,7 +168,7 @@ const Wishlist = () => {
 			data,
 		});
 		if (response.status) {
-			console.log('add-cart', response);
+			
 			getCartCount();
 			toast.success('Item Added to Cart !');
 			window.location.replace('/cart');

@@ -7,7 +7,7 @@ const CommonBreadcrumbs = props => {
 	const {state} = useCommonState();
 
 	useEffect(() => {
-		console.log(state);
+		
 	}, [state]);
 
 	return (

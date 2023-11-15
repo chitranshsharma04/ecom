@@ -36,7 +36,7 @@ const Account = () => {
 				method: 'GET',
 			});
 			if (response?.data) {
-				console.log('response', response);
+				
 				setcountryList(response?.data);
 			}
 		} catch (error) {
@@ -129,7 +129,7 @@ const Account = () => {
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(inputs);
-		console.log('inputs', inputs);
+		
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
@@ -193,7 +193,7 @@ const Account = () => {
 		const res = response.data.url.split('/');
 		const acc = res[res.length - 2];
 		Cookies.set('connect_account', acc);
-		console.log('response.data.url', response.data.url);
+		
 		router.push(response.data.url);
 	}, []);
 
@@ -214,10 +214,7 @@ const Account = () => {
 		});
 	}, [state]);
 
-	console.log(
-		'state?.userAuth?.stripe_account',
-		state?.userAuth?.stripe_account,
-	);
+	
 	return (
 		<>
 			<section className='cms-page '>

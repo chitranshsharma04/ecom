@@ -52,7 +52,7 @@ const AppProvider = ({children}) => {
 			method: 'POST',
 			data: payload,
 		});
-		console.log({response});
+		
 		if (response.status) {
 			let sliderValueMin = [];
 			sliderValueMin.push(

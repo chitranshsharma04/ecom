@@ -29,7 +29,7 @@ const Home = () => {
 	const [categories, setCategories] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	console.log('hello');
+	
 
 	const getResults = async () => {
 		setIsLoading(true);

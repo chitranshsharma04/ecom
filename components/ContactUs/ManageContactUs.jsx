@@ -66,56 +66,7 @@ const ManageContactUs = () => {
 												{productList.length > 0 &&
 													productList.map(
 														(list, index) => (
-															console.log(
-																'Contact :',
-																list,
-															),
-															(
-																<tr key={index}>
-																	<th scope='row'>
-																		{index +
-																			1}
-																	</th>
-																	<td>
-																		{
-																			list.title
-																		}
-																	</td>
-																	<td>
-																		{
-																			list
-																				.category_data
-																				.title
-																		}
-																	</td>
-																	<td>
-																		${' '}
-																		{
-																			list.price
-																		}
-																	</td>
-																	<td>
-																		{list.status ===
-																		'1'
-																			? 'Active'
-																			: 'In - Active'}
-																	</td>
-																	<td>
-																		{
-																			list.created_at
-																		}
-																	</td>
-																	<td>
-																		<Link
-																			href={`/vendor/editproduct/${list.id}`}
-																		>
-																			<button className='btn btn-primary'>
-																				<i className='fa fa-edit'></i>
-																			</button>
-																		</Link>
-																	</td>
-																</tr>
-															)
+															
 														),
 													)}
 											</tbody>
