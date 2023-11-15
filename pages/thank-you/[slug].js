@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+
 import ThankU from '@components/ThankU/ThankU';
 const index = props => {
 	return (
