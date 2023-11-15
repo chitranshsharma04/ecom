@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
-import React, {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import Link from 'next/link';
 import cookie from 'js-cookie';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
