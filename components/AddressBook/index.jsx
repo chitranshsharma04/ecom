@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import Link from 'next/link';
 import {toast} from 'react-toastify';
 import {useContextState} from '@context/reducer';
