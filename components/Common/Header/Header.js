@@ -49,7 +49,7 @@ const Header = props => {
 	});
 
 	const getUserCookie = () => {
-		if (cookie && cookie.get('userAuth')) {
+		if (cookie?.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
 		} else return {};
 	};

@@ -101,8 +101,7 @@ const ManageReturns = () => {
 											<tbody>
 												{returnOrders.list.length >
 												0 ? (
-													returnOrders.list &&
-													returnOrders.list.map(
+													returnOrders.list?.map(
 														(value, index) => (
 															<tr key={index}>
 																<th scope='row'>

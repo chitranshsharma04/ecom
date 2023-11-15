@@ -134,8 +134,7 @@ const ManageTax = () => {
 											</tbody>
 										</table>
 										<ul className='pagination justify-content-center mt-2'>
-											{pageLink &&
-												pageLink.map((item, index) => (
+											{pageLink?.map((item, index) => (
 													<li
 														key={index}
 														className={
