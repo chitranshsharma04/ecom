@@ -1,4 +1,4 @@
-import React, {useMemo, useEffect} from 'react';
+import {useMemo, useEffect} from 'react';
 import {useRouter} from 'next/router';
 import CommonBreadcrumbs from '@components/Common/Header/Breadcrumb/CommonBreadcrumbs';
 
