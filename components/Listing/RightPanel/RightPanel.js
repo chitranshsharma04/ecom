@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Pagination from 'react-responsive-pagination';
 import {useRouter} from 'next/router';
 import Loading from '@components/Common/Loading';
