@@ -36,11 +36,11 @@ export const api = async options => {
 	};
 
 	if (['POST', 'PUT'].includes(options.method)) {
-		config['data'] = options.data;
+		config.data = options.data;
 	}
 
 	if (options.headers) {
-		config['headers'] = {
+		config.headers = {
 			...header,
 			...options.headers,
 		};
