@@ -162,7 +162,7 @@ const AddProduct = props => {
 
 	useEffect(() => {
 		if (!selectedFile) {
-			setPreview(undefined);
+			setPreview();
 			return;
 		}
 		const objectUrl = URL.createObjectURL(selectedFile);
@@ -212,7 +212,7 @@ const AddProduct = props => {
 		if (file?.type.startsWith('image/')) {
 			setVarientImage([...varientImage, file]);
 		} else {
-			setSelectedFile(undefined);
+			setSelectedFile();
 			toast.warn("Please select proper image file format (jpeg,jpg,png)");
 		}
 	};
@@ -222,7 +222,7 @@ const AddProduct = props => {
 		if (file?.type.startsWith('image/')) {
 			setSelectedFile(file);
 		} else {
-			setSelectedFile(undefined);
+			setSelectedFile();
 			toast.warn("Please select proper image file format (jpeg,jpg,png)");
 		}
 	};
