@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback} from 'react';
+import {useEffect, useCallback} from 'react';
 import Pagination from 'react-responsive-pagination';
 import {useRouter} from 'next/router';
 
