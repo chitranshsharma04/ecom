@@ -1,5 +1,5 @@
 /** @format */
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {useRouter} from 'next/router';
 import {Container} from 'react-bootstrap';
 
