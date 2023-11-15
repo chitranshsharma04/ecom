@@ -118,10 +118,10 @@ const Cart = () => {
 			method: 'POST',
 			data: {
 				// eslint-disable-next-line babel/camelcase
-				cart_id: lists[index]['id'],
-				quantity: lists[index]['quantity'],
+				cart_id: lists[index]?.id,
+				quantity: lists[index]?.quantity,
 				// eslint-disable-next-line babel/camelcase
-				product_id: lists[index]['product']['id'],
+				product_id: lists[index]['product']?.id,
 			},
 		});
 		if (result.status) {
@@ -140,7 +140,7 @@ const Cart = () => {
 			url: '/cart/remove',
 			method: 'POST',
 			// eslint-disable-next-line babel/camelcase
-			data: {cart_id: lists[index]['id']},
+			data: {cart_id: lists[index]?.id},
 		});
 		if (result.status) {
 			toast.success(result.message);
