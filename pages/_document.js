@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
 							href='/favicon.ico'
 							media='print'
 							onload="this.media='all'"
-						></link>
+						 />
 						<link
 							rel='stylesheet'
 							href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'

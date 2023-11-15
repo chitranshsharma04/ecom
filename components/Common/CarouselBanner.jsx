@@ -57,7 +57,7 @@ const CarouselBanner = ({children}) => {
 								<div key={index} className='banner-slider '>
 									<div className='item'>
 										<div className='container d-flex flex-wrap justify-content-between'>
-											<div className='banner-content'></div>
+											<div className='banner-content' />
 											<div className='banner-content'>
 												<span className='title-top'>
 													Latest Collection

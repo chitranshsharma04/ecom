@@ -858,7 +858,7 @@ const AddProduct = props => {
 											labelArray={labelArray}
 											currentStep={currentStep}
 											updateStep={updateStep}
-										></StepNavigation>
+										 />
 										{currentStep === 1 ? (
 											<section
 												id='step-1'
@@ -1293,7 +1293,7 @@ const AddProduct = props => {
 														  )
 														: ''}
 													<div className='row mt-3'>
-														<div className='col-md-3 col-lg-3 attribute_options'></div>
+														<div className='col-md-3 col-lg-3 attribute_options' />
 														{showMerge ? (
 															<div className='col-md-3 col-lg-3 attribute_options'>
 																<div className='form-group'>
@@ -2050,7 +2050,7 @@ const AddProduct = props => {
 																										)
 																									}
 																									className='fas fa-trash btn'
-																								></i>
+																								 />
 																							</td>
 																						</tr>
 																					);
@@ -2078,7 +2078,7 @@ const AddProduct = props => {
 														)
 													}
 												>
-													<i className='fas fa-arrow-left'></i>{' '}
+													<i className='fas fa-arrow-left' />{' '}
 													Prev
 												</button>
 											)}
@@ -2093,7 +2093,7 @@ const AddProduct = props => {
 													}}
 													disabled={loading}
 												>
-													<i className='fa fa-fw fa-save'></i>{' '}
+													<i className='fa fa-fw fa-save' />{' '}
 													Submit
 												</button>
 											) : (
@@ -2115,7 +2115,7 @@ const AddProduct = props => {
 													}
 												>
 													Next{' '}
-													<i className='fas fa-arrow-right'></i>
+													<i className='fas fa-arrow-right' />
 												</button>
 											)}{' '}
 										</div>

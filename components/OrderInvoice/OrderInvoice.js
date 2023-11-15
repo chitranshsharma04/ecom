@@ -341,7 +341,7 @@ const OrderInvoice = props => {
 								</table>
 							</td>
 						</tr>
-						<tr></tr>
+						<tr />
 						{/* </tr> */}
 					</table>
 				</div>

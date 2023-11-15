@@ -151,7 +151,7 @@ const ResetPassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													></i>
+													 />
 												</span>
 												<span className='text-danger'>
 													{validateError.password}
@@ -175,7 +175,7 @@ const ResetPassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													></i>
+													 />
 												</span>
 												<span className='text-danger'>
 													{

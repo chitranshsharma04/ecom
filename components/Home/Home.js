@@ -324,7 +324,7 @@ const Home = () => {
 								</div>
 							))
 						) : (
-							<div></div>
+							<div />
 						)}
 					</ECarousel>
 				</div>

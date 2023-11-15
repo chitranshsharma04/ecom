@@ -12,7 +12,7 @@ export default function StepNavigation(props) {
 					label={item}
 					updateStep={props.updateStep}
 					selected={props.currentStep === index + 1}
-				></Step>
+				 />
 			))}
 		</div>
 	);

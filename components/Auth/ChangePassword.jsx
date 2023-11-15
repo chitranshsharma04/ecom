@@ -147,7 +147,7 @@ const ChangePassword = () => {
 															? 'fa-eye-slash'
 															: 'fa-eye'
 													}`}
-												></i>
+												 />
 											</span>
 										</div>
 										<span className='text-danger'>
@@ -184,7 +184,7 @@ const ChangePassword = () => {
 															? 'fa-eye-slash'
 															: 'fa-eye'
 													}`}
-												></i>
+												 />
 											</span>
 										</div>
 										<span className='text-danger'>
@@ -222,7 +222,7 @@ const ChangePassword = () => {
 															? 'fa-eye-slash'
 															: 'fa-eye'
 													}`}
-												></i>
+												 />
 											</span>
 										</div>
 										<span className='text-danger'>

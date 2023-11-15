@@ -201,7 +201,7 @@ const Login = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													></i>
+													 />
 												</span>
 												<span className='text-danger'>
 													{validateError.password}

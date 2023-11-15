@@ -16,8 +16,8 @@ const Page = props => {
 		<Loading />
 	) : (
 		<>
-			<Cms cmsdata={cmsdata}></Cms>
-			<div id='dynamicstyle'></div>
+			<Cms cmsdata={cmsdata} />
+			<div id='dynamicstyle' />
 		</>
 	);
 };

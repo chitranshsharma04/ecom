@@ -291,7 +291,7 @@ const ContactUs = () => {
 																}
 																placeholder='Comment/ Request'
 																className='form-control'
-															></textarea>
+															 />
 
 															<span className='text-danger'>
 																{

@@ -217,7 +217,7 @@ const ReportManager = () => {
 																		)
 																	}
 																>
-																	<i className='fa fa-filter'></i>{' '}
+																	<i className='fa fa-filter' />{' '}
 																	Filter
 																</button>
 																<button
@@ -229,7 +229,7 @@ const ReportManager = () => {
 																	className='btn btn-warning mr-3'
 																	title='Reset'
 																>
-																	<i className='fa  fa-refresh'></i>{' '}
+																	<i className='fa  fa-refresh' />{' '}
 																	Reset
 																</button>
 																{/* {disabled ? ( */}
@@ -240,7 +240,7 @@ const ReportManager = () => {
 																		className='fa fa-download'
 																		aria-hidden='true'
 																		role='button'
-																	></i>
+																	 />
 																</Link>
 															</div>
 														</div>
@@ -253,7 +253,7 @@ const ReportManager = () => {
 													<div className='card p-3'>
 														<div className='d-flex mb-2'>
 															<div>
-																<i className='fa fa-user'></i>
+																<i className='fa fa-user' />
 																<p className='font-16 mt-2 m-b-5'>
 																	Total Return
 																	Order
@@ -283,7 +283,7 @@ const ReportManager = () => {
 													<div className='card p-3'>
 														<div className='d-flex mb-2'>
 															<div>
-																<i className='fa fa-ban'></i>
+																<i className='fa fa-ban' />
 																<p className='font-16 mt-2 m-b-5'>
 																	Total
 																	Earning
@@ -303,7 +303,7 @@ const ReportManager = () => {
 													<div className='card p-3'>
 														<div className='d-flex mb-2'>
 															<div>
-																<i className='fa fa-spinner'></i>
+																<i className='fa fa-spinner' />
 																<p className='font-16 mt-2 m-b-5'>
 																	Total
 																	Processing
@@ -324,7 +324,7 @@ const ReportManager = () => {
 													<div className='card p-3'>
 														<div className='d-flex mb-2'>
 															<div>
-																<i className='fa fa-user'></i>
+																<i className='fa fa-user' />
 																<p className='font-16 mt-2 m-b-5'>
 																	Total
 																	Completed
@@ -343,7 +343,7 @@ const ReportManager = () => {
 												</div>
 											</div>
 											<br />
-											<div className='box-footer clearfix'></div>
+											<div className='box-footer clearfix' />
 										</div>
 									</div>
 								</div>

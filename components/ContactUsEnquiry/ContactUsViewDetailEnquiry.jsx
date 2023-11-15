@@ -160,7 +160,7 @@ const ContactUsViewDetailEnquiry = props => {
 											</td>
 										</tr>
 										<tr>
-											<th scope='row'></th>
+											<th scope='row' />
 											<td>
 												<button
 													type='button'

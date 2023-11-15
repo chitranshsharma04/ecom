@@ -268,7 +268,7 @@ const ContactUsEnquiry = props => {
 																}
 																placeholder='Comment/ Request*'
 																className='form-control'
-															></textarea>
+															 />
 
 															<span className='text-danger'>
 																{

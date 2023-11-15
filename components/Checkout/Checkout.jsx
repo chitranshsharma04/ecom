@@ -1621,7 +1621,7 @@ const Checkout = () => {
 															<i
 																className='fa fa-times'
 																aria-hidden='true'
-															></i>
+															 />
 															{item.quantity}
 														</strong>
 														<strong>
@@ -1758,7 +1758,7 @@ const Checkout = () => {
 															  }`}
 													</button>
 												</div>
-												<span className='coupon_code'></span>
+												<span className='coupon_code' />
 											</form>
 										</li>
 									</ul>

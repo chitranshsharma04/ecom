@@ -33,7 +33,7 @@ function Cms(props) {
 					dangerouslySetInnerHTML={{
 						__html: html,
 					}}
-				></div>
+				 />
 			</Container>
 		</>
 	);

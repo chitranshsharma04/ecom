@@ -134,7 +134,7 @@ const AddressBook = () => {
 															passHref
 															className='btn'
 														>
-															<i className='fas fa-edit'></i>
+															<i className='fas fa-edit' />
 														</Link>
 														<i
 															className='fas fa-trash btn'
@@ -143,7 +143,7 @@ const AddressBook = () => {
 																	address.id,
 																)
 															}
-														></i>
+														 />
 													</td>
 												</tr>
 											),
