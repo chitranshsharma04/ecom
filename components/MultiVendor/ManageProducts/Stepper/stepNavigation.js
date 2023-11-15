@@ -1,4 +1,3 @@
-import React from 'react';
 import Step from './step';
 import StyleStepper from '@styles/stepper.module.css';
 
