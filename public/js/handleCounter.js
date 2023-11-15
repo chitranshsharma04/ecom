@@ -57,7 +57,7 @@
 		});
 		$btnPlugs.click(function () {
 			var num = parseInt($input.val());
-			if (maximize == null || num < maximize) {
+			if (maximize === null || num < maximize) {
 				$input.val(num + 1);
 				changeVal(num + 1);
 			}
@@ -67,7 +67,7 @@
 			clearTimeout(keyUpTime);
 			keyUpTime = setTimeout(function () {
 				var num = $input.val();
-				if (num == '') {
+				if (num === '') {
 					num = minimum;
 					$input.val(minimum);
 				}
@@ -78,7 +78,7 @@
 				} else if (num < minimum) {
 					$input.val(minimum);
 					changeVal(minimum);
-				} else if (maximize != null && num > maximize) {
+				} else if (maximize !== null && num > maximize) {
 					$input.val(maximize);
 					changeVal(maximize);
 				} else {
@@ -88,7 +88,7 @@
 		});
 		$input.focus(function () {
 			var num = $input.val();
-			if (num == 0) $input.select();
+			if (num === 0) $input.select();
 		});
 
 		function changeVal(num) {
