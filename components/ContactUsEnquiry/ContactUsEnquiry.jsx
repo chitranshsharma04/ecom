@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {toast} from 'react-toastify';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
