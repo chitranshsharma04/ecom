@@ -98,7 +98,7 @@
 			if (num <= minimum) {
 				$btnMinus.prop('disabled', true);
 				onMinimum.call(this, num);
-			} else if (maximize != null && num >= maximize) {
+			} else if (maximize !== null && num >= maximize) {
 				$btnPlugs.prop('disabled', true);
 				onMaximize.call(this, num);
 			}
