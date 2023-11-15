@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable import/no-unresolved */
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
 import {useGlobalContext} from '@context/ContextApi';
 // import NextImage from '@components/Common/Image';
