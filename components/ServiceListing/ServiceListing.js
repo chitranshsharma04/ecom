@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @next/next/no-img-element */
 // import React from 'react';
 
 const ServiceListing = () => {
@@ -290,7 +292,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -359,7 +361,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -428,7 +430,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -497,7 +499,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -566,7 +568,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -635,7 +637,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -704,7 +706,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -773,7 +775,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -842,7 +844,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt
+												alt="image"
 											/>
 										</div>
 										<div className='store-short-detail'>

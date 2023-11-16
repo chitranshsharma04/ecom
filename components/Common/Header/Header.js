@@ -203,7 +203,7 @@ const Header = props => {
 								<div className='row align-items-center'>
 									<div className='col-lg-7'>
 										<div className='top-welcome'>
-											Welcome to ecommerce, let's
+											Welcome to ecommerce, let&apos;&s
 											subscribe our newsletter to GET
 											special promotion 50% OFF all items
 										</div>

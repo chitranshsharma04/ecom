@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @next/next/no-img-element */
 const Error404 = () => {
 	return (
 		<>
@@ -9,7 +11,7 @@ const Error404 = () => {
 								<span>Error</span> 404
 							</h2>
 							<div className='error-img'>
-								<img src='/assets/images/error-img.png' alt />
+								<img src='/assets/images/error-img.png' alt="image" />
 							</div>
 							<h3>
 								<strong>Oops!</strong> Sorry, The Page Not Found

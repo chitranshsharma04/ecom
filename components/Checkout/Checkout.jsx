@@ -373,7 +373,7 @@ const Checkout = () => {
 						country: state.shipping_country,
 					};
 
-					data?.billing_address = billAddr;
+					data.billing_address = billAddr;
 				}
 
 				const response = await api({

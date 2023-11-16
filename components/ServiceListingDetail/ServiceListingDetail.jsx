@@ -44,7 +44,7 @@ const ServiceListingDetail = () => {
 							<figure className='slider-img'>
 								<img
 									src='/assets/images/service-banner1.jpg'
-									alt
+									alt="image"
 								/>
 							</figure>
 						</div>
@@ -52,7 +52,7 @@ const ServiceListingDetail = () => {
 							<figure className='slider-img'>
 								<img
 									src='/assets/images/service-banner2.jpg'
-									alt
+									alt="image"
 								/>
 							</figure>
 						</div>
@@ -60,7 +60,7 @@ const ServiceListingDetail = () => {
 							<figure className='slider-img'>
 								<img
 									src='/assets/images/service-banner3.jpg'
-									alt
+									alt="image"
 								/>
 							</figure>
 						</div>
@@ -78,7 +78,7 @@ const ServiceListingDetail = () => {
 										<div className='store-logo'>
 											<img
 												src='/assets/images/store-logo.png'
-												alt
+												alt="image"
 											/>
 										</div>
 									</div>
