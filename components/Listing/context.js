@@ -30,8 +30,8 @@ const AppProvider = ({children}) => {
 		}
 
 		if (state.sliderChange) {
-			payload['min_price'] = state.sliderChange[0];
-			payload['max_price'] = state.sliderChange[1];
+			payload.min_price = state.sliderChange[0];
+			payload.max_price = state.sliderChange[1];
 		}
 
 		if (state.search) {
