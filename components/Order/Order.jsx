@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useEffect} from 'react';
+import {useCallback, useState, useEffect} from 'react';
 import Link from 'next/link';
 import {toast} from 'react-toastify';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
