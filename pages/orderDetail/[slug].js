@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+// import React from 'react';
 
 import OrderDetail from '@components/Order/OrderDetail';
 import {api} from '@utils/api';
