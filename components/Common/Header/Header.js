@@ -54,7 +54,7 @@ const Header = props => {
 		} else return {};
 	};
 
-	let cookiedata = getUserCookie('userAuth');
+	// let cookiedata = getUserCookie('userAuth');
 	
 	// eslint-disable-next-line no-unused-vars
 	const getResults = useCallback(async () => {
