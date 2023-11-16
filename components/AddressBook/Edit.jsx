@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {useEffect, useState} from 'react';
 import Router from 'next/router';
 import {toast} from 'react-toastify';
@@ -14,6 +15,7 @@ const Edit = () => {
 	const {state: globalState} = useGlobalContext();
 	const {state, dispatch} = useContextState();
 
+	//this is a method to get data from api
 	const getAddress = async () => {
 		const response = await api({
 			url: `/user-address/detail/${+router.query.slug}`,
@@ -34,7 +36,7 @@ const Edit = () => {
 			});
 		}
 	};
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
@@ -49,11 +51,11 @@ const Edit = () => {
 			},
 		});
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(state.address));
 	};
-
+//this is a method to submit 
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(state.address);
@@ -81,7 +83,7 @@ const Edit = () => {
 			}
 		}
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		if (!values.address1) {

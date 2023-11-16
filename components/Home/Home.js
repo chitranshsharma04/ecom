@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
@@ -30,7 +31,7 @@ const Home = () => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	
-
+	//this is a method to get data from api
 	const getResults = async () => {
 		setIsLoading(true);
 		try {
@@ -47,6 +48,7 @@ const Home = () => {
 			setIsLoading(false);
 		}
 	};
+	//this is a method to get data from api
 
 	const getannerDetailData = async () => {
 		setIsLoading(true);
@@ -60,6 +62,7 @@ const Home = () => {
 		}
 	};
 
+	//this is a method to get data from api
 	const fetchCategories = useCallback(async () => {
 		setIsLoading(true);
 		try {
@@ -95,6 +98,7 @@ const Home = () => {
 		}
 	}, []);
 
+	//this is a method to get data from api
 	const handleguestUser = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
 		const response = await api({
