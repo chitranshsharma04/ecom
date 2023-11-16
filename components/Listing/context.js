@@ -22,7 +22,7 @@ const AppProvider = ({children}) => {
 			category_slug: category,
 		};
 		if (router?.query?.search) {
-			payload['search'] = router?.query?.search;
+			payload.search = router?.query?.search;
 		}
 
 		if (router?.query?.page) {
