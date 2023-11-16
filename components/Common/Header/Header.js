@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable import/order */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable @next/next/no-html-link-for-pages */
@@ -203,7 +204,7 @@ const Header = props => {
 								<div className='row align-items-center'>
 									<div className='col-lg-7'>
 										<div className='top-welcome'>
-											Welcome to ecommerce, let&apos;&s
+											Welcome to ecommerce, let&apos;s
 											subscribe our newsletter to GET
 											special promotion 50% OFF all items
 										</div>

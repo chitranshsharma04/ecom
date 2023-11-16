@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-console */
 /* eslint-disable babel/camelcase */
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 
 import {api} from '@utils/api';

@@ -1,5 +1,5 @@
 // / eslint-disable no-console /
-import React, {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import Link from 'next/link';
 import {toast} from 'react-toastify';
 import 'react-phone-input-2/lib/style.css';

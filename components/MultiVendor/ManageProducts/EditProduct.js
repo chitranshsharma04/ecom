@@ -251,7 +251,7 @@ const EditProduct = () => {
 															</option>
 															<option value='71'>
 																{' '}
-																- - Men's
+																- - Men&apos;s
 																gromming
 															</option>
 															<option value='72'>
@@ -496,7 +496,7 @@ const EditProduct = () => {
 															</option>
 															<option value='71'>
 																{' '}
-																- - Men's
+																- - Men&apos;s
 																gromming
 															</option>
 															<option value='72'>
@@ -815,7 +815,7 @@ const EditProduct = () => {
 																Costa Rica
 															</option>
 															<option value='53'>
-																Cote D'Ivoire
+																Cote D&apos;Ivoire
 																(Ivory Coast)
 															</option>
 															<option value='54'>
