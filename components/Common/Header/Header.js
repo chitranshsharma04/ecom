@@ -5,7 +5,6 @@
 import React, {
 	useCallback,
 	useEffect,
-	Fragment,
 	useMemo,
 	memo,
 	useRef,
