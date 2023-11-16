@@ -815,7 +815,7 @@ const EditProduct = () => {
 																Costa Rica
 															</option>
 															<option value='53'>
-																Cote D'Ivoire
+																Cote D&apos;Ivoire
 																(Ivory Coast)
 															</option>
 															<option value='54'>
