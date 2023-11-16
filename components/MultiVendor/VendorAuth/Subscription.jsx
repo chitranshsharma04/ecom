@@ -6,7 +6,7 @@ import {useCallback} from 'react';
 
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is the starting point
 const Subscription = () => {
 	// const [detail, setDetail] = useState('');
 	const [paymentData] = useState('');
@@ -16,17 +16,19 @@ const Subscription = () => {
 	useEffect(() => {
 		getProfile();
 	}, []);
-
+	//this is a method to get data from api
 	const getProfile = useCallback(async () => {
+		//this is a method to get data from api
 		const response = await api({
 			url: '/vendor/profile-detail',
 			method: 'GET',
 		});
 		console.log(response);
 	}, []);
-
+	//this is a method to get data from api
 	const getDetail = async () => {
 		try {
+			//this is a method to get data from api
 			const response = await api({
 				url: '/plan/all',
 				method: 'GET',

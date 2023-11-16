@@ -3,7 +3,7 @@ import {toast} from 'react-toastify';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is the starting point
 const ChangePassword = () => {
 	const [inputs, setInputs] = useState({});
 	const [eye1, seteye1] = useState(true);
@@ -14,13 +14,13 @@ const ChangePassword = () => {
 	const [password3, setpassword3] = useState('password');
 	const [formErrors, setFormErrors] = useState({});
 	const [loading, setLoading] = useState(false);
-
+//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
@@ -28,7 +28,7 @@ const ChangePassword = () => {
 	// useEffect(() => {
 	// 	setFormErrors(validate(inputs));
 	// }, [inputs]);
-
+//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(inputs);
@@ -38,6 +38,7 @@ const ChangePassword = () => {
 		} else {
 			try {
 				setLoading(true);
+				//this is a method to get data from api
 				const response = await api({
 					url: '/users/change-password',
 					method: 'POST',
@@ -60,7 +61,7 @@ const ChangePassword = () => {
 			}
 		}
 	};
-
+//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'oldPasswordEye') {
@@ -77,7 +78,7 @@ const ChangePassword = () => {
 				: (setpassword3('password'), seteye3(true));
 		}
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const passReg =
@@ -102,7 +103,7 @@ const ChangePassword = () => {
 		}
 		return errors;
 	};
-
+//this is the starting point
 	return (
 		<>
 			<SpinnerLoader loading={loading} />

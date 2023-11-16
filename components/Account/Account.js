@@ -7,7 +7,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import UserService from '@utils/services';
 import {useGlobalContext} from '@context/ContextApi';
 import Loading from '@components/Common/Loading';
-
+//this is the starting point
 const Account = () => {
 	const {state, dispatch} = useGlobalContext();
 
@@ -116,7 +116,7 @@ const Account = () => {
 			mobile: state?.userAuth?.mobile,
 		});
 	}, [state?.userAuth]);
-
+//this is the starting point
 	return (
 		<>
 			<SpinnerLoader loading={loading} />

@@ -1,30 +1,30 @@
 import {toast} from 'react-toastify';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is the starting point
 const ContactUsEnquiry = props => {
 	const [inputs, setInputs] = useState({});
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [loading, setLoading] = useState(false);
-
+//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
-
+//this is a method to change values
 	const handleChangeMobileNo = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/[^0-9]/gi, '');
 		setInputs(values => ({...values, [name]: value}));
 		setFormErrors(validate(inputs));
 	};
-
+//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		setFormErrors({});
@@ -44,6 +44,7 @@ const ContactUsEnquiry = props => {
 					message: inputs.message,
 					product_id: props.data.slug,
 				};
+				//this is a method to get data from api
 				const response = await api({
 					url: '/contact-us-enquiry',
 					method: 'POST',
@@ -64,13 +65,13 @@ const ContactUsEnquiry = props => {
 			}
 		}
 	};
-
+//this is a method to change values
 	const handleKeyUp = e => {
 		const name = e.target.name;
 		const value = e.target.value.trimStart();
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const emailRegex =

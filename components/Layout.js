@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 
 const Header = dynamic(() => import('./Common/Header/Header'), {ssr: false});
 const Footer = dynamic(() => import('./Common/Footer/Footer'), {ssr: false});
-
+//this is the starting point
 function Layout({children, ...rest}) {
 	return (
 		<>

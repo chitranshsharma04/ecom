@@ -1,6 +1,6 @@
 import Step from './step';
 import StyleStepper from '@styles/stepper.module.css';
-
+//this is the starting point
 export default function StepNavigation(props) {
 	return (
 		<div className={StyleStepper.stepWrapper}>

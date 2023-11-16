@@ -6,14 +6,13 @@ import {confirmDialog} from '@utils/helper';
 import {api} from '@utils/api';
 import {toast} from 'react-toastify';
 import Router from 'next/router';
-
+//this is the starting point
 const Order = ({data}) => {
 	// const [selectedOption, setSelectedOption] = useState(null);
-	
+
 	if (!data) return 'No data Found';
-	
+	//this is a method to change values
 	const handleReturn = async (order_id, item_id, status = null, quantity) => {
-		
 		const confirm = await confirmDialog(
 			'Are you want to return this order?',
 		);
@@ -28,7 +27,7 @@ const Order = ({data}) => {
 			// if (status) {
 			// 	data.status = 'cancel';
 			// }
-
+			//this is a method to get data from api
 			const response = await api({
 				url: '/order/return',
 				method: 'POST',
@@ -45,7 +44,7 @@ const Order = ({data}) => {
 			}
 		}
 	};
-	
+//this is the starting point
 	return (
 		<>
 			<div className='cms-page innerblock-padd'>
@@ -156,7 +155,7 @@ const Order = ({data}) => {
 																},
 																(_, i) => i + 1,
 															);
-														
+
 														return (
 															<tr key={key}>
 																<td>

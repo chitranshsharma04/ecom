@@ -23,7 +23,7 @@ import {useCommonState} from '../reducer';
 import NavbarItem from './NavbarItem';
 import Form from 'react-bootstrap/Form';
 import NextImage from '@components/Common/Image';
-
+//this is the starting point
 const Header = props => {
 	const {state, dispatch} = useCommonState();
 	const {
@@ -163,6 +163,7 @@ const Header = props => {
 //this is a method to get cookie
 	const selectedCurrency = () => cookie.get('currencyValue') ?? 1;
 	const {pathname} = Router;
+	//this is the starting point
 	function SelectBasicExample() {
 		return (
 			<Form.Select

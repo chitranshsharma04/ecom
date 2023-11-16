@@ -1,21 +1,21 @@
 import {useState, useEffect} from 'react';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is the starting point
 const OrderInvoice = props => {
 	const [showList, setShowList] = useState('');
 	const [showProduct, setShowProduct] = useState('');
 	const [loading, setLoading] = useState(false);
-
+	//this is a method to get data from api
 	const getShowList = async () => {
 		setLoading(true);
 		try {
+			//this is a method to get data from api
 			const response = await api({
 				url: `/vendor/order/show/${props.data.slug}`,
 				method: 'GET',
 			});
 			if (response.data) {
-				
 				setShowList(response.data.order);
 				setShowProduct(response.data.order.orderitems);
 				setLoading(false);
@@ -261,16 +261,14 @@ const OrderInvoice = props => {
 									</tr>
 
 									{showProduct?.map((item, index) => (
-											<tr key={index}>
-												<td>{item?.product?.title}</td>
-												<td>{item?.product?.sku}</td>
-												<td>{item?.display_price}</td>
-												<td>{item?.quantity}</td>
-												<td>
-													{item?.display_total_price}
-												</td>
-											</tr>
-										))}
+										<tr key={index}>
+											<td>{item?.product?.title}</td>
+											<td>{item?.product?.sku}</td>
+											<td>{item?.display_price}</td>
+											<td>{item?.quantity}</td>
+											<td>{item?.display_total_price}</td>
+										</tr>
+									))}
 
 									<tr>
 										<td colSpan='6' valign='top'>

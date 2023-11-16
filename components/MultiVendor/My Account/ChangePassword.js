@@ -3,7 +3,7 @@ import {toast} from 'react-toastify';
 
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import {api} from '@utils/api';
-
+//this is the starting point
 const ChangePassword = () => {
 	const [inputs, setInputs] = useState({});
 	const [formErrors, setFormErrors] = useState({});
@@ -14,18 +14,18 @@ const ChangePassword = () => {
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
 	const [password3, setpassword3] = useState('password');
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
-		
+
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
-
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 
@@ -54,9 +54,8 @@ const ChangePassword = () => {
 
 		return errors;
 	};
-
+	//this is a method to change values
 	const handleSubmit = async event => {
-		
 		event.preventDefault();
 		setFormErrors({});
 		const result = validate(inputs);
@@ -67,6 +66,7 @@ const ChangePassword = () => {
 			setIsSubmit(true);
 
 			try {
+				//this is a method to get data from api
 				const response = await api({
 					url: '/vendor/change-password',
 					method: 'POST',
@@ -89,7 +89,7 @@ const ChangePassword = () => {
 			}
 		}
 	};
-
+	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'oldPasswordEye') {
@@ -162,7 +162,7 @@ const ChangePassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													 />
+													/>
 												</span>
 											</div>
 											<span className='text-danger'>
@@ -199,7 +199,7 @@ const ChangePassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													 />
+													/>
 												</span>
 											</div>
 											<span className='text-danger'>
@@ -236,7 +236,7 @@ const ChangePassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													 />
+													/>
 												</span>
 											</div>
 											<span className='text-danger'>

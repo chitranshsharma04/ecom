@@ -8,7 +8,7 @@ import Router from 'next/router';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 // eslint-disable-next-line import/no-unresolved
 import {api} from '@utils/api';
-
+//this is the starting point
 const Signup = () => {
 	const fileInputRef = useRef(null);
 
@@ -24,23 +24,23 @@ const Signup = () => {
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
 	const [loading, setLoading] = useState(false);
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
-
+	//this is a method to change values
 	const handleChangeMobileNo = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/[^0-9]/gi, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to change values
 	const handleSubmit = async e => {
 		e.preventDefault();
 		const result = validate(inputs);
@@ -63,6 +63,7 @@ const Signup = () => {
 
 			try {
 				setLoading(true);
+				//this is a method to get data from api
 				const response = await api({
 					url: '/vendor/register',
 					method: 'POST',
@@ -93,13 +94,13 @@ const Signup = () => {
 			}
 		}
 	};
-
+	//this is a method to change values
 	const handleKeyUp = e => {
 		const name = e.target.name;
 		const value = e.target.value.trimStart();
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to validate
 	const validate = values => {
 		setFormErrors({});
 		const errors = {};
@@ -165,7 +166,7 @@ const Signup = () => {
 		}
 		return errors;
 	};
-
+	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'passwordEye') {
@@ -443,7 +444,7 @@ const Signup = () => {
 																						? 'fa-eye-slash'
 																						: 'fa-eye'
 																				}`}
-																			 />
+																			/>
 																		</span>
 																		<span className='text-danger'>
 																			{
@@ -486,7 +487,7 @@ const Signup = () => {
 																						? 'fa-eye-slash'
 																						: 'fa-eye'
 																				}`}
-																			 />
+																			/>
 																		</span>
 
 																		<span className='text-danger'>
@@ -518,7 +519,7 @@ const Signup = () => {
 																						e
 																							.target
 																							.files[0];
-																					
+
 																					if (
 																						file?.type.startsWith(
 																							'image/',
@@ -534,7 +535,7 @@ const Signup = () => {
 																						fileInputRef.current.value =
 																							null;
 																						toast.warn(
-																							"Please select proper image file format (jpeg,jpg,png)",
+																							'Please select proper image file format (jpeg,jpg,png)',
 																						);
 																					}
 																				}

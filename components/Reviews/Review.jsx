@@ -8,7 +8,7 @@ import {useContextState} from '@context/reducer';
 import RatingWidget from '@components/Common/Rating';
 import Loading from '@components/Common/Loading';
 import Image from '@components/Common/Image';
-
+//this is the starting point
 const Review = props => {
 	const {state, dispatch} = useContextState({
 		orderLoading: true,
@@ -20,7 +20,7 @@ const Review = props => {
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
-
+//this is a method to get data from api
 	const fetchOrders = useCallback(async () => {
 		dispatch({
 			type: 'SET_DATA',
@@ -29,6 +29,7 @@ const Review = props => {
 				orderLoading: true,
 			},
 		});
+		//this is a method to get data from api
 		const orders = await api({
 			url: '/order/product',
 			method: 'POST',
@@ -53,7 +54,7 @@ const Review = props => {
 	useEffect(() => {
 		fetchOrders();
 	}, [fetchOrders]);
-
+//this is a method to change values
 	const handleChange = val => {
 		setInputs(prev => ({
 			...prev,
@@ -63,11 +64,11 @@ const Review = props => {
 		}));
 		setStarNumber(val);
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
-
+//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		setFormErrors({});
@@ -78,6 +79,7 @@ const Review = props => {
 		} else {
 			setIsSubmit(true);
 			try {
+				//this is a method to get data from api
 				const response = await api({
 					url: '/order/review',
 					method: 'POST',
@@ -96,12 +98,13 @@ const Review = props => {
 			}
 		}
 	};
+	//this is a method to get data from api
 	const handleKeyUp = e => {
 		const name = e.target.name;
 		const value = e.target.value.trimStart();
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		if (!values.rating) {
@@ -114,7 +117,7 @@ const Review = props => {
 		// }
 		return errors;
 	};
-
+//this is a method to change values
 	const handleChangeInput = event => {
 		const name = event.target.name;
 		const value = event.target.value;

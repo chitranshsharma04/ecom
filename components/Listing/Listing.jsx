@@ -5,11 +5,11 @@ import CommonBreadcrumbs from '@components/Common/Header/Breadcrumb/CommonBreadc
 import LeftPanel from './LeftPanel/LeftPanel';
 import RightPanel from './RightPanel/RightPanel';
 import {AppProvider, useListingContext} from './context';
-
+//this is the starting point
 const Listing = () => {
 	const router = useRouter();
 	const {state} = useListingContext();
-
+//this is a method to create a memp
 	const breadcrumbs = useMemo(
 		() =>
 			state.breadcrumbs?.length
@@ -27,9 +27,7 @@ const Listing = () => {
 		[state.breadcrumbs],
 	);
 
-	useEffect(() => {
-		
-	}, [router]);
+	useEffect(() => {}, [router]);
 
 	return (
 		<>

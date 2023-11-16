@@ -9,7 +9,7 @@ import Link from 'next/link';
 import UserService from '@utils/services';
 
 // let flag = false;
-
+//this is the starting point
 const ReportManager = () => {
 	const [FromDate, setFromDate] = useState('');
 	const [ToDate, setToDate] = useState('');
@@ -19,11 +19,11 @@ const ReportManager = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [defaultDate, setDefaultDate] = useState('');
 	const [flag, setFlag] = useState(false);
-
+//this is a method to change values
 	const handleChangeFromDate = event => {
 		setFromDate(moment(event).format('YYYY-MM-DD'));
 	};
-
+//this is a method to change values
 	const handleChangeToDate = event => {
 		setToDate(moment(event).format('YYYY-MM-DD'));
 	};
@@ -31,7 +31,7 @@ const ReportManager = () => {
 	useEffect(() => {
 		setValidateError(validate(FromDate, ToDate));
 	}, [FromDate, ToDate]);
-
+//this is a method to change values
 	const handleSubmit = async () => {
 		setIsLoading(true);
 		const result = validate(FromDate, ToDate);
@@ -43,6 +43,7 @@ const ReportManager = () => {
 			setValidateError({});
 			try {
 				setIsLoading(true);
+				//this is a method to get data from api
 				const response = await api({
 					url: `/vendor/report?from_date=${moment(FromDate).format(
 						'DD-MM-YYYY',
@@ -59,7 +60,7 @@ const ReportManager = () => {
 			}
 		}
 	};
-
+//this is a method to validate
 	const validate = (FromDate, ToDate) => {
 		const errors = {};
 		if (!FromDate) {
@@ -73,11 +74,12 @@ const ReportManager = () => {
 		}
 		return errors;
 	};
-
-	const getTotalEarning = async () => {
-		setIsLoading(true);
-		try {
-			const response = await api({
+//this is a method to get data from api
+const getTotalEarning = async () => {
+	setIsLoading(true);
+	try {
+		//this is a method to get data from api
+		const response = await api({
 				url: `/vendor/report-earnings?from_date=${moment(
 					FromDate,
 				).format('DD-MM-YYYY')}&to_date=${moment(ToDate).format(
@@ -102,11 +104,12 @@ const ReportManager = () => {
 			setFlag(false);
 		}
 	}, [FromDate, ToDate]);
-
+//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		setIsLoading(true);
 		try {
 			setFlag(true);
+			//this is a method to get data from api
 			const result = await UserService.getVendorProfileDetail();
 			setDefaultDate(moment(result.data.created_at).format('YYYY-MM-DD'));
 			setFromDate(moment(result.data.created_at).format('YYYY-MM-DD'));
@@ -120,7 +123,7 @@ const ReportManager = () => {
 	useEffect(() => {
 		getResults();
 	}, [getResults]);
-
+//this is a method to change values
 	const handleReset = e => {
 		e.preventDefault();
 		setFlag(true);

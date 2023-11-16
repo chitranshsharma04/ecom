@@ -7,13 +7,13 @@ import UserService from '@utils/services';
 import ProfileUploader from '@components/Common/ProfileUploader/ProfileUploader';
 import {useContextState} from '@context/reducer';
 import {useGlobalContext} from '@context/ContextApi';
-
+//this is the starting point
 const SideBar = () => {
 	const {state, dispatch} = useContextState();
 	const {state: globalState} = useGlobalContext();
 	const [cookieData, setCookieData] = useState('');
 	const routers = useRouter();
-
+	//this is a method to change values
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
 			const cookies = JSON.parse(cookie.get('userAuth'));
@@ -28,9 +28,10 @@ const SideBar = () => {
 	}, []);
 
 	//let cookiedata = getUserCookie('userAuth');
-
+	//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		try {
+			//this is a method to get data from api
 			const result = await UserService.getVendorProfileDetail();
 			dispatch({
 				type: 'SET_DATA',
@@ -47,7 +48,7 @@ const SideBar = () => {
 	useEffect(() => {
 		getResults();
 	}, [getResults]);
-
+	//this is a method to change values
 	const handleLogout = () => {
 		sessionStorage.removeItem('userAuth');
 		cookie.remove('userAuth');
@@ -65,7 +66,7 @@ const SideBar = () => {
 	const image_url = globalState?.userAuth?.profile_pic
 		? globalState?.userAuth?.profile_pic
 		: '/assets/images/placeholder.png';
-
+	//this is the starting point
 	return (
 		<>
 			{cookieData.userType === 'vendor' ? (

@@ -7,12 +7,12 @@ import {useListingState} from './reducer';
 import {useGlobalContext} from '@context/ContextApi';
 
 const AppContext = React.createContext();
-
+//this is the starting point
 const AppProvider = ({children}) => {
 	const router = useRouter();
 	const {state, dispatch} = useListingState();
 	const {currencyValue} = useGlobalContext();
-
+	//this is a method to get data from api
 	const fetchProductList = useCallback(async () => {
 		const category =
 			router?.query?.category ||
@@ -47,12 +47,13 @@ const AppProvider = ({children}) => {
 		});
 
 		const url = '/product/product-list';
+		//this is a method to get data from api
 		const response = await api({
 			url: url,
 			method: 'POST',
 			data: payload,
 		});
-		
+
 		if (response.status) {
 			let sliderValueMin = [];
 			sliderValueMin.push(
@@ -90,6 +91,7 @@ const AppProvider = ({children}) => {
 		currencyValue,
 	]);
 	useEffect(() => {
+		//this is a method to create a timeout
 		const timer = setTimeout(() => {
 			fetchProductList();
 		}, 1000);
@@ -101,6 +103,7 @@ const AppProvider = ({children}) => {
 		</AppContext.Provider>
 	);
 };
+//this is a method to create a context
 const useListingContext = () => {
 	return useContext(AppContext);
 };

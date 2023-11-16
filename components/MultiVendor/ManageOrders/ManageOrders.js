@@ -7,7 +7,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import {useRouter} from 'next/router';
-
+//this is the starting point
 const ManageOrders = () => {
 	const [orderList, setOrderList] = useState([]);
 	const [orderData, setOrderData] = useState([]);
@@ -16,7 +16,7 @@ const ManageOrders = () => {
 	const [page, setPage] = useState(null);
 	const [pageLink, setPageLink] = useState();
 	const [currentPage, setCurrentPage] = useState(1);
-
+	//this is a method to change values
 	const handleReset = e => {
 		e.preventDefault();
 		setSearchDate('');
@@ -24,22 +24,22 @@ const ManageOrders = () => {
 	};
 
 	const router = useRouter();
-
+	//this is a method to change values
 	const setRouterPage = async page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
 	};
-
+	//this is a method to get data from api
 	const getOrderList = async page => {
 		try {
 			setLoading(true);
+			//this is a method to get data from api
 			const response = await api({
-				url: "/vendor/order/list?page=" + page,
+				url: '/vendor/order/list?page=' + page,
 				method: 'GET',
 			});
 			if (response.data) {
-				
 				setLoading(false);
 				setCurrentPage(response.data.orderitems.current_page);
 				setOrderList(response.data.orderitems.data);
@@ -51,11 +51,12 @@ const ManageOrders = () => {
 			console.log(error);
 		}
 	};
-
+	//this is a method to change values
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
 			setLoading(true);
+			//this is a method to get data from api
 			const response = await api({
 				url: `/vendor/order/list?created_at=${searchDate}`,
 				method: 'GET',
@@ -69,7 +70,7 @@ const ManageOrders = () => {
 			console.log(error);
 		}
 	};
-
+	//this is a method to change values
 	const handleChange = event => {
 		setSearchDate(moment(event).format('YYYY-MM-DD'));
 	};

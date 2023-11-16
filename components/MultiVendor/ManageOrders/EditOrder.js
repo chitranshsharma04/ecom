@@ -7,7 +7,7 @@ import {API_BASE_URL} from '@utils/api';
 import {api} from '@utils/api';
 import Link from 'next/link';
 import Router from 'next/router';
-
+//this is the starting point
 const EditOrder = props => {
 	const [showList, setShowList] = useState('');
 	const [area, setArea] = useState('');
@@ -18,9 +18,11 @@ const EditOrder = props => {
 
 	const router = Router;
 	console.log('showList', showList);
+	//this is a method to get data from api
 	const getShowList = async () => {
 		try {
 			setLoading(true);
+			//this is a method to get data from api
 			const response = await api({
 				url: `/vendor/order/show/${props.data.slug}`,
 				method: 'GET',
@@ -34,6 +36,7 @@ const EditOrder = props => {
 			console.log(error);
 		}
 	};
+	//this is a method to change values
 
 	const handleSubmit = async () => {
 		const formData = new FormData();
@@ -43,6 +46,7 @@ const EditOrder = props => {
 		setDisable(false);
 		setLoading(true);
 		try {
+	//this is a method to get data from api
 			const response = await api({
 				url: '/vendor/order/status-update',
 				method: 'POST',

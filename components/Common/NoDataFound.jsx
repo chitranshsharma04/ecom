@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Loading from './Loading';
-
+//this is the starting point
 function NoDataFound(props) {
 	return (
 		<div>

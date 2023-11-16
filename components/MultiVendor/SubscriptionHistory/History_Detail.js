@@ -4,16 +4,17 @@ import moment from 'moment';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is the starting point
 const History_Detail = props => {
 	const [history_detail, setHistory_Detail] = useState();
 	const [loading, setLoading] = useState(false);
 
 	// console.log('history_detail', history_detail);
-
+	//this is a method to get data from api
 	const getSubscription_Detail = async () => {
 		try {
 			setLoading(true);
+			//this is a method to get data from api
 			const response = await api({
 				url: `/plan/history/${props.data.slug}`,
 				method: 'GET',

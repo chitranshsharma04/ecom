@@ -1,3 +1,4 @@
+//this is the starting point
 const Loading = props => {
 	const length = props.length || 1;
 	return (

@@ -1,4 +1,5 @@
 import React from 'react';
+//this is the starting point
 function Star(props) {
 	return (
 		<div
@@ -13,7 +14,7 @@ function Star(props) {
 		</div>
 	);
 }
-
+//this is the starting point
 function Rating() {
 	// function Rating(props) {
 	// let rating = props.rating;
@@ -34,7 +35,7 @@ class RatingWidget extends React.Component {
 			rated: 0,
 		};
 	}
-
+//this is a method to change values
 	handleMouseOver(i) {
 		if (this.props.view) return;
 		let currentRating = this.state.rated;
@@ -51,7 +52,7 @@ class RatingWidget extends React.Component {
 			this.setState({stars: hoverStars});
 		}
 	}
-
+//this is a method to change values
 	handleMouseOut() {
 		if (this.props.view) return;
 		let currentRating = this.state.rated;
@@ -69,7 +70,7 @@ class RatingWidget extends React.Component {
 			this.setState({stars: resetStars});
 		}
 	}
-
+//this is a method to change values
 	handleClick(i) {
 		if (this.props.view) return;
 		const clickedStar = this.state.stars.slice();
@@ -86,15 +87,15 @@ class RatingWidget extends React.Component {
 		});
 		if (this.props.onChange) this.props.onChange(i);
 	}
-
+//this is a method to change values
 	componentDidMount() {
 		this.setState(prev => ({...prev, rated: this.props.value}));
 	}
-
+//this is a method to change values
 	handleRating() {
 		return <Rating rating={this.state.rated} />;
 	}
-
+//this is a method to change values
 	renderStar(i) {
 		return (
 			<Star
@@ -107,7 +108,7 @@ class RatingWidget extends React.Component {
 			/>
 		);
 	}
-
+//this is the starting point
 	render() {
 		return (
 			<div className='rating-stars-widget-outer'>

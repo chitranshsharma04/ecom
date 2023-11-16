@@ -4,7 +4,7 @@ import {api} from '@utils/api';
 import {useGlobalContext} from '@context/ContextApi';
 import NextImage from '@components/Common/Image';
 import {useContextState} from '@context/reducer';
-
+//this is the starting point
 function ProductItem({item}) {
 	const {
 		state: globalState,
@@ -12,7 +12,7 @@ function ProductItem({item}) {
 		isAuthenticated,
 	} = useGlobalContext();
 	const {state, dispatch} = useContextState({inWishlist: item.inWishlist});
-
+	//this is a method to get data from api
 	const addRemoveToWishlist = async (event, product) => {
 		try {
 			event.preventDefault();
@@ -26,6 +26,7 @@ function ProductItem({item}) {
 				},
 			});
 
+			//this is a method to get data from api
 			const response = await api({
 				url: '/wishlist/add-remove-list',
 				method: 'POST',

@@ -6,13 +6,14 @@ const range = (start, end) => {
 	let length = end - start + 1;
 	return Array.from({length}, (_, idx) => idx + start);
 };
-
+//this is the starting point
 export const usePagination = ({
 	totalCount,
 	pageSize,
 	siblingCount = 1,
 	currentPage,
 }) => {
+	//this is a method to create a memo
 	const paginationRange = useMemo(() => {
 		const totalPageCount = Math.ceil(totalCount / pageSize);
 

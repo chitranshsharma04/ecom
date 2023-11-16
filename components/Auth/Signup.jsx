@@ -5,7 +5,7 @@ import {toast} from 'react-toastify';
 import Router from 'next/router';
 
 import {api} from '@utils/api';
-
+//this is the starting point
 const Signup = () => {
 	const [inputs, setInputs] = useState({});
 	const [formErrors, setFormErrors] = useState({});
@@ -15,23 +15,23 @@ const Signup = () => {
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
 	const router = Router;
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
-
+//this is a method to change values
 	const handleChangeMobileNo = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/[^0-9]/gi, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		setFormErrors({});
@@ -72,13 +72,13 @@ const Signup = () => {
 			}
 		}
 	};
-
+//this is a method to change values
 	const handleKeyUp = e => {
 		const name = e.target.name;
 		const value = e.target.value.trimStart();
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const emailRegex =
@@ -129,6 +129,7 @@ const Signup = () => {
 		}
 		return errors;
 	};
+	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'passwordEye') {
@@ -339,7 +340,7 @@ const Signup = () => {
 																						? 'fa-eye-slash'
 																						: 'fa-eye'
 																				}`}
-																			 />
+																			/>
 																		</span>
 																		<span className='text-danger'>
 																			{
@@ -382,7 +383,7 @@ const Signup = () => {
 																						? 'fa-eye-slash'
 																						: 'fa-eye'
 																				}`}
-																			 />
+																			/>
 																		</span>
 
 																		<span className='text-danger'>
@@ -412,7 +413,7 @@ const Signup = () => {
 														<div className='dont_account_block'>
 															<span className='dont_text'>
 																Already Have an
-																Account?{" "}
+																Account?{' '}
 																<Link href='/login'>
 																	Login
 																</Link>

@@ -5,7 +5,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
 import {useRouter} from 'next/router';
-
+//this is the starting point
 const ManageReturns = () => {
 	const [returnOrders, setReturnOrders] = useState({
 		list: [],
@@ -16,22 +16,22 @@ const ManageReturns = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const router = useRouter();
-
+	//this is a method to change values
 	const setRouterPage = async page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
 	};
-
+	//this is a method to get data from api
 	const getReturnOrderList = async page => {
 		try {
 			setReturnOrders(prev => ({...prev, loading: true}));
+			//this is a method to get data from api
 			const response = await api({
-				url: "/vendor/return-order/list?page=" + page,
+				url: '/vendor/return-order/list?page=' + page,
 				method: 'GET',
 			});
 			if (response.data) {
-				
 				setReturnOrders(() => ({
 					list: response.data.returnRequests.data,
 					loading: false,

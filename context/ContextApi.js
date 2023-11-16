@@ -7,10 +7,10 @@ import React, {
 	useEffect,
 } from 'react';
 import cookie from 'js-cookie';
-
 // import {useRouter} from 'next/router';
 
 // eslint-disable-next-line import/no-unresolved
+//this is the starting point
 import {api} from '@utils/api';
 
 import {getCountriesList} from '@utils/helper';
@@ -101,7 +101,7 @@ const AppProvider = ({children}) => {
 				},
 			});
 	}, []);
-//this is a method to get cookies
+	//this is a method to get cookies
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
@@ -120,7 +120,7 @@ const AppProvider = ({children}) => {
 		if (!isAuthenticated) return;
 
 		let cookiedata = getUserCookie('userAuth');
-//this is a method to get data from api
+		//this is a method to get data from api
 		const response = await api({
 			url: '/' + (cookiedata.userType ?? 'users') + '/profile-detail',
 		});
@@ -186,6 +186,7 @@ const AppProvider = ({children}) => {
 		</AppContext.Provider>
 	);
 };
+//this is the starting points
 const useGlobalContext = () => {
 	return useContext(AppContext);
 };

@@ -9,7 +9,7 @@ import {useContextState} from '@context/reducer';
 import {api} from '@utils/api';
 import NoDataFound from '@components/Common/NoDataFound';
 import {confirmDialog} from '@utils/helper';
-
+//this is the starting point
 const Wishlist = () => {
 	const router = useRouter();
 
@@ -21,6 +21,7 @@ const Wishlist = () => {
 		isGuestAuthenticated,
 	} = useGlobalContext();
 	const {state, dispatch} = useContextState({wishlistReload: false});
+	//this is a method to create a callback
 	const fetchWishlistItems = useCallback(async () => {
 		try {
 			// if (!globalState.userAuth?.id) return;
@@ -31,6 +32,7 @@ const Wishlist = () => {
 					wishlistLoading: true,
 				},
 			});
+			//this is a method to get data from api
 			const response = await api({
 				url: '/wishlist/list',
 				method: 'POST',
@@ -62,7 +64,7 @@ const Wishlist = () => {
 	useEffect(() => {
 		fetchWishlistItems();
 	}, [fetchWishlistItems]);
-
+	//this is a method to change values
 	const removeFromCart = async wish => {
 		try {
 			const confirm = await confirmDialog(
@@ -77,7 +79,7 @@ const Wishlist = () => {
 					wishlistReload: false,
 				},
 			});
-
+			//this is a method to get data from api
 			const response = await api({
 				url: '/wishlist/add-remove-list',
 				method: 'POST',
@@ -108,7 +110,7 @@ const Wishlist = () => {
 			});
 		}
 	};
-
+//this is a method to change values
 	const removeFromWishlist = async wish => {
 		try {
 			dispatch({
@@ -119,7 +121,7 @@ const Wishlist = () => {
 					wishlistReload: false,
 				},
 			});
-
+//this is a method to get data from api
 			const response = await api({
 				url: '/wishlist/add-remove-list',
 				method: 'POST',
@@ -150,7 +152,7 @@ const Wishlist = () => {
 			});
 		}
 	};
-
+//this is a method to submit
 	const submitAddToCart = async (e, wish) => {
 		e.preventDefault();
 
@@ -161,14 +163,13 @@ const Wishlist = () => {
 			product_id: wish?.product_id,
 			quantity: '1',
 		};
-
+//this is a method to get data from api
 		const response = await api({
 			url: '/cart/add',
 			method: 'POST',
 			data,
 		});
 		if (response.status) {
-			
 			getCartCount();
 			toast.success('Item Added to Cart !');
 			window.location.replace('/cart');

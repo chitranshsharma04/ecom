@@ -1,15 +1,13 @@
 import React, {useEffect} from 'react';
 import Link from 'next/link';
 import {useCommonState} from '../../reducer';
-
+//this is the starting point
 const CommonBreadcrumbs = props => {
 	const {breadcrumbs} = props;
 	const {state} = useCommonState();
 
-	useEffect(() => {
-		
-	}, [state]);
-
+	useEffect(() => {}, [state]);
+//this is the starting point
 	return (
 		<nav aria-label='breadcrumb' className='breadcrumb-sec'>
 			<div className='container'>

@@ -8,7 +8,7 @@ import {useGlobalContext} from '@context/ContextApi';
 import {confirmDialog} from '@utils/helper';
 import {useRouter} from 'next/router';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-
+//this is the starting point
 const AddressBook = () => {
 	const {state, dispatch} = useContextState();
 	const {state: globalState} = useGlobalContext();
@@ -16,17 +16,18 @@ const AddressBook = () => {
 	const [loading, setLoading] = useState(false);
 
 	const router = useRouter();
-
+	//this is a method to change values
 	const setRouterPage = async page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
 	};
-
+	//this is a method to get data from api
 	const getUserAddresses = async page => {
 		setLoading(true);
+		//this is a method to get data from api
 		const response = await api({
-			url: "/user-address?page=" + page,
+			url: '/user-address?page=' + page,
 			method: 'GET',
 		});
 
@@ -48,6 +49,7 @@ const AddressBook = () => {
 			'Are you really want to delete this address',
 		);
 		if (confirm) {
+			//this is a method to get data from api
 			const response = await api({
 				url: `/user-address/delete/${id}`,
 				method: 'GET',
@@ -143,7 +145,7 @@ const AddressBook = () => {
 																	address.id,
 																)
 															}
-														 />
+														/>
 													</td>
 												</tr>
 											),

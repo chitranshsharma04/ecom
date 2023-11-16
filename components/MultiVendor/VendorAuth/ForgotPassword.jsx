@@ -5,23 +5,23 @@ import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {toast} from 'react-toastify';
 
 import {api} from '@utils/api';
-
+//this is the starting point
 const ForgotPassword = () => {
 	const [inputs, setInputs] = useState({});
 	const [validateError, setValidateError] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [loading, setLoading] = useState(false);
-
+//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
-
+//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		// eslint-disable-next-line babel/camelcase
@@ -40,6 +40,7 @@ const ForgotPassword = () => {
 			setIsSubmit(true);
 			try {
 				setLoading(true);
+				//this is a method to get data from api
 				const response = await api({
 					url: '/vendor/forgot-password',
 					method: 'POST',
@@ -62,7 +63,7 @@ const ForgotPassword = () => {
 			}
 		}
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const emailRegex =
 			// eslint-disable-next-line no-useless-escape

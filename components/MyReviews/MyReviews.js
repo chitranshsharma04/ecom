@@ -6,7 +6,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import Loading from '@components/Common/Loading';
 import {api} from '@utils/api';
 import {useContextState} from '@context/reducer';
-
+//this is the starting point
 const MyReviews = () => {
 	const {state, dispatch} = useContextState({
 		reviewLoading: true,
@@ -14,7 +14,7 @@ const MyReviews = () => {
 	});
 
 	const router = useRouter();
-
+//this is a method to get data from api
 	const fetchReviews = useCallback(async () => {
 		const payload = {};
 		if (router?.query?.page) {
@@ -28,7 +28,7 @@ const MyReviews = () => {
 				reviewLoading: true,
 			},
 		});
-
+//this is a method to get data from api
 		const response = await api({
 			url: '/review',
 			method: 'POST',
@@ -52,7 +52,7 @@ const MyReviews = () => {
 	useEffect(() => {
 		fetchReviews();
 	}, [fetchReviews]);
-
+//this is a method to change values
 	const handlePageChange = page => {
 		dispatch({
 			type: 'SET_DATA',

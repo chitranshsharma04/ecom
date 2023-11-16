@@ -1,5 +1,5 @@
 import StyleStepper from '@styles/stepper.module.css';
-
+//this is the starting point
 export default function Step(props) {
 	return (
 		<div className={StyleStepper.stepBlock}>

@@ -8,13 +8,13 @@ import cookie from 'js-cookie';
 import Link from 'next/link';
 
 import {useGlobalContext} from '@context/ContextApi';
-
+//this is the starting point
 const NavbarItem = props => {
 	const [show, setShow] = React.useState(false);
 	const [indexValue, setIndexValue] = React.useState(0);
 	const {state: globalState} = useGlobalContext();
 	const routers = useRouter();
-
+//this is a method to change values
 	const handleLogout = () => {
 		sessionStorage.removeItem('userAuth');
 		cookie.remove('userAuth');
@@ -24,7 +24,7 @@ const NavbarItem = props => {
 		// router.push('/vendor/login');
 		window.location.replace('/vendor/login');
 	};
-
+//this is a method to change values
 	const onClickOfManu = index => {
 		setIndexValue(index);
 		setShow(true);
@@ -34,7 +34,7 @@ const NavbarItem = props => {
 		// 	setShow(true);
 		// }
 	};
-
+//this is a method to change values
 	const renderNavbaarData = (items, index) => {
 		if (indexValue === index) {
 			return (

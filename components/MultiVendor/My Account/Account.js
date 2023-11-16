@@ -16,7 +16,7 @@ import {api} from '@utils/api';
 import Cookies from 'js-cookie';
 
 ('use client');
-
+//this is the starting point
 const Account = () => {
 	const [countryList, setcountryList] = useState();
 	//const itiRef = useRef(null);
@@ -31,12 +31,12 @@ const Account = () => {
 
 	const getCountryList = async () => {
 		try {
+			//this is a method to get data from api
 			const response = await api({
 				url: '/users/country-list',
 				method: 'GET',
 			});
 			if (response?.data) {
-				
 				setcountryList(response?.data);
 			}
 		} catch (error) {
@@ -44,18 +44,18 @@ const Account = () => {
 			console.log(error);
 		}
 	};
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
-
+	//this is a method to change values
 	const handleChangeImage = e => {
 		let allowedExtension = ['jpg', 'jpeg', 'txt', 'png', 'pdf', 'doc'];
 		let extension = e.target.files[0].name
@@ -74,13 +74,13 @@ const Account = () => {
 			setFile(e.target.files[0]);
 		}
 	};
-
+	//this is a method to change values
 	const handlePhoneChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/[^0-9]/gi, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const emailRegex =
@@ -125,11 +125,11 @@ const Account = () => {
 		}
 		return errors;
 	};
-
+	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(inputs);
-		
+
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
@@ -170,14 +170,15 @@ const Account = () => {
 	useEffect(() => {
 		getCountryList();
 	}, []);
-
+	//this is a method to connect to stripe
 	const connectStripe = useCallback(async () => {
 		const url = window.location.origin + '/stripe/connect';
 
 		setLoading(true);
 		setDisable(true);
+		//this is a method to get data from api
 		const response = await api({
-			url: "/vendor/stripe/create-stripe-account",
+			url: '/vendor/stripe/create-stripe-account',
 			method: 'POST',
 			data: {redirect_url: url},
 		});
@@ -193,7 +194,7 @@ const Account = () => {
 		const res = response.data.url.split('/');
 		const acc = res[res.length - 2];
 		Cookies.set('connect_account', acc);
-		
+
 		router.push(response.data.url);
 	}, []);
 
@@ -213,8 +214,7 @@ const Account = () => {
 			setFile(image.image_link);
 		});
 	}, [state]);
-
-	
+	//this is the starting points
 	return (
 		<>
 			<section className='cms-page '>
@@ -261,7 +261,7 @@ const Account = () => {
 
 										<Link
 											className='btn custom-btn mb-4 pl-4 pr-4'
-											href={"/vendor/changepassword"}
+											href={'/vendor/changepassword'}
 										>
 											Change Password
 										</Link>

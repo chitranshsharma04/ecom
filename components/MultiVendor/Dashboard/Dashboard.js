@@ -10,7 +10,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import UserService from '@utils/services';
-
+//this is the starting point
 const Dashboard = () => {
 	const [dashboardData, setDashboardData] = useState('');
 	const [FromDate, setFromDate] = useState('');
@@ -20,18 +20,18 @@ const Dashboard = () => {
 	const [defaultDate, setDefaultDate] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [flag, setFlag] = useState(false);
-
+	//this is a method to get data from api
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
 		} else return {};
 	};
 	let cookiedata = getUserCookie('userAuth');
-
+	//this is a method to change values
 	const handleChangeFromDate = event => {
 		setFromDate(moment(event).format('YYYY-MM-DD'));
 	};
-
+//this is a method to change values
 	const handleChangeToDate = event => {
 		setToDate(moment(event).format('YYYY-MM-DD'));
 	};
@@ -39,7 +39,7 @@ const Dashboard = () => {
 	useEffect(() => {
 		setValidateError(validate(FromDate, ToDate));
 	}, [FromDate, ToDate]);
-
+//this is a method to change values
 	const handleSubmit = async () => {
 		setIsLoading(true);
 		const result = validate(FromDate, ToDate);
@@ -50,6 +50,7 @@ const Dashboard = () => {
 			setValidateError({});
 			try {
 				setIsLoading(true);
+				//this is a method to get data from api
 				const response = await api({
 					url: `/vendor/dashboard?from_date=${moment(FromDate).format(
 						'DD-MM-YYYY',
@@ -66,7 +67,7 @@ const Dashboard = () => {
 			}
 		}
 	};
-
+//this is a method to validate
 	const validate = (FromDate, ToDate) => {
 		const errors = {};
 		if (!FromDate) {
@@ -87,7 +88,7 @@ const Dashboard = () => {
 			setFlag(false);
 		}
 	}, [FromDate, ToDate]);
-
+//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		setIsLoading(true);
 		try {
@@ -105,7 +106,7 @@ const Dashboard = () => {
 	useEffect(() => {
 		getResults();
 	}, [getResults]);
-
+//this is a method to change values
 	const handleReset = e => {
 		e.preventDefault();
 		setFromDate(defaultDate);

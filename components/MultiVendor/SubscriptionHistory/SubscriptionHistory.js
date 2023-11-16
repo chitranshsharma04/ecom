@@ -6,14 +6,15 @@ import moment from 'moment';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is the starting point
 const SubscriptionHistory = () => {
 	const [historyList, setHistoryList] = useState([]);
 	const [loading, setLoading] = useState(false);
-
+	//this is a method to get data from api
 	const getSubscriptionHistory = async () => {
 		try {
 			setLoading(true);
+			//this is a method to get data from api
 			const response = await api({
 				url: '/plan/history',
 				method: 'GET',
@@ -33,7 +34,7 @@ const SubscriptionHistory = () => {
 	useEffect(() => {
 		getSubscriptionHistory();
 	}, []);
-
+	//this is the starting point
 	return (
 		<>
 			<SpinnerLoader loading={loading} />
@@ -93,44 +94,41 @@ const SubscriptionHistory = () => {
 
 										<tbody>
 											{historyList?.map(
-													(value, index) => (
-														<tr key={index}>
-															<th scope='row'>
-																{index + 1}
-															</th>
-															<td>
-																{
-																	value.subscription_id
-																}
-															</td>
-															<td>
-																{
-																	value.plan
-																		.title
-																}
-															</td>
-															<td>
-																{moment(
-																	value.start_date,
-																).format('L')}
-															</td>
-															<td>
-																{moment(
-																	value.end_date,
-																).format('L')}
-															</td>
-															<td>
-																<Link
-																	href={`/vendor/subscription_history_detail/${value.id}`}
-																>
-																	<button className='btn btn-warning'>
-																		<i className='fa fa-fw fa-eye' />
-																	</button>
-																</Link>
-															</td>
-														</tr>
-													),
-												)}
+												(value, index) => (
+													<tr key={index}>
+														<th scope='row'>
+															{index + 1}
+														</th>
+														<td>
+															{
+																value.subscription_id
+															}
+														</td>
+														<td>
+															{value.plan.title}
+														</td>
+														<td>
+															{moment(
+																value.start_date,
+															).format('L')}
+														</td>
+														<td>
+															{moment(
+																value.end_date,
+															).format('L')}
+														</td>
+														<td>
+															<Link
+																href={`/vendor/subscription_history_detail/${value.id}`}
+															>
+																<button className='btn btn-warning'>
+																	<i className='fa fa-fw fa-eye' />
+																</button>
+															</Link>
+														</td>
+													</tr>
+												),
+											)}
 										</tbody>
 									</table>
 								</div>

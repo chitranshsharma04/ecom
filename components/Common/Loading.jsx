@@ -1,6 +1,7 @@
 import {Spinner} from 'react-bootstrap';
-
+//this is the starting point
 function Loading() {
+	//this is the starting point
 	return (
 		<div
 			className='right-panel d-flex justify-content-center'

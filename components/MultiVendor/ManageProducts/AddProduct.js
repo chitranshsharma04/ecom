@@ -8,11 +8,11 @@ import {toast} from 'react-toastify';
 import dynamic from 'next/dynamic';
 import Select from 'react-select';
 import {confirmDialog} from '@utils/helper';
-
+//this is the starting point
 const importJodit = () => import('jodit-react');
-
+//this is the starting point
 const JoditEditor = dynamic(importJodit, {ssr: false});
-
+//this is the starting point
 const AddProduct = props => {
 	var selectInputRef = useRef(null);
 
@@ -57,7 +57,7 @@ const AddProduct = props => {
 			}
 		}
 	}, [valueAttribute]);
-
+	//this is a method to change values
 	function handleChangeInputVal(index, event) {
 		const {name, value} = event.target;
 		setInputValues(prevData => {
@@ -91,7 +91,7 @@ const AddProduct = props => {
 		}
 		return false;
 	};
-
+	//this is a method to change values
 	const updateStep = step => {
 		const result = validate(inputs);
 		if (step === 2) {
@@ -136,7 +136,7 @@ const AddProduct = props => {
 		}
 		// window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 	};
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
@@ -150,7 +150,7 @@ const AddProduct = props => {
 			[nameofError]: '',
 		});
 	};
-
+	//this is a method to change values
 	const handleChangeCheckbox = event => {
 		const name = event.target.name;
 		const checked = event.target.checked ? 1 : 0;
@@ -169,7 +169,7 @@ const AddProduct = props => {
 		setPreview(objectUrl);
 		return () => URL.revokeObjectURL(objectUrl);
 	}, [selectedFile]);
-
+	//this is a method to change values
 	const handleChangeMultiSelect = data => {
 		let objArr = {};
 
@@ -185,7 +185,7 @@ const AddProduct = props => {
 		}
 		setSubValueAttribute(objArr);
 	};
-
+	//this is a method to change values
 	const handleChangeMultiAttributeSelect = (event, itemName, itemValue) => {
 		setValueDel(true);
 		for (let i = 0; i < event.length; i++) {
@@ -196,7 +196,7 @@ const AddProduct = props => {
 			[itemName]: prevState[itemName] ? event : event,
 		}));
 	};
-
+	//this is a method to change values
 	const onClear = () => {
 		// e.preventDefault();
 		setShowMerge(true);
@@ -207,25 +207,27 @@ const AddProduct = props => {
 		setInputValues([]);
 		setCombinationValueDel([]);
 	};
+	//this is a method to change values
 	const handleChangeImageVarient = e => {
 		let file = e.target.files[0];
 		if (file?.type.startsWith('image/')) {
 			setVarientImage([...varientImage, file]);
 		} else {
 			setSelectedFile();
-			toast.warn("Please select proper image file format (jpeg,jpg,png)");
+			toast.warn('Please select proper image file format (jpeg,jpg,png)');
 		}
 	};
-
+	//this is a method to change values
 	const handleChangeImage = e => {
 		let file = e.target.files[0];
 		if (file?.type.startsWith('image/')) {
 			setSelectedFile(file);
 		} else {
 			setSelectedFile();
-			toast.warn("Please select proper image file format (jpeg,jpg,png)");
+			toast.warn('Please select proper image file format (jpeg,jpg,png)');
 		}
 	};
+	//this is a method to change values
 	function removeDuplicates(editProductId) {
 		return editProductId.filter(
 			(item, index) => editProductId.indexOf(item) === index,
@@ -266,7 +268,6 @@ const AddProduct = props => {
 				field => field.regular_price && field.available_stock,
 			);
 			if (isFieldsValid) {
-				
 			} else {
 				toast.warn('Please fill all Regular Price and stock fields !.');
 				setLoading(false);
@@ -427,7 +428,7 @@ const AddProduct = props => {
 			}
 		}
 	};
-
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		if (!values.category_id) {
@@ -459,7 +460,7 @@ const AddProduct = props => {
 		}
 		return errors;
 	};
-
+	//this is a method to change values
 	const handleGetProductById = async () => {
 		const {edit} = props;
 		if (edit === 'edit') {
@@ -512,7 +513,7 @@ const AddProduct = props => {
 							);
 						},
 					);
-
+					//this is a method to change values
 					setSubValueAttribute(dataSubAttribute);
 
 					response?.data?.product?.product_attribute_detail?.map(
@@ -520,6 +521,7 @@ const AddProduct = props => {
 							productAttriId.push(variant.id);
 						},
 					);
+					//this is a method to change values
 					setEditProductId(productAttriId);
 					const inputValues =
 						response?.data?.product?.product_attribute_detail?.map(
@@ -564,8 +566,8 @@ const AddProduct = props => {
 					setValueAttribute(valueAttributeDatas);
 
 					response.data.product.product_image?.map(image => {
-							setProductImage(image);
-						});
+						setProductImage(image);
+					});
 				}
 			} catch (error) {
 				setLoading(false);
@@ -574,17 +576,17 @@ const AddProduct = props => {
 			setIsEditable(false);
 		}
 	};
-
+	//this is a method to get data from api
 	const getSelectedProducts = async () => {
 		var DataValue = [];
 
 		try {
+			//this is a method to get data from api
 			const response = await api({
-				url: "/vendor/product/create",
+				url: '/vendor/product/create',
 				method: 'GET',
 			});
 			if (response) {
-				
 				setCategoryOptions(response.data.category);
 				setBrandOptions(response.data.brand);
 				setCountryOfManufactureOptions(response.data.countries);
@@ -610,7 +612,7 @@ const AddProduct = props => {
 			console.log(error);
 		}
 	};
-
+	//this is a method to change values
 	const showCategory = () => {
 		return categoryOptions.map((category, i) => {
 			return (
@@ -630,7 +632,7 @@ const AddProduct = props => {
 			);
 		});
 	};
-
+	//this is a method to change values
 	const showCountryOfManufacture = () => {
 		return Object.keys(countryOfManufactureOptions).map((key, i) => {
 			return (
@@ -640,6 +642,7 @@ const AddProduct = props => {
 			);
 		});
 	};
+	//this is a method to change values
 	const showBrand = () => {
 		return Object.keys(brandOptions).map((key, i) => {
 			return (
@@ -717,8 +720,9 @@ const AddProduct = props => {
 					name: 'mahaveer',
 			  }
 			: {};
-
+	//this is a method to change values
 	const deleteAttributehandle = async index => {
+		//this is a method to get data from api
 		const confirm = await confirmDialog(
 			'Are you really want to delete this product',
 		);
@@ -858,7 +862,7 @@ const AddProduct = props => {
 											labelArray={labelArray}
 											currentStep={currentStep}
 											updateStep={updateStep}
-										 />
+										/>
 										{currentStep === 1 ? (
 											<section
 												id='step-1'
@@ -1385,6 +1389,7 @@ const AddProduct = props => {
 														{Object.keys(
 															valueObject,
 														).map(index => {
+															//this is a method to change values
 															function generateCombinations(
 																subValueAttribute,
 																current,
@@ -1596,6 +1601,7 @@ const AddProduct = props => {
 																{Object.keys(
 																	valueObject,
 																).map(index => {
+																	//this is a method to change values
 																	function generateCombinations(
 																		subValueAttribute,
 																		current,
@@ -1654,6 +1660,7 @@ const AddProduct = props => {
 																			}
 																		}
 																	}
+																	//this is a method to change valuesZ
 																	function generateCombinationsForId(
 																		subValueAttribute,
 																		current,
@@ -1815,7 +1822,7 @@ const AddProduct = props => {
 																																...newData[
 																																	index
 																																],
-																																'discount_price':
+																																discount_price:
 																																	'',
 																															};
 																														return newData;
@@ -1937,7 +1944,7 @@ const AddProduct = props => {
 																																...newData[
 																																	index
 																																],
-																																'discount_price':
+																																discount_price:
 																																	'',
 																															};
 																														return newData;
@@ -2050,7 +2057,7 @@ const AddProduct = props => {
 																										)
 																									}
 																									className='fas fa-trash btn'
-																								 />
+																								/>
 																							</td>
 																						</tr>
 																					);

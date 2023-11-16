@@ -5,7 +5,9 @@ import {Carousel} from 'react-responsive-carousel';
 
 import banner1 from '../../public/assets/images/slide-1.jpg';
 import banner2 from '../../public/assets/images/slide-2.jpg';
+//this is the starting point
 const CarouselBanner = ({children}) => {
+	//this is a method to change values
 	const renderIndicator = (onClickHandler, isSelected, index) => {
 		const dotStyle = {
 			backgroundColor: isSelected ? '#333' : '#ccc',
@@ -15,6 +17,7 @@ const CarouselBanner = ({children}) => {
 			display: 'inline-block',
 			margin: '0 5px 250px 5px', // add 10px margin bottom
 		};
+		//this is the starting point
 		return (
 			<li
 				style={dotStyle}
@@ -26,7 +29,7 @@ const CarouselBanner = ({children}) => {
 			/>
 		);
 	};
-	
+	//this is the starting point
 	return (
 		<Carousel
 			// swipeable={true}
@@ -44,117 +47,132 @@ const CarouselBanner = ({children}) => {
 			preventMovementUntilSwipeScrollTolerance={false}
 			transitionTime={500}
 			renderIndicator={renderIndicator}
+			// eslint-disable-next-line react/jsx-no-comment-textnodes
 		>
-			{children.length > 0
-				? children.map((item, index) => {
-						let title = item.title;
-						if (title?.length > 10) {
-							title = title.substring(0, 8) + '...';
-						}
-						if (index === 0) {
-							return (
-								<div key={index} className='banner-slider '>
-									<div className='item'>
-										<div className='container d-flex flex-wrap justify-content-between'>
-											<div className='banner-content' />
-											<div className='banner-content'>
-												<span className='title-top'>
-													Latest Collection
-												</span>
-												<h1>
-													New Arrivals
-													{/* { {title} } */}
-												</h1>
-												<p>
-													It is a long established
-													fact that a reader will be
-													distracted by the readable
-													content of a page when
-													looking at its layout. The
-													point of using Lorem Ipsum
-													is that it has a
-													more-or-less normal
-													distribution
-												</p>
-											</div>
+			{
+				//this is the starting point
+				children.length > 0
+					? children.map((item, index) => {
+							let title = item.title;
+							if (title?.length > 10) {
+								title = title.substring(0, 8) + '...';
+							}
+							if (index === 0) {
+								return (
+									<div key={index} className='banner-slider '>
+										<div className='item'>
+											<div className='container d-flex flex-wrap justify-content-between'>
+												<div className='banner-content' />
+												<div className='banner-content'>
+													<span className='title-top'>
+														Latest Collection
+													</span>
+													<h1>
+														New Arrivals
+														{/* { {title} } */}
+													</h1>
+													<p>
+														It is a long established
+														fact that a reader will
+														be distracted by the
+														readable content of a
+														page when looking at its
+														layout. The point of
+														using Lorem Ipsum is
+														that it has a
+														more-or-less normal
+														distribution
+													</p>
+												</div>
 
-											<figure className='slider-img'>
-												{/* <NextImage
+												<figure className='slider-img'>
+													{/* <NextImage
 												src={item.image}
 												alt='img2girl'
 												width="auto"
 												height="auto"
 												style={{padding: '10%'}}
 											/> */}
-												<Image
-													src={banner1 ? banner1 : "https://placehold.co/600x400"}
-													alt='img2girl'
-													width={1080}
-													height={250}
-													priority
-													loading='eager'
-												/>
-											</figure>
+													<Image
+														src={
+															banner1
+																? banner1
+																: 'https://placehold.co/600x400'
+														}
+														alt='img2girl'
+														width={1080}
+														height={250}
+														priority
+														loading='eager'
+													/>
+												</figure>
+											</div>
 										</div>
 									</div>
-								</div>
-							);
-						} else {
-							return (
-								<div
-									key={index}
-									className='banner-slider '
-									style={{}}
-								>
-									<div className='item'>
-										<div className='container d-flex flex-wrap justify-content-between'>
-											<div className='banner-content'>
-												<span className='title-top'>
-													Latest Collection
-												</span>
-												<h1>
-													New Arrivals
-													{/* { {title} } */}
-												</h1>
-												<p>
-													It is a long established
-													fact that a reader will be
-													distracted by the readable
-													content of a page when
-													looking at its layout. The
-													point of using Lorem Ipsum
-													is that it has a
-													more-or-less normal
-													distribution
-												</p>
-											</div>
+								);
+							} else {
+								//this is the starting point
+								return (
+									<div
+										key={index}
+										className='banner-slider '
+										style={{}}
+									>
+										<div className='item'>
+											<div className='container d-flex flex-wrap justify-content-between'>
+												<div className='banner-content'>
+													<span className='title-top'>
+														Latest Collection
+													</span>
+													<h1>
+														New Arrivals
+														{/* { {title} } */}
+													</h1>
+													<p>
+														It is a long established
+														fact that a reader will
+														be distracted by the
+														readable content of a
+														page when looking at its
+														layout. The point of
+														using Lorem Ipsum is
+														that it has a
+														more-or-less normal
+														distribution
+													</p>
+												</div>
 
-											<figure
-												className='slider-img'
-												style={{}}
-											>
-												{/* <NextImage
+												<figure
+													className='slider-img'
+													style={{}}
+												>
+													{/* <NextImage
 												src={item.image}
 												alt='img2girl'
 												width="auto"
 												height="auto"
 												style={{padding: '10%'}}
 											/> */}
-												<Image
-													src={banner2 ? banner2 : "https://placehold.co/600x400"}
-													alt='img2girl'
-													width={1080}
-													height={250}
-													priority
-												/>
-											</figure>
+													<Image
+														src={
+															banner2
+																? banner2
+																: 'https://placehold.co/600x400'
+														}
+														alt='img2girl'
+														width={1080}
+														height={250}
+														priority
+													/>
+												</figure>
+											</div>
 										</div>
 									</div>
-								</div>
-							);
-						}
-				  })
-				: null}
+								);
+							}
+					  })
+					: null
+			}
 		</Carousel>
 	);
 };

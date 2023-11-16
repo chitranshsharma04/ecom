@@ -4,7 +4,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
 import {toast} from 'react-toastify';
-
+//this is the starting point
 const ContactUsViewDetailEnquiry = props => {
 	const id = props.data.slug;
 	const [contactUsViewList, setContactUsViewList] = useState('');
@@ -12,11 +12,12 @@ const ContactUsViewDetailEnquiry = props => {
 	const [productName, setProductName] = useState('');
 	const [message, setMessage] = useState('');
 	const [validateError, setValidateError] = useState('');
-
+//this is a method to get data from api
 	const getContactUsEnquiryList = async () => {
 		try {
 			setLoading(true);
 			const data = {id: id};
+			//this is a method to get data from api
 			const response = await api({
 				url: '/contact-us-view',
 				method: 'POST',
@@ -37,7 +38,7 @@ const ContactUsViewDetailEnquiry = props => {
 	useEffect(() => {
 		getContactUsEnquiryList();
 	}, []);
-
+//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		if (!message) {
@@ -55,6 +56,7 @@ const ContactUsViewDetailEnquiry = props => {
 				message: message,
 			};
 			try {
+				//this is a method to get data from api
 				const response = await api({
 					url: '/send-feedback',
 					method: 'POST',

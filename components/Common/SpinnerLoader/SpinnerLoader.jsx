@@ -1,5 +1,5 @@
 import styles from '@styles/loader.module.css';
-
+//this is the starting point
 const SpinnerLoader = ({loading}) => {
 	return (
 		<>

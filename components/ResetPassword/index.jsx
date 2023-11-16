@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import {toast} from 'react-toastify';
 
 import {api} from '@utils/api';
-
+//this is the starting point
 const ResetPassword = () => {
 	const [inputs, setInputs] = useState({});
 	const [validateError, setValidateError] = useState({});
@@ -13,19 +13,19 @@ const ResetPassword = () => {
 	const [eye2, seteye2] = useState(true);
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
-
+	//this is router calling
 	const router = useRouter();
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
-
+	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		// eslint-disable-next-line babel/camelcase
@@ -43,6 +43,7 @@ const ResetPassword = () => {
 			setValidateError({});
 			setIsSubmit(true);
 			try {
+				//this is a method to get data from api
 				const response = await api({
 					url: '/users/reset-password',
 					method: 'POST',
@@ -62,7 +63,7 @@ const ResetPassword = () => {
 			}
 		}
 	};
-
+	//this is a method to validate
 	const validate = values => {
 		const passReg =
 			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
@@ -82,7 +83,7 @@ const ResetPassword = () => {
 		}
 		return errors;
 	};
-
+	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'passwordEye') {
@@ -151,7 +152,7 @@ const ResetPassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													 />
+													/>
 												</span>
 												<span className='text-danger'>
 													{validateError.password}
@@ -175,7 +176,7 @@ const ResetPassword = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													 />
+													/>
 												</span>
 												<span className='text-danger'>
 													{
