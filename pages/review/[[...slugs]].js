@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+// import React from 'react';
 
 import Review from '@components/Reviews/Review';
 import {api} from '@utils/api';
