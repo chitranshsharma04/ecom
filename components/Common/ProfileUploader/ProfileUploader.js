@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable babel/camelcase */
 /* eslint-disable @next/next/no-img-element */
-import React, {memo, useCallback} from 'react';
+import {memo, useCallback} from 'react';
 import {toast} from 'react-toastify';
 import cookie from 'js-cookie';
 
