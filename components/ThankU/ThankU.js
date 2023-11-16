@@ -8,7 +8,7 @@ const ThankU = () => {
 					<br />
 					<br />
 					<img src='/assets/images/thankYou.png' alt='thank-you' />
-					<h1>We've received your order.</h1>
+					<h1>We&apos;ve received your order.</h1>
 
 					<p>
 						A copy of your receipt has been sent to the email
