@@ -27,8 +27,8 @@ const Footer = props => {
 				});
 			} catch (e) {
 				setStatus({
-					message: e.response.data?.message,
-					status: e.response.data?.status,
+					message: e.response.data["message"],
+					status: e.response.data["status"],
 				});
 			}
 		}

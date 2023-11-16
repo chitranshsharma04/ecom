@@ -168,8 +168,8 @@ const ProductDetail = ({productDetail}) => {
 		}
 
 		if (variant) {
-			data?.variant_id = variant.id;
-			data?.variant_slug = variant.attribute_slug;
+			data.variant_id = variant.id;
+			data.variant_slug = variant.attribute_slug;
 		}
 
 		const response = await api({

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
 import React, {useState} from 'react';
 import Router from 'next/router';
@@ -69,8 +70,8 @@ const Login = () => {
 				});
 
 				if (!response.error && response.data.api_token) {
-					response.data?.AccessToken = 'DOTSQUARES123';
-					response.data?.userType = 'vendor';
+					response.data["AccessToken"] = 'DOTSQUARES123';
+					response.data["userType"] = 'vendor';
 					cookie.set('userAuth', JSON.stringify(response.data));
 					cookie.set('token', response.data.api_token);
 					const token = response.data.api_token;
