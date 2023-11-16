@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback, useState} from 'react';
+import {useEffect, useCallback, useState} from 'react';
 import {api} from '@utils/api';
 import {Spinner} from 'react-bootstrap';
 import Cookies from 'js-cookie';
