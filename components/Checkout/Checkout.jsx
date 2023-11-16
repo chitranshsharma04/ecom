@@ -464,8 +464,8 @@ const Checkout = () => {
 			},
 		});
 	};
-
-	const handleCardValueChange = event => {
+// a function to change value
+	const handleCardValueChange = (event) => {
 		setFormErrors({});
 		setPaymentError(false);
 		handleChange({
