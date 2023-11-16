@@ -7,9 +7,10 @@ import cookie from 'js-cookie';
 
 import {api} from '@utils/api';
 import {useGlobalContext} from '@context/ContextApi';
+//this is a starting point
 const ProfileUploader = () => {
 	const {isAuthenticated, state, dispatch} = useGlobalContext();
-
+//this is a method to get cookies
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
@@ -18,7 +19,7 @@ const ProfileUploader = () => {
 	getUserCookie('userAuth');
 
 	// console.log('profile', cookiedata);
-
+//this is a method to create callback
 	const updateProfileDetail = useCallback(async (giveData, optionHeader) => {
 		if (!isAuthenticated) return;
 		const response = await api({
@@ -29,7 +30,7 @@ const ProfileUploader = () => {
 		});
 		return response;
 	}, []);
-
+//this is a method to upload image
 	const onUploadImage = async e => {
 		const file = e.target.files[0];
 		if (!file) return;
@@ -39,7 +40,7 @@ const ProfileUploader = () => {
 			toast.warning('File too Big, please select a file less than 1mb');
 			return;
 		}
-
+//this is a method to create formdata
 		const formData = new FormData();
 		formData.append('name', file.name);
 		formData.append('profile_pic', file);

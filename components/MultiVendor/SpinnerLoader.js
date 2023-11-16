@@ -1,6 +1,6 @@
 // import React from 'react';
 import {Watch} from 'react-loader-spinner';
-
+//this is a starting point
 const SpinnerLoader = () => {
 	return (
 		<div>

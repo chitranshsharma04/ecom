@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import cookie from 'js-cookie';
 
 import {api} from './api';
-
+//this is a starting point
 export const confirmDialog = (title, icon = 'warning') => {
 	return new Promise(resolve => {
 		Swal.fire({
@@ -29,6 +29,7 @@ export const confirmDialog = (title, icon = 'warning') => {
 			.catch(() => resolve(false));
 	});
 };
+	//this is a method to get data from api
 
 export const getCountriesList = async () => {
 	const response = await api({
@@ -38,6 +39,7 @@ export const getCountriesList = async () => {
 	if (response.status) return response.data;
 	else return [];
 };
+	//this is a method to get data from api
 
 export const getCurrencySymbol = () => {
 	const currencyCode = cookie.get('currencyValue');

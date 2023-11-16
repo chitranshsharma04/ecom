@@ -4,7 +4,7 @@ import ErrorPage from 'next/error';
 import Cms from '@components/cms/Cms';
 import Loading from '@components/Loading';
 import {api} from '@utils/api';
-
+//this is the starting point
 const Page = props => {
 	const {cmsdata} = props;
 	const router = useRouter();
@@ -21,10 +21,10 @@ const Page = props => {
 		</>
 	);
 };
-
+//this is a method to get data from api
 export async function getStaticProps({params}) {
 	const slug = params?.slug ? params.slug.join('/') : '/';
-
+//this is a method to get data from api
 	const props = await getCmsPageProps(slug);
 
 	let meta = {};
@@ -44,29 +44,27 @@ export async function getStaticProps({params}) {
 		revalidate: 60 * 15,
 	};
 }
-
+//this is a method to get data from api
 export async function getStaticPaths() {
 	const pages = await api({
 		url: '/users/page-all',
 	});
 
-	const paths =
-		pages.data?.filter(item => {
-			item.slug !== 'term-policy' ||
-				item.slug !== 'about-us' ||
-				item.slug !== 'contact-us';
-		});
+	const paths = pages.data?.filter(item => {
+		item.slug !== 'term-policy' ||
+			item.slug !== 'about-us' ||
+			item.slug !== 'contact-us';
+	});
 
 	return {
 		paths:
-			(paths?.map(node =>
-					node.slug === '/' ? `${node.slug}` : `/${node.slug}`,
-				)) ||
-			[],
+			paths?.map(node =>
+				node.slug === '/' ? `${node.slug}` : `/${node.slug}`,
+			) || [],
 		fallback: true,
 	};
 }
-
+//this is a method to get data from api
 async function getCmsPageProps(path) {
 	try {
 		let result = await api({

@@ -5,7 +5,7 @@ const initialValue = {
 	selectedCategory: '',
 	search: '',
 };
-
+//this is a method to create reducer
 const reducer = (state = initialValue, action) => {
 	switch (action.type) {
 		case 'SET_DATA':
@@ -14,7 +14,7 @@ const reducer = (state = initialValue, action) => {
 			return state;
 	}
 };
-
+//this is a method to create reducer
 export const useCommonState = () => {
 	const [state, dispatch] = useReducer(reducer, initialValue);
 	return {state, dispatch};

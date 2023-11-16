@@ -2,7 +2,7 @@
 // import React from 'react';
 
 import Wishlist from '@components/Wishlist';
-
+//this is a starting point
 const index = () => {
 	return <Wishlist />;
 };

@@ -6,7 +6,7 @@ import {api} from '@utils/api';
 import Link from 'next/link';
 import {toast} from 'react-toastify';
 import {useRouter} from 'next/router';
-
+//this is a starting point
 const Reviews = () => {
 	const [reviewList, setReviewList] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -15,13 +15,13 @@ const Reviews = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const router = useRouter();
-
+//this is a method to set router
 	const setRouterPage = async page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
 	};
-
+//this is a method to get review list
 	const getReviewList = async () => {
 		try {
 			setLoading(true);
@@ -41,7 +41,7 @@ const Reviews = () => {
 			console.log(error);
 		}
 	};
-
+//this is a method to change values
 	const handleChange = async (id, status) => {
 		let formData = new FormData();
 		formData.append('id', id);

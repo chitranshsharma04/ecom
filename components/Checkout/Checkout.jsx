@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
@@ -9,7 +10,7 @@ import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {useContextState} from '@context/reducer';
 import {api} from '@utils/api';
 import {useGlobalContext} from '@context/ContextApi';
-
+//this is a starting point
 const Checkout = () => {
 	const router = useRouter();
 	const [isSubmitVal, setIsSubmitVal] = useState(false);
@@ -30,6 +31,7 @@ const Checkout = () => {
 	const [selectedValue, setSelectedValue] = useState('online');
 
 	const {state: globalState, getCartCount} = useGlobalContext();
+	//this is a method to cancel
 	const handleChange = event => {
 		dispatch({
 			type: 'SET_DATA',
@@ -39,11 +41,11 @@ const Checkout = () => {
 			},
 		});
 	};
-
+//this is a method to create function
 	const handleBlur = inputs => {
 		setFormErrors(validate(inputs));
 	};
-
+//this is a async method to get user address 
 	const customerAddresses = async () => {
 		setLoading(true);
 		const response = await api({
@@ -62,7 +64,7 @@ const Checkout = () => {
 			});
 		}
 	};
-
+//this is a method to change address
 	const handleAddressChange = event => {
 		const value = event.target.value;
 		const address = state.addresses.find(i => i.id + 'l' === value + 'l');
@@ -82,7 +84,7 @@ const Checkout = () => {
 			});
 		}
 	};
-
+//this is a method to fetch shipping options
 	const fetchShippingOptions = async () => {
 		const response = await api({
 			url: '/shipping-address',
@@ -99,7 +101,7 @@ const Checkout = () => {
 			});
 		}
 	};
-
+//this is a method to fetch cart details
 	const fetchCartDetails = useCallback(async pincode => {
 		const response = await api({
 			url: `/list_cart?zip_code=${pincode}`,
@@ -117,7 +119,7 @@ const Checkout = () => {
 			setCoupon(null);
 		}
 	}, []);
-
+//this is a method to apply coupon
 	const applyCouponCode = useCallback(
 		async event => {
 			event.preventDefault();
@@ -145,7 +147,7 @@ const Checkout = () => {
 		},
 		[state?.shipping_postal_code],
 	);
-
+//this is a method to remove coupon
 	const removeCouponCode = event => {
 		event.preventDefault();
 		setCoupon(null);
@@ -173,13 +175,14 @@ const Checkout = () => {
 			});
 		}
 	}, [globalState]);
-
+//this is a method to cart list call
 	const cartListCall = () => {
 		handleBlur();
 		setCoupon(null);
 		fetchCartDetails(state.shipping_postal_code);
 	};
 	const errors = {};
+	//this is a method to validate
 	const validate = values => {
 		if (!state?.firstname) {
 			errors.firstname = 'First name is required!';
@@ -264,7 +267,7 @@ const Checkout = () => {
 		}
 		return errors;
 	};
-
+//this is a method to submit
 	const handleSubmit = async event => {
 		dispatch({
 			type: 'SET_DATA',
@@ -432,7 +435,7 @@ const Checkout = () => {
 			}
 		}
 	};
-
+//this is a method to bill address
 	const handleBillingAddress = e => {
 		if (e.target.checked === true) {
 			setBillingDiv(false);
@@ -454,7 +457,7 @@ const Checkout = () => {
 			});
 		}
 	};
-
+//this is a method to change billing
 	const handleChangeBilling = event => {
 		dispatch({
 			type: 'SET_DATA',
@@ -472,7 +475,7 @@ const Checkout = () => {
 			target: {name: event.target.id, value: event.target.value},
 		});
 	};
-
+//this is a method to create memo
 	const totalPrice = useMemo(
 		() =>
 			(state?.cartDetails?.data?.reduce(

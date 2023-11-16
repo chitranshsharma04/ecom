@@ -36,7 +36,7 @@ const Header = props => {
 	const [loading, setLoading] = useState(false);
 
 	const headerRef = useRef();
-
+//this is a method to make a callback
 	const onResize = useCallback(() => {
 		if (headerRef.current) setHeaderHeight(headerRef.current.clientHeight);
 	}, []);
@@ -48,7 +48,7 @@ const Header = props => {
 			window.removeEventListener('resize', onResize);
 		};
 	});
-
+//this is a method to get cokkies
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
@@ -58,6 +58,7 @@ const Header = props => {
 	// let cookiedata = getUserCookie('userAuth');
 	
 	// eslint-disable-next-line no-unused-vars
+	//this is a method to make a callback
 	const getResults = useCallback(async () => {
 		try {
 			const resultCategorylist = props.categories;
@@ -115,6 +116,7 @@ const Header = props => {
 	// 		},
 	// 	});
 	// };
+	//this is a method to search for value
 	const handleSearch = event => {
 		dispatch({
 			type: 'SET_DATA',
@@ -124,7 +126,7 @@ const Header = props => {
 			},
 		});
 	};
-
+//this is a method to submit
 	const handleSubmit = async () => {
 		const {pathname} = Router;
 		if (pathname) {
@@ -135,12 +137,13 @@ const Header = props => {
 			Router.push(url);
 		}
 	};
-
+//this is a method of pressing enter
 	const handleKeyDown = event => {
 		if (event.key === 'Enter') {
 			handleSubmit();
 		}
 	};
+	//this is a method to reset data
 	const handleEmpty = () => {
 		// Router.push('/vendor/dashboard');
 		dispatch({
@@ -151,13 +154,13 @@ const Header = props => {
 			},
 		});
 	};
-
+//this is a usememo to memoize
 	useMemo(() => {
 		if (isAuthenticated && cookie.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
 		}
 	}, [isAuthenticated, cookie.get('userAuth')]);
-
+//this is a method to get cookie
 	const selectedCurrency = () => cookie.get('currencyValue') ?? 1;
 	const {pathname} = Router;
 	function SelectBasicExample() {

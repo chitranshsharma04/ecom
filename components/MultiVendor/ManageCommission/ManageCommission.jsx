@@ -3,7 +3,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
 import {useRouter} from 'next/router';
-
+//this is a starting point
 const ManageCommission = () => {
 	const [commissionList, setCommissionList] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -12,22 +12,22 @@ const ManageCommission = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const router = useRouter();
-
+	//this is a method to set router
 	const setRouterPage = async page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
 	};
-
+	//this is a method to get commision
 	const getCommissionList = async () => {
 		try {
 			setLoading(true);
+			//this is a method to call api
 			const response = await api({
-				url: "/category-list/commission?page=" + page,
+				url: '/category-list/commission?page=' + page,
 				method: 'GET',
 			});
 			if (response.data) {
-				
 				setLoading(false);
 				setCommissionList(response.data);
 				setCurrentPage(response.data.current_page);
@@ -91,7 +91,6 @@ const ManageCommission = () => {
 														?.length > 0 &&
 													commissionList?.data?.map(
 														(value, index) => {
-															
 															return (
 																<tr key={index}>
 																	<th scope='row'>

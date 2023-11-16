@@ -5,7 +5,7 @@
 
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import StyleSheet from '@styles/products.module.css';
-
+//this is a starting point
 const EditProduct = () => {
 	return (
 		<>

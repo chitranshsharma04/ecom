@@ -15,7 +15,7 @@ import ECarousel from '@components/Common/Carousel';
 import RatingWidget from '@components/Common/Rating';
 import Loading from '@components/Common/Loading';
 import RatingStar from '@components/Common/RatingStar/RatingStar';
-
+//this is a starting point
 const ProductDetail = ({productDetail}) => {
 	const router = useRouter();
 	const {
@@ -53,9 +53,9 @@ const ProductDetail = ({productDetail}) => {
 			setSlug(router.query?.slug[router.query?.slug.length - 1]);
 		}
 	}, [router.query?.slug]);
-
+	//this is a method to change values
 	const handleDragStart = e => e.preventDefault();
-
+	//this is a method to get data from api
 	const getProductDetail = async () => {
 		try {
 			if (variant?.attribute_image) {
@@ -121,7 +121,7 @@ const ProductDetail = ({productDetail}) => {
 			router.push('/');
 		}
 	}, [variant]);
-
+	//this is a method to change values
 	const handleIncrement = () => {
 		if (productDetail?.stock <= parseInt(state?.quantity)) {
 			toast.warning('Actual quantity is less than Desired quantity.');
@@ -138,7 +138,7 @@ const ProductDetail = ({productDetail}) => {
 			});
 		}
 	};
-
+	//this is a method to change values
 	const handleDecrement = () => {
 		if (state?.quantity > 1) {
 			dispatch({
@@ -150,7 +150,7 @@ const ProductDetail = ({productDetail}) => {
 			});
 		}
 	};
-
+	//this is a method to submit
 	const submitAddToCart = async e => {
 		e.preventDefault();
 
@@ -171,7 +171,7 @@ const ProductDetail = ({productDetail}) => {
 			data.variant_id = variant.id;
 			data.variant_slug = variant.attribute_slug;
 		}
-
+		//this is a method to get data from api
 		const response = await api({
 			url: '/cart/add',
 			method: 'POST',
@@ -186,7 +186,7 @@ const ProductDetail = ({productDetail}) => {
 			//toast.warning('Please login to add to cart.!');
 		}
 	};
-
+//this is a method to change values
 	const handleAttribute = async (k, selected) => {
 		let sVariant = new Array(...selectedVariant);
 
@@ -208,9 +208,9 @@ const ProductDetail = ({productDetail}) => {
 		formData.append('product_id', productDetail?.id);
 
 		sVariant.forEach(key => {
-			formData.append("attribute[]", key);
+			formData.append('attribute[]', key);
 		});
-
+	//this is a method to get data from api
 		const response = await api({
 			url: '/product/product-price',
 			method: 'POST',
@@ -226,6 +226,7 @@ const ProductDetail = ({productDetail}) => {
 		}
 	};
 	// console.log('variantError', variantError);
+	//this is a method to create reducer
 	const addRemoveToWishlist = async (event, product) => {
 		try {
 			event.preventDefault();
@@ -240,6 +241,7 @@ const ProductDetail = ({productDetail}) => {
 					removeFromCartLoading: true,
 				},
 			});
+	//this is a method to get data from api
 
 			const response = await api({
 				url: '/wishlist/add-remove-list',
@@ -273,7 +275,6 @@ const ProductDetail = ({productDetail}) => {
 		}
 	};
 	if (!productDetail?.title) return <Loading />;
-	
 
 	return (
 		<>
@@ -285,7 +286,7 @@ const ProductDetail = ({productDetail}) => {
 						</li>
 						{productDetail?.breadcrumbs?.map((br, i) => {
 							return (
-								<li className={"breadcrumb-item"} key={i}>
+								<li className={'breadcrumb-item'} key={i}>
 									{br.slug === Slug ? (
 										<span
 											className={`${
@@ -424,7 +425,7 @@ const ProductDetail = ({productDetail}) => {
 														dangerouslySetInnerHTML={{
 															__html: productDetail?.long_description,
 														}}
-													 />
+													/>
 												</div>
 												<div className='availibily-blk detail-des'>
 													<div className='availibily-col d-flex align-items-center'>
@@ -499,7 +500,7 @@ const ProductDetail = ({productDetail}) => {
 																														prd.title
 																													}`,
 																												}}
-																											 />
+																											/>
 																										</div>
 																									);
 																								},
@@ -962,7 +963,7 @@ const ProductDetail = ({productDetail}) => {
 																		dangerouslySetInnerHTML={{
 																			__html: item.short_description,
 																		}}
-																	 />
+																	/>
 																)}
 															<span className='price'>
 																$

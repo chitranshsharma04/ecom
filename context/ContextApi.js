@@ -16,30 +16,31 @@ import {api} from '@utils/api';
 import {getCountriesList} from '@utils/helper';
 
 import {useContextState} from './reducer';
-
+//this is a method to create a context
 const AppContext = React.createContext();
-
+//this is the starting point
 const AppProvider = ({children}) => {
 	// const router = useRouter();
 	// console.log('router', router);
 	const [productList, setProductList] = useState([]);
 	const {state, dispatch} = useContextState();
 	const [configData, setConfigData] = useState();
-
+	//this is a method to create a memo
 	const isAuthenticated = useMemo(
 		() => (cookie.get('token') ? true : false),
 		[cookie.get('token')],
 	);
-
+	//this is a method to create a memo
 	const currencyValue = useMemo(
 		() => cookie.get('currencyValue'),
 		[cookie.get('currencyValue')],
 	);
-
+	//this is a method to change values
 	const handleConfigFile = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
+		//this is a method to get data from api
 		const response = await api({
-			url: "/users/user-config",
+			url: '/users/user-config',
 			method: 'get',
 		});
 
@@ -47,15 +48,16 @@ const AppProvider = ({children}) => {
 			setConfigData(response.data);
 		}
 	};
-
+	//this is a method to create a memo
 	const isGuestAuthenticated = useMemo(
 		() => (cookie.get('tokenguest') ? true : false),
 		[cookie.get('tokenguest')],
 	);
-
+	//this is a method to create a callback
 	const getCartCount = useCallback(async () => {
 		// if (!isAuthenticated) return;
 		// getUserCookie();
+		//this is a method to get data from api
 		const count = await api({
 			url: '/cart/count',
 			method: 'POST',
@@ -69,9 +71,10 @@ const AppProvider = ({children}) => {
 				},
 			});
 	}, []);
-
+	//this is a method to create a callback
 	const getWishlistCount = useCallback(async () => {
 		if (!isAuthenticated) return;
+		//this is a method to get data from api
 		const count = await api({
 			url: '/wishlist/count',
 			method: 'POST',
@@ -85,8 +88,9 @@ const AppProvider = ({children}) => {
 				},
 			});
 	}, [isAuthenticated]);
-
+	//this is a method to create a callback
 	const getCountries = useCallback(async () => {
+		//this is a method to get data from api
 		const data = await getCountriesList();
 		if (data?.length)
 			dispatch({
@@ -97,12 +101,13 @@ const AppProvider = ({children}) => {
 				},
 			});
 	}, []);
-
+//this is a method to get cookies
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
 		} else return {};
 	};
+	//this is a method to create callback
 	const getUserProfileDetail = useCallback(async () => {
 		dispatch({
 			type: 'SET_DATA',
@@ -115,7 +120,7 @@ const AppProvider = ({children}) => {
 		if (!isAuthenticated) return;
 
 		let cookiedata = getUserCookie('userAuth');
-
+//this is a method to get data from api
 		const response = await api({
 			url: '/' + (cookiedata.userType ?? 'users') + '/profile-detail',
 		});

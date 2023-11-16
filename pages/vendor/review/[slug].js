@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router';
 
 import Review from '@components/MultiVendor/ManageReviews/ViewReview';
-
+//this is the starting point
 const ViewReview = () => {
 	const router = useRouter();
 	const pathdata = router.query;

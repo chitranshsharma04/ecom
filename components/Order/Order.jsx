@@ -6,14 +6,14 @@ import {api} from '@utils/api';
 import {useContextState} from '@context/reducer';
 import Loading from '@components/Common/Loading';
 import {confirmDialog} from '@utils/helper';
-
+//this is a starting point
 const Order = () => {
 	const {state, dispatch} = useContextState({
 		orderLoading: true,
 		orderList: [],
 	});
 	const [page, setPage] = useState(1);
-
+//this is a method to create callback
 	const fetchOrders = useCallback(async page => {
 		dispatch({
 			type: 'SET_DATA',
@@ -39,7 +39,7 @@ const Order = () => {
 	useEffect(() => {
 		fetchOrders(page);
 	}, [fetchOrders, page]);
-
+//this is a method to cancel
 	const handleCancel = async id => {
 		const confirm = await confirmDialog(
 			'Are you want to cancel this order?',

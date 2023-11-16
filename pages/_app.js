@@ -21,18 +21,19 @@ import 'react-medium-image-zoom/dist/styles.css';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Loading from '@components/Common/Loading';
 import {api} from '@utils/api';
-
+//this is the starting point
 const NextNProgress = dynamic(() => import('nextjs-progressbar'));
 let categoryCache;
 
 setInterval(() => {
 	categoryCache = null;
 }, 30000);
-
+//this is the starting point
 const App = props => {
 	const {Component, pageProps, categoryProps, cmsPages} = props;
 	const [hydrate, setHydrate] = useState();
 	const router = useRouter();
+	//this is a method to create a callback
 	const resetWindowScrollPosition = useCallback(
 		() =>
 			window.scrollTo({

@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unknown-property */
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 
+//this is the starting point
 export default class MyDocument extends Document {
+	//this is a method to get data from api
 	static async getInitialProps(ctx) {
 		const originalRenderPage = ctx.renderPage;
 
@@ -19,6 +21,7 @@ export default class MyDocument extends Document {
 		initialProps.cat = [{name: 'abc'}];
 		return initialProps;
 	}
+	//this is the starting point
 	render() {
 		return (
 			<Html lang='en'>
@@ -47,7 +50,7 @@ export default class MyDocument extends Document {
 							href='/favicon.ico'
 							media='print'
 							onload="this.media='all'"
-						 />
+						/>
 						<link
 							rel='stylesheet'
 							href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'

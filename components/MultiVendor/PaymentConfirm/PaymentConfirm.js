@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 
 import {api} from '@utils/api';
-
+//this is a starting point
 const PaymentConfirm = () => {
 	const [paymentStatus, setPaymentStatus] = useState({
 		status: false,
@@ -14,7 +14,7 @@ const PaymentConfirm = () => {
 	});
 
 	const router = useRouter();
-
+//this is a method to get stripe
 	const getStripeData = async () => {
 		// console.log('id', id);
 		var plan_id = sessionStorage.getItem('plan_id');

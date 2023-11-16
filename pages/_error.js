@@ -1,6 +1,7 @@
 // import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+//this is a starting point
 function Error() {
 	return (
 		<div className='container text-center'>
@@ -18,7 +19,7 @@ function Error() {
 		</div>
 	);
 }
-
+//this is a method to create something
 Error.getInitialProps = ({res, err}) => {
 	const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
 	return {statusCode};

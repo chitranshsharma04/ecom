@@ -7,7 +7,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import {api} from '@utils/api';
 import {useGlobalContext} from '@context/ContextApi';
 import {useContextState} from '@context/reducer';
-
+//this is a starting point
 const Edit = () => {
 	const router = Router;
 

@@ -9,7 +9,7 @@ import 'react-phone-number-input/style.css';
 import {api} from '@utils/api';
 
 import SpinnerLoader from '../SpinnerLoader';
-
+//this is a starting point
 const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 	const [inputs, setInputs] = useState(Allinputs);
 	const [showResendBtn, setShowResendBtn] = useState(false);
@@ -19,7 +19,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 	const [seconds, setSeconds] = useState(0);
 	const router = useRouter();
 	// console.log('hi inputs', Allinputs);
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value;
@@ -46,7 +46,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 			clearInterval(interval);
 		};
 	});
-
+	//this is a method to change values
 	const handleSendOtp = async e => {
 		e.preventDefault();
 		setDisable(!disable);
@@ -57,13 +57,13 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 			// setLoading(true);
 			setMinutes(2);
 			setSeconds(59);
+			//this is a method to get data from api
 			const response = await api({
 				url: '/Otp/send',
 				method: 'POST',
 				data: formData,
 			});
 			if (response.status === true) {
-				
 				toast.success(response.message);
 			} else if (response.error) {
 				toast.error(response.message);
@@ -76,7 +76,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 			console.log(error);
 		}
 	};
-
+	//this is a method to change values
 	const handleVerifyOtp = async (e, type) => {
 		e.preventDefault();
 		setLoading(false);
@@ -84,13 +84,13 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 			const formData1 = new FormData();
 			formData1.append('action', type);
 			formData1.append('otp', inputs.otp);
+			//this is a method to get data from api
 			const response = await api({
 				url: '/Otp/send',
 				method: 'POST',
 				data: formData1,
 			});
 			if (response.status === true) {
-				
 				// handleOtpChange(inputs.mobile, true);
 				setAllInputs(inputs);
 
@@ -107,7 +107,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 			console.log(error);
 		}
 	};
-
+//this is a method to change values
 	const handleMobileChange = e => {
 		const mobile = 'mobile';
 		setInputs(values => ({...values, [mobile]: e}));

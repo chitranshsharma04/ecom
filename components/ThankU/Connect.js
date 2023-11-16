@@ -4,18 +4,19 @@ import {Spinner} from 'react-bootstrap';
 import Cookies from 'js-cookie';
 ('use client');
 import {useRouter} from 'next/router';
-
+//this is a starting point
 const Connect = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const router = useRouter();
-
+	//this is a method to change values
 	const handleReturn = useCallback(async () => {
 		const acc = Cookies.get('connect_account');
 		Cookies.remove('connect_account');
 		setLoading(true);
+		//this is a method to get data from api
 		const response = await api({
-			url: "/vendor/stripe/update-stripe-key",
+			url: '/vendor/stripe/update-stripe-key',
 			method: 'POST',
 			data: {stripe_id: acc},
 		});

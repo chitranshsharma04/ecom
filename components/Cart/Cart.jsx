@@ -18,7 +18,7 @@ const Cart = () => {
 	const {state, dispatch} = useCartListState();
 	const {state: globalState, isAuthenticated} = useGlobalContext();
 	const [loading, setLoading] = React.useState(false);
-
+//this is a method to get response
 	const getResults = async () => {
 		try {
 			setLoading(true);
@@ -67,7 +67,7 @@ const Cart = () => {
 	useEffect(() => {
 		getResults();
 	}, []);
-
+//this is a method to handle increment
 	const handleIncrement = async (index, item) => {
 		if (item?.product?.stock < parseInt(item?.quantity) + 1) {
 			setLoading(false);
@@ -102,6 +102,7 @@ const Cart = () => {
 			getResults();
 		}
 	};
+	//this is a method to handle decrement
 	const handleDecrement = async index => {
 		const lists = state.list;
 		lists[index]['quantity'] = Number(lists[index].quantity) - 1;
@@ -129,6 +130,7 @@ const Cart = () => {
 			getResults();
 		}
 	};
+	//this is a method to remove from cart
 	const handleRemove = async index => {
 		const confirm = await confirmDialog(
 			'Are you sure to remove from Cart ?',
@@ -149,7 +151,7 @@ const Cart = () => {
 
 		getCartCount();
 	};
-
+//this is a method to change page
 	const changePage = e => {
 		e.preventDefault();
 		if (isAuthenticated && globalState?.userAuth) {

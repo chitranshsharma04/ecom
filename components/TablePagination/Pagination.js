@@ -2,7 +2,7 @@
 import classnames from 'classnames';
 import {usePagination, DOTS} from './usePagination';
 import style from '../../styles/pagination.module.scss';
-
+//this is a starting point
 const Pagination = props => {
 	const {
 		onPageChange,
@@ -23,11 +23,11 @@ const Pagination = props => {
 	if (currentPage === 0 || paginationRange.length < 2) {
 		return null;
 	}
-
+	//this is a method to next value
 	const onNext = () => {
 		onPageChange(currentPage + 1);
 	};
-
+	//this is a method to previous value
 	const onPrevious = () => {
 		onPageChange(currentPage - 1);
 	};

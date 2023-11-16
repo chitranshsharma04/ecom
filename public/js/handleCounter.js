@@ -90,7 +90,7 @@
 			var num = $input.val();
 			if (num === 0) $input.select();
 		});
-
+		//this is a method to change values
 		function changeVal(num) {
 			$input.data('num', num);
 			$btnMinus.prop('disabled', false);

@@ -2,20 +2,20 @@ import axios from 'axios';
 
 import {API_BASE_URL, api} from '@utils/api';
 import {headerValue} from '@utils/api';
-
+//this is a method to change values
 const getProfileDetail = () => {
 	return axios.get(API_BASE_URL + '/users/profile-detail', {
 		headers: headerValue(),
 	});
 };
-
+//this is a method to change values
 const getVendorProfileDetail = () => {
 	return api({
 		url: '/vendor/profile-detail',
 		method: 'GET',
 	});
 };
-
+//this is a method to change values
 const updateVendorProfileDetail = giveData => {
 	// return axios.post(API_BASE_URL + '/vendor/profile-update', giveData, {
 	// 	headers: {...header},
@@ -36,7 +36,7 @@ const updateVendorProfileDetail = giveData => {
 		headers: headerValue(),
 	});
 };
-
+//this is a method to change values
 const updateProfileDetail = (giveData, optionHeader) => {
 	return axios.post(API_BASE_URL + '/users/profile-update', giveData, {
 		headers: headerValue(),

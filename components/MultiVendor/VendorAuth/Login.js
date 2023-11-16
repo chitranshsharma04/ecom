@@ -9,7 +9,7 @@ import cookie from 'js-cookie';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
 import {useGlobalContext} from '@context/ContextApi';
-
+//this is a starting point
 const Login = () => {
 	const [inputs, setInputs] = useState({});
 	const [validateError, setValidateError] = useState({});
@@ -21,13 +21,13 @@ const Login = () => {
 	const [rememberMe, setRememberMe] = useState(false);
 
 	const router = Router;
-
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+	//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
@@ -42,10 +42,11 @@ const Login = () => {
 		}
 	}, []);
 
+	//this is a method to change values
 	function handleRememberMeChange(event) {
 		setRememberMe(event.target.checked);
 	}
-
+	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		// eslint-disable-next-line babel/camelcase
@@ -63,6 +64,8 @@ const Login = () => {
 			setValidateError({});
 			try {
 				setLoading(true);
+				//this is a method to get data from api
+
 				const response = await api({
 					url: '/vendor/login',
 					method: 'POST',
@@ -111,7 +114,7 @@ const Login = () => {
 			}
 		}
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const passReg =
 			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
@@ -129,6 +132,7 @@ const Login = () => {
 		}
 		return errors;
 	};
+	//this is a method to show or hide password
 	const Eye = () => {
 		if (password === 'password') {
 			setpassword('text');
@@ -202,7 +206,7 @@ const Login = () => {
 																? 'fa-eye-slash'
 																: 'fa-eye'
 														}`}
-													 />
+													/>
 												</span>
 												<span className='text-danger'>
 													{validateError.password}

@@ -9,6 +9,7 @@ const meta = {
 	title: '',
 	description: '',
 };
+//this is a starting point
 const index = props => {
 	meta.title = 'hetere ';
 	return (
@@ -21,13 +22,14 @@ const index = props => {
 index.meta = meta;
 
 export default index;
-
+//this is a starting point
 export async function getServerSideProps(context) {
 	const {query} = context;
 	const slug = query.slug[query.slug.length - 1];
 
 	try {
 		if (context.req?.cookies?.userAuth) {
+			//this is a method to get data from api
 			const getResult = await api({
 				url: `/product/product_detail/${slug}`,
 				headers: {

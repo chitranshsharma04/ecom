@@ -5,7 +5,7 @@ import cookie from 'js-cookie';
 export const API_BASE_URL = "https://testing-admin-ecom-ecom-b2b.projectstatus.co.uk/api/v1";
 //const API_BASE_URL = `http://127.0.0.1:8000/api/v1`;
 // http://192.168.4.188/In-house-e-commerce-multi-php/api/v1/vendor/stripe/create-payment-link
-
+//this is a starting point
 export const headerValue = () => {
 	const USER = cookie.get('userAuth');
 	const AUTH_KEY = USER ? JSON.parse(USER)?.auth_key : '';
@@ -25,6 +25,7 @@ export const headerValue = () => {
 	}
 	return header;
 };
+	//this is a method to get data from api
 
 export const api = async options => {
 	const header = await headerValue();
@@ -45,6 +46,8 @@ export const api = async options => {
 			...options.headers,
 		};
 	}
+	//this is a method to get data from api
+
 	const response = await axios(config);
 	console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', response);
 	if (response.data) return response.data;

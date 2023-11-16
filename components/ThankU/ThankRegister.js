@@ -2,8 +2,9 @@
 import {useEffect} from 'react';
 import {toast} from 'react-toastify';
 import {api} from '@utils/api';
-
+//this is a starting point
 const ThankRegister = props => {
+	//this is a method to change values
 	const handleReturn = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
 		const response = await api({

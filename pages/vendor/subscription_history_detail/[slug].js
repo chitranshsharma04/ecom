@@ -2,7 +2,7 @@
 import {useRouter} from 'next/router';
 
 import History_Detail from '@components/MultiVendor/SubscriptionHistory/History_Detail';
-
+//this is a starting point
 const history_Details = () => {
 	const router = useRouter();
 	const pathdata = router.query;

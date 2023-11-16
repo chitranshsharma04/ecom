@@ -7,13 +7,13 @@ const header = {
 	Authkey: 'SnHbbXzb',
 	'Access-Token': 'DOTSQUARES123',
 };
-
+//this is a method to change values
 const getCategorylist = () => {
 	return axios.get(API_BASE_URL + '/category-list', {
 		headers: header,
 	});
 };
-
+//this is a method to change values
 const newsletter = getdata => {
 	return axios.post(
 		API_BASE_URL + '/newsletter/add',
@@ -23,6 +23,8 @@ const newsletter = getdata => {
 		},
 	);
 };
+	//this is a method to get data from api
+
 const getProductlist = getdata => {
 	return axios.post(API_BASE_URL + '/product/product-list', getdata, {
 		headers: header,

@@ -6,7 +6,7 @@ import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import {api} from '@utils/api';
 import {useGlobalContext} from '@context/ContextApi';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-
+//this is a starting point
 const Create = () => {
 	const router = Router;
 
@@ -16,17 +16,17 @@ const Create = () => {
 	const [loading, setLoading] = useState(false);
 	const [isSubmit, setIsSubmit] = useState(false);
 	const {state} = useGlobalContext();
-
+//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
-
+//this is a method to submit
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(inputs);
@@ -60,7 +60,7 @@ const Create = () => {
 		}
 		setIsSubmit(false);
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		if (!values.address1) {

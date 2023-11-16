@@ -7,18 +7,20 @@ import {useGlobalContext} from '@context/ContextApi';
 // import NextImage from '@components/Common/Image';
 import LayoutServices from '@utils/layoutService/layoutService';
 import Image from 'next/image';
-
+//this is a starting point
 const Footer = props => {
 	const {pages} = props;
 	const [email, setEmail] = useState('');
 	const [validateError, setValidateError] = useState({});
 	const [resStatus, setStatus] = useState({});
 	const {configData} = useGlobalContext();
-
+//this is a method to change values
 	const handleSubmit = async () => {
 		const resultValid = validate(email);
 		if (!resultValid.email) {
 			try {
+					//this is a method to get data from api
+
 				const getResult = await LayoutServices.newsletter(email);
 				setEmail('');
 				setStatus({
@@ -36,12 +38,13 @@ const Footer = props => {
 			setStatus({});
 		}, 4000);
 	};
+	//this is a method to change values
 	const handleChange = e => {
 		setEmail(e.target.value);
 		setValidateError({});
 		setStatus({});
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		// eslint-disable-next-line no-useless-escape

@@ -7,11 +7,12 @@
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel/dist/assets/owl.theme.default.css';
 import dynamic from 'next/dynamic';
-
+//this is a starting point
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
 	ssr: false,
 });
 
+//this is a starting point
 const ServiceListingDetail = () => {
 	return (
 		<>

@@ -3,7 +3,7 @@
 
 import OrderDetail from '@components/Order/OrderDetail';
 import {api} from '@utils/api';
-
+//this is a starting point
 const index = data => {
 	return (
 		<div>
@@ -13,7 +13,7 @@ const index = data => {
 };
 
 export default index;
-
+//this is a starting point
 export async function getServerSideProps(context) {
 	const {query} = context;
 	try {
@@ -21,6 +21,7 @@ export async function getServerSideProps(context) {
 			return {
 				props: {},
 			};
+		//this is a method to get data from api
 		const getResult = await api({
 			url: `/order/${query.slug}`,
 			headers: {

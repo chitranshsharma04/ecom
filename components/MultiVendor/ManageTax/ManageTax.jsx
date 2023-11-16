@@ -1,14 +1,15 @@
+/* eslint-disable prettier/prettier */
 import React, {useState, useEffect} from 'react';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
-
+//this is a starting point
 const ManageTax = () => {
 	const [taxList, setTaxList] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [pageLink, setPageLink] = useState();
 	const [page, setPage] = useState(1);
-
+//this is a starting point
 	const getTaxList = async page => {
 		try {
 			setLoading(true);

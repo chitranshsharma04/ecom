@@ -1,14 +1,13 @@
 /** @format */
 import {useCallback} from 'react';
 import {useRouter} from 'next/router';
-import {Container} from 'react-bootstrap';
-
+import//this is the starting point
 function Cms(props) {
 	const {cmsdata} = props;
 	const router = useRouter();
 
 	const html = cmsdata;
-
+//this is a method to change values
 	const handleAnchorClick = useCallback(
 		e => {
 			e.preventDefault();

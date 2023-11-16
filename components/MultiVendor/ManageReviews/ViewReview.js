@@ -1,14 +1,15 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
 import {useState, useEffect} from 'react';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import RatingStar from '@components/Common/RatingStar/RatingStar';
 import {api} from '@utils/api';
-
+//this is a starting point
 const ViewReview = props => {
 	const [showList, setShowList] = useState('');
 	const [loading, setLoading] = useState(false);
-
+//this is a method to get review list
 	const getReviewList = async () => {
 		try {
 			setLoading(true);

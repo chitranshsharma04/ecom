@@ -5,7 +5,7 @@ import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import {api} from '@utils/api';
 import Router from 'next/router';
-
+//this is a starting point
 const EditReturnOrder = props => {
 	const [returnState, setReturnState] = useState({});
 	const [updateStatus, setUpdateStatus] = useState('');
@@ -14,10 +14,11 @@ const EditReturnOrder = props => {
 	const router = Router;
 
 	// console.log('returnState', returnState);
-
+	//this is a method to get return
 	const getReturnRequest = async () => {
 		try {
 			setLoading(true);
+			//this is a method to call api
 			const response = await api({
 				url: `/vendor/return-order/show/${props.data.slug}`,
 				method: 'GET',
@@ -36,13 +37,14 @@ const EditReturnOrder = props => {
 			setLoading(false);
 		}
 	};
-
+	//this is a method to change values
 	const handleStatusUpdate = async () => {
 		const formData = new FormData();
 		formData.append('id', props.data.slug);
 		formData.append('status', updateStatus);
 		formData.append('message', reason);
 		try {
+			//this is a method to call api
 			const response = await api({
 				url: '/vendor/return-order/status-update',
 				method: 'POST',
@@ -63,12 +65,14 @@ const EditReturnOrder = props => {
 			console.log('error', error);
 		}
 	};
-
+	//this is a method to change values
 	const handleRefund = async amount => {
 		const formData = new FormData();
 		formData.append('id', props.data.slug);
 		formData.append('amount', amount);
 		try {
+			//this is a method to get data from api
+
 			const response = await api({
 				url: '/vendor/return-order/refund',
 				method: 'POST',

@@ -19,22 +19,23 @@ const Account = () => {
 	const router = Router;
 
 	// const [profileDetails, setprofileDetails] = useState([]);
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
-
+//this is a method to change values
 	const handleChangeMobileNo = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/[^0-9]/gi, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-
+//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		// const regexp = /^\S*$/;
@@ -62,7 +63,7 @@ const Account = () => {
 		}
 		return errors;
 	};
-
+//this is a method to submit
 	const handleSubmit = async event => {
 		setSubmitDisable(true);
 		setLoading(true);

@@ -1,7 +1,7 @@
 // import React from 'react';
 import Link from 'next/link';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
-
+//this is a starting point
 const Dashboard = () => {
 	return (
 		<>

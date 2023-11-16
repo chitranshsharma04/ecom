@@ -3,7 +3,7 @@ import signup from '@components/Auth/Signup';
 signup.meta = {
 	title: 'Register | E-Commerce Solution',
 };
-
+//this is the starting point
 export async function getServerSideProps(ctx) {
 	const token = ctx.req.cookies.token;
 	if (token) {
