@@ -88,7 +88,7 @@ const TermsAndConditions = () => {
 						<p>
 							Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s
+							industry&apos;s standard dummy text ever since the 1500s
 						</p>
 						<p>
 							It is a long established fact that a reader will be
