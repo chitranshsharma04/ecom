@@ -17,7 +17,7 @@ const Error404 = () => {
 							<p>
 								Lorem Ipsum is simply dummy text of the printing
 								and typesetting industry. Lorem Ipsum has been
-								the industry's standard dummy.
+								the industry&apos;s standard dummy.
 							</p>
 							<a className='custom-btn btn' href='#'>
 								Back to home
