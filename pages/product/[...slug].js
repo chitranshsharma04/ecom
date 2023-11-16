@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+// import React from 'react';
 
 import Productdetail from '@components/ProductDetail/ProductDetail';
 import UserService from '@utils/ProductDetailServices';
