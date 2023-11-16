@@ -26,7 +26,7 @@ const AppProvider = ({children}) => {
 		}
 
 		if (router?.query?.page) {
-			payload['page'] = router?.query?.page;
+			payload.page = router?.query?.page;
 		}
 
 		if (state.sliderChange) {
