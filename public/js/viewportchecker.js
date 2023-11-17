@@ -122,7 +122,7 @@
 				(e = {
 					height: a(c.scrollBox).height(),
 					width: a(c.scrollBox).width(),
-				}),
+				})
 					d.checkElements();
 			}),
 			this.checkElements(),
