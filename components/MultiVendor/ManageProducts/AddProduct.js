@@ -600,6 +600,7 @@ const AddProduct = props => {
 							value: attributeOption.id,
 							label: attributeOption.title,
 						});
+						 return null;
 					});
 					setAttributeValueOptions(prev => ({
 						...prev,
