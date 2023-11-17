@@ -213,6 +213,7 @@ const Login = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
+														role="button" 
 														onClick={Eye}
 														className={`fa ${
 															eye
