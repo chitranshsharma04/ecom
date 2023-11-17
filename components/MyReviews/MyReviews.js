@@ -161,7 +161,7 @@ const MyReviews = () => {
 			{state?.reviewList?.length > 0 ? (
 				<Pagination
 					maxWidth={30}
-					current={state?.currentPage || 1}
+					current={state?.currentPage ? state?.currentPage : 1}
 					total={state.TotalPage}
 					onPageChange={handlePageChange}
 				/>
