@@ -19,6 +19,7 @@ const RightPanel = () => {
 			var newUrlData = '';
 			slugs.map(item => {
 				newUrlData = newUrlData ? newUrlData + '/' + item : item;
+				 return null;
 			});
 			setNewUrl(newUrlData);
 			 return null;
