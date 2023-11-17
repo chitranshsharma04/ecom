@@ -718,6 +718,7 @@ const ProductDetail = ({productDetail}) => {
 																	</div>
 																) : (
 																	<span
+																		role="button" tabIndex={0}
 																		className='addWish like'
 																		onClick={event =>
 																			productDetail?.stock &&
