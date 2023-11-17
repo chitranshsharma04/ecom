@@ -216,6 +216,7 @@ const ChangePassword = () => {
 											/>
 											<span className='p-viewer1'>
 												<i
+													role="button" 
 													name='confirmPasswordEye'
 													onClick={Eye}
 													className={`fa ${
