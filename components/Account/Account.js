@@ -137,7 +137,7 @@ const Account = () => {
 								>
 									<div className='row'>
 										<div className='col-lg-6 form-group'>
-											<label>First Name</label>{' '}
+											<label htmlFor="labelForValue" >First Name</label>{' '}
 											<span className='required'>*</span>
 											<input
 												type='text'
@@ -154,7 +154,7 @@ const Account = () => {
 											</span>
 										</div>
 										<div className='col-lg-6 form-group'>
-											<label>Last Name</label>{' '}
+											<label htmlFor="labelForValue" >Last Name</label>{' '}
 											<span className='required'>*</span>
 											<input
 												type='text'
@@ -171,7 +171,7 @@ const Account = () => {
 											</span>
 										</div>
 										<div className='col-lg-6 form-group'>
-											<label>Email</label>
+											<label htmlFor="labelForValue" >Email</label>
 											<input
 												type='text'
 												className='form-control'
@@ -187,7 +187,7 @@ const Account = () => {
 											</span>
 										</div>
 										<div className='col-lg-6 form-group'>
-											<label>Mobile Number</label>{' '}
+											<label htmlFor="labelForValue" >Mobile Number</label>{' '}
 											<span className='required'>*</span>
 											<input
 												type='text'
