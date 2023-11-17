@@ -139,6 +139,7 @@ const AddressBook = () => {
 															<i className='fas fa-edit' />
 														</Link>
 														<i
+															role="button" 
 															className='fas fa-trash btn'
 															onClick={() =>
 																handleDelete(
