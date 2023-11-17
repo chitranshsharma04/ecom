@@ -234,6 +234,7 @@ const AddProduct = props => {
 			(item, index) => editProductId.indexOf(item) === index,
 		);
 	}
+	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		setLoading(true);
