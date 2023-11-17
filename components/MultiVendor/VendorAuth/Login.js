@@ -100,10 +100,10 @@ const Login = () => {
 							userAuth: response.data,
 						},
 					});
-					{
+					
 						// eslint-disable-next-line babel/no-unused-expressions
 						router.push('/vendor/dashboard');
-					}
+					
 				} else {
 					setError(response.message);
 					setLoading(false);
