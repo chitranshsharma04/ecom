@@ -158,6 +158,7 @@ const Header = props => {
 		if (isAuthenticated && cookie.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
 		}
+		 return null;
 	}, [isAuthenticated, cookie.get('userAuth')]);
 //this is a method to get cookie
 	const selectedCurrency = () => cookie.get('currencyValue') ?? 1;
