@@ -412,7 +412,7 @@ const Checkout = () => {
 				}
 				if (response.status) {
 					getCartCount();
-					router.push('/thank-you/' + response?.data?.order_id);
+					router.push(`/thank-you/${response?.data?.order_id}`);
 					toast.success('Order Placed Successfully');
 					setIsSubmitVal(false);
 					setLoading(false);
