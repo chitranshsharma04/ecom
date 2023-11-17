@@ -268,7 +268,7 @@ const Cart = () => {
 																			/>
 																			<button
 																				onClick={() => {
-																					{
+																					
 																						setLoading(
 																							true,
 																						);
@@ -276,7 +276,7 @@ const Cart = () => {
 																							index,
 																							item,
 																						);
-																					}
+																					
 																				}}
 																				className='input-group-text increment-btn'
 																				disabled={
