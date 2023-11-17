@@ -257,6 +257,7 @@ const Reviews = () => {
 																}
 															>
 																<a
+																	href='#top'
 																	className='page-link'
 																	onClick={() => {
 																		setPage(

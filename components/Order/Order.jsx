@@ -307,7 +307,8 @@ const Order = () => {
 											(item.active ? ' active' : '')
 										}
 									>
-										<a
+										<a 
+											href='#top'
 											className='page-link'
 											onClick={() => {
 												setPage(

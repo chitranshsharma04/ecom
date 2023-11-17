@@ -45,19 +45,19 @@ const Store = () => {
 												Connect with us
 											</div>
 											<div className='social-icons'>
-												<a href='#'>
+												<a href='#top'>
 													<i className='fab fa-facebook-f' />
 												</a>
-												<a href='#'>
+												<a href='#top'>
 													<i className='fab  fa-twitter' />
 												</a>
-												<a href='#'>
+												<a href='#top'>
 													<i className='fab fa-google-plus-g' />
 												</a>
-												<a href='#'>
+												<a href='#top'>
 													<i className='fab fa-linkedin-in' />
 												</a>
-												<a href='#'>
+												<a href='#top'>
 													<i className='fab fa-pinterest-p' />
 												</a>
 											</div>
@@ -120,7 +120,7 @@ const Store = () => {
 								<div className='item'>
 									<div className='product-box'>
 										<figure>
-											<a href='#'>
+											<a href='#top'>
 												<img
 													src='/assets/images/img1.png'
 													alt='a'
@@ -135,7 +135,7 @@ const Store = () => {
 								<div className='item'>
 									<div className='product-box'>
 										<figure>
-											<a href='#'>
+											<a href='#top'>
 												<img
 													src='/assets/images/img2.png'
 													alt='a'
@@ -150,7 +150,7 @@ const Store = () => {
 								<div className='item'>
 									<div className='product-box'>
 										<figure>
-											<a href='#'>
+											<a href='#top'>
 												<img
 													src='/assets/images/img3.png'
 													alt='a'
@@ -165,7 +165,7 @@ const Store = () => {
 								<div className='item'>
 									<div className='product-box'>
 										<figure>
-											<a href='#'>
+											<a href='#top'>
 												<img
 													src='/assets/images/img4.png'
 													alt='a'
@@ -180,7 +180,7 @@ const Store = () => {
 								<div className='item'>
 									<div className='product-box'>
 										<figure>
-											<a href='#'>
+											<a href='#top'>
 												<img
 													src='/assets/images/img5.png'
 													alt='a'
@@ -195,7 +195,7 @@ const Store = () => {
 								<div className='item'>
 									<div className='product-box'>
 										<figure>
-											<a href='#'>
+											<a href='#top'>
 												<img
 													src='/assets/images/img6.png'
 													alt='a'
