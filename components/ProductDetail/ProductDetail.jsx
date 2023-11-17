@@ -71,7 +71,7 @@ const ProductDetail = ({productDetail}) => {
 									width='100%'
 									height='100%'
 									src={img.image_link}
-									alt={img.image_name || ''}
+									alt={img.image_name ?? ''}
 								/>
 							</Zoom>,
 						);
@@ -92,7 +92,7 @@ const ProductDetail = ({productDetail}) => {
 										width='100%'
 										height='100%'
 										src={img.image_link}
-										alt={img.image_name || ''}
+										alt={img.image_name ?? ''}
 									/>
 								</Zoom>,
 							);
@@ -364,7 +364,7 @@ const ProductDetail = ({productDetail}) => {
 											<div className='product-info-col product_data product-detail-block'>
 												<span className='brand-heading pb-2 d-block'>
 													{productDetail?.brand_data
-														?.title || ''}
+														?.title ?? ''}
 												</span>
 												<h1 className='pb-3'>
 													{productDetail?.title}
@@ -492,7 +492,7 @@ const ProductDetail = ({productDetail}) => {
 																												}
 																												style={{
 																													backgroundColor: `${
-																														prd.hexcode ||
+																														prd.hexcode ??
 																														prd.title
 																													}`,
 																												}}
@@ -604,7 +604,7 @@ const ProductDetail = ({productDetail}) => {
 																	}}
 																	readOnly
 																	value={
-																		state?.quantity ||
+																		state?.quantity ??
 																		1
 																	}
 																	type='text'
@@ -620,7 +620,7 @@ const ProductDetail = ({productDetail}) => {
 																	className='input-group-text increment-btn'
 																	disabled={
 																		variant?.stock ===
-																			0 ||
+																			0 ??
 																		state?.quantity >=
 																			variant?.stock
 																			? true
@@ -842,7 +842,7 @@ const ProductDetail = ({productDetail}) => {
 														title={`Reviews (${
 															productDetail
 																?.reviews
-																?.length || 0
+																?.length ?? 0
 														})`}
 													>
 														<ul className='list-unstyled'>
@@ -884,7 +884,7 @@ const ProductDetail = ({productDetail}) => {
 																						<div className='row col-md-12 ratingWidget'>
 																							<RatingWidget
 																								value={
-																									item?.rating ||
+																									item?.rating ??
 																									0
 																								}
 																								view
