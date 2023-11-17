@@ -26,7 +26,7 @@ function Rating() {
 		// 	</span>
 	);
 }
-
+//this is the starting point
 class RatingWidget extends React.Component {
 	constructor(props) {
 		super(props);

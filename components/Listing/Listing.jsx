@@ -28,7 +28,7 @@ const Listing = () => {
 	);
 
 	useEffect(() => {}, [router]);
-
+//this is the starting point
 	return (
 		<>
 			<CommonBreadcrumbs breadcrumbs={breadcrumbs} />
@@ -44,7 +44,7 @@ const Listing = () => {
 		</>
 	);
 };
-
+//this is the starting point
 const Index = () => {
 	return (
 		<AppProvider>

@@ -11,7 +11,7 @@ import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
 	ssr: false,
 });
-
+//this is the starting point
 const Store = () => {
 	return (
 		<>

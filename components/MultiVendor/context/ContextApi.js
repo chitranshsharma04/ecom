@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 
 const AppContext = React.createContext();
-
+//this is the starting point
 const AppProvider = ({children}) => {
 	useEffect(() => {});
 	return (
@@ -10,7 +10,7 @@ const AppProvider = ({children}) => {
 		</>
 	);
 };
-
+//this is the CONTEXT
 const useGlobalContext = () => {
 	return useContext(AppContext);
 };

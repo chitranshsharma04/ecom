@@ -80,6 +80,7 @@ const AddProduct = props => {
 		'Product Images',
 		'Product stocks',
 	];
+	//this is a method to get data from api
 	const checkArrays = () => {
 		for (const key in subValueAttribute) {
 			if (

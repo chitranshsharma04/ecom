@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 
 export const DOTS = '...';
-
+//this is the starting point
 const range = (start, end) => {
 	let length = end - start + 1;
 	return Array.from({length}, (_, idx) => idx + start);

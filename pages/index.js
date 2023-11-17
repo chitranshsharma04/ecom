@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
 const Home = dynamic(() => import('@components/Home/Home'));
-
 import styles from '../styles/Home.module.css';
 
+//this is the starting point
 const Index = () => {
 	return (
 		<div className={styles.container}>
