@@ -493,8 +493,7 @@ const Signup = () => {
 
 																<div className='col-md-12'>
 																	<div className='form-group'>
-																		<label>
-																			Upload
+																	<label htmlFor="labelForValue" >																			Upload
 																			Business
 																			Documents*
 																		</label>
