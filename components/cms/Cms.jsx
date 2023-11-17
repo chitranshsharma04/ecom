@@ -30,10 +30,7 @@ function Cms(props) {
 					id='content-area'
 					onClick={handleAnchorClick}
 					onKeyPress={handleAnchorClick}
-					dangerouslySetInnerHTML={{
-						__html: html,
-					}}
-				/>
+				>{html}</div>
 			</Container>
 		</>
 	);
