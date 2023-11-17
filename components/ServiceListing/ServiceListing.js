@@ -914,7 +914,7 @@ const ServiceListing = () => {
 									<li className='page-item disabled'>
 										<a
 											className='page-link'
-											href='#'
+											href='#top'
 											aria-label='Previous'
 										>
 											<i className='fas fa-chevron-left' />
