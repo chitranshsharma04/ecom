@@ -190,7 +190,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='firstname'
 																			value={
-																				inputs.firstname ||
+																				inputs.firstname ??
 																				''
 																			}
 																			onKeyUp={
@@ -221,7 +221,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='lastname'
 																			value={
-																				inputs.lastname ||
+																				inputs.lastname ??
 																				''
 																			}
 																			onChange={
@@ -252,7 +252,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='email'
 																			value={
-																				inputs.email ||
+																				inputs.email ??
 																				''
 																			}
 																			onChange={
@@ -283,7 +283,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='mobile'
 																			value={
-																				inputs.mobile ||
+																				inputs.mobile ??
 																				''
 																			}
 																			onChange={
@@ -316,7 +316,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='password'
 																			value={
-																				inputs.password ||
+																				inputs.password ??
 																				''
 																			}
 																			onChange={
@@ -359,7 +359,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='confirmpassword'
 																			value={
-																				inputs.confirmpassword ||
+																				inputs.confirmpassword ??
 																				''
 																			}
 																			onChange={
