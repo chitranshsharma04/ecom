@@ -89,7 +89,10 @@ class RatingWidget extends React.Component {
 	}
 //this is a method to change values
 	componentDidMount() {
-		this.setState(prev => ({...prev, rated: this.props.value}));
+	    this.setState(prevState => ({
+	        ...prevState,
+	        rated: this.props.value
+	    }));
 	}
 //this is a method to change values
 	handleRating() {
