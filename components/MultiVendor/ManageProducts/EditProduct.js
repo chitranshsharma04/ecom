@@ -44,6 +44,7 @@ const EditProduct = () => {
 												step='1'
 											>
 												<a
+													href='#top'
 													className={
 														StyleSheet.formStepper
 													}
@@ -64,6 +65,7 @@ const EditProduct = () => {
 												step='2'
 											>
 												<a
+													href='#top'
 													className='mx-2 btn-navigate-form-step'
 													step_number='2'
 												>
