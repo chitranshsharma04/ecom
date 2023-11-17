@@ -1,11 +1,10 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Pagination from 'react-responsive-pagination';
 import {useRouter} from 'next/router';
 import Loading from '@components/Common/Loading';
 import {useListingContext} from '../context';
 import ProductItem from './ProductItem';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-import {useEffect} from 'react';
 //this is the starting point
 const RightPanel = () => {
 	const {state, dispatch} = useListingContext();
