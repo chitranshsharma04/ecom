@@ -174,6 +174,7 @@ const AddressBook = () => {
 											}
 										>
 											<a
+												href='#top'
 												className='page-link'
 												onClick={() => {
 													setPage(
