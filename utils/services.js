@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-import {API_BASE_URL, api} from '@utils/api';
-import {headerValue} from '@utils/api';
+import { headerValue, API_BASE_URL, api} from '@utils/api';
 //this is a method to change values
 const getProfileDetail = () => {
 	return axios.get(API_BASE_URL + '/users/profile-detail', {
