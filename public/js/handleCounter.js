@@ -21,9 +21,15 @@
 			writable: true,
 			minimum: 1,
 			maximize: null,
-			onChange: function () {},
-			onMinimum: function () {},
-			onMaximize: function () {},
+			onChange: function () {
+				//It needs to empty, If any logic arises, dev will add it.
+			},
+			onMinimum: function () {
+				//It needs to empty, If any logic arises, dev will add it.
+			},
+			onMaximize: function () {
+				//It needs to empty, If any logic arises, dev will add it.
+			},
 		};
 		var settings = $.extend({}, defaultOpts, options);
 		minimum = settings.minimum;
