@@ -187,6 +187,7 @@ const ProductDetail = ({productDetail}) => {
 			toast.warning(response.message);
 			//toast.warning('Please login to add to cart.!');
 		}
+		 return null;
 	};
 //this is a method to change values
 	const handleAttribute = async (k, selected) => {
@@ -275,6 +276,7 @@ const ProductDetail = ({productDetail}) => {
 				},
 			});
 		}
+		 return null;
 	};
 	if (!productDetail?.title) return <Loading />;
 
