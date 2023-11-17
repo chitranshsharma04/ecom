@@ -15,8 +15,8 @@ const AppProvider = ({children}) => {
 	//this is a method to get data from api
 	const fetchProductList = useCallback(async () => {
 		const category =
-			router?.query?.category ||
-			router?.query?.slugs?.[router?.query?.slugs.length - 1] ||
+			router?.query?.category ??
+			router?.query?.slugs?.[router?.query?.slugs.length - 1] ??
 			'';
 		const payload = {
 			category_slug: category,
