@@ -506,7 +506,7 @@ const Signup = () => {
 																				fileInputRef
 																			}
 																			onChange={e => {
-																				{
+																				
 																					let file =
 																						e
 																							.target
@@ -530,7 +530,7 @@ const Signup = () => {
 																							'Please select proper image file format (jpeg,jpg,png)',
 																						);
 																					}
-																				}
+																				
 																			}}
 																			onBlur={
 																				handleBlur
