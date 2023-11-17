@@ -22,250 +22,250 @@ const ServiceListing = () => {
 										<div className='card-body'>
 											<ul className='catgory-list'>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Acupuncture
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Ambulance Services
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Ayurvedic Medicines
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Ayurvedic Treatment
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Bangles
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Beauty &amp; Wellness
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Beauty Parlours
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Children&apos;s Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Chit Funds
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Clinics
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Contact Lenses
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														CPAP &amp; BIPAP Systems
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Dental Clinics
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Diagnostic Centres
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Doctors
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Education Colleges
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Emergency Services
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														ENT Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Eye Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Eyeglasses
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Fertility &amp;
 														Infertility Clinics
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Financial Services
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Fitness Centres
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														General Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														General Pharmacies
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Hair Stylists
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Health Clubs
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Homeopathy Clinics
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Homeopathy Medicines
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Lab Equipment And
 														Chemical Suppliers
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Laboratories
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Ladies Dresses
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Maternity Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Medical Equipments
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Medical Stockings
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Mobile Phones
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Multispecialty Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Optics &amp; Eyewear
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Oxygen Concentrators
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Pharmaceutical Companies
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Pharmacies
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Physiotherapy Clinics
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Rehabilitation Centres
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Sarees &amp; Blouses
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Spa &amp; Saloon
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Super Specialty
 														Hospitals
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Surgical Instruments
 													</a>
 												</li>
 												<li>
-													<a href='javascript:void(0)'>
+													<a href='#'>
 														Unani Treatment
 													</a>
 												</li>
@@ -318,7 +318,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -344,7 +344,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -387,7 +387,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -413,7 +413,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -456,7 +456,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -482,7 +482,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -525,7 +525,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -551,7 +551,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -594,7 +594,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -620,7 +620,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -663,7 +663,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -689,7 +689,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -732,7 +732,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -758,7 +758,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -801,7 +801,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -827,7 +827,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>
@@ -870,7 +870,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='store-website'>
 																<i className='fas fa-globe' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Website
 																</a>{' '}
@@ -896,7 +896,7 @@ const ServiceListing = () => {
 															</div>
 															<div className='map-location'>
 																<i className='fas fa-map-marker-alt' />{' '}
-																<a href='javascript:void(0)'>
+																<a href='#'>
 																	{' '}
 																	Directions
 																</a>

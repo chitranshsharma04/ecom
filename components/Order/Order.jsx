@@ -141,7 +141,7 @@ const Order = () => {
 																	{order.status ===
 																	'cancelled' ? (
 																		<Link
-																			href='javascript:void(0);'
+																			href='#'
 																			className='btn btn-secondary mb-1'
 																			style={{
 																				cursor: 'not-allowed',
@@ -191,7 +191,7 @@ const Order = () => {
 																	) : order.status ===
 																	  'Refunded' ? (
 																		<Link
-																			href='javascript:void(0);'
+																			href='#'
 																			className='btn btn-secondary mb-1'
 																			style={{
 																				cursor: 'not-allowed',
@@ -202,7 +202,7 @@ const Order = () => {
 																	) : order.status ===
 																	  'Returned' ? (
 																		<Link
-																			href='javascript:void(0);'
+																			href='#'
 																			className='btn btn-secondary mb-1'
 																			style={{
 																				cursor: 'not-allowed',
@@ -213,7 +213,7 @@ const Order = () => {
 																	) : order.status ===
 																	  'Failed' ? (
 																		<Link
-																			href='javascript:void(0);'
+																			href='#'
 																			className='btn btn-secondary mb-1'
 																			style={{
 																				cursor: 'not-allowed',

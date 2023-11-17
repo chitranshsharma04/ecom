@@ -89,19 +89,19 @@ const ServiceListingDetail = () => {
 												Connect with us
 											</div>
 											<div className='social-icons'>
-												<a href='javascript:void(0)'>
+												<a href='#'>
 													<i className='fab fa-facebook-f' />
 												</a>
-												<a href='javascript:void(0)'>
+												<a href='#'>
 													<i className='fab  fa-twitter' />
 												</a>
-												<a href='javascript:void(0)'>
+												<a href='#'>
 													<i className='fab fa-google-plus-g' />
 												</a>
-												<a href='javascript:void(0)'>
+												<a href='#'>
 													<i className='fab fa-linkedin-in' />
 												</a>
-												<a href='javascript:void(0)'>
+												<a href='#'>
 													<i className='fab fa-pinterest-p' />
 												</a>
 											</div>
