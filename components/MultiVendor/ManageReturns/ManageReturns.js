@@ -201,6 +201,7 @@ const ManageReturns = () => {
 																}
 															>
 																<a
+																	href='#top'
 																	className='page-link'
 																	onClick={() => {
 																		setPage(
