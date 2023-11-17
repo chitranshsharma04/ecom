@@ -74,7 +74,7 @@ const Account = () => {
 			setValidateError(result);
 			setSubmitDisable(false);
 			setLoading(false);
-			return;
+
 		} else {
 			setDisable(false);
 			setValidateError({});
