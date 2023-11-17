@@ -211,7 +211,8 @@ const Account = () => {
 			});
 		}
 		state?.userAuth?.business_document?.map(image => {
-			setFile(image.image_link);
+		    setFile(image.image_link);
+		    return null; // or return something else if needed
 		});
 	}, [state]);
 	//this is the starting points
