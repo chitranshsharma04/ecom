@@ -38,7 +38,7 @@ const ResetPassword = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-			return;
+
 		} else {
 			setValidateError({});
 			setIsSubmit(true);
