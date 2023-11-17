@@ -272,7 +272,7 @@ const ServiceListing = () => {
 											</ul>
 											<div className='viewmore-btn'>
 												<a
-													href='javascript:void(0)'
+													href='#'
 													className='btn  custom-btn'
 												>
 													View More
