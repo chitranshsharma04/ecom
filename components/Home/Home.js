@@ -8,8 +8,7 @@ import Link from 'next/link';
 import UserService from '@utils/HomeServices';
 import LayoutServices from '@utils/layoutService/layoutService';
 import NextImage from '@components/Common/Image';
-import ECarousel from '@components/Common/Carousel';
-import {DealECarousel} from '@components/Common/Carousel';
+import {DealECarousel, ECarousel} from '@components/Common/Carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import {Carousel} from 'react-responsive-carousel';
 import CarouselBanner from '@components/Common/CarouselBanner';
