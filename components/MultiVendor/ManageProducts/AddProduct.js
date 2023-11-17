@@ -269,8 +269,7 @@ const AddProduct = props => {
 			const isFieldsValid = inputValues.every(
 				field => field.regular_price && field.available_stock,
 			);
-			if (isFieldsValid) {
-			} else {
+			if (!isFieldsValid) {
 				toast.warn('Please fill all Regular Price and stock fields !.');
 				setLoading(false);
 
