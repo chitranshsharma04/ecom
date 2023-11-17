@@ -365,7 +365,7 @@ const Checkout = () => {
 						country: state.billing_country,
 					};
 
-					data['billing_address'] = billAddr;
+					data.billing_address = billAddr;
 				} else {
 					const billAddr = {
 						address: state.shipping_address1,
