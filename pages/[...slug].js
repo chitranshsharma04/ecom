@@ -38,7 +38,7 @@ export async function getStaticProps({params}) {
 	}
 	return {
 		props: {
-			cmsdata: props?.result?.data?.description || null,
+			cmsdata: props?.result?.data?.description ?? null,
 			meta,
 		},
 		revalidate: 60 * 15,
@@ -51,8 +51,8 @@ export async function getStaticPaths() {
 	});
 
 	const paths = pages.data?.filter(item => {
-		item.slug !== 'term-policy' ||
-			item.slug !== 'about-us' ||
+		item.slug !== 'term-policy' ??
+			item.slug !== 'about-us' ??
 			item.slug !== 'contact-us';
 	});
 
@@ -60,7 +60,7 @@ export async function getStaticPaths() {
 		paths:
 			paths?.map(node =>
 				node.slug === '/' ? `${node.slug}` : `/${node.slug}`,
-			) || [],
+			) ?? [],
 		fallback: true,
 	};
 }
