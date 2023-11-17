@@ -49,7 +49,7 @@ export const api = async options => {
 	//this is a method to get data from api
 
 	const response = await axios(config);
-	console.log('response', response);
+	// console.log('response', response);
 	if (response.data) return response.data;
 
 	return response;
