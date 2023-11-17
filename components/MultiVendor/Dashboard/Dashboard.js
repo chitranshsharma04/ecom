@@ -189,7 +189,7 @@ const Dashboard = () => {
 											href='/vendor/manageorders'
 											legacyBehavior
 										>
-											<a className='dash-link'>
+											<a className='dash-link' href='#top'>
 												<span className='dash-icon'>
 													<img
 														src='/assets/images/dash-icon1.png'
