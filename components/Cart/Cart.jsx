@@ -105,7 +105,7 @@ const Cart = () => {
 	//this is a method to handle decrement
 	const handleDecrement = async index => {
 		const lists = state.list;
-		lists[index]['quantity'] = Number(lists[index].quantity) - 1;
+		lists[index].quantity = Number(lists[index].quantity) - 1;
 		dispatch({
 			type: 'SET_DATA',
 			data: {
