@@ -197,7 +197,7 @@ const Header = props => {
 			<SpinnerLoader loading={loading} />
 			<div
 				className='header-gap'
-				style={{height: parseInt(headerHeight) + 0 + 'px'}}
+				style={{height: `${parseInt(headerHeight)}0px`}}
 			 />
 			<header className='header' ref={headerRef}>
 				{globalState?.userAuth?.role === 2 ? (
