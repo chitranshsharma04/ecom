@@ -326,7 +326,8 @@ const Checkout = () => {
 							placeOrderLoading: false,
 						},
 					});
-					return toast.error(stripeToken.message);
+					 toast.error(stripeToken.message);
+					 return null;
 				}
 
 				const data = {
