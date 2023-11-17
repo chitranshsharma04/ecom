@@ -211,7 +211,8 @@ const Account = () => {
 			});
 		}
 		state?.userAuth?.business_document?.map(image => {
-			setFile(image.image_link);
+		    setFile(image.image_link);
+		    return null; // or return something else if needed
 		});
 	}, [state]);
 	//this is the starting points
@@ -281,7 +282,7 @@ const Account = () => {
 												className='form-control'
 												type='text'
 												name='firstname'
-												value={inputs?.firstname || ''}
+												value={inputs?.firstname ?? ''}
 												placeholder='First Name'
 												onChange={handleChange}
 												onBlur={handleBlur}
@@ -302,7 +303,7 @@ const Account = () => {
 												className='form-control'
 												type='text'
 												name='lastname'
-												value={inputs?.lastname || ''}
+												value={inputs?.lastname ?? ''}
 												placeholder='Last Name'
 												onChange={handleChange}
 												onBlur={handleBlur}
@@ -319,7 +320,7 @@ const Account = () => {
 												className='form-control  '
 												placeholder='example@email.com.'
 												name='email'
-												value={inputs?.email || ''}
+												value={inputs?.email ?? ''}
 												disabled
 												//onChange={handleChange}
 											/>
@@ -341,7 +342,7 @@ const Account = () => {
 													className='form-control'
 													//onBlur={handlePhoneBlur}
 													name='mobile'
-													value={inputs?.mobile || ''}
+													value={inputs?.mobile ?? ''}
 													placeholder='Enter Phone Number'
 													onChange={handlePhoneChange}
 													onBlur={handleBlur}
@@ -366,7 +367,7 @@ const Account = () => {
 												placeholder='example@email.com.'
 												name='business_name'
 												value={
-													inputs?.business_name || ''
+													inputs?.business_name ?? ''
 												}
 												onChange={handleChange}
 												onBlur={handleBlur}
@@ -381,7 +382,7 @@ const Account = () => {
 												Country
 											</label>
 											<select
-												value={inputs?.country || ''}
+												value={inputs?.country ?? ''}
 												className='form-control'
 												name='country'
 												onChange={handleChange}
@@ -423,7 +424,7 @@ const Account = () => {
 											<input
 												type='text'
 												className='form-control  '
-												value={inputs?.vat_no || ''}
+												value={inputs?.vat_no ?? ''}
 												placeholder='Vat Number'
 												name='vat_no'
 												required=''

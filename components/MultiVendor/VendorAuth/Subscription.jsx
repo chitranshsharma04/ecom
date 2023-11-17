@@ -1,8 +1,7 @@
 /* eslint-disable babel/camelcase */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-key */
-import {useState, useEffect} from 'react';
-import {useCallback} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';

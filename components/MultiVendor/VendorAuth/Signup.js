@@ -159,10 +159,10 @@ const Signup = () => {
 				errors.confirmpassword = 'Password is not matched!';
 			}
 		}
-		if (!images === 'jpg' && 'jpeg' && 'svg' && 'png') {
-			errors.images = 'Please enter valid image format';
+		if (!['jpg', 'jpeg', 'svg', 'png'].includes(images)) {
+		    errors.images = 'Please enter a valid image format';
 		} else if (!images.length) {
-			errors.images = 'Please select an image !';
+		    errors.images = 'Please select an image!';
 		}
 		return errors;
 	};
@@ -231,8 +231,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='firstname'
 																			value={
-																				inputs.firstname ||
-																				''
+																				inputs.firstname ? inputs.firstname  : ''
 																			}
 																			onKeyUp={
 																				handleKeyUp
@@ -262,8 +261,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='lastname'
 																			value={
-																				inputs.lastname ||
-																				''
+																				inputs.lastname ? inputs.lastname : ''
 																			}
 																			onChange={
 																				handleChange
@@ -293,8 +291,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='email'
 																			value={
-																				inputs.email ||
-																				''
+																				inputs.email ? inputs.email :''
 																			}
 																			onChange={
 																				handleChange
@@ -324,8 +321,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='mobile'
 																			value={
-																				inputs.mobile ||
-																				''
+																				inputs.mobile ? inputs.mobile :''
 																			}
 																			onChange={
 																				handleChangeMobileNo
@@ -356,8 +352,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='vat_no'
 																			value={
-																				inputs.vat_no ||
-																				''
+																				inputs.vat_no ? inputs.vat_no : ''
 																			}
 																			onChange={
 																				handleChange
@@ -387,8 +382,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='business_name'
 																			value={
-																				inputs.business_name ||
-																				''
+																				inputs.business_name ? inputs.business_name : ''
 																			}
 																			onChange={
 																				handleChange
@@ -420,8 +414,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='password'
 																			value={
-																				inputs.password ||
-																				''
+																				inputs.password ? inputs.password : ''
 																			}
 																			onChange={
 																				handleChange
@@ -463,8 +456,7 @@ const Signup = () => {
 																			className='form-control'
 																			name='confirmpassword'
 																			value={
-																				inputs.confirmpassword ||
-																				''
+																				inputs.confirmpassword ? inputs.confirmpassword : ''
 																			}
 																			onChange={
 																				handleChange

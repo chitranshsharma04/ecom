@@ -121,7 +121,7 @@ const Login = () => {
 		const errors = {};
 		if (!values.email) {
 			errors.email = 'Email field is required !';
-		} else if (!/^[a-zA-Z0-9]+.+[a-zA-Z0-9]+@+[A-z]/.test(values.email)) {
+		} else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(values.email)) {
 			errors.email = 'Enter valid email address.';
 		}
 		if (!values.password) {
@@ -178,7 +178,7 @@ const Login = () => {
 													placeholder='Email Address'
 													className='form-control'
 													name='email'
-													value={inputs.email || ''}
+													value={inputs.email ? inputs.email : ''}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>
@@ -193,7 +193,7 @@ const Login = () => {
 													className='form-control'
 													name='password'
 													value={
-														inputs.password || ''
+														inputs.password ? inputs.password : ''
 													}
 													onChange={handleChange}
 													onBlur={handleBlur}

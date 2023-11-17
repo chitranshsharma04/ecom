@@ -17,12 +17,11 @@ import Router from 'next/router';
 import cookie from 'js-cookie';
 import {toast} from 'react-toastify';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-import Image from '@components/Common/Image';
+import { NextImage, Image } from '@components/Common/Image';
 import {useGlobalContext} from '@context/ContextApi';
 import {useCommonState} from '../reducer';
 import NavbarItem from './NavbarItem';
 import Form from 'react-bootstrap/Form';
-import NextImage from '@components/Common/Image';
 //this is the starting point
 const Header = props => {
 	const {state, dispatch} = useCommonState();
@@ -159,6 +158,7 @@ const Header = props => {
 		if (isAuthenticated && cookie.get('userAuth')) {
 			return JSON.parse(cookie.get('userAuth'));
 		}
+		 return null;
 	}, [isAuthenticated, cookie.get('userAuth')]);
 //this is a method to get cookie
 	const selectedCurrency = () => cookie.get('currencyValue') ?? 1;
@@ -222,7 +222,7 @@ const Header = props => {
 													href='/vendor/signup'
 												>
 													{pathname ===
-														'/vendor/signup' ||
+														'/vendor/signup' ??
 													pathname ===
 														'/vendor/login' ? (
 														''
@@ -347,7 +347,7 @@ const Header = props => {
 												&nbsp;
 												<i className='fas fa-shopping-bag' />
 												<span className='badge badge-danger count-wishlist'>
-													{globalState?.cartCount ||
+													{globalState?.cartCount ??
 														0}
 												</span>
 											</Link>
@@ -356,7 +356,7 @@ const Header = props => {
 											{!isAuthenticated ? (
 												<a
 													className='heart-icon'
-													href='#'
+													href='#top'
 													onClick={() =>
 														toast.info(
 															'Please login to View Wishlist',
@@ -365,7 +365,7 @@ const Header = props => {
 												>
 													<i className='fa fa-heart' />
 													<span className='badge badge-danger count-wishlist'>
-														{globalState?.wishlistCount ||
+														{globalState?.wishlistCount ??
 															0}
 													</span>
 												</a>
@@ -378,7 +378,7 @@ const Header = props => {
 													&nbsp;
 													<i className='fa fa-heart' />
 													<span className='badge badge-danger count-wishlist'>
-														{globalState?.wishlistCount ||
+														{globalState?.wishlistCount ??
 															0}
 													</span>
 												</Link>

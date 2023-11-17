@@ -16,7 +16,7 @@ const Dashboard = () => {
 							<div className='row'>
 								<div className='col-lg-4 col-sm-6'>
 									<Link href='/orders' legacyBehavior>
-										<a className='dash-link'>
+										<a className='dash-link' href='#top'>
 											<span className='dash-icon'>
 												<img
 													src='/assets/images/dash-icon1.png'

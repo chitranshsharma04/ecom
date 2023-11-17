@@ -110,7 +110,7 @@ const ForgotPassword = () => {
 													placeholder='Enter your email'
 													className='form-control'
 													name='email'
-													value={inputs.email || ''}
+													value={inputs.email ? inputs.email : ''}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>

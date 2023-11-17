@@ -121,7 +121,7 @@ const Create = () => {
 											name='address1'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.address1 || ''}
+											value={inputs.address1 ? inputs.address1 :'' }
 										/>
 										<span className='text-danger'>
 											{validateError.address1}
@@ -141,7 +141,7 @@ const Create = () => {
 											name='address2'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.address2 || ''}
+											value={inputs.address2 ? inputs.address2 : ''}
 										/>
 										<span className='text-danger'>
 											{validateError.address2}
@@ -162,7 +162,7 @@ const Create = () => {
 											name='city'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.city || ''}
+											value={inputs.city ? inputs.city : ''}
 										/>
 										<span className='text-danger'>
 											{validateError.city}
@@ -183,7 +183,7 @@ const Create = () => {
 											name='postal_code'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.postal_code || ''}
+											value={inputs.postal_code ? inputs.postal_code : ''}
 										/>
 										<span className='text-danger'>
 											{validateError.postal_code}
@@ -204,7 +204,7 @@ const Create = () => {
 											name='state'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.state || ''}
+											value={inputs.state ? inputs.state : ''}
 										/>
 										<span className='text-danger'>
 											{validateError.state}
@@ -222,7 +222,7 @@ const Create = () => {
 											name='country_id'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.country_id || ''}
+											value={inputs.country_id ? inputs.country_id :  ''}
 										>
 											<option value=''>
 												--Select Country--

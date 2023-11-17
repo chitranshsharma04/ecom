@@ -132,9 +132,9 @@ const ChangePassword = () => {
 												name='current_password'
 												onChange={handleChange}
 												onBlur={handleBlur}
-												//value={state?.['current-password'] || ''}
+												//value={state?.['current-password'] ?? ''}
 												value={
-													inputs?.current_password ||
+													inputs?.current_password ??
 													''
 												}
 												required
@@ -170,9 +170,9 @@ const ChangePassword = () => {
 												name='new_password'
 												onChange={handleChange}
 												onBlur={handleBlur}
-												// value={state?.['new-password'] || ''}
+												// value={state?.['new-password'] ?? ''}
 												value={
-													inputs?.new_password || ''
+													inputs?.new_password ?? ''
 												}
 												required
 											/>
@@ -207,9 +207,9 @@ const ChangePassword = () => {
 												name='new_password_confirmation'
 												onChange={handleChange}
 												onBlur={handleBlur}
-												// value={state?.['new-password_confirmation'] || ''}
+												// value={state?.['new-password_confirmation'] ?? ''}
 												value={
-													inputs?.new_password_confirmation ||
+													inputs?.new_password_confirmation ??
 													''
 												}
 												required

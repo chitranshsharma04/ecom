@@ -10,7 +10,7 @@ function NoDataFound(props) {
 			>
 				<div className='row' style={{width: '50%'}}>
 					<div className='col-md-12 text-center'>
-						{props.loading || props.loading === undefined ? (
+						{props.loading ?? props.loading === undefined ? (
 							<Loading />
 						) : (
 							<div
@@ -22,7 +22,7 @@ function NoDataFound(props) {
 									alt='empty-bag-img'
 								/>
 								<div className='text-muted alert-heading h4'>
-									{props.message || 'Your bag is empty'}
+									{props.message ? props.message : 'Your bag is empty'}
 								</div>
 								<div className='cart-button'>
 									<Link href='/' className='custom-btn btn'>

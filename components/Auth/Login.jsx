@@ -191,7 +191,7 @@ const Login = () => {
 													placeholder='Email Address'
 													className='form-control'
 													name='email'
-													value={inputs.email || ''}
+													value={inputs.email ?? ''}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>
@@ -206,7 +206,7 @@ const Login = () => {
 													className='form-control'
 													name='password'
 													value={
-														inputs.password || ''
+														inputs.password ?? ''
 													}
 													onChange={handleChange}
 													onBlur={handleBlur}

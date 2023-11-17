@@ -186,6 +186,7 @@ const LeftPanel = () => {
 												}
 												trigger={
 													<a
+														href='#top'
 														onClick={() => {
 															{
 																setcollapseToggleUp(

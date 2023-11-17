@@ -1,11 +1,10 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Pagination from 'react-responsive-pagination';
 import {useRouter} from 'next/router';
 import Loading from '@components/Common/Loading';
 import {useListingContext} from '../context';
 import ProductItem from './ProductItem';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-import {useEffect} from 'react';
 //this is the starting point
 const RightPanel = () => {
 	const {state, dispatch} = useListingContext();
@@ -20,9 +19,12 @@ const RightPanel = () => {
 			var newUrlData = '';
 			slugs.map(item => {
 				newUrlData = newUrlData ? newUrlData + '/' + item : item;
+				 return null;
 			});
 			setNewUrl(newUrlData);
+			 return null;
 		}
+		 return null;
 	}, [router.query.slugs]);
 	//this is a method to change values
 	const handlePageChange = page => {

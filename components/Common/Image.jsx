@@ -7,8 +7,8 @@ function NextImage({src, alt, ...rest}) {
 	return (
 		<img
 			// src={imageError ? '/assets/images/missingImage.png' : src}
-			src={src || '/assets/images/missingImage.png'}
-			alt={alt?.toString() || 'demo'}
+			src={src ? src : '/assets/images/missingImage.png'}
+			alt={alt?.toString() ?? 'demo'}
 			// priority
 			// onError={() => setImageError(true)}
 			onError={({currentTarget}) => {

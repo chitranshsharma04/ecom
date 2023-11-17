@@ -238,6 +238,7 @@ const ManageOrders = () => {
 																}
 															>
 																<a
+																	href='#top'
 																	className='page-link'
 																	onClick={() => {
 																		setPage(

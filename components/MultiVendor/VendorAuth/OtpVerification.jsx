@@ -155,8 +155,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 																			className='form-control'
 																			name='email'
 																			value={
-																				inputs.email ||
-																				''
+																				inputs.email ? inputs.email : ''
 																			}
 																			onChange={
 																				handleMobileChange
@@ -199,7 +198,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 																			}
 																		>
 																			{seconds >
-																				0 ||
+																				0 ??
 																			minutes >
 																				0 ? (
 																				<>
@@ -233,8 +232,7 @@ const OtpVerification = ({Allinputs, setAllInputs, handleSubmit}) => {
 																			className='form-control'
 																			name='otp'
 																			value={
-																				inputs.otp ||
-																				''
+																				inputs.otp ? inputs.otp : ''
 																			}
 																			onChange={
 																				handleChange

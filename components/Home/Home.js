@@ -8,8 +8,7 @@ import Link from 'next/link';
 import UserService from '@utils/HomeServices';
 import LayoutServices from '@utils/layoutService/layoutService';
 import NextImage from '@components/Common/Image';
-import ECarousel from '@components/Common/Carousel';
-import {DealECarousel} from '@components/Common/Carousel';
+import {DealECarousel, ECarousel} from '@components/Common/Carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import {Carousel} from 'react-responsive-carousel';
 import CarouselBanner from '@components/Common/CarouselBanner';
@@ -286,7 +285,7 @@ const Home = () => {
 													// height='auto'
 													alt={
 														item.product_image?.[0]
-															?.image_name ||
+															?.image_name ??
 														'demo image'
 													}
 													src={
@@ -338,7 +337,7 @@ const Home = () => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-sm-6'>
-							<a href='#'>
+							<a href='#top'>
 								<Image
 									priority
 									src='/assets/images/add-banner.webp'
@@ -349,7 +348,7 @@ const Home = () => {
 							</a>
 						</div>
 						<div className='col-sm-6'>
-							<a href='#'>
+							<a href='#top'>
 								<Image
 									priority
 									src='/assets/images/add-banner1.webp'
@@ -441,7 +440,7 @@ const Home = () => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-sm-12'>
-							<a href='#'>
+							<a href='#top'>
 								<NextImage
 									src='/assets/images/new-arrivals.webp'
 									alt='new-arrivals'
@@ -488,7 +487,7 @@ const Home = () => {
 														alt={
 															item
 																.product_image?.[0]
-																?.image_name ||
+																?.image_name ??
 															'img'
 														}
 													/>

@@ -154,7 +154,7 @@ const ContactUsViewDetailEnquiry = props => {
 															event.target.value,
 														)
 													}
-													value={message || ''}
+													value={message ?? ''}
 												/>
 												<span className='text-danger'>
 													{validateError}

@@ -3,8 +3,7 @@ import {useState, useEffect} from 'react';
 import {toast} from 'react-toastify';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-import {API_BASE_URL} from '@utils/api';
-import {api} from '@utils/api';
+import {api , API_BASE_URL} from '@utils/api';
 import Link from 'next/link';
 import Router from 'next/router';
 //this is the starting point

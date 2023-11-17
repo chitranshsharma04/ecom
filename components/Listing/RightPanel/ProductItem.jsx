@@ -57,6 +57,7 @@ function ProductItem({item}) {
 				},
 			});
 		}
+		 return null;
 	};
 	return (
 		<div className='product-box'>

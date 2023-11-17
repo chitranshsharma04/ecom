@@ -1,6 +1,6 @@
 /* eslint-disable import/order */
 /* eslint-disable import/namespace */
-import React, {useEffect, useCallback, useState} from 'react';
+import {useEffect, useCallback, useState} from 'react';
 import dynamic from 'next/dynamic';
 import {ToastContainer} from 'react-toastify';
 import cookie from 'js-cookie';

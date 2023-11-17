@@ -32,7 +32,7 @@ export const api = async options => {
 	// try {
 	const config = {
 		url: `${API_BASE_URL}${options.url}`,
-		method: options.method || 'GET',
+		method: options.method? options.method : 'GET',
 		headers: header,
 	};
 
@@ -49,7 +49,7 @@ export const api = async options => {
 	//this is a method to get data from api
 
 	const response = await axios(config);
-	console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', response);
+	// console.log('response', response);
 	if (response.data) return response.data;
 
 	return response;
