@@ -69,7 +69,7 @@ const Account = () => {
 				'Please upload valid file of file format like doc, pdf, png, jpg, jpeg.',
 			);
 			setValidateError(errors);
-			return;
+
 		} else {
 			setFile(e.target.files[0]);
 		}
