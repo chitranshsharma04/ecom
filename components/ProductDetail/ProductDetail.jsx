@@ -421,11 +421,7 @@ const ProductDetail = ({productDetail}) => {
 												/>
 												<div className='overview-blk detail-des mt-3'>
 													<h2> Description</h2>
-													<span
-														dangerouslySetInnerHTML={{
-															__html: productDetail?.long_description,
-														}}
-													/>
+													<span>{productDetail?.long_description}</span>
 												</div>
 												<div className='availibily-blk detail-des'>
 													<div className='availibily-col d-flex align-items-center'>
