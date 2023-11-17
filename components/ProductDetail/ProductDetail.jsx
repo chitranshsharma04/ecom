@@ -75,6 +75,7 @@ const ProductDetail = ({productDetail}) => {
 								/>
 							</Zoom>,
 						);
+						 return null;
 					});
 				}
 				if (images.length) setProductImage(images);
