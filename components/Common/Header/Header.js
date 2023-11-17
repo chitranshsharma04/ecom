@@ -222,7 +222,7 @@ const Header = props => {
 													href='/vendor/signup'
 												>
 													{pathname ===
-														'/vendor/signup' ||
+														'/vendor/signup' ??
 													pathname ===
 														'/vendor/login' ? (
 														''
@@ -347,7 +347,7 @@ const Header = props => {
 												&nbsp;
 												<i className='fas fa-shopping-bag' />
 												<span className='badge badge-danger count-wishlist'>
-													{globalState?.cartCount ||
+													{globalState?.cartCount ??
 														0}
 												</span>
 											</Link>
@@ -365,7 +365,7 @@ const Header = props => {
 												>
 													<i className='fa fa-heart' />
 													<span className='badge badge-danger count-wishlist'>
-														{globalState?.wishlistCount ||
+														{globalState?.wishlistCount ??
 															0}
 													</span>
 												</a>
@@ -378,7 +378,7 @@ const Header = props => {
 													&nbsp;
 													<i className='fa fa-heart' />
 													<span className='badge badge-danger count-wishlist'>
-														{globalState?.wishlistCount ||
+														{globalState?.wishlistCount ??
 															0}
 													</span>
 												</Link>
