@@ -51,9 +51,11 @@ export async function getStaticPaths() {
 	});
 
 	const paths = pages.data?.filter(item => {
-		item.slug !== 'term-policy' ??
-			item.slug !== 'about-us' ??
-			item.slug !== 'contact-us';
+	    return (
+		item.slug !== 'term-policy' &&
+		item.slug !== 'about-us' &&
+		item.slug !== 'contact-us'
+	    );
 	});
 
 	return {
