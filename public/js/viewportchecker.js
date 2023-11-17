@@ -33,7 +33,7 @@
 							a('body').scrollTop(),
 							a(window).scrollTop(),
 					  )),
-					  (f = b + e.height)),
+					  (f = b + e.height))
 					d.each(function () {
 						var d = a(this),
 							g = {},
