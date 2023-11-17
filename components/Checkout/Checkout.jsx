@@ -291,7 +291,7 @@ const Checkout = () => {
 					placeOrderLoading: false,
 				},
 			});
-			return;
+
 		} else {
 			try {
 				setLoading(true);
