@@ -224,7 +224,7 @@ const Order = () => {
 																	) : order.status ===
 																	  'Pending_for_payment' ? (
 																		<Link
-																			href='javascript:void(0);'
+																			href='#'
 																			className='btn btn-secondary mb-1'
 																			style={{
 																				cursor: 'not-allowed',
