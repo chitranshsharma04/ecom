@@ -212,10 +212,7 @@ const ManageReturns = () => {
 																>
 																	<span
 																		aria-hidden='true'
-																		dangerouslySetInnerHTML={{
-																			__html: item.label,
-																		}}
-																	/>
+																	>{item.label}</span>
 																</a>
 															</li>
 														),
