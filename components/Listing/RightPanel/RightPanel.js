@@ -24,6 +24,7 @@ const RightPanel = () => {
 			setNewUrl(newUrlData);
 			 return null;
 		}
+		 return null;
 	}, [router.query.slugs]);
 	//this is a method to change values
 	const handlePageChange = page => {
