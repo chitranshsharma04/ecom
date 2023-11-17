@@ -521,6 +521,7 @@ const AddProduct = props => {
 						variant => {
 							productAttriId.push(variant.id);
 						},
+						 return null;
 					);
 					//this is a method to change values
 					setEditProductId(productAttriId);
