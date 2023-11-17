@@ -165,10 +165,10 @@ const NavbarItem = props => {
 										renderMenuOnMount
 										show={show}
 										onMouseEnter={() => {
-											{
+											
 												setShow(true);
 												setIndexValue(index);
-											}
+											
 										}}
 										onMouseLeave={() => setShow(false)}
 										onClick={() => onClickOfManu(index)}
