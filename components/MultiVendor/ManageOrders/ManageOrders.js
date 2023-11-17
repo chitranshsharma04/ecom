@@ -247,12 +247,7 @@ const ManageOrders = () => {
 																		);
 																	}}
 																>
-																	<span
-																		aria-hidden='true'
-																		dangerouslySetInnerHTML={{
-																			__html: item.label,
-																		}}
-																	/>
+															<span aria-hidden='true'>{item.label}</span>
 																</a>
 															</li>
 														),
