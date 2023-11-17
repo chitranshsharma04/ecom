@@ -338,7 +338,7 @@ const Home = () => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-sm-6'>
-							<a href='#'>
+							<a href='#top'>
 								<Image
 									priority
 									src='/assets/images/add-banner.webp'
@@ -349,7 +349,7 @@ const Home = () => {
 							</a>
 						</div>
 						<div className='col-sm-6'>
-							<a href='#'>
+							<a href='#top'>
 								<Image
 									priority
 									src='/assets/images/add-banner1.webp'
