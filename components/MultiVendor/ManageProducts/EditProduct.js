@@ -98,6 +98,7 @@ const EditProduct = () => {
 												step='4'
 											>
 												<a
+													href='#top'
 													className='mx-2 btn-navigate-form-step'
 													step_number='4'
 												>
