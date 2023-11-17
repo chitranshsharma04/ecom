@@ -488,7 +488,7 @@ const Home = () => {
 														alt={
 															item
 																.product_image?.[0]
-																?.image_name ||
+																?.image_name ??
 															'img'
 														}
 													/>
