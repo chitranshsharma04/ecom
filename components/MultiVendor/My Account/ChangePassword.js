@@ -61,7 +61,6 @@ const ChangePassword = () => {
 		const result = validate(inputs);
 		if (Object.keys(result).length) {
 			setFormErrors(result);
-			return;
 		} else {
 			setIsSubmit(true);
 
