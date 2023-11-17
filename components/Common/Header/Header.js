@@ -17,12 +17,11 @@ import Router from 'next/router';
 import cookie from 'js-cookie';
 import {toast} from 'react-toastify';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
-import Image from '@components/Common/Image';
+import { NextImage, Image } from '@components/Common/Image';
 import {useGlobalContext} from '@context/ContextApi';
 import {useCommonState} from '../reducer';
 import NavbarItem from './NavbarItem';
 import Form from 'react-bootstrap/Form';
-import NextImage from '@components/Common/Image';
 //this is the starting point
 const Header = props => {
 	const {state, dispatch} = useCommonState();
