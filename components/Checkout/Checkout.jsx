@@ -481,7 +481,7 @@ const Checkout = () => {
 			(state?.cartDetails?.data?.reduce(
 				(total, val) => (total += +val.final_value),
 				0,
-			) || 0) - (+state?.cartDetails?.tax_price || 0),
+			) ?? 0) - (+state?.cartDetails?.tax_price ?? 0),
 		[state?.cartDetails],
 	);
 
@@ -512,7 +512,7 @@ const Checkout = () => {
 	return (
 		<>
 			<SpinnerLoader
-				loading={loading || (globalState?.loadingProfile ?? true)}
+				loading={loading ?? (globalState?.loadingProfile ?? true)}
 			/>
 			<div className='section pad-btm-sec checkout-sec'>
 				<div className='container'>
@@ -623,7 +623,7 @@ const Checkout = () => {
 																if (
 																	event.target
 																		.value ===
-																		'' ||
+																		'' ??
 																	re.test(
 																		event
 																			.target
@@ -1031,7 +1031,7 @@ const Checkout = () => {
 															}
 															onBlur={handleBlur}
 															value={
-																state?.shipping_country ||
+																state?.shipping_country ??
 																''
 															}
 															disabled={
@@ -1338,7 +1338,7 @@ const Checkout = () => {
 																	handleBlur
 																}
 																value={
-																	state?.billing_country ||
+																	state?.billing_country ??
 																	''
 																}
 																disabled={
@@ -1563,7 +1563,7 @@ const Checkout = () => {
 													}
 													onBlur={handleBlur}
 													value={
-														state?.billing_country ||
+														state?.billing_country ??
 														''
 													}
 													disabled={isSubmitVal}
@@ -1739,7 +1739,7 @@ const Checkout = () => {
 															(coupon &&
 																Object.keys(
 																	coupon,
-																).length > 0) ||
+																).length > 0) ??
 															isSubmitVal
 																? true
 																: false
