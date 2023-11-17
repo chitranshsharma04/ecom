@@ -352,7 +352,7 @@ const Checkout = () => {
 				};
 
 				if (coupon) {
-					data['promocode'] = coupon.code;
+					data.promocode = coupon.code;
 				}
 
 				if (state?.billingAddress === false) {
