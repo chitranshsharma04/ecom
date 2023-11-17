@@ -67,7 +67,7 @@ const Checkout = () => {
 //this is a method to change address
 	const handleAddressChange = event => {
 		const value = event.target.value;
-		const address = state.addresses.find(i => i.id + 'l' === value + 'l');
+		const address = state.addresses.find(i => `i.id + '1' === value + '1'`);
 
 		if (address) {
 			dispatch({
