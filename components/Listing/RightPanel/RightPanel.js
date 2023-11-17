@@ -18,7 +18,7 @@ const RightPanel = () => {
 			var slugs = router.query.slugs;
 			var newUrlData = '';
 			slugs.map(item => {
-				newUrlData = newUrlData ? newUrlData + '/' + item : item;
+				newUrlData = newUrlData ? `${newUrlData}/${item}` : item;
 				 return null;
 			});
 			setNewUrl(newUrlData);
