@@ -21,7 +21,7 @@ const Error404 = () => {
 								and typesetting industry. Lorem Ipsum has been
 								the industry&apos;s standard dummy.
 							</p>
-							<a className='custom-btn btn' href='#'>
+							<a className='custom-btn btn' href='#top'>
 								Back to home
 							</a>{' '}
 						</div>
