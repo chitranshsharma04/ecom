@@ -185,8 +185,7 @@ const AddressBook = () => {
 											>
 												<span
 													aria-hidden='true'
-													{item.label}
-												/>
+												>{item.label}</span>
 											</a>
 										</li>
 									))}
