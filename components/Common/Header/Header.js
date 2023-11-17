@@ -356,7 +356,7 @@ const Header = props => {
 											{!isAuthenticated ? (
 												<a
 													className='heart-icon'
-													href='#'
+													href='#top'
 													onClick={() =>
 														toast.info(
 															'Please login to View Wishlist',
