@@ -179,6 +179,7 @@ const Wishlist = () => {
 			getCartCount();
 			toast.warning(response.message);
 		}
+		 return null;
 	};
 
 	return (
