@@ -959,11 +959,7 @@ const ProductDetail = ({productDetail}) => {
 															{item.short_description &&
 																item.short_description !==
 																	'' && (
-																	<p
-																		dangerouslySetInnerHTML={{
-																			__html: item.short_description,
-																		}}
-																	/>
+																	<p>{item.short_description}</p>
 																)}
 															<span className='price'>
 																$
