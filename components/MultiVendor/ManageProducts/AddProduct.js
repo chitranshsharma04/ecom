@@ -568,6 +568,7 @@ const AddProduct = props => {
 
 					response.data.product.product_image?.map(image => {
 						setProductImage(image);
+						 return null;
 					});
 				}
 			} catch (error) {
