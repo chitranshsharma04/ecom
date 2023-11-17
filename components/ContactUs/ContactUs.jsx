@@ -168,7 +168,7 @@ const ContactUs = () => {
 																className='form-control'
 																name='firstname'
 																value={
-																	inputs.firstname ||
+																	inputs.firstname ??
 																	''
 																}
 																onKeyUp={
@@ -196,7 +196,7 @@ const ContactUs = () => {
 																className='form-control'
 																name='lastname'
 																value={
-																	inputs.lastname ||
+																	inputs.lastname ??
 																	''
 																}
 																onChange={
@@ -224,7 +224,7 @@ const ContactUs = () => {
 																className='form-control'
 																name='email'
 																value={
-																	inputs.email ||
+																	inputs.email ??
 																	''
 																}
 																onChange={
@@ -252,7 +252,7 @@ const ContactUs = () => {
 																className='form-control'
 																name='phone'
 																value={
-																	inputs.phone ||
+																	inputs.phone ??
 																	''
 																}
 																onChange={
@@ -278,7 +278,7 @@ const ContactUs = () => {
 																type='text'
 																name='message'
 																value={
-																	inputs.message ||
+																	inputs.message ??
 																	''
 																}
 																onChange={
