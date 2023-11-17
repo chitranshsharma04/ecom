@@ -619,7 +619,7 @@ const Checkout = () => {
 														placeholder='Phone Number'
 														name='phone'
 														onChange={event => {
-															{
+															
 																const re =
 																	/^[0-9\b]+$/; // regex to match only numbers
 																if (
@@ -636,7 +636,7 @@ const Checkout = () => {
 																		event,
 																	);
 																}
-															}
+															
 														}}
 														onBlur={handleBlur}
 														onKeyDown={event => {
