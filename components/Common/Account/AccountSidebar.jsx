@@ -209,7 +209,9 @@ const SideBar = () => {
 							</li> */}
 
 							<li>
-								<span onClick={handleLogout}>Logout</span>
+								<span onClick={handleLogout}
+									role="button"
+									>Logout</span>
 							</li>
 						</ul>
 					</div>
