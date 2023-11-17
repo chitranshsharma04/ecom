@@ -479,6 +479,7 @@ const ProductDetail = ({productDetail}) => {
 																											}}
 																										>
 																											<div
+																												aria-hidden
 																												onClick={() =>
 																													handleAttribute(
 																														i,
