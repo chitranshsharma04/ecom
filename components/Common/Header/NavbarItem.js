@@ -145,6 +145,7 @@ const NavbarItem = props => {
 							<span
 								onClick={handleLogout}
 								className={'vendor-menu'}
+									role="button" tabIndex={0}
 							>
 								Logout
 							</span>
