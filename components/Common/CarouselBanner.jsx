@@ -24,7 +24,6 @@ const CarouselBanner = ({children}) => {
 				onClick={onClickHandler}
 				key={index}
 				// role='span'
-				tabIndex='0'
 				aria-label={`slide ${index + 1}`}
 			/>
 		);
