@@ -22,6 +22,7 @@ const RightPanel = () => {
 				newUrlData = newUrlData ? newUrlData + '/' + item : item;
 			});
 			setNewUrl(newUrlData);
+			 return null;
 		}
 	}, [router.query.slugs]);
 	//this is a method to change values
