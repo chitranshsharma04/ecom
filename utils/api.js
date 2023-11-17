@@ -32,7 +32,7 @@ export const api = async options => {
 	// try {
 	const config = {
 		url: `${API_BASE_URL}${options.url}`,
-		method: options.method || 'GET',
+		method: options.method? options.method : 'GET',
 		headers: header,
 	};
 
