@@ -925,7 +925,7 @@ const Checkout = () => {
 															}
 															// onBlur={handleBlur}
 															onBlur={() => {
-																{
+																
 																	state
 																		?.shipping_postal_code
 																		.length >
@@ -941,7 +941,7 @@ const Checkout = () => {
 																		: null;
 
 																	cartListCall;
-																}
+																
 															}}
 															onKeyDown={event => {
 																if (
