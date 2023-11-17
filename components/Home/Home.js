@@ -441,7 +441,7 @@ const Home = () => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-sm-12'>
-							<a href='#'>
+							<a href='#top'>
 								<NextImage
 									src='/assets/images/new-arrivals.webp'
 									alt='new-arrivals'
