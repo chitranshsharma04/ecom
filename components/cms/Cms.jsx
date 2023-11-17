@@ -1,13 +1,14 @@
 /** @format */
 import {useCallback} from 'react';
 import {useRouter} from 'next/router';
-import//this is the starting point
+import {Container} from 'react-bootstrap';
+//this is the starting point
 function Cms(props) {
 	const {cmsdata} = props;
 	const router = useRouter();
 
 	const html = cmsdata;
-//this is a method to change values
+	//this is a callback func
 	const handleAnchorClick = useCallback(
 		e => {
 			e.preventDefault();
@@ -20,7 +21,7 @@ function Cms(props) {
 		},
 		[router],
 	);
-
+	//this is the starting point
 	return (
 		<>
 			<Container>
@@ -32,7 +33,7 @@ function Cms(props) {
 					dangerouslySetInnerHTML={{
 						__html: html,
 					}}
-				 />
+				/>
 			</Container>
 		</>
 	);
