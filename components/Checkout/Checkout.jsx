@@ -118,6 +118,7 @@ const Checkout = () => {
 			});
 			setCoupon(null);
 		}
+		 return null;
 	}, []);
 //this is a method to apply coupon
 	const applyCouponCode = useCallback(
