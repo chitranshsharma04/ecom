@@ -51,7 +51,7 @@ const Account = () => {
 		}
 		if (!values.email) {
 			errors.email = 'Email field is required !';
-		} else if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(values.email)) {
+		} else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(values.email)) {
 			errors.email = 'Enter valid email address.';
 		}
 		if (!values?.mobile) {
