@@ -118,7 +118,7 @@ const ChangePassword = () => {
 							<div className=''>
 								<div className='row'>
 									<div className='col-lg-4 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											Old Password
 											<span className='text-danger'>
 												*
@@ -157,7 +157,7 @@ const ChangePassword = () => {
 										</span>
 									</div>
 									<div className='col-lg-4 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											New Password
 											<span className='text-danger'>
 												*
@@ -195,7 +195,7 @@ const ChangePassword = () => {
 										</span>
 									</div>
 									<div className='col-lg-4 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											Confirm Password
 											<span className='text-danger'>
 												*
