@@ -144,7 +144,7 @@ const ContactUsEnquiry = props => {
 																className='form-control'
 																name='firstname'
 																value={
-																	inputs.firstname ||
+																	inputs.firstname ??
 																	''
 																}
 																onKeyUp={
@@ -172,7 +172,7 @@ const ContactUsEnquiry = props => {
 																className='form-control'
 																name='lastname'
 																value={
-																	inputs.lastname ||
+																	inputs.lastname ??
 																	''
 																}
 																onChange={
@@ -200,7 +200,7 @@ const ContactUsEnquiry = props => {
 																className='form-control'
 																name='email'
 																value={
-																	inputs.email ||
+																	inputs.email ??
 																	''
 																}
 																onChange={
@@ -228,7 +228,7 @@ const ContactUsEnquiry = props => {
 																className='form-control'
 																name='phone'
 																value={
-																	inputs.phone ||
+																	inputs.phone ??
 																	''
 																}
 																onChange={
