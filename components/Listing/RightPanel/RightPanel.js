@@ -15,7 +15,7 @@ const RightPanel = () => {
 	// console.log("router >>>>>>>>>>",);
 
 	useEffect(() => {
-		if (router.query.slugs.length > 0) {
+		if (router.query?.slugs?.length > 0) {
 			var slugs = router.query.slugs;
 			var newUrlData = '';
 			slugs.map(item => {
