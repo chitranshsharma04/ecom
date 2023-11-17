@@ -532,6 +532,7 @@ const ProductDetail = ({productDetail}) => {
 																								) => {
 																									return (
 																										<div
+																											aria-hidden
 																											key={
 																												i +
 																												k +
