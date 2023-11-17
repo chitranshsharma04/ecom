@@ -254,8 +254,7 @@ const ContactUsEnquiry = props => {
 																type='text'
 																name='message'
 																value={
-																	inputs.message ||
-																	''
+																	inputs.message ?inputs.message : ''
 																}
 																onChange={
 																	handleChange
