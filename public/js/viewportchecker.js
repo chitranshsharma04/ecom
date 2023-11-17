@@ -80,7 +80,7 @@
 								l = g.scrollHorizontal
 									? k + d.width()
 									: k + d.height();
-							g.invertBottomOffset && (l -= 2 * g.offset),
+							g.invertBottomOffset && (l -= 2 * g.offset)
 								k < f && l > b
 									? (d.removeClass(g.classToRemove),
 									  d.addClass(g.classToAdd),
