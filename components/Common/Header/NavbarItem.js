@@ -14,7 +14,7 @@ const NavbarItem = props => {
 	const [indexValue, setIndexValue] = React.useState(0);
 	const {state: globalState} = useGlobalContext();
 	const routers = useRouter();
-//this is a method to change values
+	//this is a method to change values
 	const handleLogout = () => {
 		sessionStorage.removeItem('userAuth');
 		cookie.remove('userAuth');
@@ -24,7 +24,7 @@ const NavbarItem = props => {
 		// router.push('/vendor/login');
 		window.location.replace('/vendor/login');
 	};
-//this is a method to change values
+	//this is a method to change values
 	const onClickOfManu = index => {
 		setIndexValue(index);
 		setShow(true);
@@ -34,7 +34,7 @@ const NavbarItem = props => {
 		// 	setShow(true);
 		// }
 	};
-//this is a method to change values
+	//this is a method to change values
 	const renderNavbaarData = (items, index) => {
 		if (indexValue === index) {
 			return (
@@ -60,6 +60,7 @@ const NavbarItem = props => {
 				</>
 			);
 		}
+		return null;
 	};
 
 	return (
@@ -67,7 +68,7 @@ const NavbarItem = props => {
 			variant='red'
 			bg='red'
 			expand='lg'
-			style={{fontSize: "120%", color: "#f8f9fa"}}
+			style={{fontSize: '120%', color: '#f8f9fa'}}
 		>
 			<Navbar.Toggle aria-controls='navbar-red-example' />
 			<Navbar.Collapse id='navbar-red-example'>
