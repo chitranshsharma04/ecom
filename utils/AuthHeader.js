@@ -5,7 +5,7 @@ const header = {
 	Authkey: cookie.get('userAuth')
 		? JSON.parse(cookie.get('userAuth'))?.auth_key
 		: '',
-	Authentication: `Bearer ${cookie.get('token') || ''}`,
+	Authentication: `Bearer ${cookie.get('token') ?? ''}`,
 	'Access-Token': 'DOTSQUARES123',
 	'Content-Type': 'multipart/form-data',
 };
