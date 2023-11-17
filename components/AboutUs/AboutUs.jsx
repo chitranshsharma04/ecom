@@ -9,7 +9,7 @@ const AboutUs = () => {
 					<div className='row no-gutters'>
 						<div className='col-lg-6'>
 							<div className='about-img-box'>
-								<img src='/assets/images/girls-shopping.jpg' alt="image" />
+								<img src='/assets/images/girls-shopping.jpg' alt="PlaceHolderImg" />
 							</div>
 						</div>
 						<div className='col-lg-6'>
@@ -75,7 +75,7 @@ const AboutUs = () => {
 							</div>
 							<div className='col-lg-4'>
 								<div className='about-img-box'>
-									<img src='/assets/images/about-us_3.jpg' alt="image" />
+									<img src='/assets/images/about-us_3.jpg' alt="PlaceHolderImg" />
 								</div>
 							</div>
 							<div className='col-lg-4'>
@@ -98,7 +98,7 @@ const AboutUs = () => {
 							</div>
 							<div className='col-lg-4'>
 								<div className='about-img-box'>
-									<img src='/assets/images/about-us_4.jpg' alt="image" />
+									<img src='/assets/images/about-us_4.jpg' alt="PlaceHolderImg" />
 								</div>
 							</div>
 							<div className='col-lg-4'>
@@ -121,7 +121,7 @@ const AboutUs = () => {
 							</div>
 							<div className='col-lg-4'>
 								<div className='about-img-box'>
-									<img src='/assets/images/girls-shopping4.jpg' alt="image" />
+									<img src='/assets/images/girls-shopping4.jpg' alt="PlaceHolderImg" />
 								</div>
 							</div>
 						</div>

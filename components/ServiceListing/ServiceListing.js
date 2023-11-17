@@ -292,7 +292,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -361,7 +361,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -430,7 +430,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -499,7 +499,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -568,7 +568,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -637,7 +637,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -706,7 +706,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -775,7 +775,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>
@@ -844,7 +844,7 @@ const ServiceListing = () => {
 										<div className='store-box-pic'>
 											<img
 												src='/assets/images/store.jpg'
-												alt="image"
+												alt="PlaceHolderImg"
 											/>
 										</div>
 										<div className='store-short-detail'>

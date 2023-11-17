@@ -11,7 +11,7 @@ const Error404 = () => {
 								<span>Error</span> 404
 							</h2>
 							<div className='error-img'>
-								<img src='/assets/images/error-img.png' alt="image" />
+								<img src='/assets/images/error-img.png' alt="PlaceHolderImg" />
 							</div>
 							<h3>
 								<strong>Oops!</strong> Sorry, The Page Not Found
