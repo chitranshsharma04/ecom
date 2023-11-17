@@ -233,14 +233,14 @@ const Cart = () => {
 																		>
 																			<button
 																				onClick={() => {
-																					{
+																					
 																						handleDecrement(
 																							index,
 																						);
 																						setLoading(
 																							true,
 																						);
-																					}
+																					
 																				}}
 																				className='input-group-text decrement-btn '
 																				disabled={
