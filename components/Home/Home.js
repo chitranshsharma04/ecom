@@ -286,7 +286,7 @@ const Home = () => {
 													// height='auto'
 													alt={
 														item.product_image?.[0]
-															?.image_name ||
+															?.image_name ??
 														'demo image'
 													}
 													src={
