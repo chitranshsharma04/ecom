@@ -1,6 +1,6 @@
 //this is the starting point
 const Loading = props => {
-	const length = props.length || 1;
+	const length = props.length ?? 1;
 	return (
 		<div className='row'>
 			{[...new Array(length)].map((i, key) => (
