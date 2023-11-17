@@ -185,9 +185,7 @@ const AddressBook = () => {
 											>
 												<span
 													aria-hidden='true'
-													dangerouslySetInnerHTML={{
-														__html: item.label,
-													}}
+													{item.label}
 												/>
 											</a>
 										</li>
