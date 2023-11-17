@@ -172,12 +172,12 @@ const Header = props => {
 				aria-label='Default select example'
 				style={{height: '50%', marginRight: 20, outline: 'none'}}
 				onChange={({target}) => {
-					{
+					
 						setLoading(true);
 						setCurrencyValue(target.value);
 						cookie.set('currencyValue', target.value);
 						Router.reload();
-					}
+					
 				}}
 			>
 				{configData?.currency?.map((item, index) => {
