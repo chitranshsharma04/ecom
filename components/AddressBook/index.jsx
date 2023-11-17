@@ -43,7 +43,7 @@ const AddressBook = () => {
 			});
 		}
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleDelete = async id => {
 		const confirm = await confirmDialog(
 			'Are you really want to delete this address',
@@ -72,7 +72,7 @@ const AddressBook = () => {
 	useEffect(() => {
 		setPage(router?.query?.page ?? 1);
 	}, [router?.query?.page]);
-//this is the starting point
+	//this is the starting point
 	return (
 		<>
 			<SpinnerLoader loading={loading} />
@@ -183,9 +183,9 @@ const AddressBook = () => {
 													);
 												}}
 											>
-												<span
-													aria-hidden='true'
-												>{item.label}</span>
+												<span aria-hidden='true'>
+													{item.label}
+												</span>
 											</a>
 										</li>
 									))}
