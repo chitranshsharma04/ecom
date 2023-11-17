@@ -159,10 +159,10 @@ const Signup = () => {
 				errors.confirmpassword = 'Password is not matched!';
 			}
 		}
-		if (!images === 'jpg' && 'jpeg' && 'svg' && 'png') {
-			errors.images = 'Please enter valid image format';
+		if (!['jpg', 'jpeg', 'svg', 'png'].includes(images)) {
+		    errors.images = 'Please enter a valid image format';
 		} else if (!images.length) {
-			errors.images = 'Please select an image !';
+		    errors.images = 'Please select an image!';
 		}
 		return errors;
 	};
