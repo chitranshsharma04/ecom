@@ -39,21 +39,27 @@ class RatingWidget extends React.Component {
 	}
 	//this is a method to change values
 	handleMouseOver(i) {
-		if (this.props.view) return;
-		const currentRating = this.state.rated;
+  if (this.props.view) return;
 
-		if (currentRating > 0) {
-			const hoverRatedStars = this.state.stars.slice();
-			hoverRatedStars.fill(currentRating, 0, i);
-			// _.fill(hoverRatedStars, 0, currentRating, i);
-			this.setState({stars: hoverRatedStars});
-		} else {
-			const hoverStars = Array(5).fill(-1);
-			hoverStars.fill(0, 0, i + 1);
-			// _.fill(hoverStars, 0, 0, i + 1);
-			this.setState({stars: hoverStars});
-		}
-	}
+  this.setState(prevState => {
+    const currentRating = prevState.rated;
+
+    if (currentRating > 0) {
+      const hoverRatedStars = prevState.stars.slice();
+      hoverRatedStars.fill(currentRating, 0, i);
+      // _.fill(hoverRatedStars, 0, currentRating, i);
+      return { stars: hoverRatedStars };
+    } else {
+      const hoverStars = Array(5).fill(-1);
+      hoverStars.fill(0, 0, i + 1);
+      // _.fill(hoverStars, 0, 0, i + 1);
+      return { stars: hoverStars };
+    }
+  }, () => {
+    // Add any additional logic that needs to be executed after state is updated
+  });
+}
+
 	//this is a method to change values
 	handleMouseOut() {
   if (this.props.view) return;
