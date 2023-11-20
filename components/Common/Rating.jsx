@@ -56,22 +56,27 @@ class RatingWidget extends React.Component {
 	}
 	//this is a method to change values
 	handleMouseOut() {
-		if (this.props.view) return;
-		const currentRating = this.state.rated;
-		if (currentRating > 0) {
-			const resetRatedStars = this.state.stars.slice();
-			resetRatedStars.fill(currentRating, -1, resetRatedStars.length);
+  if (this.props.view) return;
 
-			// _.fill(resetRatedStars, -1, currentRating, resetRatedStars.length);
-			this.setState({stars: resetRatedStars});
-		} else {
-			const resetStars = this.state.stars.slice();
-			resetStars.fill(-1, 0, resetStars.length);
+  this.setState(prevState => {
+    const currentRating = prevState.rated;
 
-			// _.fill(resetStars, -1, 0, resetStars.length);
-			this.setState({stars: resetStars});
-		}
-	}
+    if (currentRating > 0) {
+      const resetRatedStars = prevState.stars.slice();
+      resetRatedStars.fill(currentRating, -1, resetRatedStars.length);
+
+      // _.fill(resetRatedStars, -1, currentRating, resetRatedStars.length);
+      return { stars: resetRatedStars };
+    } else {
+      const resetStars = prevState.stars.slice();
+      resetStars.fill(-1, 0, resetStars.length);
+
+      // _.fill(resetStars, -1, 0, resetStars.length);
+      return { stars: resetStars };
+    }
+  });
+}
+
 	//this is a method to change values
 handleClick(i) {
   if (this.props.view) return;
