@@ -19,11 +19,26 @@ const ReportManager = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [defaultDate, setDefaultDate] = useState('');
 	const [flag, setFlag] = useState(false);
-//this is a method to change values
+	//this is a method to validate
+	const validate = (FromDate, ToDate) => {
+		const errors = {};
+		if (!FromDate) {
+			errors.FromDate = 'From date is required!';
+		}
+		if (!ToDate) {
+			errors.ToDate = 'To date is required!';
+		}
+		if (FromDate > ToDate) {
+			errors.FromDate = "From date can't be greater than To date";
+		}
+		return errors;
+	};
+
+	//this is a method to change values
 	const handleChangeFromDate = event => {
 		setFromDate(moment(event).format('YYYY-MM-DD'));
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleChangeToDate = event => {
 		setToDate(moment(event).format('YYYY-MM-DD'));
 	};
@@ -31,7 +46,7 @@ const ReportManager = () => {
 	useEffect(() => {
 		setValidateError(validate(FromDate, ToDate));
 	}, [FromDate, ToDate]);
-//this is a method to change values
+	//this is a method to change values
 	const handleSubmit = async () => {
 		setIsLoading(true);
 		const result = validate(FromDate, ToDate);
@@ -60,26 +75,13 @@ const ReportManager = () => {
 			}
 		}
 	};
-//this is a method to validate
-	const validate = (FromDate, ToDate) => {
-		const errors = {};
-		if (!FromDate) {
-			errors.FromDate = 'From date is required!';
-		}
-		if (!ToDate) {
-			errors.ToDate = 'To date is required!';
-		}
-		if (FromDate > ToDate) {
-			errors.FromDate = "From date can't be greater than To date";
-		}
-		return errors;
-	};
-//this is a method to get data from api
-const getTotalEarning = async () => {
-	setIsLoading(true);
-	try {
-		//this is a method to get data from api
-		const response = await api({
+
+	//this is a method to get data from api
+	const getTotalEarning = async () => {
+		setIsLoading(true);
+		try {
+			//this is a method to get data from api
+			const response = await api({
 				url: `/vendor/report-earnings?from_date=${moment(
 					FromDate,
 				).format('DD-MM-YYYY')}&to_date=${moment(ToDate).format(
@@ -88,7 +90,6 @@ const getTotalEarning = async () => {
 				method: 'GET',
 			});
 			if (response) {
-				
 				setTotalEarning(response.data);
 				setIsLoading(false);
 			}
@@ -104,7 +105,7 @@ const getTotalEarning = async () => {
 			setFlag(false);
 		}
 	}, [FromDate, ToDate]);
-//this is a method to get data from api
+	//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		setIsLoading(true);
 		try {
@@ -123,7 +124,7 @@ const getTotalEarning = async () => {
 	useEffect(() => {
 		getResults();
 	}, [getResults]);
-//this is a method to change values
+	//this is a method to change values
 	const handleReset = e => {
 		e.preventDefault();
 		setFlag(true);
@@ -243,7 +244,7 @@ const getTotalEarning = async () => {
 																		className='fa fa-download'
 																		aria-hidden='true'
 																		role='button'
-																	 />
+																	/>
 																</Link>
 															</div>
 														</div>

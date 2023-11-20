@@ -12,9 +12,6 @@ const Subscription = () => {
 	//const [finalData, setFinalData] = useState('');
 	const [loading] = useState(false);
 
-	useEffect(() => {
-		getProfile();
-	}, []);
 	//this is a method to get data from api
 	const getProfile = useCallback(async () => {
 		//this is a method to get data from api
@@ -39,6 +36,9 @@ const Subscription = () => {
 			console.log(error);
 		}
 	};
+	useEffect(() => {
+		getProfile();
+	}, []);
 
 	// const getStripeData = async id => {
 	// 	// console.log('id', id);

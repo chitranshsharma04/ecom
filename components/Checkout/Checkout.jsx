@@ -31,6 +31,91 @@ const Checkout = () => {
 	const [selectedValue, setSelectedValue] = useState('online');
 
 	const {state: globalState, getCartCount} = useGlobalContext();
+		//this is a method to validate
+		const validate = values => {
+			if (!state?.firstname) {
+				errors.firstname = 'First name is required!';
+			} else if (state.firstname.length > 15) {
+				errors.firstname = 'Maximum 15 characters is required!';
+			}
+			if (!state?.lastname) {
+				errors.lastname = 'Last name is required!';
+			} else if (state.lastname.length > 15) {
+				errors.lastname = 'Maximum 15 characters is required!';
+			}
+			if (!state?.phone) {
+				errors.phone = 'Phone is required!';
+			} else if (values?.phone?.length < 8) {
+				errors.phone = 'Phone must be between 8 and 16 digits!';
+			} else if (state?.phone?.length > 16) {
+				errors.phone = 'Phone not more than 16 digits!';
+			}
+			if (!state?.shipping_address1) {
+				errors.address1 = 'Address is required!';
+			} else if (state?.shipping_address1.length > 100) {
+				errors.address1 = 'Maximum 100 characters is required!';
+			}
+			if (!state?.shipping_address2) {
+				errors.address2 = 'Apartment, Suit field is required!';
+			} else if (state?.shipping_address2.length > 100) {
+				errors.address2 = 'Maximum 100 characters is required!';
+			}
+			if (!state?.shipping_city) {
+				errors.addressCity = 'City is required!';
+			} else if (state?.shipping_city.length > 30) {
+				errors.addressCity = 'Maximum 30 characters is required!';
+			}
+			if (!state?.shipping_postal_code) {
+				errors.postal_code = 'Postal code is required!';
+			} else if (state?.shipping_postal_code.length > 7) {
+				errors.postal_code = 'Postal Code Should have 6 Digits!';
+			}
+			if (!state?.shipping_state) {
+				errors.addressState = 'State is required!';
+			} else if (state?.shipping_state.length > 30) {
+				errors.addressState = 'Maximum 30 characters is required!';
+			}
+			if (!state?.shipping_country) {
+				errors.country = 'Country is required!';
+			}
+			if (!(state?.['card-expiry'] && state?.['card-number'] && state?.cvc)) {
+				errors.payment = 'The payment method field is required.';
+			}
+	
+			if (state?.billingAddress === false) {
+				if (!state?.billing_address1) {
+					errors.billing_address1 = 'Billing Address is required!';
+				} else if (state?.billing_address1.length > 100) {
+					errors.billing_address1 = 'Maximum 100 characters is required!';
+				}
+				if (!state?.billing_address2) {
+					errors.billing_address2 =
+						'Billing Apartment, Suit field is required!';
+				} else if (state?.billing_address2.length > 100) {
+					errors.billing_address2 = 'Maximum 100 characters is required!';
+				}
+				if (!state?.billing_city) {
+					errors.billing_city = 'Billing City is required!';
+				} else if (state?.billing_city.length > 30) {
+					errors.billing_city = 'Maximum 30 characters is required!';
+				}
+				if (!state?.billing_postal_code) {
+					errors.billing_postal_code = 'Billing Postal code is required!';
+				} else if (state?.billing_postal_code.length > 6) {
+					errors.billing_postal_code = 'Maximum 6 digit is required!';
+				}
+				if (!state?.billing_state) {
+					errors.billing_state = 'Billing State is required!';
+				} else if (state?.billing_state.length > 30) {
+					errors.billing_state = 'Maximum 30 characters is required!';
+				}
+				if (!state?.billing_country) {
+					errors.billing_country = 'Billing Country is required!';
+				}
+			}
+			return errors;
+		};
+		
 	//this is a method to cancel
 	const handleChange = event => {
 		dispatch({
@@ -41,11 +126,11 @@ const Checkout = () => {
 			},
 		});
 	};
-//this is a method to create function
+	//this is a method to create function
 	const handleBlur = inputs => {
 		setFormErrors(validate(inputs));
 	};
-//this is a async method to get user address 
+	//this is a async method to get user address
 	const customerAddresses = async () => {
 		setLoading(true);
 		const response = await api({
@@ -53,7 +138,6 @@ const Checkout = () => {
 			method: 'GET',
 		});
 		if (response.status) {
-			
 			setLoading(false);
 			dispatch({
 				type: 'SET_DATA',
@@ -64,7 +148,7 @@ const Checkout = () => {
 			});
 		}
 	};
-//this is a method to change address
+	//this is a method to change address
 	const handleAddressChange = event => {
 		const value = event.target.value;
 		const address = state.addresses.find(i => "i.id + '1' === value + '1'");
@@ -84,7 +168,7 @@ const Checkout = () => {
 			});
 		}
 	};
-//this is a method to fetch shipping options
+	//this is a method to fetch shipping options
 	const fetchShippingOptions = async () => {
 		const response = await api({
 			url: '/shipping-address',
@@ -101,7 +185,7 @@ const Checkout = () => {
 			});
 		}
 	};
-//this is a method to fetch cart details
+	//this is a method to fetch cart details
 	const fetchCartDetails = useCallback(async pincode => {
 		const response = await api({
 			url: `/list_cart?zip_code=${pincode}`,
@@ -118,9 +202,9 @@ const Checkout = () => {
 			});
 			setCoupon(null);
 		}
-		 return null;
+		return null;
 	}, []);
-//this is a method to apply coupon
+	//this is a method to apply coupon
 	const applyCouponCode = useCallback(
 		async event => {
 			event.preventDefault();
@@ -140,7 +224,7 @@ const Checkout = () => {
 				return toast.error(response.message);
 			} else {
 				setCoupon(response.data);
-				
+
 				setLoadingCoupon(false);
 				couponCode.value = '';
 				return toast.success(response.message);
@@ -148,7 +232,7 @@ const Checkout = () => {
 		},
 		[state?.shipping_postal_code],
 	);
-//this is a method to remove coupon
+	//this is a method to remove coupon
 	const removeCouponCode = event => {
 		event.preventDefault();
 		setCoupon(null);
@@ -176,99 +260,25 @@ const Checkout = () => {
 			});
 		}
 	}, [globalState]);
-//this is a method to cart list call
+	//this is a method to cart list call
 	const cartListCall = () => {
 		handleBlur();
 		setCoupon(null);
 		fetchCartDetails(state.shipping_postal_code);
 	};
 	const errors = {};
-	//this is a method to validate
-	const validate = values => {
-		if (!state?.firstname) {
-			errors.firstname = 'First name is required!';
-		} else if (state.firstname.length > 15) {
-			errors.firstname = 'Maximum 15 characters is required!';
-		}
-		if (!state?.lastname) {
-			errors.lastname = 'Last name is required!';
-		} else if (state.lastname.length > 15) {
-			errors.lastname = 'Maximum 15 characters is required!';
-		}
-		if (!state?.phone) {
-			errors.phone = 'Phone is required!';
-		} else if (values?.phone?.length < 8) {
-			errors.phone = 'Phone must be between 8 and 16 digits!';
-		} else if (state?.phone?.length > 16) {
-			errors.phone = 'Phone not more than 16 digits!';
-		}
-		if (!state?.shipping_address1) {
-			errors.address1 = 'Address is required!';
-		} else if (state?.shipping_address1.length > 100) {
-			errors.address1 = 'Maximum 100 characters is required!';
-		}
-		if (!state?.shipping_address2) {
-			errors.address2 = 'Apartment, Suit field is required!';
-		} else if (state?.shipping_address2.length > 100) {
-			errors.address2 = 'Maximum 100 characters is required!';
-		}
-		if (!state?.shipping_city) {
-			errors.addressCity = 'City is required!';
-		} else if (state?.shipping_city.length > 30) {
-			errors.addressCity = 'Maximum 30 characters is required!';
-		}
-		if (!state?.shipping_postal_code) {
-			errors.postal_code = 'Postal code is required!';
-		} else if (state?.shipping_postal_code.length > 7) {
-			errors.postal_code = 'Postal Code Should have 6 Digits!';
-		}
-		if (!state?.shipping_state) {
-			errors.addressState = 'State is required!';
-		} else if (state?.shipping_state.length > 30) {
-			errors.addressState = 'Maximum 30 characters is required!';
-		}
-		if (!state?.shipping_country) {
-			errors.country = 'Country is required!';
-		}
-		if (!(state?.['card-expiry'] && state?.['card-number'] && state?.cvc)) {
-			
-			errors.payment = 'The payment method field is required.';
-		}
 
-		if (state?.billingAddress === false) {
-			if (!state?.billing_address1) {
-				errors.billing_address1 = 'Billing Address is required!';
-			} else if (state?.billing_address1.length > 100) {
-				errors.billing_address1 = 'Maximum 100 characters is required!';
-			}
-			if (!state?.billing_address2) {
-				errors.billing_address2 =
-					'Billing Apartment, Suit field is required!';
-			} else if (state?.billing_address2.length > 100) {
-				errors.billing_address2 = 'Maximum 100 characters is required!';
-			}
-			if (!state?.billing_city) {
-				errors.billing_city = 'Billing City is required!';
-			} else if (state?.billing_city.length > 30) {
-				errors.billing_city = 'Maximum 30 characters is required!';
-			}
-			if (!state?.billing_postal_code) {
-				errors.billing_postal_code = 'Billing Postal code is required!';
-			} else if (state?.billing_postal_code.length > 6) {
-				errors.billing_postal_code = 'Maximum 6 digit is required!';
-			}
-			if (!state?.billing_state) {
-				errors.billing_state = 'Billing State is required!';
-			} else if (state?.billing_state.length > 30) {
-				errors.billing_state = 'Maximum 30 characters is required!';
-			}
-			if (!state?.billing_country) {
-				errors.billing_country = 'Billing Country is required!';
-			}
-		}
-		return errors;
-	};
-//this is a method to submit
+		//this is a method to create memo
+		const totalPrice = useMemo(
+			() =>
+				(state?.cartDetails?.data?.reduce(
+					(total, val) => (total += +val.final_value),
+					0,
+				) ?? 0) - (+state?.cartDetails?.tax_price ?? 0),
+			[state?.cartDetails],
+		);
+
+	//this is a method to submit
 	const handleSubmit = async event => {
 		dispatch({
 			type: 'SET_DATA',
@@ -291,7 +301,6 @@ const Checkout = () => {
 					placeOrderLoading: false,
 				},
 			});
-
 		} else {
 			try {
 				setLoading(true);
@@ -327,8 +336,8 @@ const Checkout = () => {
 							placeOrderLoading: false,
 						},
 					});
-					 toast.error(stripeToken.message);
-					 return null;
+					toast.error(stripeToken.message);
+					return null;
 				}
 
 				const data = {
@@ -437,7 +446,7 @@ const Checkout = () => {
 			}
 		}
 	};
-//this is a method to bill address
+	//this is a method to bill address
 	const handleBillingAddress = e => {
 		if (e.target.checked === true) {
 			setBillingDiv(false);
@@ -459,7 +468,7 @@ const Checkout = () => {
 			});
 		}
 	};
-//this is a method to change billing
+	//this is a method to change billing
 	const handleChangeBilling = event => {
 		dispatch({
 			type: 'SET_DATA',
@@ -469,23 +478,15 @@ const Checkout = () => {
 			},
 		});
 	};
-// a function to change value
-	const handleCardValueChange = (event) => {
+	// a function to change value
+	const handleCardValueChange = event => {
 		setFormErrors({});
 		setPaymentError(false);
 		handleChange({
 			target: {name: event.target.id, value: event.target.value},
 		});
 	};
-//this is a method to create memo
-	const totalPrice = useMemo(
-		() =>
-			(state?.cartDetails?.data?.reduce(
-				(total, val) => (total += +val.final_value),
-				0,
-			) ?? 0) - (+state?.cartDetails?.tax_price ?? 0),
-		[state?.cartDetails],
-	);
+
 
 	const options = [
 		{
@@ -514,7 +515,7 @@ const Checkout = () => {
 	return (
 		<>
 			<SpinnerLoader
-				loading={loading ?? (globalState?.loadingProfile ?? true)}
+				loading={loading ?? globalState?.loadingProfile ?? true}
 			/>
 			<div className='section pad-btm-sec checkout-sec'>
 				<div className='container'>
@@ -619,24 +620,21 @@ const Checkout = () => {
 														placeholder='Phone Number'
 														name='phone'
 														onChange={event => {
-															
-																const re =
-																	/^[0-9\b]+$/; // regex to match only numbers
-																if (
+															const re =
+																/^[0-9\b]+$/; // regex to match only numbers
+															if (
+																event.target
+																	.value ===
+																	'' ??
+																re.test(
 																	event.target
-																		.value ===
-																		'' ??
-																	re.test(
-																		event
-																			.target
-																			.value,
-																	)
-																) {
-																	handleChange(
-																		event,
-																	);
-																}
-															
+																		.value,
+																)
+															) {
+																handleChange(
+																	event,
+																);
+															}
 														}}
 														onBlur={handleBlur}
 														onKeyDown={event => {
@@ -691,7 +689,6 @@ const Checkout = () => {
 																	}
 																	checked
 																	onChange={e => {
-																		
 																		setSelectedValue(
 																			e
 																				.target
@@ -925,23 +922,20 @@ const Checkout = () => {
 															}
 															// onBlur={handleBlur}
 															onBlur={() => {
-																
-																	state
-																		?.shipping_postal_code
-																		.length >
-																	6
-																		? (errors.postal_code =
-																				'Postal Code Should have 6 Digits!')
-																		: state
-																				?.shipping_postal_code
-																				.length <
-																		  6
-																		? (errors.postal_code =
-																				'Postal Code not more than 6 Digits!')
-																		: null;
+																state
+																	?.shipping_postal_code
+																	.length > 6
+																	? (errors.postal_code =
+																			'Postal Code Should have 6 Digits!')
+																	: state
+																			?.shipping_postal_code
+																			.length <
+																	  6
+																	? (errors.postal_code =
+																			'Postal Code not more than 6 Digits!')
+																	: null;
 
-																	cartListCall;
-																
+																cartListCall;
 															}}
 															onKeyDown={event => {
 																if (
@@ -1626,7 +1620,7 @@ const Checkout = () => {
 															<i
 																className='fa fa-times'
 																aria-hidden='true'
-															 />
+															/>
 															{item.quantity}
 														</strong>
 														<strong>

@@ -7,59 +7,7 @@ const ContactUs = () => {
 	const [inputs, setInputs] = useState({});
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
-//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/^\s/, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to change values
-	const handleBlur = () => {
-		setFormErrors(validate(inputs));
-	};
-//this is a method to change values
-	const handleChangeMobileNo = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/[^0-9]/gi, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to change values
-	const handleSubmit = async event => {
-		event.preventDefault();
-		setFormErrors({});
-		const result = validate(inputs);
-		if (Object.keys(result).length) {
-			setFormErrors(result);
-
-		} else {
-			setIsSubmit(true);
-			try {
-				//this is a method to get data from api
-				const response = await api({
-					url: '/contact',
-					method: 'POST',
-					data: inputs,
-				});
-				if (response.error) {
-					toast.error(response.message);
-				} else {
-					toast.success(response.message);
-					setInputs({});
-				}
-				setIsSubmit(false);
-			} catch (error) {
-				// eslint-disable-next-line no-console
-				console.log(error);
-			}
-		}
-	};
-//this is a method to change values
-	const handleKeyUp = e => {
-		const name = e.target.name;
-		const value = e.target.value.trimStart();
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to validate
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const emailRegex =
@@ -100,6 +48,59 @@ const ContactUs = () => {
 
 		return errors;
 	};
+
+	//this is a method to change values
+	const handleChange = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/^\s/, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleBlur = () => {
+		setFormErrors(validate(inputs));
+	};
+	//this is a method to change values
+	const handleChangeMobileNo = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/[^0-9]/gi, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleSubmit = async event => {
+		event.preventDefault();
+		setFormErrors({});
+		const result = validate(inputs);
+		if (Object.keys(result).length) {
+			setFormErrors(result);
+		} else {
+			setIsSubmit(true);
+			try {
+				//this is a method to get data from api
+				const response = await api({
+					url: '/contact',
+					method: 'POST',
+					data: inputs,
+				});
+				if (response.error) {
+					toast.error(response.message);
+				} else {
+					toast.success(response.message);
+					setInputs({});
+				}
+				setIsSubmit(false);
+			} catch (error) {
+				// eslint-disable-next-line no-console
+				console.log(error);
+			}
+		}
+	};
+	//this is a method to change values
+	const handleKeyUp = e => {
+		const name = e.target.name;
+		const value = e.target.value.trimStart();
+		setInputs(values => ({...values, [name]: value}));
+	};
+
 	return (
 		<>
 			<div className='contact-page'>
@@ -292,7 +293,7 @@ const ContactUs = () => {
 																}
 																placeholder='Comment/ Request'
 																className='form-control'
-															 />
+															/>
 
 															<span className='text-danger'>
 																{

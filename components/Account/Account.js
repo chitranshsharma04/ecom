@@ -19,23 +19,7 @@ const Account = () => {
 	const router = Router;
 
 	// const [profileDetails, setprofileDetails] = useState([]);
-	//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/^\s/, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to change values
-	const handleBlur = () => {
-		setValidateError(validate(inputs));
-	};
-//this is a method to change values
-	const handleChangeMobileNo = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/[^0-9]/gi, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to validate
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		// const regexp = /^\S*$/;
@@ -51,7 +35,11 @@ const Account = () => {
 		}
 		if (!values.email) {
 			errors.email = 'Email field is required !';
-		} else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(values.email)) {
+		} else if (
+			!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+				values.email,
+			)
+		) {
 			errors.email = 'Enter valid email address.';
 		}
 		if (!values?.mobile) {
@@ -63,7 +51,25 @@ const Account = () => {
 		}
 		return errors;
 	};
-//this is a method to submit
+
+	//this is a method to change values
+	const handleChange = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/^\s/, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleBlur = () => {
+		setValidateError(validate(inputs));
+	};
+	//this is a method to change values
+	const handleChangeMobileNo = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/[^0-9]/gi, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+
+	//this is a method to submit
 	const handleSubmit = async event => {
 		setSubmitDisable(true);
 		setLoading(true);
@@ -74,7 +80,6 @@ const Account = () => {
 			setValidateError(result);
 			setSubmitDisable(false);
 			setLoading(false);
-
 		} else {
 			setDisable(false);
 			setValidateError({});
@@ -116,7 +121,7 @@ const Account = () => {
 			mobile: state?.userAuth?.mobile,
 		});
 	}, [state?.userAuth]);
-//this is the starting point
+	//this is the starting point
 	return (
 		<>
 			<SpinnerLoader loading={loading} />
@@ -137,7 +142,9 @@ const Account = () => {
 								>
 									<div className='row'>
 										<div className='col-lg-6 form-group'>
-											<label htmlFor="labelForValue" >First Name</label>{' '}
+											<label htmlFor='labelForValue'>
+												First Name
+											</label>{' '}
 											<span className='required'>*</span>
 											<input
 												type='text'
@@ -154,7 +161,9 @@ const Account = () => {
 											</span>
 										</div>
 										<div className='col-lg-6 form-group'>
-											<label htmlFor="labelForValue" >Last Name</label>{' '}
+											<label htmlFor='labelForValue'>
+												Last Name
+											</label>{' '}
 											<span className='required'>*</span>
 											<input
 												type='text'
@@ -171,7 +180,9 @@ const Account = () => {
 											</span>
 										</div>
 										<div className='col-lg-6 form-group'>
-											<label htmlFor="labelForValue" >Email</label>
+											<label htmlFor='labelForValue'>
+												Email
+											</label>
 											<input
 												type='text'
 												className='form-control'
@@ -187,7 +198,9 @@ const Account = () => {
 											</span>
 										</div>
 										<div className='col-lg-6 form-group'>
-											<label htmlFor="labelForValue" >Mobile Number</label>{' '}
+											<label htmlFor='labelForValue'>
+												Mobile Number
+											</label>{' '}
 											<span className='required'>*</span>
 											<input
 												type='text'

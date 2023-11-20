@@ -20,6 +20,21 @@ const Dashboard = () => {
 	const [defaultDate, setDefaultDate] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [flag, setFlag] = useState(false);
+	//this is a method to validate
+	const validate = (FromDate, ToDate) => {
+		const errors = {};
+		if (!FromDate) {
+			errors.FromDate = 'From date is required!';
+		}
+		if (!ToDate) {
+			errors.ToDate = 'To date is required!';
+		}
+		if (FromDate > ToDate) {
+			errors.FromDate = "From date can't be greater than To date!";
+		}
+		return errors;
+	};
+
 	//this is a method to get data from api
 	const getUserCookie = () => {
 		if (cookie?.get('userAuth')) {
@@ -31,7 +46,7 @@ const Dashboard = () => {
 	const handleChangeFromDate = event => {
 		setFromDate(moment(event).format('YYYY-MM-DD'));
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleChangeToDate = event => {
 		setToDate(moment(event).format('YYYY-MM-DD'));
 	};
@@ -39,7 +54,7 @@ const Dashboard = () => {
 	useEffect(() => {
 		setValidateError(validate(FromDate, ToDate));
 	}, [FromDate, ToDate]);
-//this is a method to change values
+	//this is a method to change values
 	const handleSubmit = async () => {
 		setIsLoading(true);
 		const result = validate(FromDate, ToDate);
@@ -67,20 +82,6 @@ const Dashboard = () => {
 			}
 		}
 	};
-//this is a method to validate
-	const validate = (FromDate, ToDate) => {
-		const errors = {};
-		if (!FromDate) {
-			errors.FromDate = 'From date is required!';
-		}
-		if (!ToDate) {
-			errors.ToDate = 'To date is required!';
-		}
-		if (FromDate > ToDate) {
-			errors.FromDate = "From date can't be greater than To date!";
-		}
-		return errors;
-	};
 
 	useEffect(() => {
 		if (flag) {
@@ -88,7 +89,7 @@ const Dashboard = () => {
 			setFlag(false);
 		}
 	}, [FromDate, ToDate]);
-//this is a method to get data from api
+	//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		setIsLoading(true);
 		try {
@@ -106,7 +107,7 @@ const Dashboard = () => {
 	useEffect(() => {
 		getResults();
 	}, [getResults]);
-//this is a method to change values
+	//this is a method to change values
 	const handleReset = e => {
 		e.preventDefault();
 		setFromDate(defaultDate);
@@ -189,7 +190,10 @@ const Dashboard = () => {
 											href='/vendor/manageorders'
 											legacyBehavior
 										>
-											<a className='dash-link' href='#top'>
+											<a
+												className='dash-link'
+												href='#top'
+											>
 												<span className='dash-icon'>
 													<img
 														src='/assets/images/dash-icon1.png'
@@ -212,7 +216,10 @@ const Dashboard = () => {
 										</Link>
 									) : (
 										<Link href='/orders' legacyBehavior>
-											<a className='dash-link' href='#top'>
+											<a
+												className='dash-link'
+												href='#top'
+											>
 												<span className='dash-icon'>
 													<img
 														src='/assets/images/dash-icon1.png'

@@ -16,17 +16,47 @@ const Create = () => {
 	const [loading, setLoading] = useState(false);
 	const [isSubmit, setIsSubmit] = useState(false);
 	const {state} = useGlobalContext();
-//this is a method to change values
+	//this is a method to validate
+	const validate = values => {
+		const errors = {};
+		if (!values.address1) {
+			errors.address1 = 'Address field is required';
+		} else if (values.address1.length > 150) {
+			errors.address1 = 'Address field is Too Long';
+		}
+		if (!values.address2) {
+			errors.address2 = 'Address line field is required';
+		} else if (values.address2.length > 150) {
+			errors.address2 = 'Address line field is Too Long';
+		}
+		if (!values.city) {
+			errors.city = 'City field is required';
+		} else if (values.city.length > 150) {
+			errors.city = 'City field is Too Long';
+		}
+		if (!values.state) errors.state = 'State field is required';
+
+		if (!values.postal_code) {
+			errors.postal_code = 'Postal code field is required';
+		} else if (isNaN(values.postal_code)) {
+			errors.postal_code = 'Please Enter a valid postal code';
+		}
+		// eslint-disable-next-line babel/camelcase
+		if (!values.country_id) errors.country_id = 'Country field is required';
+		return errors;
+	};
+
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleBlur = () => {
 		setValidateError(validate(inputs));
 	};
-//this is a method to submit
+	//this is a method to submit
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(inputs);
@@ -60,35 +90,6 @@ const Create = () => {
 		}
 		setIsSubmit(false);
 	};
-//this is a method to validate
-	const validate = values => {
-		const errors = {};
-		if (!values.address1) {
-			errors.address1 = 'Address field is required';
-		} else if (values.address1.length > 150) {
-			errors.address1 = 'Address field is Too Long';
-		}
-		if (!values.address2) {
-			errors.address2 = 'Address line field is required';
-		} else if (values.address2.length > 150) {
-			errors.address2 = 'Address line field is Too Long';
-		}
-		if (!values.city) {
-			errors.city = 'City field is required';
-		} else if (values.city.length > 150) {
-			errors.city = 'City field is Too Long';
-		}
-		if (!values.state) errors.state = 'State field is required';
-
-		if (!values.postal_code) {
-			errors.postal_code = 'Postal code field is required';
-		} else if (isNaN(values.postal_code)) {
-			errors.postal_code = 'Please Enter a valid postal code';
-		}
-		// eslint-disable-next-line babel/camelcase
-		if (!values.country_id) errors.country_id = 'Country field is required';
-		return errors;
-	};
 
 	return (
 		<>
@@ -108,7 +109,7 @@ const Create = () => {
 							>
 								<div className='row'>
 									<div className='col-lg-6 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											Address{' '}
 											<span className='text-danger'>
 												*
@@ -121,14 +122,18 @@ const Create = () => {
 											name='address1'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.address1 ? inputs.address1 :'' }
+											value={
+												inputs.address1
+													? inputs.address1
+													: ''
+											}
 										/>
 										<span className='text-danger'>
 											{validateError.address1}
 										</span>
 									</div>
 									<div className='col-lg-6 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											Address Line{' '}
 											<span className='text-danger'>
 												*
@@ -141,7 +146,11 @@ const Create = () => {
 											name='address2'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.address2 ? inputs.address2 : ''}
+											value={
+												inputs.address2
+													? inputs.address2
+													: ''
+											}
 										/>
 										<span className='text-danger'>
 											{validateError.address2}
@@ -149,7 +158,7 @@ const Create = () => {
 									</div>
 
 									<div className='col-lg-6 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											City
 											<span className='text-danger'>
 												*
@@ -162,14 +171,16 @@ const Create = () => {
 											name='city'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.city ? inputs.city : ''}
+											value={
+												inputs.city ? inputs.city : ''
+											}
 										/>
 										<span className='text-danger'>
 											{validateError.city}
 										</span>
 									</div>
 									<div className='col-lg-6 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											Postal Code
 											<span className='text-danger'>
 												*
@@ -183,7 +194,11 @@ const Create = () => {
 											name='postal_code'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.postal_code ? inputs.postal_code : ''}
+											value={
+												inputs.postal_code
+													? inputs.postal_code
+													: ''
+											}
 										/>
 										<span className='text-danger'>
 											{validateError.postal_code}
@@ -191,7 +206,7 @@ const Create = () => {
 									</div>
 
 									<div className='col-lg-6 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											State
 											<span className='text-danger'>
 												*
@@ -204,14 +219,16 @@ const Create = () => {
 											name='state'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.state ? inputs.state : ''}
+											value={
+												inputs.state ? inputs.state : ''
+											}
 										/>
 										<span className='text-danger'>
 											{validateError.state}
 										</span>
 									</div>
 									<div className='col-lg-6 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											Country
 											<span className='text-danger'>
 												*
@@ -222,7 +239,11 @@ const Create = () => {
 											name='country_id'
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={inputs.country_id ? inputs.country_id :  ''}
+											value={
+												inputs.country_id
+													? inputs.country_id
+													: ''
+											}
 										>
 											<option value=''>
 												--Select Country--

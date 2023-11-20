@@ -1,4 +1,6 @@
+import {useState} from 'react';
 import {toast} from 'react-toastify';
+
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
 //this is the starting point
@@ -7,71 +9,7 @@ const ContactUsEnquiry = props => {
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [loading, setLoading] = useState(false);
-//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/^\s/, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to change values
-	const handleBlur = () => {
-		setFormErrors(validate(inputs));
-	};
-//this is a method to change values
-	const handleChangeMobileNo = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/[^0-9]/gi, '');
-		setInputs(values => ({...values, [name]: value}));
-		setFormErrors(validate(inputs));
-	};
-//this is a method to change values
-	const handleSubmit = async event => {
-		event.preventDefault();
-		setFormErrors({});
-		const result = validate(inputs);
-		if (Object.keys(result).length) {
-			setFormErrors(result);
-
-		} else {
-			setIsSubmit(true);
-			setLoading(true);
-			try {
-				const data = {
-					firstname: inputs.firstname,
-					lastname: inputs.lastname,
-					email: inputs.email,
-					phone: inputs.phone,
-					message: inputs.message,
-					product_id: props.data.slug,
-				};
-				//this is a method to get data from api
-				const response = await api({
-					url: '/contact-us-enquiry',
-					method: 'POST',
-					data: data,
-				});
-				if (response.error) {
-					toast.error(response.message);
-					setLoading(false);
-				} else {
-					toast.success(response.message);
-					setInputs({});
-				}
-				setIsSubmit(false);
-				setLoading(false);
-			} catch (error) {
-				// eslint-disable-next-line no-console
-				console.log(error);
-			}
-		}
-	};
-//this is a method to change values
-	const handleKeyUp = e => {
-		const name = e.target.name;
-		const value = e.target.value.trimStart();
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to validate
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const emailRegex =
@@ -112,6 +50,70 @@ const ContactUsEnquiry = props => {
 
 		return errors;
 	};
+	//this is a method to change values
+	const handleChange = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/^\s/, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleBlur = () => {
+		setFormErrors(validate(inputs));
+	};
+	//this is a method to change values
+	const handleChangeMobileNo = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/[^0-9]/gi, '');
+		setInputs(values => ({...values, [name]: value}));
+		setFormErrors(validate(inputs));
+	};
+	//this is a method to change values
+	const handleSubmit = async event => {
+		event.preventDefault();
+		setFormErrors({});
+		const result = validate(inputs);
+		if (Object.keys(result).length) {
+			setFormErrors(result);
+		} else {
+			setIsSubmit(true);
+			setLoading(true);
+			try {
+				const data = {
+					firstname: inputs.firstname,
+					lastname: inputs.lastname,
+					email: inputs.email,
+					phone: inputs.phone,
+					message: inputs.message,
+					product_id: props.data.slug,
+				};
+				//this is a method to get data from api
+				const response = await api({
+					url: '/contact-us-enquiry',
+					method: 'POST',
+					data: data,
+				});
+				if (response.error) {
+					toast.error(response.message);
+					setLoading(false);
+				} else {
+					toast.success(response.message);
+					setInputs({});
+				}
+				setIsSubmit(false);
+				setLoading(false);
+			} catch (error) {
+				// eslint-disable-next-line no-console
+				console.log(error);
+			}
+		}
+	};
+	//this is a method to change values
+	const handleKeyUp = e => {
+		const name = e.target.name;
+		const value = e.target.value.trimStart();
+		setInputs(values => ({...values, [name]: value}));
+	};
+
 	return (
 		<>
 			<SpinnerLoader loading={loading} />
@@ -254,7 +256,9 @@ const ContactUsEnquiry = props => {
 																type='text'
 																name='message'
 																value={
-																	inputs.message ?inputs.message : ''
+																	inputs.message
+																		? inputs.message
+																		: ''
 																}
 																onChange={
 																	handleChange
@@ -267,7 +271,7 @@ const ContactUsEnquiry = props => {
 																}
 																placeholder='Comment/ Request*'
 																className='form-control'
-															 />
+															/>
 
 															<span className='text-danger'>
 																{

@@ -20,7 +20,21 @@ const Review = props => {
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
-//this is a method to get data from api
+	//this is a method to validate
+	const validate = values => {
+		const errors = {};
+		if (!values.rating) {
+			errors.rating = 'Rating is required!';
+		}
+		// if (values.comment.length < 10) {
+		// 	errors.comment = 'Minimum 10 characters is required!';
+		// } else if (values.comment.length > 100) {
+		// 	errors.comment = 'Maximum 100 characters is required!';
+		// }
+		return errors;
+	};
+
+	//this is a method to get data from api
 	const fetchOrders = useCallback(async () => {
 		dispatch({
 			type: 'SET_DATA',
@@ -54,7 +68,7 @@ const Review = props => {
 	useEffect(() => {
 		fetchOrders();
 	}, [fetchOrders]);
-//this is a method to change values
+	//this is a method to change values
 	const handleChange = val => {
 		setInputs(prev => ({
 			...prev,
@@ -64,18 +78,17 @@ const Review = props => {
 		}));
 		setStarNumber(val);
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		setFormErrors({});
 		const result = validate(inputs);
 		if (Object.keys(result).length) {
 			setFormErrors(result);
-
 		} else {
 			setIsSubmit(true);
 			try {
@@ -104,20 +117,8 @@ const Review = props => {
 		const value = e.target.value.trimStart();
 		setInputs(values => ({...values, [name]: value}));
 	};
-//this is a method to validate
-	const validate = values => {
-		const errors = {};
-		if (!values.rating) {
-			errors.rating = 'Rating is required!';
-		}
-		// if (values.comment.length < 10) {
-		// 	errors.comment = 'Minimum 10 characters is required!';
-		// } else if (values.comment.length > 100) {
-		// 	errors.comment = 'Maximum 100 characters is required!';
-		// }
-		return errors;
-	};
-//this is a method to change values
+
+	//this is a method to change values
 	const handleChangeInput = event => {
 		const name = event.target.name;
 		const value = event.target.value;

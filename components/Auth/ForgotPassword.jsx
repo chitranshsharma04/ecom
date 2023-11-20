@@ -11,6 +11,20 @@ const ForgotPassword = () => {
 	const [validateError, setValidateError] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [loading, setLoading] = useState(false);
+	//this is a method to validate
+	const validate = values => {
+		const emailRegex =
+			// eslint-disable-next-line no-useless-escape
+			/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+		const errors = {};
+		if (!values.email) {
+			errors.email = 'Email field is required !';
+		} else if (!emailRegex.test(values.email)) {
+			errors.email = 'Enter valid email address!';
+		}
+		return errors;
+	};
 	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
@@ -34,7 +48,6 @@ const ForgotPassword = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-
 		} else {
 			setValidateError({});
 			setIsSubmit(true);
@@ -63,20 +76,6 @@ const ForgotPassword = () => {
 				console.log(error);
 			}
 		}
-	};
-	//this is a method to validate
-	const validate = values => {
-		const emailRegex =
-			// eslint-disable-next-line no-useless-escape
-			/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-		const errors = {};
-		if (!values.email) {
-			errors.email = 'Email field is required !';
-		} else if (!emailRegex.test(values.email)) {
-			errors.email = 'Enter valid email address!';
-		}
-		return errors;
 	};
 
 	return (
@@ -110,7 +109,11 @@ const ForgotPassword = () => {
 													placeholder='Enter your email'
 													className='form-control'
 													name='email'
-													value={inputs.email ? inputs.email : ''}
+													value={
+														inputs.email
+															? inputs.email
+															: ''
+													}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>

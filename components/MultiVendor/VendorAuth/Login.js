@@ -21,16 +21,7 @@ const Login = () => {
 	const [rememberMe, setRememberMe] = useState(false);
 
 	const router = Router;
-	//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/^\s/, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-	//this is a method to change values
-	const handleBlur = () => {
-		setValidateError(validate(inputs));
-	};
+
 
 	React.useEffect(() => {
 		const storedEmail = localStorage.getItem('authEmailVendor');
@@ -63,6 +54,16 @@ const Login = () => {
 		}
 		return errors;
 	};
+		//this is a method to change values
+		const handleChange = event => {
+			const name = event.target.name;
+			const value = event.target.value.replace(/^\s/, '');
+			setInputs(values => ({...values, [name]: value}));
+		};
+		//this is a method to change values
+		const handleBlur = () => {
+			setValidateError(validate(inputs));
+		};
 	//this is a method to change values
 	function handleRememberMeChange(event) {
 		setRememberMe(event.target.checked);

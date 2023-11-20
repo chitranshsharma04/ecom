@@ -15,69 +15,7 @@ const Signup = () => {
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
 	const router = Router;
-	//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/^\s/, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to change values
-	const handleBlur = () => {
-		setFormErrors(validate(inputs));
-	};
-//this is a method to change values
-	const handleChangeMobileNo = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/[^0-9]/gi, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to change values
-	const handleSubmit = async event => {
-		event.preventDefault();
-		setFormErrors({});
-		const result = validate(inputs);
-		if (Object.keys(result).length) {
-			setFormErrors(result);
-		} else {
-			setIsSubmit(true);
-
-			try {
-				let formData = new FormData();
-				formData.append('firstname', inputs.firstname);
-				formData.append('lastname', inputs.lastname);
-				formData.append('mobile', inputs.mobile);
-				formData.append('email', inputs.email);
-				formData.append('password', inputs.password);
-				const response = await api({
-					url: '/users/register',
-					method: 'POST',
-					data: formData,
-				});
-
-				if (response.error) {
-					setIsSubmit(false);
-					toast.error(response.message);
-				} else if (response.error === false) {
-					setIsSubmit(false);
-					toast.success(response.message);
-					router.push('/login');
-				} else {
-					setIsSubmit(false);
-					toast.warning(response);
-				}
-			} catch (error) {
-				// eslint-disable-next-line no-console
-				console.log(error);
-			}
-		}
-	};
-//this is a method to change values
-	const handleKeyUp = e => {
-		const name = e.target.name;
-		const value = e.target.value.trimStart();
-		setInputs(values => ({...values, [name]: value}));
-	};
-//this is a method to validate
+	//this is a method to validate
 	const validate = values => {
 		const errors = {};
 		const emailRegex =
@@ -128,6 +66,70 @@ const Signup = () => {
 		}
 		return errors;
 	};
+
+	//this is a method to change values
+	const handleChange = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/^\s/, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleBlur = () => {
+		setFormErrors(validate(inputs));
+	};
+	//this is a method to change values
+	const handleChangeMobileNo = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/[^0-9]/gi, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleSubmit = async event => {
+		event.preventDefault();
+		setFormErrors({});
+		const result = validate(inputs);
+		if (Object.keys(result).length) {
+			setFormErrors(result);
+		} else {
+			setIsSubmit(true);
+
+			try {
+				let formData = new FormData();
+				formData.append('firstname', inputs.firstname);
+				formData.append('lastname', inputs.lastname);
+				formData.append('mobile', inputs.mobile);
+				formData.append('email', inputs.email);
+				formData.append('password', inputs.password);
+				const response = await api({
+					url: '/users/register',
+					method: 'POST',
+					data: formData,
+				});
+
+				if (response.error) {
+					setIsSubmit(false);
+					toast.error(response.message);
+				} else if (response.error === false) {
+					setIsSubmit(false);
+					toast.success(response.message);
+					router.push('/login');
+				} else {
+					setIsSubmit(false);
+					toast.warning(response);
+				}
+			} catch (error) {
+				// eslint-disable-next-line no-console
+				console.log(error);
+			}
+		}
+	};
+	//this is a method to change values
+	const handleKeyUp = e => {
+		const name = e.target.name;
+		const value = e.target.value.trimStart();
+		setInputs(values => ({...values, [name]: value}));
+	};
+
 	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
@@ -330,8 +332,10 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
-																				  tabIndex={0}
-																				role="button" 
+																				tabIndex={
+																					0
+																				}
+																				role='button'
 																				name='passwordEye'
 																				onClick={
 																					Eye
@@ -375,8 +379,10 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
-																				tabIndex={0}
-																				role="button" 
+																				tabIndex={
+																					0
+																				}
+																				role='button'
 																				name='confirmpasswordEye'
 																				onClick={
 																					Eye

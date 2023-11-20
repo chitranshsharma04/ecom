@@ -1,3 +1,4 @@
+/* eslint-disable babel/no-unused-expressions */
 import {useState} from 'react';
 import {toast} from 'react-toastify';
 
@@ -14,17 +15,6 @@ const ChangePassword = () => {
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
 	const [password3, setpassword3] = useState('password');
-	//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/^\s/, '');
-
-		setInputs(values => ({...values, [name]: value}));
-	};
-	//this is a method to change values
-	const handleBlur = () => {
-		setFormErrors(validate(inputs));
-	};
 	//this is a method to validate
 	const validate = values => {
 		const errors = {};
@@ -54,6 +44,19 @@ const ChangePassword = () => {
 
 		return errors;
 	};
+
+	//this is a method to change values
+	const handleChange = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/^\s/, '');
+
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleBlur = () => {
+		setFormErrors(validate(inputs));
+	};
+
 	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
@@ -132,7 +135,7 @@ const ChangePassword = () => {
 								<form className='mt-4' onSubmit={handleSubmit}>
 									<div className='row'>
 										<div className='col-lg-4 form-group'>
-											<label htmlFor="labelForValue" >
+											<label htmlFor='labelForValue'>
 												Old Password
 												<span className='text-danger'>
 													*
@@ -146,15 +149,17 @@ const ChangePassword = () => {
 													name='current_password'
 													required=''
 													value={
-														inputs.current_password ? inputs.current_password : ''
+														inputs.current_password
+															? inputs.current_password
+															: ''
 													}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>
 												<span className='p-viewer1'>
 													<i
-														  tabIndex={0}
-														role="button" 
+														tabIndex={0}
+														role='button'
 														name='oldPasswordEye'
 														onClick={Eye}
 														className={`fa ${
@@ -170,7 +175,7 @@ const ChangePassword = () => {
 											</span>
 										</div>
 										<div className='col-lg-4 form-group'>
-											<label htmlFor="labelForValue" >
+											<label htmlFor='labelForValue'>
 												New Password
 												<span className='text-danger'>
 													*
@@ -184,7 +189,9 @@ const ChangePassword = () => {
 													name='new_password'
 													required=''
 													value={
-														inputs.new_password ? inputs.new_password : ''
+														inputs.new_password
+															? inputs.new_password
+															: ''
 													}
 													onChange={handleChange}
 													onBlur={handleBlur}
@@ -192,7 +199,7 @@ const ChangePassword = () => {
 												<span className='p-viewer1'>
 													<i
 														tabIndex={0}
-														role="button"
+														role='button'
 														name='newPasswordEye'
 														onClick={Eye}
 														className={`fa ${
@@ -208,7 +215,7 @@ const ChangePassword = () => {
 											</span>
 										</div>
 										<div className='col-lg-4 form-group'>
-											<label htmlFor="labelForValue" >
+											<label htmlFor='labelForValue'>
 												Confirm Password
 												<span className='text-danger'>
 													*
@@ -222,7 +229,9 @@ const ChangePassword = () => {
 													name='new_password_confirmation'
 													required=''
 													value={
-														inputs.new_password_confirmation ? inputs.new_password_confirmation : ''
+														inputs.new_password_confirmation
+															? inputs.new_password_confirmation
+															: ''
 													}
 													onChange={handleChange}
 													onBlur={handleBlur}
@@ -230,7 +239,7 @@ const ChangePassword = () => {
 												<span className='p-viewer1'>
 													<i
 														tabIndex={0}
-														role="button" 
+														role='button'
 														name='confirmPasswordEye'
 														onClick={Eye}
 														className={`fa ${

@@ -24,6 +24,72 @@ const Signup = () => {
 	const [password1, setpassword1] = useState('password');
 	const [password2, setpassword2] = useState('password');
 	const [loading, setLoading] = useState(false);
+	//this is a method to validate
+	const validate = values => {
+		setFormErrors({});
+		const errors = {};
+		const emailRegex =
+			// eslint-disable-next-line no-useless-escape
+			/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+		// eslint-disable-next-line prettier/prettier
+		const passReg =
+			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
+
+		if (!values.firstname) {
+			errors.firstname = 'First name is required!';
+		} else if (values.firstname.length > 20) {
+			errors.firstname = 'Do not enter more than 20 characters!';
+		}
+
+		if (!values.lastname) {
+			errors.lastname = 'Last name is required!';
+		} else if (values.lastname.length > 20) {
+			errors.lastname = 'Do not enter more than 20 characters!';
+		}
+
+		if (!values.email) {
+			errors.email = 'Email field is required!';
+		} else if (!emailRegex.test(values.email)) {
+			errors.email = 'Enter valid email address!';
+		}
+		if (!parseInt(values.mobile)) {
+			errors.mobile = 'Enter mobile number!';
+		} else if (parseInt(values.mobile.length) < 8) {
+			errors.mobile = 'The mobile must be between 8 and 16 digits';
+		} else if (parseInt(values.mobile.length) > 16) {
+			errors.mobile = 'The mobile not more than 16 digits';
+		}
+		if (!values.vat_no) {
+			errors.vat_no = 'Required Business Registration Number!';
+		} else if (values.vat_no.length < 3) {
+			errors.vat_no = 'Please Enter More than 3 Character';
+		}
+		if (!values.business_name) {
+			errors.business_name = 'Required Business Name!';
+		} else if (values.business_name.length < 3) {
+			errors.business_name = 'Please Enter More than 3 Character';
+		}
+		if (!values.password) {
+			errors.password = 'Password is required!';
+		} else if (!passReg.test(values.password)) {
+			errors.password =
+				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
+		}
+		if (!values.confirmpassword) {
+			errors.confirmpassword = 'Confirm password is required!';
+		} else {
+			if (!(values.password === values.confirmpassword)) {
+				errors.confirmpassword = 'Password is not matched!';
+			}
+		}
+		if (!['jpg', 'jpeg', 'svg', 'png'].includes(images)) {
+			errors.images = 'Please enter a valid image format';
+		} else if (!images.length) {
+			errors.images = 'Please select an image!';
+		}
+		return errors;
+	};
 	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
@@ -100,72 +166,7 @@ const Signup = () => {
 		const value = e.target.value.trimStart();
 		setInputs(values => ({...values, [name]: value}));
 	};
-	//this is a method to validate
-	const validate = values => {
-		setFormErrors({});
-		const errors = {};
-		const emailRegex =
-			// eslint-disable-next-line no-useless-escape
-			/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-		// eslint-disable-next-line prettier/prettier
-		const passReg =
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
-
-		if (!values.firstname) {
-			errors.firstname = 'First name is required!';
-		} else if (values.firstname.length > 20) {
-			errors.firstname = 'Do not enter more than 20 characters!';
-		}
-
-		if (!values.lastname) {
-			errors.lastname = 'Last name is required!';
-		} else if (values.lastname.length > 20) {
-			errors.lastname = 'Do not enter more than 20 characters!';
-		}
-
-		if (!values.email) {
-			errors.email = 'Email field is required!';
-		} else if (!emailRegex.test(values.email)) {
-			errors.email = 'Enter valid email address!';
-		}
-		if (!parseInt(values.mobile)) {
-			errors.mobile = 'Enter mobile number!';
-		} else if (parseInt(values.mobile.length) < 8) {
-			errors.mobile = 'The mobile must be between 8 and 16 digits';
-		} else if (parseInt(values.mobile.length) > 16) {
-			errors.mobile = 'The mobile not more than 16 digits';
-		}
-		if (!values.vat_no) {
-			errors.vat_no = 'Required Business Registration Number!';
-		} else if (values.vat_no.length < 3) {
-			errors.vat_no = 'Please Enter More than 3 Character';
-		}
-		if (!values.business_name) {
-			errors.business_name = 'Required Business Name!';
-		} else if (values.business_name.length < 3) {
-			errors.business_name = 'Please Enter More than 3 Character';
-		}
-		if (!values.password) {
-			errors.password = 'Password is required!';
-		} else if (!passReg.test(values.password)) {
-			errors.password =
-				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
-		}
-		if (!values.confirmpassword) {
-			errors.confirmpassword = 'Confirm password is required!';
-		} else {
-			if (!(values.password === values.confirmpassword)) {
-				errors.confirmpassword = 'Password is not matched!';
-			}
-		}
-		if (!['jpg', 'jpeg', 'svg', 'png'].includes(images)) {
-		    errors.images = 'Please enter a valid image format';
-		} else if (!images.length) {
-		    errors.images = 'Please select an image!';
-		}
-		return errors;
-	};
 	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
@@ -231,7 +232,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='firstname'
 																			value={
-																				inputs.firstname ? inputs.firstname  : ''
+																				inputs.firstname
+																					? inputs.firstname
+																					: ''
 																			}
 																			onKeyUp={
 																				handleKeyUp
@@ -261,7 +264,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='lastname'
 																			value={
-																				inputs.lastname ? inputs.lastname : ''
+																				inputs.lastname
+																					? inputs.lastname
+																					: ''
 																			}
 																			onChange={
 																				handleChange
@@ -291,7 +296,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='email'
 																			value={
-																				inputs.email ? inputs.email :''
+																				inputs.email
+																					? inputs.email
+																					: ''
 																			}
 																			onChange={
 																				handleChange
@@ -321,7 +328,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='mobile'
 																			value={
-																				inputs.mobile ? inputs.mobile :''
+																				inputs.mobile
+																					? inputs.mobile
+																					: ''
 																			}
 																			onChange={
 																				handleChangeMobileNo
@@ -352,7 +361,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='vat_no'
 																			value={
-																				inputs.vat_no ? inputs.vat_no : ''
+																				inputs.vat_no
+																					? inputs.vat_no
+																					: ''
 																			}
 																			onChange={
 																				handleChange
@@ -382,7 +393,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='business_name'
 																			value={
-																				inputs.business_name ? inputs.business_name : ''
+																				inputs.business_name
+																					? inputs.business_name
+																					: ''
 																			}
 																			onChange={
 																				handleChange
@@ -414,7 +427,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='password'
 																			value={
-																				inputs.password ? inputs.password : ''
+																				inputs.password
+																					? inputs.password
+																					: ''
 																			}
 																			onChange={
 																				handleChange
@@ -428,8 +443,10 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
-																				role = "button"
-																				  tabIndex={0}	
+																				role='button'
+																				tabIndex={
+																					0
+																				}
 																				name='passwordEye'
 																				onClick={
 																					Eye
@@ -458,7 +475,9 @@ const Signup = () => {
 																			className='form-control'
 																			name='confirmpassword'
 																			value={
-																				inputs.confirmpassword ? inputs.confirmpassword : ''
+																				inputs.confirmpassword
+																					? inputs.confirmpassword
+																					: ''
 																			}
 																			onChange={
 																				handleChange
@@ -472,8 +491,10 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
-																				  tabIndex={0}
-																				role="button" 
+																				tabIndex={
+																					0
+																				}
+																				role='button'
 																				name='confirmpasswordEye'
 																				onClick={
 																					Eye
@@ -496,7 +517,9 @@ const Signup = () => {
 
 																<div className='col-md-12'>
 																	<div className='form-group'>
-																	<label htmlFor="labelForValue" >																			Upload
+																		<label htmlFor='labelForValue'>
+																			{' '}
+																			Upload
 																			Business
 																			Documents*
 																		</label>
@@ -509,31 +532,29 @@ const Signup = () => {
 																				fileInputRef
 																			}
 																			onChange={e => {
-																				
-																					let file =
+																				let file =
+																					e
+																						.target
+																						.files[0];
+
+																				if (
+																					file?.type.startsWith(
+																						'image/',
+																					)
+																				) {
+																					setImages(
 																						e
 																							.target
-																							.files[0];
-
-																					if (
-																						file?.type.startsWith(
-																							'image/',
-																						)
-																					) {
-																						setImages(
-																							e
-																								.target
-																								.files,
-																						);
-																					} else {
-																						// setFile(null);
-																						fileInputRef.current.value =
-																							null;
-																						toast.warn(
-																							'Please select proper image file format (jpeg,jpg,png)',
-																						);
-																					}
-																				
+																							.files,
+																					);
+																				} else {
+																					// setFile(null);
+																					fileInputRef.current.value =
+																						null;
+																					toast.warn(
+																						'Please select proper image file format (jpeg,jpg,png)',
+																					);
+																				}
 																			}}
 																			onBlur={
 																				handleBlur

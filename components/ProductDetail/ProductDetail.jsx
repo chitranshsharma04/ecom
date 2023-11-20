@@ -36,7 +36,45 @@ const ProductDetail = ({productDetail}) => {
 		quantity: 1,
 		inWishlist: productDetail?.isLiked,
 	});
+	//this is a method to change values
+	const handleAttribute = async (k, selected) => {
+		let sVariant = new Array(...selectedVariant);
 
+		if (k !== null) {
+			sVariant[k] = selected;
+		} else {
+			sVariant = selected;
+		}
+		setSelectedVariant(sVariant);
+
+		if (
+			sVariant.filter(e => e).length !==
+			productDetail?.product_attribute?.length
+		) {
+			return;
+		}
+
+		const formData = new FormData();
+		formData.append('product_id', productDetail?.id);
+
+		sVariant.forEach(key => {
+			formData.append('attribute[]', key);
+		});
+		//this is a method to get data from api
+		const response = await api({
+			url: '/product/product-price',
+			method: 'POST',
+			data: formData,
+		});
+
+		if (response.status) {
+			// console.log('responseId', response.data);
+			setVariant(response.data);
+			setVariantError(null);
+		} else {
+			setVariantError(response.message);
+		}
+	};
 	useEffect(() => {
 		let attr = [];
 		productDetail?.product_attribute?.forEach(i => {
@@ -75,7 +113,7 @@ const ProductDetail = ({productDetail}) => {
 								/>
 							</Zoom>,
 						);
-						 return null;
+						return null;
 					});
 				}
 				if (images.length) setProductImage(images);
@@ -97,7 +135,7 @@ const ProductDetail = ({productDetail}) => {
 									/>
 								</Zoom>,
 							);
-							 return null;
+							return null;
 						});
 					}
 					if (images.length) setProductImage(images);
@@ -187,47 +225,9 @@ const ProductDetail = ({productDetail}) => {
 			toast.warning(response.message);
 			//toast.warning('Please login to add to cart.!');
 		}
-		 return null;
+		return null;
 	};
-//this is a method to change values
-	const handleAttribute = async (k, selected) => {
-		let sVariant = new Array(...selectedVariant);
 
-		if (k !== null) {
-			sVariant[k] = selected;
-		} else {
-			sVariant = selected;
-		}
-		setSelectedVariant(sVariant);
-
-		if (
-			sVariant.filter(e => e).length !==
-			productDetail?.product_attribute?.length
-		) {
-			return;
-		}
-
-		const formData = new FormData();
-		formData.append('product_id', productDetail?.id);
-
-		sVariant.forEach(key => {
-			formData.append('attribute[]', key);
-		});
-	//this is a method to get data from api
-		const response = await api({
-			url: '/product/product-price',
-			method: 'POST',
-			data: formData,
-		});
-
-		if (response.status) {
-			// console.log('responseId', response.data);
-			setVariant(response.data);
-			setVariantError(null);
-		} else {
-			setVariantError(response.message);
-		}
-	};
 	// console.log('variantError', variantError);
 	//this is a method to create reducer
 	const addRemoveToWishlist = async (event, product) => {
@@ -244,7 +244,7 @@ const ProductDetail = ({productDetail}) => {
 					removeFromCartLoading: true,
 				},
 			});
-	//this is a method to get data from api
+			//this is a method to get data from api
 
 			const response = await api({
 				url: '/wishlist/add-remove-list',
@@ -276,7 +276,7 @@ const ProductDetail = ({productDetail}) => {
 				},
 			});
 		}
-		 return null;
+		return null;
 	};
 	if (!productDetail?.title) return <Loading />;
 
@@ -425,7 +425,11 @@ const ProductDetail = ({productDetail}) => {
 												/>
 												<div className='overview-blk detail-des mt-3'>
 													<h2> Description</h2>
-													<span>{productDetail?.long_description}</span>
+													<span>
+														{
+															productDetail?.long_description
+														}
+													</span>
 												</div>
 												<div className='availibily-blk detail-des'>
 													<div className='availibily-col d-flex align-items-center'>
@@ -718,7 +722,10 @@ const ProductDetail = ({productDetail}) => {
 																	</div>
 																) : (
 																	<span
-																		role="button" tabIndex={0}
+																		role='button'
+																		tabIndex={
+																			0
+																		}
 																		className='addWish like'
 																		onClick={event =>
 																			productDetail?.stock &&
@@ -962,7 +969,11 @@ const ProductDetail = ({productDetail}) => {
 															{item.short_description &&
 																item.short_description !==
 																	'' && (
-																	<p>{item.short_description}</p>
+																	<p>
+																		{
+																			item.short_description
+																		}
+																	</p>
 																)}
 															<span className='price'>
 																$

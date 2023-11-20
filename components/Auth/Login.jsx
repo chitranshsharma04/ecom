@@ -19,6 +19,27 @@ const Login = () => {
 	const [rememberMe, setRememberMe] = useState(false);
 
 	const router = Router;
+	//this is a method to validate
+	const validate = values => {
+		const emailRegex =
+			// eslint-disable-next-line no-useless-escape
+			/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+		const passReg =
+			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
+		const errors = {};
+		if (!values.email) {
+			errors.email = 'Email field is required !';
+		} else if (!emailRegex.test(values.email)) {
+			errors.email = 'Enter valid email address!';
+		}
+		if (!values.password) {
+			errors.password = 'Password is required.';
+		} else if (!passReg.test(values.password)) {
+			errors.password =
+				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
+		}
+		return errors;
+	};
 	//this is a method to change values
 	const handleguestUser = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
@@ -52,15 +73,6 @@ const Login = () => {
 		setRememberMe(event.target.checked);
 	}
 
-	useEffect(() => {
-		const storedEmail = localStorage.getItem('authEmail');
-		const storedPassword = localStorage.getItem('authPassword');
-		const storedRememberMe = localStorage.getItem('authRememberMe');
-		if (storedEmail && storedPassword && storedRememberMe) {
-			setInputs({email: storedEmail, password: storedPassword});
-			setRememberMe(true);
-		}
-	}, []);
 	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
@@ -123,27 +135,7 @@ const Login = () => {
 			}
 		}
 	};
-	//this is a method to validate
-	const validate = values => {
-		const emailRegex =
-			// eslint-disable-next-line no-useless-escape
-			/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-		const passReg =
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
-		const errors = {};
-		if (!values.email) {
-			errors.email = 'Email field is required !';
-		} else if (!emailRegex.test(values.email)) {
-			errors.email = 'Enter valid email address!';
-		}
-		if (!values.password) {
-			errors.password = 'Password is required.';
-		} else if (!passReg.test(values.password)) {
-			errors.password =
-				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
-		}
-		return errors;
-	};
+
 	//this is a method to show or hide password
 	const Eye = () => {
 		if (password === 'password') {
@@ -155,6 +147,15 @@ const Login = () => {
 		}
 	};
 
+	useEffect(() => {
+		const storedEmail = localStorage.getItem('authEmail');
+		const storedPassword = localStorage.getItem('authPassword');
+		const storedRememberMe = localStorage.getItem('authRememberMe');
+		if (storedEmail && storedPassword && storedRememberMe) {
+			setInputs({email: storedEmail, password: storedPassword});
+			setRememberMe(true);
+		}
+	}, []);
 	return (
 		<>
 			<SpinnerLoader loading={loading} />

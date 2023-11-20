@@ -14,7 +14,35 @@ const Edit = () => {
 	const [validateError, setValidateError] = useState({});
 	const {state: globalState} = useGlobalContext();
 	const {state, dispatch} = useContextState();
+//this is a method to validate
+const validate = values => {
+	const errors = {};
+	if (!values.address1) {
+		errors.address1 = 'Address field is required';
+	} else if (values.address1.length > 150) {
+		errors.address1 = 'Address field is Too Long';
+	}
+	if (!values.address2) {
+		errors.address2 = 'Address line field is required';
+	} else if (values.address2.length > 150) {
+		errors.address2 = 'Address line field is Too Long';
+	}
+	if (!values.city) {
+		errors.city = 'City field is required';
+	} else if (values.city.length > 150) {
+		errors.city = 'City field is Too Long';
+	}
+	if (!values.state) errors.state = 'State field is required';
+	if (!values.postal_code) {
+		errors.postal_code = 'Postal code field is required';
+	} else if (isNaN(values.postal_code)) {
+		errors.postal_code = 'Please Enter a valid postal code';
+	}
 
+	// eslint-disable-next-line babel/camelcase
+	if (!values.country_id) errors.country_id = 'Country field is required';
+	return errors;
+};
 	//this is a method to get data from api
 	const getAddress = async () => {
 		const response = await api({
@@ -83,35 +111,7 @@ const Edit = () => {
 			}
 		}
 	};
-//this is a method to validate
-	const validate = values => {
-		const errors = {};
-		if (!values.address1) {
-			errors.address1 = 'Address field is required';
-		} else if (values.address1.length > 150) {
-			errors.address1 = 'Address field is Too Long';
-		}
-		if (!values.address2) {
-			errors.address2 = 'Address line field is required';
-		} else if (values.address2.length > 150) {
-			errors.address2 = 'Address line field is Too Long';
-		}
-		if (!values.city) {
-			errors.city = 'City field is required';
-		} else if (values.city.length > 150) {
-			errors.city = 'City field is Too Long';
-		}
-		if (!values.state) errors.state = 'State field is required';
-		if (!values.postal_code) {
-			errors.postal_code = 'Postal code field is required';
-		} else if (isNaN(values.postal_code)) {
-			errors.postal_code = 'Please Enter a valid postal code';
-		}
 
-		// eslint-disable-next-line babel/camelcase
-		if (!values.country_id) errors.country_id = 'Country field is required';
-		return errors;
-	};
 
 	useEffect(() => {
 		getAddress();

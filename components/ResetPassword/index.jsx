@@ -1,3 +1,4 @@
+/* eslint-disable babel/no-unused-expressions */
 import {useState} from 'react';
 import Image from 'next/image';
 import {useRouter} from 'next/router';
@@ -15,6 +16,27 @@ const ResetPassword = () => {
 	const [password2, setpassword2] = useState('password');
 	//this is router calling
 	const router = useRouter();
+	//this is a method to validate
+	const validate = values => {
+		const passReg =
+			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
+		const errors = {};
+		if (!values.password) {
+			errors.password = 'Password is required!';
+		} else if (!passReg.test(values.password)) {
+			errors.password =
+				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
+		}
+		if (!values.confirmPassword) {
+			errors.confirmPassword = 'Confirm password is required!';
+		} else {
+			if (!(values.password === values.confirmPassword)) {
+				errors.confirmPassword = 'Password is not matched!';
+			}
+		}
+		return errors;
+	};
+
 	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
@@ -38,7 +60,6 @@ const ResetPassword = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-
 		} else {
 			setValidateError({});
 			setIsSubmit(true);
@@ -63,26 +84,7 @@ const ResetPassword = () => {
 			}
 		}
 	};
-	//this is a method to validate
-	const validate = values => {
-		const passReg =
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
-		const errors = {};
-		if (!values.password) {
-			errors.password = 'Password is required!';
-		} else if (!passReg.test(values.password)) {
-			errors.password =
-				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
-		}
-		if (!values.confirmPassword) {
-			errors.confirmPassword = 'Confirm password is required!';
-		} else {
-			if (!(values.password === values.confirmPassword)) {
-				errors.confirmPassword = 'Password is not matched!';
-			}
-		}
-		return errors;
-	};
+
 	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
@@ -145,7 +147,7 @@ const ResetPassword = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
-														role="button"
+														role='button'
 														tabIndex={0}
 														name='passwordEye'
 														onClick={Eye}
@@ -171,7 +173,7 @@ const ResetPassword = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
-														role="button"
+														role='button'
 														tabIndex={0}
 														name='confirmpasswordEye'
 														onClick={Eye}

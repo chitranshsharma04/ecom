@@ -28,58 +28,6 @@ const Account = () => {
 	const router = useRouter();
 	const [file, setFile] = useState([]);
 	const [isLoading, setLoading] = useState(false);
-//this is the starting point
-	const getCountryList = async () => {
-		try {
-			//this is a method to get data from api
-			const response = await api({
-				url: '/users/country-list',
-				method: 'GET',
-			});
-			if (response?.data) {
-				setcountryList(response?.data);
-			}
-		} catch (error) {
-			// eslint-disable-next-line no-console
-			console.log(error);
-		}
-	};
-	//this is a method to change values
-	const handleChange = event => {
-		const name = event.target.name;
-
-		const value = event.target.value.replace(/^\s/, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
-	//this is a method to change values
-	const handleBlur = () => {
-		setValidateError(validate(inputs));
-	};
-	//this is a method to change values
-	const handleChangeImage = e => {
-		let allowedExtension = ['jpg', 'jpeg', 'txt', 'png', 'pdf', 'doc'];
-		let extension = e.target.files[0].name
-			.replace(/.*\./, '')
-			.toLowerCase();
-		if (allowedExtension.indexOf(extension) < 0) {
-			const errors = {};
-			errors.fileError =
-				'Please upload valid file of file format like doc, pdf, png, jpg, jpeg.';
-			toast.error(
-				'Please upload valid file of file format like doc, pdf, png, jpg, jpeg.',
-			);
-			setValidateError(errors);
-
-		} else {
-			setFile(e.target.files[0]);
-		}
-	};
-	//this is a method to change values
-	const handlePhoneChange = event => {
-		const name = event.target.name;
-		const value = event.target.value.replace(/[^0-9]/gi, '');
-		setInputs(values => ({...values, [name]: value}));
-	};
 	//this is a method to validate
 	const validate = values => {
 		const errors = {};
@@ -125,6 +73,59 @@ const Account = () => {
 		}
 		return errors;
 	};
+
+	//this is the starting point
+	const getCountryList = async () => {
+		try {
+			//this is a method to get data from api
+			const response = await api({
+				url: '/users/country-list',
+				method: 'GET',
+			});
+			if (response?.data) {
+				setcountryList(response?.data);
+			}
+		} catch (error) {
+			// eslint-disable-next-line no-console
+			console.log(error);
+		}
+	};
+	//this is a method to change values
+	const handleChange = event => {
+		const name = event.target.name;
+
+		const value = event.target.value.replace(/^\s/, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+	//this is a method to change values
+	const handleBlur = () => {
+		setValidateError(validate(inputs));
+	};
+	//this is a method to change values
+	const handleChangeImage = e => {
+		let allowedExtension = ['jpg', 'jpeg', 'txt', 'png', 'pdf', 'doc'];
+		let extension = e.target.files[0].name
+			.replace(/.*\./, '')
+			.toLowerCase();
+		if (allowedExtension.indexOf(extension) < 0) {
+			const errors = {};
+			errors.fileError =
+				'Please upload valid file of file format like doc, pdf, png, jpg, jpeg.';
+			toast.error(
+				'Please upload valid file of file format like doc, pdf, png, jpg, jpeg.',
+			);
+			setValidateError(errors);
+		} else {
+			setFile(e.target.files[0]);
+		}
+	};
+	//this is a method to change values
+	const handlePhoneChange = event => {
+		const name = event.target.name;
+		const value = event.target.value.replace(/[^0-9]/gi, '');
+		setInputs(values => ({...values, [name]: value}));
+	};
+
 	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
@@ -133,7 +134,6 @@ const Account = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-
 		} else {
 			setDisable(false);
 			setValidateError({});
@@ -211,8 +211,8 @@ const Account = () => {
 			});
 		}
 		state?.userAuth?.business_document?.map(image => {
-		    setFile(image.image_link);
-		    return null; // or return something else if needed
+			setFile(image.image_link);
+			return null; // or return something else if needed
 		});
 	}, [state]);
 	//this is the starting points
