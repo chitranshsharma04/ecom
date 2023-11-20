@@ -16,7 +16,7 @@ const ContactUsViewDetailEnquiry = props => {
 	const getContactUsEnquiryList = async () => {
 		try {
 			setLoading(true);
-			const data = {id: id};
+			const data = {id};
 			//this is a method to get data from api
 			const response = await api({
 				url: '/contact-us-view',
