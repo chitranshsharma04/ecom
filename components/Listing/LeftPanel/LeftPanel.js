@@ -83,7 +83,7 @@ const LeftPanel = () => {
 		});
 	};
 //this is a method to change values
-	const handleSubmit = async () => {
+	const handleSubmit =  () => {
 		dispatch({
 			type: 'SET_DATA',
 			data: {
