@@ -53,7 +53,7 @@ const ContactUsViewDetailEnquiry = props => {
 			const data = {
 				email: contactUsViewList.email,
 				subject: contactUsViewList.message,
-				message: message,
+				message,
 			};
 			try {
 				//this is a method to get data from api
