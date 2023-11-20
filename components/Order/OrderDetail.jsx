@@ -19,7 +19,7 @@ const Order = ({data}) => {
 		if (confirm) {
 			const dataObj = {
 				// eslint-disable-next-line babel/camelcase
-				order_id: order_id,
+				order_id,
 				item: [item_id],
 				return_quantity: parseInt(quantity),
 			};
