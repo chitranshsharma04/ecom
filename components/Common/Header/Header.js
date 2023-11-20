@@ -126,7 +126,7 @@ const Header = props => {
 		});
 	};
 //this is a method to submit
-	const handleSubmit = async () => {
+	const handleSubmit = () => {
 		const {pathname} = Router;
 		if (pathname) {
 			const url = `/products/search?category=${
