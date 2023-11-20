@@ -114,7 +114,6 @@ const LeftPanel = () => {
 	// }, [max]);
 
 	return (
-		<>
 			<div className='left-panel'>
 				<div className='input-group'>
 					<input
@@ -311,7 +310,6 @@ const LeftPanel = () => {
 					</div>
 				</div>
 			</div>
-		</>
 	);
 };
 
