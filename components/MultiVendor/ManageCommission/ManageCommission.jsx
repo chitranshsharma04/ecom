@@ -13,9 +13,9 @@ const ManageCommission = () => {
 
 	const router = useRouter();
 	//this is a method to set router
-	const setRouterPage = page => {
+	const setRouterPage = pageindex => {
 		router.replace({
-			query: {...router.query, page: page},
+			query: {...router.query, page: pageindex},
 		});
 	};
 	//this is a method to get commision
@@ -176,7 +176,11 @@ const ManageCommission = () => {
 																		);
 																	}}
 																>
-																	<span aria-hidden='true'>{item.label}</span>
+																	<span aria-hidden='true'>
+																		{
+																			item.label
+																		}
+																	</span>
 																</a>
 															</li>
 														),

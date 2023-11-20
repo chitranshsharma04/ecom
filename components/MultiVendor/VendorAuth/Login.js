@@ -13,7 +13,7 @@ import {useGlobalContext} from '@context/ContextApi';
 const Login = () => {
 	const [inputs, setInputs] = useState({});
 	const [validateError, setValidateError] = useState({});
-	const [error, setError] = useState();
+	const [errorState, setErrorState] = useState();
 	const {state, dispatch} = useGlobalContext();
 	const [eye, seteye] = useState(true);
 	const [password, setpassword] = useState('password');
@@ -105,7 +105,7 @@ const Login = () => {
 						router.push('/vendor/dashboard');
 					
 				} else {
-					setError(response.message);
+					setErrorState(response.message);
 					setLoading(false);
 				}
 			} catch (error) {
@@ -165,9 +165,9 @@ const Login = () => {
 									<div className='form_heading'>
 										<h2>Login to your Account</h2>
 									</div>
-									{error && (
+									{errorState && (
 										<div className='alert-danger mb-3 p-2'>
-											{error}
+											{errorState}
 										</div>
 									)}
 									<form onSubmit={handleSubmit}>

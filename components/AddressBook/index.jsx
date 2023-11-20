@@ -17,17 +17,17 @@ const AddressBook = () => {
 
 	const router = useRouter();
 	//this is a method to change values
-	const setRouterPage = page => {
+	const setRouterPage = pageindex => {
 		router.replace({
-			query: {...router.query, page: page},
+			query: {...router.query, page: pageindex},
 		});
 	};
 	//this is a method to get data from api
-	const getUserAddresses = async page => {
+	const getUserAddresses = async pageindex => {
 		setLoading(true);
 		//this is a method to get data from api
 		const response = await api({
-			url: '/user-address?page=' + page,
+			url: '/user-address?page=' + pageindex,
 			method: 'GET',
 		});
 
@@ -139,8 +139,8 @@ const AddressBook = () => {
 															<i className='fas fa-edit' />
 														</Link>
 														<i
-															role="button"
-															  tabIndex={0}
+															role='button'
+															tabIndex={0}
 															className='fas fa-trash btn'
 															onClick={() =>
 																handleDelete(

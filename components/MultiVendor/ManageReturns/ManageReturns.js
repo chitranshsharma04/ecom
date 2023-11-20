@@ -17,18 +17,18 @@ const ManageReturns = () => {
 
 	const router = useRouter();
 	//this is a method to change values
-	const setRouterPage = page => {
+	const setRouterPage = pageindex => {
 		router.replace({
-			query: {...router.query, page: page},
+			query: {...router.query, page: pageindex},
 		});
 	};
 	//this is a method to get data from api
-	const getReturnOrderList = async page => {
+	const getReturnOrderList = async pageindex => {
 		try {
 			setReturnOrders(prev => ({...prev, loading: true}));
 			//this is a method to get data from api
 			const response = await api({
-				url: '/vendor/return-order/list?page=' + page,
+				url: '/vendor/return-order/list?page=' + pageindex,
 				method: 'GET',
 			});
 			if (response.data) {
@@ -211,9 +211,11 @@ const ManageReturns = () => {
 																		);
 																	}}
 																>
-																	<span
-																		aria-hidden='true'
-																	>{item.label}</span>
+																	<span aria-hidden='true'>
+																		{
+																			item.label
+																		}
+																	</span>
 																</a>
 															</li>
 														),

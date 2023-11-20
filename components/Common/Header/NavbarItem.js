@@ -45,8 +45,8 @@ const NavbarItem = props => {
 					>
 						All {items.title}
 					</NavDropdown.Item>
-					{items.children.map((subItems, index) => (
-						<Fragment key={index}>
+					{items.children.map((subItems, idx) => (
+						<Fragment key={idx}>
 							<NavDropdown.Divider />
 							<NavDropdown.Item
 								as={Link}

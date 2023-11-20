@@ -50,7 +50,7 @@ const LeftPanel = () => {
 			},
 		});
 	}, [state?.sliderValue?.[0], state?.sliderValue?.[1]]);
-//this is a method to get data from api
+	//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		try {
 			const resultCategorylist = await LayoutServices.getCategorylist();
@@ -67,11 +67,11 @@ const LeftPanel = () => {
 	useEffect(() => {
 		handleChangeSlider(state?.sliderValue);
 	}, [router]);
-//this is a method to change values
+	//this is a method to change values
 	const handleChange = e => {
 		setSearch(e.target.value);
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleKeyPress = e => {
 		setSearch(e.target.value);
 		dispatch({
@@ -82,8 +82,8 @@ const LeftPanel = () => {
 			},
 		});
 	};
-//this is a method to change values
-	const handleSubmit =  () => {
+	//this is a method to change values
+	const handleSubmit = () => {
 		dispatch({
 			type: 'SET_DATA',
 			data: {
@@ -92,7 +92,7 @@ const LeftPanel = () => {
 			},
 		});
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleChangeSlider = value => {
 		dispatch({
 			type: 'SET_DATA',
@@ -103,7 +103,7 @@ const LeftPanel = () => {
 			},
 		});
 	};
-//this is a method to memo
+	//this is a method to memo
 	const sliderRangeval = useMemo(() => {
 		return state?.sliderChange
 			?.map(val => `${getCurrencySymbol()} ${val}`)
@@ -188,17 +188,15 @@ const LeftPanel = () => {
 													<a
 														href='#top'
 														onClick={() => {
-															
-																setcollapseToggleUp(
-																	collapseToggleUp ===
-																		'up'
-																		? 'down'
-																		: 'up',
-																);
-																setClickedItem(
-																	index,
-																);
-															
+															setcollapseToggleUp(
+																collapseToggleUp ===
+																	'up'
+																	? 'down'
+																	: 'up',
+															);
+															setClickedItem(
+																index,
+															);
 														}}
 													>
 														<i
@@ -227,13 +225,13 @@ const LeftPanel = () => {
 															{items.children.map(
 																(
 																	subItems,
-																	index,
+																	idx,
 																) => (
 																	<li
 																		className='collapseThree_clothing menu-active showcollapseOne collapse show'
 																		data-parent='#collapseThree'
 																		key={
-																			index
+																			idx
 																		}
 																	>
 																		<a
@@ -258,7 +256,7 @@ const LeftPanel = () => {
 																				float: 'right',
 																			}}
 																			data-toggle='collapse'
-																		 />
+																		/>
 																	</li>
 																),
 															)}

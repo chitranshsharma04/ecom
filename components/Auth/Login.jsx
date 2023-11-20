@@ -11,7 +11,7 @@ import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 const Login = () => {
 	const [inputs, setInputs] = useState({});
 	const [validateError, setValidateError] = useState({});
-	const [error, setError] = useState();
+	const [errorState, setErrorState] = useState();
 	const {state, dispatch} = useGlobalContext();
 	const [eye, seteye] = useState(true);
 	const [password, setpassword] = useState('password');
@@ -74,7 +74,6 @@ const Login = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-
 		} else {
 			setValidateError({});
 			try {
@@ -115,7 +114,7 @@ const Login = () => {
 					});
 					router.push('/');
 				} else {
-					setError(response.message);
+					setErrorState(response.message);
 					setLoading(false);
 				}
 			} catch (error) {
@@ -178,9 +177,9 @@ const Login = () => {
 									<div className='form_heading'>
 										<h2>Login to your Account</h2>
 									</div>
-									{error && (
+									{errorState && (
 										<div className='alert-danger mb-3 p-2'>
-											{error}
+											{errorState}
 										</div>
 									)}
 									<form onSubmit={handleSubmit}>
@@ -214,7 +213,7 @@ const Login = () => {
 												<span className='p-viewer2'>
 													<i
 														tabIndex={0}
-														role="button" 
+														role='button'
 														onClick={Eye}
 														className={`fa ${
 															eye

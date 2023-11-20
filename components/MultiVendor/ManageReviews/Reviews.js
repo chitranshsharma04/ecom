@@ -15,18 +15,18 @@ const Reviews = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const router = useRouter();
-//this is a method to set router
-	const setRouterPage = page => {
+	//this is a method to set router
+	const setRouterPage = pageindex => {
 		router.replace({
-			query: {...router.query, page: page},
+			query: {...router.query, page: pageindex},
 		});
 	};
-//this is a method to get review list
+	//this is a method to get review list
 	const getReviewList = async () => {
 		try {
 			setLoading(true);
 			const response = await api({
-				url: "/vendor/get-all-review?page=" + page,
+				url: '/vendor/get-all-review?page=' + page,
 				method: 'POST',
 			});
 			if (response?.data) {
@@ -41,7 +41,7 @@ const Reviews = () => {
 			console.log(error);
 		}
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleChange = async (id, status) => {
 		let formData = new FormData();
 		formData.append('id', id);
@@ -267,7 +267,11 @@ const Reviews = () => {
 																		);
 																	}}
 																>
-																<span aria-hidden='true'>{item.label}</span>
+																	<span aria-hidden='true'>
+																		{
+																			item.label
+																		}
+																	</span>
 																</a>
 															</li>
 														),

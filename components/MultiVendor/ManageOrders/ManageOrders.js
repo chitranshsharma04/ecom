@@ -25,18 +25,18 @@ const ManageOrders = () => {
 
 	const router = useRouter();
 	//this is a method to change values
-	const setRouterPage = page => {
+	const setRouterPage = pageindex => {
 		router.replace({
-			query: {...router.query, page: page},
+			query: {...router.query, page: pageindex},
 		});
 	};
 	//this is a method to get data from api
-	const getOrderList = async page => {
+	const getOrderList = async pageindex => {
 		try {
 			setLoading(true);
 			//this is a method to get data from api
 			const response = await api({
-				url: '/vendor/order/list?page=' + page,
+				url: '/vendor/order/list?page=' + pageindex,
 				method: 'GET',
 			});
 			if (response.data) {
@@ -248,7 +248,11 @@ const ManageOrders = () => {
 																		);
 																	}}
 																>
-															<span aria-hidden='true'>{item.label}</span>
+																	<span aria-hidden='true'>
+																		{
+																			item.label
+																		}
+																	</span>
 																</a>
 															</li>
 														),
