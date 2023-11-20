@@ -210,6 +210,7 @@ const SideBar = () => {
 
 							<li>
 								<span onClick={handleLogout}
+									  tabIndex={0}
 									role="button"
 									>Logout</span>
 							</li>
