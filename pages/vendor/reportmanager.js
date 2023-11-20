@@ -1,4 +1,4 @@
-import reportmanager from './../../components/MultiVendor/ReportManager/ReportManager';
+import reportmanager from '../../components/MultiVendor/ReportManager/ReportManager';
 
 reportmanager.meta = {
 	title: 'Report Manager | E-Commerce Solution',

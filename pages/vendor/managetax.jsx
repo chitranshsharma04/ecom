@@ -1,4 +1,4 @@
-import managetax from './../../components/MultiVendor/ManageTax/ManageTax';
+import managetax from '../../components/MultiVendor/ManageTax/ManageTax';
 
 managetax.meta = {
 	title: 'Manage Tax | E-Commerce Solution',

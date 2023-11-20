@@ -1,4 +1,4 @@
-import managecommission from './../../components/MultiVendor/ManageCommission/ManageCommission';
+import managecommission from '../../components/MultiVendor/ManageCommission/ManageCommission';
 
 managecommission.meta = {
 	title: 'Manage Commission | E-Commerce Solution',
