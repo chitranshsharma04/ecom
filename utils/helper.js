@@ -8,7 +8,7 @@ export const confirmDialog = (title, icon = 'warning') => {
 		Swal.fire({
 			title: '',
 			text: title,
-			icon: icon,
+			icon,
 			// showDenyButton: true,
 			showCancelButton: true,
 			confirmButtonText: 'Confirm',
