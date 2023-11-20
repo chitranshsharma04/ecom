@@ -249,6 +249,7 @@ const LeftPanel = () => {
 																			}
 																		</a>
 																		<a
+																			aria-hidden=true
 																			href='#title46'
 																			className='card-link'
 																			style={{
