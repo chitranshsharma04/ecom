@@ -26,6 +26,7 @@ function Cms(props) {
 		<>
 			<Container>
 				<div
+					role="button" tabIndex={0}
 					className='foral-editor'
 					id='content-area'
 					onClick={handleAnchorClick}

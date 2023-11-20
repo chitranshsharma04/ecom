@@ -145,6 +145,8 @@ const NavbarItem = props => {
 							<span
 								onClick={handleLogout}
 								className={'vendor-menu'}
+								role='button'
+								tabIndex={0}
 							>
 								Logout
 							</span>
@@ -164,10 +166,8 @@ const NavbarItem = props => {
 										renderMenuOnMount
 										show={show}
 										onMouseEnter={() => {
-											{
-												setShow(true);
-												setIndexValue(index);
-											}
+											setShow(true);
+											setIndexValue(index);
 										}}
 										onMouseLeave={() => setShow(false)}
 										onClick={() => onClickOfManu(index)}

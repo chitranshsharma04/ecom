@@ -54,4 +54,5 @@ export async function getServerSideProps(context) {
 	} catch (error) {
 		// console.log({e});
 	}
+	 return null;
 }

@@ -14,7 +14,9 @@ const Unsubscribe = props => {
 			`https://testing-admin-php-ecom-single.projectstatus.co.uk/unsubscribe/${props?.data?.pathdata?.slug}`,
 		)
 			.then(response => response.json())
-			.then(data => {});
+			.then(data => {
+				//It needs to empty, If any logic arises, dev will add it.
+			});
 
 		// if (response.status) {
 		//     // fetchOrders();

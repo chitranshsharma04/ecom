@@ -209,7 +209,10 @@ const SideBar = () => {
 							</li> */}
 
 							<li>
-								<span onClick={handleLogout}>Logout</span>
+								<span onClick={handleLogout}
+									  tabIndex={0}
+									role="button"
+									>Logout</span>
 							</li>
 						</ul>
 					</div>
@@ -317,7 +320,7 @@ const SideBar = () => {
 						)}
 					</li> */}
 							<li>
-								<span onClick={handleLogout}>Logout</span>
+								<span role = "button"   tabIndex={0} onClick={handleLogout}>Logout</span>
 							</li>
 						</ul>
 					</div>

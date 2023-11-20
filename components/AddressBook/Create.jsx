@@ -108,7 +108,7 @@ const Create = () => {
 							>
 								<div className='row'>
 									<div className='col-lg-6 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											Address{' '}
 											<span className='text-danger'>
 												*
@@ -128,7 +128,7 @@ const Create = () => {
 										</span>
 									</div>
 									<div className='col-lg-6 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											Address Line{' '}
 											<span className='text-danger'>
 												*
@@ -149,7 +149,7 @@ const Create = () => {
 									</div>
 
 									<div className='col-lg-6 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											City
 											<span className='text-danger'>
 												*
@@ -169,7 +169,7 @@ const Create = () => {
 										</span>
 									</div>
 									<div className='col-lg-6 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											Postal Code
 											<span className='text-danger'>
 												*
@@ -191,7 +191,7 @@ const Create = () => {
 									</div>
 
 									<div className='col-lg-6 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											State
 											<span className='text-danger'>
 												*
@@ -211,7 +211,7 @@ const Create = () => {
 										</span>
 									</div>
 									<div className='col-lg-6 form-group'>
-										<label>
+										<label htmlFor="labelForValue" >
 											Country
 											<span className='text-danger'>
 												*

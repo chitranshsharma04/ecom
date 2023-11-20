@@ -27,7 +27,9 @@ const Listing = () => {
 		[state.breadcrumbs],
 	);
 
-	useEffect(() => {}, [router]);
+	useEffect(() => {
+		//It needs to empty, If any logic arises, dev will add it.
+	}, [router]);
 //this is the starting point
 	return (
 		<>

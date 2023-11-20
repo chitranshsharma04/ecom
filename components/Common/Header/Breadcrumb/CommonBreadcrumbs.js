@@ -6,7 +6,9 @@ const CommonBreadcrumbs = props => {
 	const {breadcrumbs} = props;
 	const {state} = useCommonState();
 
-	useEffect(() => {}, [state]);
+	useEffect(() => {
+		//It needs to empty, If any logic arises, dev will add it.
+	}, [state]);
 //this is the starting point
 	return (
 		<nav aria-label='breadcrumb' className='breadcrumb-sec'>

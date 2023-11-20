@@ -59,7 +59,7 @@ const Login = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-			return;
+
 		} else {
 			setValidateError({});
 			try {
@@ -100,10 +100,10 @@ const Login = () => {
 							userAuth: response.data,
 						},
 					});
-					{
+					
 						// eslint-disable-next-line babel/no-unused-expressions
 						router.push('/vendor/dashboard');
-					}
+					
 				} else {
 					setError(response.message);
 					setLoading(false);
@@ -200,6 +200,8 @@ const Login = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
+  														tabIndex={0}
+														role="button" 
 														onClick={Eye}
 														className={`fa ${
 															eye

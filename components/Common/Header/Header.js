@@ -126,7 +126,7 @@ const Header = props => {
 		});
 	};
 //this is a method to submit
-	const handleSubmit = async () => {
+	const handleSubmit = () => {
 		const {pathname} = Router;
 		if (pathname) {
 			const url = `/products/search?category=${
@@ -172,12 +172,12 @@ const Header = props => {
 				aria-label='Default select example'
 				style={{height: '50%', marginRight: 20, outline: 'none'}}
 				onChange={({target}) => {
-					{
+					
 						setLoading(true);
 						setCurrencyValue(target.value);
 						cookie.set('currencyValue', target.value);
 						Router.reload();
-					}
+					
 				}}
 			>
 				{configData?.currency?.map((item, index) => {
@@ -197,7 +197,7 @@ const Header = props => {
 			<SpinnerLoader loading={loading} />
 			<div
 				className='header-gap'
-				style={{height: parseInt(headerHeight) + 0 + 'px'}}
+				style={{height: `${parseInt(headerHeight)}0px`}}
 			 />
 			<header className='header' ref={headerRef}>
 				{globalState?.userAuth?.role === 2 ? (

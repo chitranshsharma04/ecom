@@ -17,7 +17,7 @@ const AddressBook = () => {
 
 	const router = useRouter();
 	//this is a method to change values
-	const setRouterPage = async page => {
+	const setRouterPage = page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
@@ -139,6 +139,8 @@ const AddressBook = () => {
 															<i className='fas fa-edit' />
 														</Link>
 														<i
+															role="button"
+															  tabIndex={0}
 															className='fas fa-trash btn'
 															onClick={() =>
 																handleDelete(

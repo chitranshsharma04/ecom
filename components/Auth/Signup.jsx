@@ -38,7 +38,6 @@ const Signup = () => {
 		const result = validate(inputs);
 		if (Object.keys(result).length) {
 			setFormErrors(result);
-			return;
 		} else {
 			setIsSubmit(true);
 
@@ -331,6 +330,8 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
+																				  tabIndex={0}
+																				role="button" 
 																				name='passwordEye'
 																				onClick={
 																					Eye
@@ -374,6 +375,8 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
+																				tabIndex={0}
+																				role="button" 
 																				name='confirmpasswordEye'
 																				onClick={
 																					Eye

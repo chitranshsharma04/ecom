@@ -3,6 +3,7 @@ import React from 'react';
 function Star(props) {
 	return (
 		<div
+			role="button" tabIndex={0}
 			className={`star ${props.value === 0 ? 'semi-active' : ''} ${
 				props.position <= props.rated ? 'active' : ''
 			} `}

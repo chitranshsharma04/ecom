@@ -121,10 +121,10 @@ $(function ($) {
 		maximize: 10,
 		onChange: valChanged,
 		onMinimum: function (e) {
-			
+			//It needs to empty, If any logic arises, dev will add it.
 		},
 		onMaximize: function (e) {
-			
+//It needs to empty, If any logic arises, dev will add it.			
 		},
 	};
 	// $('#handleCounter').handleCounter(options)

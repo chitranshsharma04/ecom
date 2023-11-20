@@ -33,7 +33,7 @@
 							a('body').scrollTop(),
 							a(window).scrollTop(),
 					  )),
-					  (f = b + e.height)),
+					  (f = b + e.height))
 					d.each(function () {
 						var d = a(this),
 							g = {},
@@ -80,7 +80,7 @@
 								l = g.scrollHorizontal
 									? k + d.width()
 									: k + d.height();
-							g.invertBottomOffset && (l -= 2 * g.offset),
+							g.invertBottomOffset && (l -= 2 * g.offset)
 								k < f && l > b
 									? (d.removeClass(g.classToRemove),
 									  d.addClass(g.classToAdd),
@@ -122,7 +122,7 @@
 				(e = {
 					height: a(c.scrollBox).height(),
 					width: a(c.scrollBox).width(),
-				}),
+				})
 					d.checkElements();
 			}),
 			this.checkElements(),

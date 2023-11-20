@@ -428,6 +428,8 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
+																				role = "button"
+																				  tabIndex={0}	
 																				name='passwordEye'
 																				onClick={
 																					Eye
@@ -470,6 +472,8 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
+																				  tabIndex={0}
+																				role="button" 
 																				name='confirmpasswordEye'
 																				onClick={
 																					Eye
@@ -492,8 +496,7 @@ const Signup = () => {
 
 																<div className='col-md-12'>
 																	<div className='form-group'>
-																		<label>
-																			Upload
+																	<label htmlFor="labelForValue" >																			Upload
 																			Business
 																			Documents*
 																		</label>
@@ -506,7 +509,7 @@ const Signup = () => {
 																				fileInputRef
 																			}
 																			onChange={e => {
-																				{
+																				
 																					let file =
 																						e
 																							.target
@@ -530,7 +533,7 @@ const Signup = () => {
 																							'Please select proper image file format (jpeg,jpg,png)',
 																						);
 																					}
-																				}
+																				
 																			}}
 																			onBlur={
 																				handleBlur

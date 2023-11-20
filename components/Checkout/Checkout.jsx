@@ -67,7 +67,7 @@ const Checkout = () => {
 //this is a method to change address
 	const handleAddressChange = event => {
 		const value = event.target.value;
-		const address = state.addresses.find(i => i.id + 'l' === value + 'l');
+		const address = state.addresses.find(i => `i.id + '1' === value + '1'`);
 
 		if (address) {
 			dispatch({
@@ -291,7 +291,7 @@ const Checkout = () => {
 					placeOrderLoading: false,
 				},
 			});
-			return;
+
 		} else {
 			try {
 				setLoading(true);
@@ -412,7 +412,7 @@ const Checkout = () => {
 				}
 				if (response.status) {
 					getCartCount();
-					router.push('/thank-you/' + response?.data?.order_id);
+					router.push(`/thank-you/${response?.data?.order_id}`);
 					toast.success('Order Placed Successfully');
 					setIsSubmitVal(false);
 					setLoading(false);
@@ -619,7 +619,7 @@ const Checkout = () => {
 														placeholder='Phone Number'
 														name='phone'
 														onChange={event => {
-															{
+															
 																const re =
 																	/^[0-9\b]+$/; // regex to match only numbers
 																if (
@@ -636,7 +636,7 @@ const Checkout = () => {
 																		event,
 																	);
 																}
-															}
+															
 														}}
 														onBlur={handleBlur}
 														onKeyDown={event => {
@@ -925,7 +925,7 @@ const Checkout = () => {
 															}
 															// onBlur={handleBlur}
 															onBlur={() => {
-																{
+																
 																	state
 																		?.shipping_postal_code
 																		.length >
@@ -941,7 +941,7 @@ const Checkout = () => {
 																		: null;
 
 																	cartListCall;
-																}
+																
 															}}
 															onKeyDown={event => {
 																if (

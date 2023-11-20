@@ -486,7 +486,7 @@ const EditOrder = props => {
 									<br />
 									<table className='table'>
 										<tbody>
-											<tr scope='row'>
+											<tr>
 												<th>Discount Amount</th>
 												<td>
 													{
@@ -495,7 +495,7 @@ const EditOrder = props => {
 													}
 												</td>
 											</tr>
-											<tr scope='row'>
+											<tr>
 												<th>Shipping Amount</th>
 												<td>
 													{
@@ -505,7 +505,7 @@ const EditOrder = props => {
 												</td>
 											</tr>
 
-											<tr scope='row'>
+											<tr>
 												<th>Grand Total</th>
 												<td>
 													{

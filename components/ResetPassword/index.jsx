@@ -38,7 +38,7 @@ const ResetPassword = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-			return;
+
 		} else {
 			setValidateError({});
 			setIsSubmit(true);
@@ -135,7 +135,7 @@ const ResetPassword = () => {
 												</span>
 											</div>
 											<div className='form-group'>
-												<input
+												<inputE
 													type={password1}
 													placeholder='New password'
 													className='form-control'
@@ -145,6 +145,8 @@ const ResetPassword = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
+														role="button"
+														tabIndex={0}
 														name='passwordEye'
 														onClick={Eye}
 														className={`fa ${
@@ -169,6 +171,8 @@ const ResetPassword = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
+														role="button"
+														tabIndex={0}
 														name='confirmpasswordEye'
 														onClick={Eye}
 														className={`fa ${

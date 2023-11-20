@@ -83,7 +83,7 @@ const LeftPanel = () => {
 		});
 	};
 //this is a method to change values
-	const handleSubmit = async () => {
+	const handleSubmit =  () => {
 		dispatch({
 			type: 'SET_DATA',
 			data: {
@@ -188,7 +188,7 @@ const LeftPanel = () => {
 													<a
 														href='#top'
 														onClick={() => {
-															{
+															
 																setcollapseToggleUp(
 																	collapseToggleUp ===
 																		'up'
@@ -198,7 +198,7 @@ const LeftPanel = () => {
 																setClickedItem(
 																	index,
 																);
-															}
+															
 														}}
 													>
 														<i

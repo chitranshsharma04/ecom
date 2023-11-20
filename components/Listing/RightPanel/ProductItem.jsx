@@ -71,6 +71,7 @@ function ProductItem({item}) {
 				</div>
 			) : (
 				<span
+					role="button" tabIndex={0}
 					className='addWish like'
 					onClick={event => addRemoveToWishlist(event, item)}
 				>
