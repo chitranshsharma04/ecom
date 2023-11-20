@@ -25,7 +25,7 @@ const ManageOrders = () => {
 
 	const router = useRouter();
 	//this is a method to change values
-	const setRouterPage = async page => {
+	const setRouterPage = page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
