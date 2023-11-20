@@ -77,7 +77,7 @@
 					num = minimum;
 					$input.val(minimum);
 				}
-				var reg = new RegExp('^[\\d]*$');
+				var reg = '^[\\d]*$';
 				if (isNaN(parseInt(num)) || !reg.test(num)) {
 					$input.val($input.data('num'));
 					changeVal($input.data('num'));
