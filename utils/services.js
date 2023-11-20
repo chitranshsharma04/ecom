@@ -21,7 +21,7 @@ const updateVendorProfileDetail = giveData => {
 	// });
 	var form_data = new FormData();
 	for (var key in giveData) {
-	    if (giveData.hasOwnProperty(key)) {
+	    if (Object.prototype.hasOwnProperty.call(giveData, key)) {
 		form_data.append(key, giveData[key]);
 	    }
 	}
