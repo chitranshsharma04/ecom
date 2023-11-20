@@ -135,7 +135,7 @@ const ResetPassword = () => {
 												</span>
 											</div>
 											<div className='form-group'>
-												<input
+												<inputE
 													type={password1}
 													placeholder='New password'
 													className='form-control'
@@ -145,6 +145,8 @@ const ResetPassword = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
+														role="button"
+														tabIndex={0}
 														name='passwordEye'
 														onClick={Eye}
 														className={`fa ${
