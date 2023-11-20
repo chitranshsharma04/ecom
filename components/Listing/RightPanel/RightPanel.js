@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import {useEffect, useState} from 'react';
 import Pagination from 'react-responsive-pagination';
 import {useRouter} from 'next/router';
@@ -19,12 +20,12 @@ const RightPanel = () => {
 			var newUrlData = '';
 			slugs.map(item => {
 				newUrlData = newUrlData ? newUrlData + '/' + item : item;
-				 return null;
+				return null;
 			});
 			setNewUrl(newUrlData);
-			 return null;
+			return null;
 		}
-		 return null;
+		return null;
 	}, [router.query.slugs]);
 	//this is a method to change values
 	const handlePageChange = page => {
