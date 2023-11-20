@@ -60,7 +60,7 @@ const ContactUsViewDetailEnquiry = props => {
 				const response = await api({
 					url: '/send-feedback',
 					method: 'POST',
-					data: data,
+					data,
 				});
 				if (response.error) {
 					toast.error(response.message);
