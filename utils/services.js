@@ -20,9 +20,10 @@ const updateVendorProfileDetail = giveData => {
 	// 	headers: {...header},
 	// });
 	var form_data = new FormData();
-
 	for (var key in giveData) {
+	    if (giveData.hasOwnProperty(key)) {
 		form_data.append(key, giveData[key]);
+	    }
 	}
 	// for (const key of giveData.keys()) {
 	// 	form_data.append(key, giveData[key]);
