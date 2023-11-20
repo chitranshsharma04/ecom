@@ -17,7 +17,7 @@ const Order = ({data}) => {
 			'Are you want to return this order?',
 		);
 		if (confirm) {
-			const data = {
+			const dataObj = {
 				// eslint-disable-next-line babel/camelcase
 				order_id: order_id,
 				item: [item_id],
@@ -31,7 +31,7 @@ const Order = ({data}) => {
 			const response = await api({
 				url: '/order/return',
 				method: 'POST',
-				data,
+				dataObj,
 			});
 
 			if (response.status) {
