@@ -41,7 +41,28 @@ const Login = () => {
 			setRememberMe(true);
 		}
 	}, []);
-
+	//this is a method to validate
+	const validate = values => {
+		const passReg =
+			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
+		const errors = {};
+		if (!values.email) {
+			errors.email = 'Email field is required !';
+		} else if (
+			!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+				values.email,
+			)
+		) {
+			errors.email = 'Enter valid email address.';
+		}
+		if (!values.password) {
+			errors.password = 'Password is required.';
+		} else if (!passReg.test(values.password)) {
+			errors.password =
+				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
+		}
+		return errors;
+	};
 	//this is a method to change values
 	function handleRememberMeChange(event) {
 		setRememberMe(event.target.checked);
@@ -59,7 +80,6 @@ const Login = () => {
 		if (Object.keys(result).length) {
 			// eslint-disable-next-line no-undef
 			setValidateError(result);
-
 		} else {
 			setValidateError({});
 			try {
@@ -100,10 +120,9 @@ const Login = () => {
 							userAuth: response.data,
 						},
 					});
-					
-						// eslint-disable-next-line babel/no-unused-expressions
-						router.push('/vendor/dashboard');
-					
+
+					// eslint-disable-next-line babel/no-unused-expressions
+					router.push('/vendor/dashboard');
 				} else {
 					setErrorState(response.message);
 					setLoading(false);
@@ -114,24 +133,7 @@ const Login = () => {
 			}
 		}
 	};
-//this is a method to validate
-	const validate = values => {
-		const passReg =
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
-		const errors = {};
-		if (!values.email) {
-			errors.email = 'Email field is required !';
-		} else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(values.email)) {
-			errors.email = 'Enter valid email address.';
-		}
-		if (!values.password) {
-			errors.password = 'Password is required.';
-		} else if (!passReg.test(values.password)) {
-			errors.password =
-				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character';
-		}
-		return errors;
-	};
+
 	//this is a method to show or hide password
 	const Eye = () => {
 		if (password === 'password') {
@@ -178,7 +180,11 @@ const Login = () => {
 													placeholder='Email Address'
 													className='form-control'
 													name='email'
-													value={inputs.email ? inputs.email : ''}
+													value={
+														inputs.email
+															? inputs.email
+															: ''
+													}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>
@@ -193,15 +199,17 @@ const Login = () => {
 													className='form-control'
 													name='password'
 													value={
-														inputs.password ? inputs.password : ''
+														inputs.password
+															? inputs.password
+															: ''
 													}
 													onChange={handleChange}
 													onBlur={handleBlur}
 												/>
 												<span className='p-viewer2'>
 													<i
-  														tabIndex={0}
-														role="button" 
+														tabIndex={0}
+														role='button'
 														onClick={Eye}
 														className={`fa ${
 															eye
