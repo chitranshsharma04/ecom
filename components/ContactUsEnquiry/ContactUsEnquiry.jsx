@@ -90,7 +90,7 @@ const ContactUsEnquiry = props => {
 				const response = await api({
 					url: '/contact-us-enquiry',
 					method: 'POST',
-					data: data,
+					data,
 				});
 				if (response.error) {
 					toast.error(response.message);

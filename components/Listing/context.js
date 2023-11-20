@@ -49,7 +49,7 @@ const AppProvider = ({children}) => {
 		const url = '/product/product-list';
 		//this is a method to get data from api
 		const response = await api({
-			url: url,
+			url,
 			method: 'POST',
 			data: payload,
 		});

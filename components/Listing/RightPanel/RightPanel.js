@@ -36,7 +36,7 @@ const RightPanel = () => {
 			},
 		});
 		router.replace({
-			query: {...router.query, page: page},
+			query: {...router.query, page},
 		});
 		// router.push()
 	};

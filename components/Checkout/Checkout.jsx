@@ -393,7 +393,7 @@ const Checkout = () => {
 				const response = await api({
 					url: '/order/place-order',
 					method: 'POST',
-					data: data,
+					data,
 				});
 				dispatch({
 					type: 'SET_DATA',
