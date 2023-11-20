@@ -89,7 +89,7 @@ const Header = props => {
 				type: 'SET_DATA',
 				data: {
 					...state,
-					resultCategorylist: resultCategorylist,
+					resultCategorylist,
 					searchCategories: items,
 					currencyData: currencyValue,
 				},
