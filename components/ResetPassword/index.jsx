@@ -169,6 +169,8 @@ const ResetPassword = () => {
 												/>
 												<span className='p-viewer2'>
 													<i
+														role="button"
+														tabIndex={0}
 														name='confirmpasswordEye'
 														onClick={Eye}
 														className={`fa ${
