@@ -18,9 +18,8 @@ const RightPanel = () => {
 		if (router.query?.slugs?.length > 0) {
 			var slugs = router.query.slugs;
 			var newUrlData = '';
-			slugs.map(item => {
-				newUrlData = newUrlData ? `${newUrlData}/${item}` : item;
-				 return null;
+			slugs.forEach(item => {
+			    newUrlData = newUrlData ? `${newUrlData}/${item}` : item;
 			});
 			setNewUrl(newUrlData);
 			return null;

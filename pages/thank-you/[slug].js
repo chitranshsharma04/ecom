@@ -23,4 +23,5 @@ export async function getServerSideProps(context) {
 		console.log('klg-26', error);
 		// console.log({e});
 	}
+	return null;
 }

@@ -244,11 +244,7 @@ const Cart = () => {
 																				}}
 																				className='input-group-text decrement-btn '
 																				disabled={
-																					+item.quantity ===
-																					1
-																						? true
-																						: false ||
-																						  loading
+																					+item.quantity === 1 || loading
 																				}
 																			>
 																				-

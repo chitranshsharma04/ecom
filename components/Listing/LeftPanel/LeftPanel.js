@@ -114,7 +114,6 @@ const LeftPanel = () => {
 	// }, [max]);
 
 	return (
-		<>
 			<div className='left-panel'>
 				<div className='input-group'>
 					<input
@@ -250,6 +249,7 @@ const LeftPanel = () => {
 																			}
 																		</a>
 																		<a
+																			aria-hidden=true
 																			href='#title46'
 																			className='card-link'
 																			style={{
@@ -311,7 +311,6 @@ const LeftPanel = () => {
 					</div>
 				</div>
 			</div>
-		</>
 	);
 };
 

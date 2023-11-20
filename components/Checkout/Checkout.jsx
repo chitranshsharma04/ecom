@@ -445,6 +445,7 @@ const Checkout = () => {
 				});
 			}
 		}
+		return null;
 	};
 	//this is a method to bill address
 	const handleBillingAddress = e => {
