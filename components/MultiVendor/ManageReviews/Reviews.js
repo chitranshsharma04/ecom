@@ -16,7 +16,7 @@ const Reviews = () => {
 
 	const router = useRouter();
 //this is a method to set router
-	const setRouterPage = async page => {
+	const setRouterPage = page => {
 		router.replace({
 			query: {...router.query, page: page},
 		});
