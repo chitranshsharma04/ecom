@@ -94,7 +94,7 @@ const Signup = () => {
 			setIsSubmit(true);
 
 			try {
-				let formData = new FormData();
+				const formData = new FormData();
 				formData.append('firstname', inputs.firstname);
 				formData.append('lastname', inputs.lastname);
 				formData.append('mobile', inputs.mobile);
@@ -132,7 +132,7 @@ const Signup = () => {
 
 	//this is a method to change values
 	const Eye = e => {
-		let nameEye = e.target.attributes.name.nodeValue;
+		const nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'passwordEye') {
 			password1 === 'password'
 				? (setpassword1('text'), seteye1(false))

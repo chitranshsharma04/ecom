@@ -93,7 +93,7 @@ const ChangePassword = () => {
 	};
 	//this is a method to change values
 	const Eye = e => {
-		let nameEye = e.target.attributes.name.nodeValue;
+		const nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'oldPasswordEye') {
 			password1 === 'password'
 				? (setpassword1('text'), seteye1(false))

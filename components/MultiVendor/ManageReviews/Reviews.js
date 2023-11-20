@@ -43,7 +43,7 @@ const Reviews = () => {
 	};
 	//this is a method to change values
 	const handleChange = async (id, status) => {
-		let formData = new FormData();
+		const formData = new FormData();
 		formData.append('id', id);
 		formData.append('status', status === 'Pending' ? 2 : 1);
 

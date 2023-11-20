@@ -53,7 +53,7 @@ const SideBar = () => {
 		sessionStorage.removeItem('userAuth');
 		cookie.remove('userAuth');
 		cookie.remove('token');
-		let guesttoken = cookie.get('tokenguest');
+		const guesttoken = cookie.get('tokenguest');
 		cookie.set('tokenguest', guesttoken);
 		if (cookieData.userType === 'vendor') {
 			window.location.replace('/vendor/login');

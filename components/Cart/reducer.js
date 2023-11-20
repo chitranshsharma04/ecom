@@ -12,7 +12,7 @@ const reducer = (state = initialValue, action) => {
 	switch (action.type) {
 		case 'SET_DATA':
 			// eslint-disable-next-line no-case-declarations
-			let subTotal = action.data.list.reduce(function (acc, obj) {
+			const subTotal = action.data.list.reduce(function (acc, obj) {
 				return acc + Number(obj.final_value);
 			}, 0);
 

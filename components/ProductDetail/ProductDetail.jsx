@@ -76,7 +76,7 @@ const ProductDetail = ({productDetail}) => {
 		}
 	};
 	useEffect(() => {
-		let attr = [];
+		const attr = [];
 		productDetail?.product_attribute?.forEach(i => {
 			attr.push(i?.option?.option_values?.[0]?.title);
 		});
@@ -97,7 +97,7 @@ const ProductDetail = ({productDetail}) => {
 	const getProductDetail = async () => {
 		try {
 			if (variant?.attribute_image) {
-				let images = [];
+				const images = [];
 				if (variant?.attribute_image) {
 					variant?.attribute_image.map((img, index) => {
 						images.push(
@@ -119,7 +119,7 @@ const ProductDetail = ({productDetail}) => {
 				if (images.length) setProductImage(images);
 			} else {
 				if (productDetail?.product_image) {
-					let images = [];
+					const images = [];
 					if (productDetail?.product_image) {
 						productDetail?.product_image.map((img, index) => {
 							images.push(

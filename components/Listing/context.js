@@ -55,7 +55,7 @@ const AppProvider = ({children}) => {
 		});
 
 		if (response.status) {
-			let sliderValueMin = [];
+			const sliderValueMin = [];
 			sliderValueMin.push(
 				parseInt(response?.data?.rang?.min),
 				parseInt(response?.data?.rang?.max),

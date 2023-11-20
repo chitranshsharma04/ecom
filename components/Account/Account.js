@@ -84,7 +84,7 @@ const Account = () => {
 			setDisable(false);
 			setValidateError({});
 			try {
-				let formData = new FormData();
+				const formData = new FormData();
 				formData.append('firstname', inputs.firstname);
 				formData.append('lastname', inputs.lastname);
 				formData.append('mobile', inputs.mobile);

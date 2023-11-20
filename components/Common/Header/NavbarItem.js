@@ -19,7 +19,7 @@ const NavbarItem = props => {
 		sessionStorage.removeItem('userAuth');
 		cookie.remove('userAuth');
 		cookie.remove('token');
-		let guesttoken = cookie.get('tokenguest');
+		const guesttoken = cookie.get('tokenguest');
 		cookie.set('tokenguest', guesttoken);
 		// router.push('/vendor/login');
 		window.location.replace('/vendor/login');

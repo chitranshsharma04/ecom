@@ -68,7 +68,7 @@ const Home = () => {
 			const results = await LayoutServices.getCategorylist();
 			setIsLoading(false);
 			const items = [];
-			for (let item of results.data.data) {
+			for (const item of results.data.data) {
 				items.push(
 					<div className='item' key={item.id}>
 						<div className='deal-box'>

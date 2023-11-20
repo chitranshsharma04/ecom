@@ -169,7 +169,7 @@ const Signup = () => {
 
 	//this is a method to change values
 	const Eye = e => {
-		let nameEye = e.target.attributes.name.nodeValue;
+		const nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'passwordEye') {
 			// eslint-disable-next-line babel/no-unused-expressions
 			password1 === 'password'
@@ -532,7 +532,7 @@ const Signup = () => {
 																				fileInputRef
 																			}
 																			onChange={e => {
-																				let file =
+																				const file =
 																					e
 																						.target
 																						.files[0];

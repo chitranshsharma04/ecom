@@ -99,7 +99,7 @@ const Login = () => {
 
 				if (!response.error && response.data.api_token) {
 					response.data.AccessToken = 'DOTSQUARES123';
-					let guesttoken = cookie.get('tokenguest');
+					const guesttoken = cookie.get('tokenguest');
 
 					cookie.set('tokenguest', guesttoken);
 					cookie.set('userAuth', JSON.stringify(response.data));

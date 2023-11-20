@@ -3,7 +3,8 @@ import React from 'react';
 function Star(props) {
 	return (
 		<div
-			role="button" tabIndex={0}
+			role='button'
+			tabIndex={0}
 			className={`star ${props.value === 0 ? 'semi-active' : ''} ${
 				props.position <= props.rated ? 'active' : ''
 			} `}
@@ -36,10 +37,10 @@ class RatingWidget extends React.Component {
 			rated: 0,
 		};
 	}
-//this is a method to change values
+	//this is a method to change values
 	handleMouseOver(i) {
 		if (this.props.view) return;
-		let currentRating = this.state.rated;
+		const currentRating = this.state.rated;
 
 		if (currentRating > 0) {
 			const hoverRatedStars = this.state.stars.slice();
@@ -53,10 +54,10 @@ class RatingWidget extends React.Component {
 			this.setState({stars: hoverStars});
 		}
 	}
-//this is a method to change values
+	//this is a method to change values
 	handleMouseOut() {
 		if (this.props.view) return;
-		let currentRating = this.state.rated;
+		const currentRating = this.state.rated;
 		if (currentRating > 0) {
 			const resetRatedStars = this.state.stars.slice();
 			resetRatedStars.fill(currentRating, -1, resetRatedStars.length);
@@ -71,7 +72,7 @@ class RatingWidget extends React.Component {
 			this.setState({stars: resetStars});
 		}
 	}
-//this is a method to change values
+	//this is a method to change values
 	handleClick(i) {
 		if (this.props.view) return;
 		const clickedStar = this.state.stars.slice();
@@ -88,18 +89,18 @@ class RatingWidget extends React.Component {
 		});
 		if (this.props.onChange) this.props.onChange(i);
 	}
-//this is a method to change values
+	//this is a method to change values
 	componentDidMount() {
-	    this.setState(prevState => ({
-	        ...prevState,
-	        rated: this.props.value
-	    }));
+		this.setState(prevState => ({
+			...prevState,
+			rated: this.props.value,
+		}));
 	}
-//this is a method to change values
+	//this is a method to change values
 	handleRating() {
 		return <Rating rating={this.state.rated} />;
 	}
-//this is a method to change values
+	//this is a method to change values
 	renderStar(i) {
 		return (
 			<Star
@@ -112,7 +113,7 @@ class RatingWidget extends React.Component {
 			/>
 		);
 	}
-//this is the starting point
+	//this is the starting point
 	render() {
 		return (
 			<div className='rating-stars-widget-outer'>

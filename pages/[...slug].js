@@ -24,7 +24,7 @@ const Page = props => {
 //this is a method to get data from api
 export async function getStaticProps({params}) {
 	const slug = params?.slug ? params.slug.join('/') : '/';
-//this is a method to get data from api
+	//this is a method to get data from api
 	const props = await getCmsPageProps(slug);
 
 	let meta = {};
@@ -51,11 +51,11 @@ export async function getStaticPaths() {
 	});
 
 	const paths = pages.data?.filter(item => {
-	    return (
-		item.slug !== 'term-policy' &&
-		item.slug !== 'about-us' &&
-		item.slug !== 'contact-us'
-	    );
+		return (
+			item.slug !== 'term-policy' &&
+			item.slug !== 'about-us' &&
+			item.slug !== 'contact-us'
+		);
 	});
 
 	return {

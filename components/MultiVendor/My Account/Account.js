@@ -103,8 +103,8 @@ const Account = () => {
 	};
 	//this is a method to change values
 	const handleChangeImage = e => {
-		let allowedExtension = ['jpg', 'jpeg', 'txt', 'png', 'pdf', 'doc'];
-		let extension = e.target.files[0].name
+		const allowedExtension = ['jpg', 'jpeg', 'txt', 'png', 'pdf', 'doc'];
+		const extension = e.target.files[0].name
 			.replace(/.*\./, '')
 			.toLowerCase();
 		if (allowedExtension.indexOf(extension) < 0) {
@@ -138,7 +138,7 @@ const Account = () => {
 			setDisable(false);
 			setValidateError({});
 			try {
-				let formData = new FormData();
+				const formData = new FormData();
 				formData.append('firstname', inputs.firstname);
 				formData.append('lastname', inputs.lastname);
 				formData.append('mobile', inputs.mobile);

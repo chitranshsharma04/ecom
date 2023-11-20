@@ -41,7 +41,7 @@ const Dashboard = () => {
 			return JSON.parse(cookie.get('userAuth'));
 		} else return {};
 	};
-	let cookiedata = getUserCookie('userAuth');
+	const cookiedata = getUserCookie('userAuth');
 	//this is a method to change values
 	const handleChangeFromDate = event => {
 		setFromDate(moment(event).format('YYYY-MM-DD'));
