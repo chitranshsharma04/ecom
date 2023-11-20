@@ -428,6 +428,8 @@ const Signup = () => {
 																		/>
 																		<span className='p-viewer'>
 																			<i
+																				role = "button"
+																				  tabIndex={0}	
 																				name='passwordEye'
 																				onClick={
 																					Eye
