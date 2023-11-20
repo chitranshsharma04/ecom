@@ -26,7 +26,7 @@ const Reviews = () => {
 		try {
 			setLoading(true);
 			const response = await api({
-				url: '/vendor/get-all-review?page=' + page,
+				url: `/vendor/get-all-review?page=${page}`,
 				method: 'POST',
 			});
 			if (response?.data) {

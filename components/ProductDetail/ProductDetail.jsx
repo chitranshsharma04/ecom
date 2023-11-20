@@ -941,10 +941,7 @@ const ProductDetail = ({productDetail}) => {
 														<div className='product-box'>
 															<figure>
 																<a
-																	href={
-																		'/product/' +
-																		item.slug
-																	}
+																	href={`/product/&{item.slug}`}
 																>
 																	<NextImage
 																		width={
