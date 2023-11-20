@@ -73,22 +73,25 @@ class RatingWidget extends React.Component {
 		}
 	}
 	//this is a method to change values
-	handleClick(i) {
-		if (this.props.view) return;
-		const clickedStar = this.state.stars.slice();
+handleClick(i) {
+  if (this.props.view) return;
 
-		clickedStar.fill(1, 0, i);
-		clickedStar.fill(1, i, clickedStar.length);
+  this.setState(prevState => {
+    const clickedStar = prevState.stars.slice();
+    clickedStar.fill(1, 0, i);
+    clickedStar.fill(1, i, clickedStar.length);
 
-		// _.fill(clickedStar, 1, 0, i);
-		// _.fill(clickedStar, 1, i, clickedStar.length);
+    // _.fill(clickedStar, 1, 0, i);
+    // _.fill(clickedStar, 1, i, clickedStar.length);
 
-		this.setState({
-			stars: clickedStar,
-			rated: i,
-		});
-		if (this.props.onChange) this.props.onChange(i);
-	}
+    return {
+      stars: clickedStar,
+      rated: i,
+    };
+  }, () => {
+    if (this.props.onChange) this.props.onChange(i);
+  });
+}
 	//this is a method to change values
 	componentDidMount() {
 		this.setState(prevState => ({
