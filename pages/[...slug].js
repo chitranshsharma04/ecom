@@ -69,7 +69,7 @@ export async function getStaticPaths() {
 //this is a method to get data from api
 async function getCmsPageProps(path) {
 	try {
-		let result = await api({
+		const result = await api({
 			url: `/users/page-all?slug=${path}`,
 			method: 'get',
 		});

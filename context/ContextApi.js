@@ -119,7 +119,7 @@ const AppProvider = ({children}) => {
 
 		if (!isAuthenticated) return;
 
-		let cookiedata = getUserCookie('userAuth');
+		const cookiedata = getUserCookie('userAuth');
 		//this is a method to get data from api
 		const response = await api({
 			url: '/' + (cookiedata.userType ?? 'users') + '/profile-detail',
