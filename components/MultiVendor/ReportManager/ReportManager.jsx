@@ -46,6 +46,28 @@ const ReportManager = () => {
 	useEffect(() => {
 		setValidateError(validate(FromDate, ToDate));
 	}, [FromDate, ToDate]);
+	//this is a method to get data from api
+	const getTotalEarning = async () => {
+		setIsLoading(true);
+		try {
+			//this is a method to get data from api
+			const response = await api({
+				url: `/vendor/report-earnings?from_date=${moment(
+					FromDate,
+				).format('DD-MM-YYYY')}&to_date=${moment(ToDate).format(
+					'DD-MM-YYYY',
+				)}`,
+				method: 'GET',
+			});
+			if (response) {
+				setTotalEarning(response.data);
+				setIsLoading(false);
+			}
+		} catch (error) {
+			console.log(error);
+			setIsLoading(false);
+		}
+	};
 	//this is a method to change values
 	const handleSubmit = async () => {
 		setIsLoading(true);
@@ -73,29 +95,6 @@ const ReportManager = () => {
 				console.log(error);
 				setIsLoading(false);
 			}
-		}
-	};
-
-	//this is a method to get data from api
-	const getTotalEarning = async () => {
-		setIsLoading(true);
-		try {
-			//this is a method to get data from api
-			const response = await api({
-				url: `/vendor/report-earnings?from_date=${moment(
-					FromDate,
-				).format('DD-MM-YYYY')}&to_date=${moment(ToDate).format(
-					'DD-MM-YYYY',
-				)}`,
-				method: 'GET',
-			});
-			if (response) {
-				setTotalEarning(response.data);
-				setIsLoading(false);
-			}
-		} catch (error) {
-			console.log(error);
-			setIsLoading(false);
 		}
 	};
 

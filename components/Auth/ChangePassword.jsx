@@ -14,13 +14,38 @@ const ChangePassword = () => {
 	const [password3, setpassword3] = useState('password');
 	const [formErrors, setFormErrors] = useState({});
 	const [loading, setLoading] = useState(false);
-//this is a method to change values
+	//this is a method to validate
+	const validate = values => {
+		const errors = {};
+		const passReg =
+			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
+
+		if (!values.current_password) {
+			errors.current_password = 'Old Password is required!';
+		}
+		if (!values.new_password) {
+			errors.new_password = 'New Password is required!';
+		} else if (!passReg.test(values.new_password)) {
+			errors.new_password =
+				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character!';
+		}
+		if (!values.new_password_confirmation) {
+			errors.new_password_confirmation = 'Confirm Password is required!';
+		} else {
+			if (!(values.new_password === values.new_password_confirmation)) {
+				errors.new_password_confirmation =
+					'Confirm Password is not matched!';
+			}
+		}
+		return errors;
+	};
+	//this is a method to change values
 	const handleChange = event => {
 		const name = event.target.name;
 		const value = event.target.value.replace(/^\s/, '');
 		setInputs(values => ({...values, [name]: value}));
 	};
-//this is a method to change values
+	//this is a method to change values
 	const handleBlur = () => {
 		setFormErrors(validate(inputs));
 	};
@@ -28,13 +53,13 @@ const ChangePassword = () => {
 	// useEffect(() => {
 	// 	setFormErrors(validate(inputs));
 	// }, [inputs]);
-//this is a method to change values
+
+	//this is a method to change values
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const result = validate(inputs);
 		if (Object.keys(result).length) {
 			setFormErrors(result);
-
 		} else {
 			try {
 				setLoading(true);
@@ -61,7 +86,7 @@ const ChangePassword = () => {
 			}
 		}
 	};
-//this is a method to change values
+	//this is a method to change values
 	const Eye = e => {
 		let nameEye = e.target.attributes.name.nodeValue;
 		if (nameEye === 'oldPasswordEye') {
@@ -78,32 +103,8 @@ const ChangePassword = () => {
 				: (setpassword3('password'), seteye3(true));
 		}
 	};
-//this is a method to validate
-	const validate = values => {
-		const errors = {};
-		const passReg =
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*.,#?&])[A-Za-z\d@$!%*.,#?&]{8,50}$/;
 
-		if (!values.current_password) {
-			errors.current_password = 'Old Password is required!';
-		}
-		if (!values.new_password) {
-			errors.new_password = 'New Password is required!';
-		} else if (!passReg.test(values.new_password)) {
-			errors.new_password =
-				'Password must be minimum 8 character should have at least one lower case, one upper case, one numeric and one special character!';
-		}
-		if (!values.new_password_confirmation) {
-			errors.new_password_confirmation = 'Confirm Password is required!';
-		} else {
-			if (!(values.new_password === values.new_password_confirmation)) {
-				errors.new_password_confirmation =
-					'Confirm Password is not matched!';
-			}
-		}
-		return errors;
-	};
-//this is the starting point
+	//this is the starting point
 	return (
 		<>
 			<SpinnerLoader loading={loading} />
@@ -118,7 +119,7 @@ const ChangePassword = () => {
 							<div className=''>
 								<div className='row'>
 									<div className='col-lg-4 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											Old Password
 											<span className='text-danger'>
 												*
@@ -141,8 +142,8 @@ const ChangePassword = () => {
 											/>
 											<span className='p-viewer1'>
 												<i
-													  tabIndex={0}
-													role="button" 
+													tabIndex={0}
+													role='button'
 													name='oldPasswordEye'
 													onClick={Eye}
 													className={`fa ${
@@ -150,7 +151,7 @@ const ChangePassword = () => {
 															? 'fa-eye-slash'
 															: 'fa-eye'
 													}`}
-												 />
+												/>
 											</span>
 										</div>
 										<span className='text-danger'>
@@ -158,7 +159,7 @@ const ChangePassword = () => {
 										</span>
 									</div>
 									<div className='col-lg-4 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											New Password
 											<span className='text-danger'>
 												*
@@ -180,8 +181,8 @@ const ChangePassword = () => {
 											/>
 											<span className='p-viewer1'>
 												<i
-													  tabIndex={0}
-													role="button" 
+													tabIndex={0}
+													role='button'
 													name='newPasswordEye'
 													onClick={Eye}
 													className={`fa ${
@@ -189,7 +190,7 @@ const ChangePassword = () => {
 															? 'fa-eye-slash'
 															: 'fa-eye'
 													}`}
-												 />
+												/>
 											</span>
 										</div>
 										<span className='text-danger'>
@@ -197,7 +198,7 @@ const ChangePassword = () => {
 										</span>
 									</div>
 									<div className='col-lg-4 form-group'>
-										<label htmlFor="labelForValue" >
+										<label htmlFor='labelForValue'>
 											Confirm Password
 											<span className='text-danger'>
 												*
@@ -220,8 +221,8 @@ const ChangePassword = () => {
 											/>
 											<span className='p-viewer1'>
 												<i
-													  tabIndex={0}
-													role="button" 
+													tabIndex={0}
+													role='button'
 													name='confirmPasswordEye'
 													onClick={Eye}
 													className={`fa ${
@@ -229,7 +230,7 @@ const ChangePassword = () => {
 															? 'fa-eye-slash'
 															: 'fa-eye'
 													}`}
-												 />
+												/>
 											</span>
 										</div>
 										<span className='text-danger'>

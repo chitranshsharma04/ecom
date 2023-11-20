@@ -31,91 +31,92 @@ const Checkout = () => {
 	const [selectedValue, setSelectedValue] = useState('online');
 
 	const {state: globalState, getCartCount} = useGlobalContext();
-		//this is a method to validate
-		const validate = values => {
-			if (!state?.firstname) {
-				errors.firstname = 'First name is required!';
-			} else if (state.firstname.length > 15) {
-				errors.firstname = 'Maximum 15 characters is required!';
+	const errors = {};
+	//this is a method to validate
+	const validate = values => {
+		if (!state?.firstname) {
+			errors.firstname = 'First name is required!';
+		} else if (state.firstname.length > 15) {
+			errors.firstname = 'Maximum 15 characters is required!';
+		}
+		if (!state?.lastname) {
+			errors.lastname = 'Last name is required!';
+		} else if (state.lastname.length > 15) {
+			errors.lastname = 'Maximum 15 characters is required!';
+		}
+		if (!state?.phone) {
+			errors.phone = 'Phone is required!';
+		} else if (values?.phone?.length < 8) {
+			errors.phone = 'Phone must be between 8 and 16 digits!';
+		} else if (state?.phone?.length > 16) {
+			errors.phone = 'Phone not more than 16 digits!';
+		}
+		if (!state?.shipping_address1) {
+			errors.address1 = 'Address is required!';
+		} else if (state?.shipping_address1.length > 100) {
+			errors.address1 = 'Maximum 100 characters is required!';
+		}
+		if (!state?.shipping_address2) {
+			errors.address2 = 'Apartment, Suit field is required!';
+		} else if (state?.shipping_address2.length > 100) {
+			errors.address2 = 'Maximum 100 characters is required!';
+		}
+		if (!state?.shipping_city) {
+			errors.addressCity = 'City is required!';
+		} else if (state?.shipping_city.length > 30) {
+			errors.addressCity = 'Maximum 30 characters is required!';
+		}
+		if (!state?.shipping_postal_code) {
+			errors.postal_code = 'Postal code is required!';
+		} else if (state?.shipping_postal_code.length > 7) {
+			errors.postal_code = 'Postal Code Should have 6 Digits!';
+		}
+		if (!state?.shipping_state) {
+			errors.addressState = 'State is required!';
+		} else if (state?.shipping_state.length > 30) {
+			errors.addressState = 'Maximum 30 characters is required!';
+		}
+		if (!state?.shipping_country) {
+			errors.country = 'Country is required!';
+		}
+		if (!(state?.['card-expiry'] && state?.['card-number'] && state?.cvc)) {
+			errors.payment = 'The payment method field is required.';
+		}
+
+		if (state?.billingAddress === false) {
+			if (!state?.billing_address1) {
+				errors.billing_address1 = 'Billing Address is required!';
+			} else if (state?.billing_address1.length > 100) {
+				errors.billing_address1 = 'Maximum 100 characters is required!';
 			}
-			if (!state?.lastname) {
-				errors.lastname = 'Last name is required!';
-			} else if (state.lastname.length > 15) {
-				errors.lastname = 'Maximum 15 characters is required!';
+			if (!state?.billing_address2) {
+				errors.billing_address2 =
+					'Billing Apartment, Suit field is required!';
+			} else if (state?.billing_address2.length > 100) {
+				errors.billing_address2 = 'Maximum 100 characters is required!';
 			}
-			if (!state?.phone) {
-				errors.phone = 'Phone is required!';
-			} else if (values?.phone?.length < 8) {
-				errors.phone = 'Phone must be between 8 and 16 digits!';
-			} else if (state?.phone?.length > 16) {
-				errors.phone = 'Phone not more than 16 digits!';
+			if (!state?.billing_city) {
+				errors.billing_city = 'Billing City is required!';
+			} else if (state?.billing_city.length > 30) {
+				errors.billing_city = 'Maximum 30 characters is required!';
 			}
-			if (!state?.shipping_address1) {
-				errors.address1 = 'Address is required!';
-			} else if (state?.shipping_address1.length > 100) {
-				errors.address1 = 'Maximum 100 characters is required!';
+			if (!state?.billing_postal_code) {
+				errors.billing_postal_code = 'Billing Postal code is required!';
+			} else if (state?.billing_postal_code.length > 6) {
+				errors.billing_postal_code = 'Maximum 6 digit is required!';
 			}
-			if (!state?.shipping_address2) {
-				errors.address2 = 'Apartment, Suit field is required!';
-			} else if (state?.shipping_address2.length > 100) {
-				errors.address2 = 'Maximum 100 characters is required!';
+			if (!state?.billing_state) {
+				errors.billing_state = 'Billing State is required!';
+			} else if (state?.billing_state.length > 30) {
+				errors.billing_state = 'Maximum 30 characters is required!';
 			}
-			if (!state?.shipping_city) {
-				errors.addressCity = 'City is required!';
-			} else if (state?.shipping_city.length > 30) {
-				errors.addressCity = 'Maximum 30 characters is required!';
+			if (!state?.billing_country) {
+				errors.billing_country = 'Billing Country is required!';
 			}
-			if (!state?.shipping_postal_code) {
-				errors.postal_code = 'Postal code is required!';
-			} else if (state?.shipping_postal_code.length > 7) {
-				errors.postal_code = 'Postal Code Should have 6 Digits!';
-			}
-			if (!state?.shipping_state) {
-				errors.addressState = 'State is required!';
-			} else if (state?.shipping_state.length > 30) {
-				errors.addressState = 'Maximum 30 characters is required!';
-			}
-			if (!state?.shipping_country) {
-				errors.country = 'Country is required!';
-			}
-			if (!(state?.['card-expiry'] && state?.['card-number'] && state?.cvc)) {
-				errors.payment = 'The payment method field is required.';
-			}
-	
-			if (state?.billingAddress === false) {
-				if (!state?.billing_address1) {
-					errors.billing_address1 = 'Billing Address is required!';
-				} else if (state?.billing_address1.length > 100) {
-					errors.billing_address1 = 'Maximum 100 characters is required!';
-				}
-				if (!state?.billing_address2) {
-					errors.billing_address2 =
-						'Billing Apartment, Suit field is required!';
-				} else if (state?.billing_address2.length > 100) {
-					errors.billing_address2 = 'Maximum 100 characters is required!';
-				}
-				if (!state?.billing_city) {
-					errors.billing_city = 'Billing City is required!';
-				} else if (state?.billing_city.length > 30) {
-					errors.billing_city = 'Maximum 30 characters is required!';
-				}
-				if (!state?.billing_postal_code) {
-					errors.billing_postal_code = 'Billing Postal code is required!';
-				} else if (state?.billing_postal_code.length > 6) {
-					errors.billing_postal_code = 'Maximum 6 digit is required!';
-				}
-				if (!state?.billing_state) {
-					errors.billing_state = 'Billing State is required!';
-				} else if (state?.billing_state.length > 30) {
-					errors.billing_state = 'Maximum 30 characters is required!';
-				}
-				if (!state?.billing_country) {
-					errors.billing_country = 'Billing Country is required!';
-				}
-			}
-			return errors;
-		};
-		
+		}
+		return errors;
+	};
+
 	//this is a method to cancel
 	const handleChange = event => {
 		dispatch({
@@ -266,17 +267,16 @@ const Checkout = () => {
 		setCoupon(null);
 		fetchCartDetails(state.shipping_postal_code);
 	};
-	const errors = {};
 
-		//this is a method to create memo
-		const totalPrice = useMemo(
-			() =>
-				(state?.cartDetails?.data?.reduce(
-					(total, val) => (total += +val.final_value),
-					0,
-				) ?? 0) - (+state?.cartDetails?.tax_price ?? 0),
-			[state?.cartDetails],
-		);
+	//this is a method to create memo
+	const totalPrice = useMemo(
+		() =>
+			(state?.cartDetails?.data?.reduce(
+				(total, val) => (total += +val.final_value),
+				0,
+			) ?? 0) - (+state?.cartDetails?.tax_price ?? 0),
+		[state?.cartDetails],
+	);
 
 	//this is a method to submit
 	const handleSubmit = async event => {
@@ -486,7 +486,6 @@ const Checkout = () => {
 			target: {name: event.target.id, value: event.target.value},
 		});
 	};
-
 
 	const options = [
 		{

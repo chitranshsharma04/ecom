@@ -50,6 +50,17 @@ const LeftPanel = () => {
 			},
 		});
 	}, [state?.sliderValue?.[0], state?.sliderValue?.[1]]);
+	//this is a method to change values
+	const handleChangeSlider = value => {
+		dispatch({
+			type: 'SET_DATA',
+			data: {
+				...state,
+				sliderChange: value,
+				sliderValChange: !state.sliderValChange,
+			},
+		});
+	};
 	//this is a method to get data from api
 	const getResults = useCallback(async () => {
 		try {
@@ -89,17 +100,6 @@ const LeftPanel = () => {
 			data: {
 				...state,
 				search: search,
-			},
-		});
-	};
-	//this is a method to change values
-	const handleChangeSlider = value => {
-		dispatch({
-			type: 'SET_DATA',
-			data: {
-				...state,
-				sliderChange: value,
-				sliderValChange: !state.sliderValChange,
 			},
 		});
 	};
