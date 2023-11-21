@@ -3,7 +3,7 @@ import 'react-multi-carousel/lib/styles.css';
 //this is the starting point
 export function DealECarousel({children, ...rest}) {
 	const max = rest?.max ?? false;
-	//this is the starting point
+//this is the starting point
 	const responsive1 = {
 		superLargeDesktop: {
 			// the naming can be any, depends on you.
@@ -23,7 +23,7 @@ export function DealECarousel({children, ...rest}) {
 			items: 2,
 		},
 	};
-	//this is the starting point
+//this is the starting point
 	return (
 		<Carousel
 			responsive={responsive1}
@@ -73,7 +73,7 @@ function ECarousel({children, ...rest}) {
 			items: 1,
 		},
 	};
-	//this is the starting point
+//this is the starting point
 	return (
 		<Carousel
 			responsive={responsive1}

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/order */
@@ -18,12 +17,11 @@ import Router from 'next/router';
 import cookie from 'js-cookie';
 import {toast} from 'react-toastify';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
+import { NextImage, Image } from '@components/Common/Image';
 import {useGlobalContext} from '@context/ContextApi';
 import {useCommonState} from '../reducer';
 import NavbarItem from './NavbarItem';
 import Form from 'react-bootstrap/Form';
-import NextImage from '../Image';
-import Image from 'next/image';
 //this is the starting point
 const Header = props => {
 	const {state, dispatch} = useCommonState();
@@ -35,7 +33,7 @@ const Header = props => {
 	const [currencyValue, setCurrencyValue] = React.useState(1);
 	const [headerHeight, setHeaderHeight] = React.useState(0);
 	const [loading, setLoading] = useState(false);
-	// console.log(headerHeight,"headerheight")
+
 	const headerRef = useRef();
 //this is a method to make a callback
 	const onResize = useCallback(() => {
@@ -56,8 +54,8 @@ const Header = props => {
 		} else return {};
 	};
 
-	let cookiedata = getUserCookie('userAuth');
-	console.log('cookie', cookiedata);
+	// let cookiedata = getUserCookie('userAuth');
+	
 	// eslint-disable-next-line no-unused-vars
 	//this is a method to make a callback
 	const getResults = useCallback(async () => {
@@ -91,7 +89,7 @@ const Header = props => {
 				type: 'SET_DATA',
 				data: {
 					...state,
-					resultCategorylist : resultCategorylist,
+					resultCategorylist,
 					searchCategories: items,
 					currencyData: currencyValue,
 				},
@@ -104,6 +102,7 @@ const Header = props => {
 	useEffect(() => {
 		getResults();
 	}, [getResults]);
+
 	// const handleSelect = event => {
 	// 	var index = event.nativeEvent.target.selectedIndex;
 
@@ -198,8 +197,8 @@ const Header = props => {
 			<SpinnerLoader loading={loading} />
 			<div
 				className='header-gap'
-				style={{height: parseInt(headerHeight) + 0 + 'px'}}
-			></div>
+				style={{height: `${parseInt(headerHeight)}0px`}}
+			 />
 			<header className='header' ref={headerRef}>
 				{globalState?.userAuth?.role === 2 ? (
 					''
@@ -260,8 +259,6 @@ const Header = props => {
 											<NextImage
 												src='/assets/images/logo.png'
 												alt='av'
-												width={100}
-												height={100}
 												style={{minHeight: '100rem'}}
 											/>
 											{globalState?.userAuth?.role ===
@@ -286,8 +283,6 @@ const Header = props => {
 											<Image
 												src='/assets/images/logo.png'
 												alt='av'
-												width={200}
-												height={100}
 											/>
 											{/* {globalState?.userAuth?.role === 2 ? (
 										<span className='text'>DS E-Commerce</span>
@@ -361,7 +356,7 @@ const Header = props => {
 											{!isAuthenticated ? (
 												<a
 													className='heart-icon'
-													href='#'
+													href='#top'
 													onClick={() =>
 														toast.info(
 															'Please login to View Wishlist',
@@ -397,13 +392,13 @@ const Header = props => {
 											<Link href='/vendor/dashboard'>
 												&nbsp;
 												<>
-													{globalState?.userAuth?.profile_pic && <NextImage
-														src={globalState?.userAuth?.profile_pic}
+													<Image
+														src={`${globalState?.userAuth?.profile_pic}`}
 														width={50}
 														height={50}
 														alt='profile'
 														className='user-img mr-3 profile-img'
-													/>}
+													/>
 													{globalState?.userAuth
 														?.firstname
 														? `${globalState?.userAuth?.firstname} ${globalState?.userAuth?.lastname}`
@@ -418,8 +413,8 @@ const Header = props => {
 												{' '}
 												&nbsp;
 												<>
-													<NextImage
-														src={globalState?.userAuth?.profile_pic}
+													<Image
+														src={`${globalState?.userAuth?.profile_pic}`}
 														width={50}
 														height={50}
 														alt='profile'

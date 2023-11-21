@@ -7,16 +7,18 @@ import React, {useState, useEffect, useCallback} from 'react';
 import Link from 'next/link';
 import UserService from '@utils/HomeServices';
 import LayoutServices from '@utils/layoutService/layoutService';
+import NextImage from '@components/Common/Image';
+import {DealECarousel, ECarousel} from '@components/Common/Carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import {Carousel} from 'react-responsive-carousel';
+import CarouselBanner from '@components/Common/CarouselBanner';
 import {api} from '@utils/api';
 import cookie from 'js-cookie';
 import {useGlobalContext} from '@context/ContextApi';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import Image from 'next/image';
 import Skeleton from 'react-loading-skeleton';
-import CarouselBanner from '@components/Common/CarouselBanner';
-import ECarousel, { DealECarousel } from '@components/Common/Carousel';
-import NextImage from '@components/Common/Image';
+
 // import { useContextState } from '@context/reducer';
 
 const Home = () => {
