@@ -106,8 +106,7 @@ const ManageProducts = () => {
 			}
 		});
 	}, [productList, searchTerm]);
-
-	
+	console.log('filteredProductList', filteredProductList);
 
 	const handleKeyDown = event => {
 		if (event.key === 'Enter') {
@@ -295,9 +294,10 @@ const ManageProducts = () => {
 										</table>
 										<ul className='pagination justify-content-center'>
 											{productList.length > 0
-												? pageLink?.map(
-														(item, index) => (
-															
+												? pageLink?.map((item, index) =>
+														console.log(
+															item,
+															index,
 														),
 												  )
 												: ''}

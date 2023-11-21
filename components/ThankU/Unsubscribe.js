@@ -3,7 +3,6 @@ import {useEffect} from 'react';
 // import { api } from '@utils/api';
 
 const Unsubscribe = props => {
-	
 	const handleReturn = async () => {
 		// const confirm = await confirmDialog('Are you want to return this order?');
 		// const response = await api({
@@ -16,6 +15,7 @@ const Unsubscribe = props => {
 			.then(response => response.json())
 			.then(data => {
 				//It needs to empty, If any logic arises, dev will add it.
+				console.log(data);
 			});
 
 		// if (response.status) {

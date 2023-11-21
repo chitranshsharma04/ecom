@@ -521,7 +521,6 @@ const AddProduct = props => {
 						variant => {
 							productAttriId.push(variant.id);
 						},
-						 return null;
 					);
 					//this is a method to change values
 					setEditProductId(productAttriId);
@@ -569,7 +568,7 @@ const AddProduct = props => {
 
 					response.data.product.product_image?.map(image => {
 						setProductImage(image);
-						 return null;
+						return null;
 					});
 				}
 			} catch (error) {
@@ -602,7 +601,7 @@ const AddProduct = props => {
 							value: attributeOption.id,
 							label: attributeOption.title,
 						});
-						 return null;
+						return null;
 					});
 					setAttributeValueOptions(prev => ({
 						...prev,
@@ -884,7 +883,9 @@ const AddProduct = props => {
 															</label>
 															<select
 																value={
-																	inputs.category_id ? inputs.category_id :''
+																	inputs.category_id
+																		? inputs.category_id
+																		: ''
 																}
 																onChange={
 																	handleChange
@@ -917,7 +918,9 @@ const AddProduct = props => {
 															</label>
 															<select
 																value={
-																	inputs.brand_name? inputs.brand_name  :''
+																	inputs.brand_name
+																		? inputs.brand_name
+																		: ''
 																}
 																onChange={
 																	handleChange
@@ -955,7 +958,9 @@ const AddProduct = props => {
 																id='title'
 																placeholder='Product Name'
 																value={
-																	inputs.title ? inputs.title :''
+																	inputs.title
+																		? inputs.title
+																		: ''
 																}
 																maxLength={50}
 																onChange={
@@ -982,7 +987,9 @@ const AddProduct = props => {
 																id='sku'
 																placeholder='SKU'
 																value={
-																	inputs.sku ? inputs.sku : ''
+																	inputs.sku
+																		? inputs.sku
+																		: ''
 																}
 																onChange={
 																	handleChange
@@ -1007,7 +1014,9 @@ const AddProduct = props => {
 															</label>
 															<select
 																value={
-																	inputs.country_of_manufacture ? inputs.country_of_manufacture :''
+																	inputs.country_of_manufacture
+																		? inputs.country_of_manufacture
+																		: ''
 																}
 																onChange={
 																	handleChange
@@ -1043,7 +1052,11 @@ const AddProduct = props => {
 																id='price'
 																placeholder='$ 25000.00'
 																value={
-																	inputs.price ? parseInt(inputs.price) : '' 
+																	inputs.price
+																		? parseInt(
+																				inputs.price,
+																		  )
+																		: ''
 																}
 																onChange={e => {
 																	{
@@ -1054,7 +1067,8 @@ const AddProduct = props => {
 																		const regex =
 																			/^[0-9\b]{0,8}$/; // Only allow digits, maximum length of 8
 																		if (
-																			input ==='' ??
+																			input ===
+																				'' ??
 																			regex.test(
 																				input,
 																			)
@@ -1083,9 +1097,11 @@ const AddProduct = props => {
 																id='discounted_price'
 																placeholder='$ 20000.00'
 																value={
-																	inputs.discounted_price ? parseInt(
-																		inputs.discounted_price,
-																	) : ''
+																	inputs.discounted_price
+																		? parseInt(
+																				inputs.discounted_price,
+																		  )
+																		: ''
 																}
 																onChange={e => {
 																	{
@@ -1135,7 +1151,9 @@ const AddProduct = props => {
 																ref={editor}
 																name='long_description'
 																value={
-																	inputs.long_description ? inputs.long_description : ''
+																	inputs.long_description
+																		? inputs.long_description
+																		: ''
 																}
 																onBlur={long_description => {
 																	{
@@ -1528,7 +1546,9 @@ const AddProduct = props => {
 																placeholder='0'
 																min='0'
 																value={
-																	inputs.stock ? inputs.stock : ''
+																	inputs.stock
+																		? inputs.stock
+																		: ''
 																}
 																onChange={event => {
 																	{

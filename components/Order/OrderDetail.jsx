@@ -1,11 +1,12 @@
+
 import Link from 'next/link';
+import {toast} from 'react-toastify';
+import Router from 'next/router';
 
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import Image from '@components/Common/Image';
 import {confirmDialog} from '@utils/helper';
 import {api} from '@utils/api';
-import {toast} from 'react-toastify';
-import Router from 'next/router';
 //this is the starting point
 const Order = ({data}) => {
 	// const [selectedOption, setSelectedOption] = useState(null);
@@ -13,6 +14,8 @@ const Order = ({data}) => {
 	if (!data) return 'No data Found';
 	//this is a method to change values
 	const handleReturn = async (order_id, item_id, status = null, quantity) => {
+		console.log(status);
+
 		const confirm = await confirmDialog(
 			'Are you want to return this order?',
 		);
@@ -44,7 +47,7 @@ const Order = ({data}) => {
 			}
 		}
 	};
-//this is the starting point
+	//this is the starting point
 	return (
 		<>
 			<div className='cms-page innerblock-padd'>
@@ -155,7 +158,10 @@ const Order = ({data}) => {
 																},
 																(_, i) => i + 1,
 															);
-
+														console.log(
+															'selectOptions',
+															selectOptions,
+														);
 														return (
 															<tr key={key}>
 																<td>

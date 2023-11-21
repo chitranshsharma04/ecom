@@ -1,3 +1,6 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 /* eslint-disable @next/next/link-passhref */
 import React, {useState} from 'react';
 import Link from 'next/link';
@@ -65,9 +68,11 @@ const ManageContactUs = () => {
 											<tbody>
 												{productList.length > 0 &&
 													productList.map(
-														(list, index) => (
-															
-														),
+														(list, index) =>
+															console.log(
+																'Contact :',
+																list,
+															),
 													)}
 											</tbody>
 										</table>

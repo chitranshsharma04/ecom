@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
@@ -152,7 +151,7 @@ const Checkout = () => {
 	//this is a method to change address
 	const handleAddressChange = event => {
 		const value = event.target.value;
-		const address = state.addresses.find(i => "i.id + '1' === value + '1'");
+		const address = state.addresses.find(i => i.id + 'l' === value + 'l');
 
 		if (address) {
 			dispatch({

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /** @format */
 import {useCallback} from 'react';
 import {useRouter} from 'next/router';
@@ -26,12 +27,15 @@ function Cms(props) {
 		<>
 			<Container>
 				<div
-					role="button" tabIndex={0}
+					role='button'
+					tabIndex={0}
 					className='foral-editor'
 					id='content-area'
 					onClick={handleAnchorClick}
 					onKeyPress={handleAnchorClick}
-				>{html}</div>
+				>
+					{html}
+				</div>
 			</Container>
 		</>
 	);

@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/link-passhref */
 import React, {useState, useEffect} from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import AccountSidebar from '@components/Common/Account/AccountSidebar';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
@@ -88,9 +87,11 @@ const ManageContactUsEnquiry = () => {
 														contactUsList.length >
 															0 &&
 														contactUsList.map(
-															(list, index) => (
-																
-															),
+															(list, index) =>
+																console.log(
+																	list,
+																	index,
+																),
 														)
 													) : (
 														<tr>
