@@ -114,203 +114,193 @@ const LeftPanel = () => {
 	// }, [max]);
 
 	return (
-			<div className='left-panel'>
-				<div className='input-group'>
-					<input
-						type='text'
-						id='searchTitle'
-						className='form-control'
-						placeholder='Search'
-						value={search}
-						onChange={handleChange}
-						onKeyUp={handleKeyPress}
-					/>
-					<div className='input-group-append'>
-						<button
-							aria-label='Search Button'
-							className='btn search-btn '
-							id='searchButton'
-							type='button'
-							onClick={handleSubmit}
-						>
-							&nbsp;
-							<i className='fas fa-search' />
-						</button>
-					</div>
-				</div>
-
-				<h4>Filters</h4>
-				<div id='accordion'>
-					<div className='card'>
-						<Collapsible
-							open={collapseToggle}
-							contentElementId={'Shop by Category'}
-							trigger={
-								<div className='card-header'>
-									<a
-										className={`${
-											collapseToggle
-												? ''
-												: 'card-link collapsed'
-										}`}
-										data-toggle='collapse'
-										href='#collapseOne'
-										aria-expanded='false'
-										onClick={() =>
-											setcollapseToggle(!collapseToggle)
-										}
-									>
-										Shop by Category
-									</a>
-								</div>
-							}
-						>
-							{categories.map((items, index) => (
-								<div className='card-body' key={index}>
-									<ul className='catgory-list'>
-										<li>
-											<a
-												href={`/products/${items.slug}`}
-												className='card-name'
-											>
-												{items.title}
-											</a>
-											<Collapsible
-												open={
-													state?.breadcrumbs?.[0]
-														?.slug === items.slug
-												}
-												contentElementId={
-													'Shop by Category' + index
-												}
-												trigger={
-													<a
-														href='#top'
-														onClick={() => {
-															setcollapseToggleUp(
-																collapseToggleUp ===
-																	'up'
-																	? 'down'
-																	: 'up',
-															);
-															setClickedItem(
-																index,
-															);
-														}}
-													>
-														<i
-															style={{
-																float: 'right',
-																marginTop:
-																	'-13px',
-															}}
-															className={`fa fa-chevron-${
-																clickedItem ===
-																index
-																	? collapseToggleUp
-																	: 'down'
-															}`}
-														/>
-													</a>
-												}
-											>
-												<div
-													id='title40'
-													className='collapses1_women collapse show'
-													data-parent='#collapseOne'
-												>
-													<div className='card-body'>
-														<ul>
-															{items.children.map(
-																(
-																	subItems,
-																	idx,
-																) => (
-																	<li
-																		className='collapseThree_clothing menu-active showcollapseOne collapse show'
-																		data-parent='#collapseThree'
-																		key={
-																			idx
-																		}
-																	>
-																		<a
-																			href={`/products/${items.slug}/${subItems.slug}`}
-																			className={`card-name ${
-																				state
-																					?.breadcrumbs?.[1]
-																					?.slug ===
-																				subItems.slug
-																					? 'text-danger'
-																					: ''
-																			}`}
-																		>
-																			{
-																				subItems.title
-																			}
-																		</a>
-																		<a
-																			aria-hidden=true
-																			href='#title46'
-																			className='card-link'
-																			style={{
-																				float: 'right',
-																			}}
-																			data-toggle='collapse'
-																		/>
-																	</li>
-																),
-															)}
-														</ul>
-													</div>
-												</div>
-											</Collapsible>
-										</li>
-									</ul>
-								</div>
-							))}
-						</Collapsible>
-					</div>
-					<div className='card'>
-						<Collapsible
-							trigger={
-								<div className='card-header'>
-									<a
-										className={`card-link ${
-											collapseToggle2 ? 'collapsed' : ''
-										}`}
-										data-toggle='collapse'
-										href='#collapseTwo'
-										onClick={() =>
-											setcollapseToggle2(!collapseToggle2)
-										}
-									>
-										Filter By Price
-									</a>
-								</div>
-							}
-						>
-							<div className='card-body px-2'>
-								<p className='text-center text-muted'>
-									{sliderRangeval}
-								</p>
-
-								<Slider
-									range
-									draggableTrack
-									value={state.sliderChange}
-									min={parseInt(min)}
-									max={parseInt(max)}
-									// step={200}
-									allowCross={false}
-									onChange={value =>
-										handleChangeSlider(value)
-									}
-								/>
-							</div>
-						</Collapsible>
-					</div>
+		<div className='left-panel'>
+			<div className='input-group'>
+				<input
+					type='text'
+					id='searchTitle'
+					className='form-control'
+					placeholder='Search'
+					value={search}
+					onChange={handleChange}
+					onKeyUp={handleKeyPress}
+				/>
+				<div className='input-group-append'>
+					<button
+						aria-label='Search Button'
+						className='btn search-btn '
+						id='searchButton'
+						type='button'
+						onClick={handleSubmit}
+					>
+						&nbsp;
+						<i className='fas fa-search' />
+					</button>
 				</div>
 			</div>
+
+			<h4>Filters</h4>
+			<div id='accordion'>
+				<div className='card'>
+					<Collapsible
+						open={collapseToggle}
+						contentElementId={'Shop by Category'}
+						trigger={
+							<div className='card-header'>
+								<a
+									className={`${
+										collapseToggle
+											? ''
+											: 'card-link collapsed'
+									}`}
+									data-toggle='collapse'
+									href='#collapseOne'
+									aria-expanded='false'
+									onClick={() =>
+										setcollapseToggle(!collapseToggle)
+									}
+								>
+									Shop by Category
+								</a>
+							</div>
+						}
+					>
+						{categories.map((items, index) => (
+							<div className='card-body' key={index}>
+								<ul className='catgory-list'>
+									<li>
+										<a
+											href={`/products/${items.slug}`}
+											className='card-name'
+										>
+											{items.title}
+										</a>
+										<Collapsible
+											open={
+												state?.breadcrumbs?.[0]
+													?.slug === items.slug
+											}
+											contentElementId={
+												'Shop by Category' + index
+											}
+											trigger={
+												<a
+													href='#top'
+													onClick={() => {
+														setcollapseToggleUp(
+															collapseToggleUp ===
+																'up'
+																? 'down'
+																: 'up',
+														);
+														setClickedItem(index);
+													}}
+												>
+													<i
+														style={{
+															float: 'right',
+															marginTop: '-13px',
+														}}
+														className={`fa fa-chevron-${
+															clickedItem ===
+															index
+																? collapseToggleUp
+																: 'down'
+														}`}
+													/>
+												</a>
+											}
+										>
+											<div
+												id='title40'
+												className='collapses1_women collapse show'
+												data-parent='#collapseOne'
+											>
+												<div className='card-body'>
+													<ul>
+														{items.children.map(
+															(subItems, idx) => (
+																<li
+																	className='collapseThree_clothing menu-active showcollapseOne collapse show'
+																	data-parent='#collapseThree'
+																	key={idx}
+																>
+																	<a
+																		href={`/products/${items.slug}/${subItems.slug}`}
+																		className={`card-name ${
+																			state
+																				?.breadcrumbs?.[1]
+																				?.slug ===
+																			subItems.slug
+																				? 'text-danger'
+																				: ''
+																		}`}
+																	>
+																		{
+																			subItems.title
+																		}
+																	</a>
+																	<a
+																		aria-hidden='true'
+																		href='#title46'
+																		className='card-link'
+																		style={{
+																			float: 'right',
+																		}}
+																		data-toggle='collapse'
+																	/>
+																</li>
+															),
+														)}
+													</ul>
+												</div>
+											</div>
+										</Collapsible>
+									</li>
+								</ul>
+							</div>
+						))}
+					</Collapsible>
+				</div>
+				<div className='card'>
+					<Collapsible
+						trigger={
+							<div className='card-header'>
+								<a
+									className={`card-link ${
+										collapseToggle2 ? 'collapsed' : ''
+									}`}
+									data-toggle='collapse'
+									href='#collapseTwo'
+									onClick={() =>
+										setcollapseToggle2(!collapseToggle2)
+									}
+								>
+									Filter By Price
+								</a>
+							</div>
+						}
+					>
+						<div className='card-body px-2'>
+							<p className='text-center text-muted'>
+								{sliderRangeval}
+							</p>
+
+							<Slider
+								range
+								draggableTrack
+								value={state.sliderChange}
+								min={parseInt(min)}
+								max={parseInt(max)}
+								// step={200}
+								allowCross={false}
+								onChange={value => handleChangeSlider(value)}
+							/>
+						</div>
+					</Collapsible>
+				</div>
+			</div>
+		</div>
 	);
 };
 

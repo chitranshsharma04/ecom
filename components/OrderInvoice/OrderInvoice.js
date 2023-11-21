@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {useState, useEffect} from 'react';
 import SpinnerLoader from '@components/Common/SpinnerLoader/SpinnerLoader';
 import {api} from '@utils/api';
@@ -45,7 +46,12 @@ const OrderInvoice = props => {
 					>
 						<tr>
 							<td className='p-0 pl-0 pb-4'>
-								<img src='/assets/images/logo.png' alt='' />
+								<img
+									src='/assets/images/logo.png'
+									alt=''
+									width={100}
+									height={100}
+								/>
 							</td>
 						</tr>
 
